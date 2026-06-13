@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sdd/tools/schemas/patch.schema.json",
+  "title": "SDD patch manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "change_id",
+    "program_id",
+    "patch_kind",
+    "lifecycle",
+    "status",
+    "created_at",
+    "closed_at",
+    "related_docs"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "enum": [1]
+    },
+    "change_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "program_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "patch_kind": {
+      "type": "string",
+      "enum": ["spec", "batch"]
+    },
+    "lifecycle": {
+      "type": "string",
+      "enum": ["spec-first", "spec-anchored"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "blocked", "closed", "abandoned"]
+    },
+    "created_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "closed_at": {
+      "type": ["string", "null"],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "related_docs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

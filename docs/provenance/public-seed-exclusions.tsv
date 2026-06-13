@@ -1,0 +1,16 @@
+source_path_or_pattern	classification	reason
+.git/**	excluded	Portfolio history is replaced by a new sanitized PAW history; source commit provenance is recorded.
+_inbox/**	excluded	Private handoffs, ledger, and research must never enter public history.
+src/**	excluded	Portfolio runtime and personal content have no active PAW product function.
+public/**	excluded	Portfolio public assets, SEO files, and CNAME are not PAW product surfaces.
+docs/** from source	excluded	Portfolio contracts do not become PAW doctrine; minimal bootstrap docs are authored separately.
+sdd/parches/** except README.md	excluded	Portfolio-specific historical patches remain available only in the private snapshot.
+.codex/skills/blog-*	excluded	Portfolio editorial workflow is not active PAW product behavior.
+.codex/skills/astro-pages-verify/**	excluded	Portfolio and GitHub Pages verification is source-repo-specific.
+.codex/agents/astro-verifier.toml	excluded	Astro and GitHub Pages verifier is source-repo-specific.
+.github/**	excluded	Inherited deployment automation must not execute in PAW.
+astro.config.mjs, tailwind.config.mjs, tsconfig.json	excluded	Portfolio build configuration is not needed for PAW bootstrap.
+package.json, package-lock.json	excluded	Portfolio dependencies and scripts are not needed for the dependency-free bootstrap.
+tests/blog-*.test.mjs, tests/public-release-closure.test.mjs	excluded	Portfolio runtime tests are not PAW tests.
+README.md, AGENTS.md, .gitignore, LICENSE.md from source	excluded	Portfolio identity, governance, ignore rules, and MIT template license are replaced by PAW bootstrap files.
+node_modules/**, dist/**, .astro/**, caches, logs, .env*	excluded	Generated output, dependencies, caches, logs, and secret-bearing files are not published.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "SDD Close"
+  short_description: "Close SDD patches with drift and validation evidence."
+  default_prompt: "Close this SDD patch using the live artifacts, decision log, drift records, and validation results."

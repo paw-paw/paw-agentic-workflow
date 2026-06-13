@@ -1,0 +1,9 @@
+schema_version: 1
+change_id: fixture-batch
+program_id: fixture-program
+patch_kind: batch
+lifecycle: spec-first
+status: active
+created_at: 2026-05-17
+closed_at: null
+related_docs: []

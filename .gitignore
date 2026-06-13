@@ -1,0 +1,27 @@
+# Private transformation inputs
+_inbox/
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated output
+node_modules/
+dist/
+.output/
+.astro/
+coverage/
+
+# Logs and caches
+*.log
+.cache/
+.npm/
+
+# Editor and operating-system metadata
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*.Zone.Identifier

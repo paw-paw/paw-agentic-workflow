@@ -1,0 +1,13 @@
+# Project-scoped Codex configuration for the SDD orchestration system.
+
+[agents]
+# Keep orchestration bounded. The SDD system should use subagents selectively,
+# not spawn large uncontrolled agent trees.
+max_threads = 4
+
+# Direct child agents are allowed, but recursive delegation is blocked.
+# The main Codex session remains the centralized manager.
+max_depth = 1
+
+# Conservative default timeout for spawned work.
+job_max_runtime_seconds = 1200
