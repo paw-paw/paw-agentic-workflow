@@ -5,7 +5,7 @@ description: >
   a mismatch. Trigger: When a completed or in-progress SDD phase under `sdd/parches/...` no longer matches `definicion.md`,
   `plan.md`, `tasks.md`, `decision.log`, backlogs, or repo reality. Do not use for new planning,
   broad redesign, phase execution, or Astro validation.
-license: Apache-2.0
+license: MPL-2.0
 metadata:
   author: paw-paw
   version: "1.0"

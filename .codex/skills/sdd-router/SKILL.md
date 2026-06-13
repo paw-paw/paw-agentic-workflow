@@ -4,7 +4,7 @@ description: >
   Diagnose the current SDD state of a change and recommend the next correct local SDD skill or normal workflow.
   Use when the user is unsure which SDD step applies, when artifacts may be missing, or when routing between
   intake, plan, tasks, backlog, execution, drift sync, and Astro verification is needed. Does not modify files.
-license: Apache-2.0
+license: MPL-2.0
 metadata:
   author: paw-paw
   version: "1.0"

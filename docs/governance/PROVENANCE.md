@@ -20,4 +20,6 @@ The private snapshot contains all Git-tracked source files plus the ignored `_in
 
 The PAW repository starts with a new sanitized history. It does not import the portfolio `.git/` directory or portfolio commit history. Source commit identity and per-file hashes preserve traceability without exposing private staging material.
 
-`docs/provenance/public-seed-imports.tsv` records every byte-identical imported file. `docs/provenance/public-seed-exclusions.tsv` records excluded surfaces and reasons.
+`docs/provenance/public-seed-imports.tsv` records the source hash of every file imported byte-for-byte into initial public commit `c07668df6129cdc00e530e390b4344cc90f63d63`. The hashes describe import-time provenance, not a requirement that later governed revisions remain byte-identical.
+
+`docs/provenance/public-seed-exclusions.tsv` records excluded source surfaces and reasons.

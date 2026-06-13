@@ -1,4 +1,4 @@
-source_path	destination_path	classification	sha256
+source_path	destination_path	classification	source_sha256_at_import
 .codex/agents/sdd-artifact-writer.toml	.codex/agents/sdd-artifact-writer.toml	active-v1-bootstrap	90d2f04418abe80aba7ab0cf0227b416e13c3dfe6b4f438ce3265ab500492cff
 .codex/agents/sdd-docs-checker.toml	.codex/agents/sdd-docs-checker.toml	active-v1-bootstrap	d83cc54e030d381d8ea4576ba0846546e57ab3d5615f2eca2b24c0e8ab6bb345
 .codex/agents/sdd-drift-reviewer.toml	.codex/agents/sdd-drift-reviewer.toml	active-v1-bootstrap	ad37dbae2d2033584b9535475fd0add04a6a95b41a6bf9fe8a5908607acf855f

@@ -12,5 +12,5 @@ sdd/parches/** except README.md	excluded	Portfolio-specific historical patches r
 astro.config.mjs, tailwind.config.mjs, tsconfig.json	excluded	Portfolio build configuration is not needed for PAW bootstrap.
 package.json, package-lock.json	excluded	Portfolio dependencies and scripts are not needed for the dependency-free bootstrap.
 tests/blog-*.test.mjs, tests/public-release-closure.test.mjs	excluded	Portfolio runtime tests are not PAW tests.
-README.md, AGENTS.md, .gitignore, LICENSE.md from source	excluded	Portfolio identity, governance, ignore rules, and MIT template license are replaced by PAW bootstrap files.
+README.md, AGENTS.md, .gitignore, LICENSE.md from source	excluded	Source-repository identity, governance, ignore rules, and licensing are not applicable to PAW and are replaced by PAW bootstrap files.
 node_modules/**, dist/**, .astro/**, caches, logs, .env*	excluded	Generated output, dependencies, caches, logs, and secret-bearing files are not published.

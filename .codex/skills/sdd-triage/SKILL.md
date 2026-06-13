@@ -4,7 +4,7 @@ description: >
   Classify a new change before a formal SDD workspace exists. Trigger when the user brings a fresh idea,
   handover, or ambiguous request and the system must decide whether SDD applies, propose identity and type,
   detect split pressure, surface human blockers, or hand an existing workspace to `sdd-router`.
-license: Apache-2.0
+license: MPL-2.0
 metadata:
   author: paw-paw
   version: "1.0"

@@ -5,7 +5,7 @@ description: >
   Trigger: When a spec-driven change already has a definition under `sdd/parches/...` and needs its `plan.md`,
   affected areas, risks, dependencies, and validations. Do not use for intake, task breakdown, backlog
   creation, implementation, drift sync, or Astro verification.
-license: Apache-2.0
+license: MPL-2.0
 metadata:
   author: paw-paw
   version: "1.0"

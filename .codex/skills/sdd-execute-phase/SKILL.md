@@ -5,7 +5,7 @@ description: >
   Trigger: When `sdd/parches/.../backlog/faseN.md` exists and the user asks to implement that
   phase. Use for scoped execution, findings, decisions, and validations. Do not use for intake,
   planning, task creation, drift-only sync, or generic Astro verification.
-license: Apache-2.0
+license: MPL-2.0
 metadata:
   author: paw-paw
   version: "1.0"

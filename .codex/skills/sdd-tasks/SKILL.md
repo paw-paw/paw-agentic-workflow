@@ -5,7 +5,7 @@ description: >
   Trigger: When `sdd/parches/.../plan.md` exists and the change needs `tasks.md` with phases,
   dependencies, likely files, and validations. Do not use for intake, planning from scratch,
   per-file backlog checklists, implementation, drift sync, or verification.
-license: Apache-2.0
+license: MPL-2.0
 metadata:
   author: paw-paw
   version: "1.0"
