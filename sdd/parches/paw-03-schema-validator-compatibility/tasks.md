@@ -5,7 +5,7 @@
 - Change id: `paw-03-schema-validator-compatibility`
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
-- Estado: `ready-for-backlog`
+- Estado: `active`
 - Ultima actualizacion: `2026-06-14`
 - Owner: sesion Codex activa con aprobacion humana
 
@@ -42,6 +42,7 @@
 
 ### Fase 1 - Schema v2 y parsing versionado
 
+- Estado: `done`
 - Objetivo: crear los contratos fisicos iniciales y una capa de parsing fail-loud
   capaz de detectar version antes de aplicar reglas.
 - Origen en `plan.md`: Bloque 1 - Contratos fisicos y parsing versionado.
@@ -71,6 +72,7 @@
 
 ### Fase 2 - Validacion dual y compatibilidad historica
 
+- Estado: `pending`
 - Objetivo: implementar validadores separados v1/v2 y una matriz completa de
   compatibilidad read-only.
 - Origen en `plan.md`: Bloque 2 - Validadores v1/v2 y compatibilidad historica.
@@ -101,6 +103,7 @@
 
 ### Fase 3 - CLI contractual y bridge v1
 
+- Estado: `pending`
 - Objetivo: exponer el validator PAW mediante una interfaz estable y conservar las
   invocaciones operativas v1 sin duplicar implementacion.
 - Origen en `plan.md`: Bloque 3 - CLI y output contractual.
@@ -132,6 +135,7 @@
 
 ### Fase 4 - Conformance, documentacion y reconciliacion final
 
+- Estado: `pending`
 - Objetivo: completar la evidencia durable, promover el estado implementado y
   verificar que la materializacion no activa el workflow v2.
 - Origen en `plan.md`: Bloque 4 - Fixtures, conformance y reconciliacion de estado.
@@ -236,3 +240,4 @@ proporcional a su riesgo.
 
 - `2026-06-14`
   - Division inicial en cuatro fases trazables a los bloques del plan reconciliado.
+  - Fase 1 cerrada con schema v2, parsing versionado y contract tests validados.

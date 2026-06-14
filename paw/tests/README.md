@@ -13,6 +13,11 @@ compatibility evidence until cutover.
 
 This directory is reserved for future portable fixtures, examples, compatibility checks, and conformance assets derived from approved PAW rules.
 
+## Materialized Surface
+
+- `contract/patch-parsing.test.mjs` covers the constrained YAML parser, structured
+  diagnostics, schema-version detection, and the physical v2 schema contract.
+
 ## Ownership
 
 The patch that introduces a contract owns its associated conformance evidence. Repository maintainers own the integrity of the overall validation surface.

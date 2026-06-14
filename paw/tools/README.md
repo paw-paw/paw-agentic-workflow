@@ -13,6 +13,18 @@ until cutover. Implementing tools here does not activate v2 writers or workspace
 
 This directory is reserved for future deterministic tools that validate or operate on approved PAW contracts.
 
+## Materialized Surface
+
+- `schemas/patch-v2.schema.json` defines the physical v2 manifest shape.
+- `validation/parse-patch-yaml.mjs` parses the constrained manifest YAML subset.
+- `validation/detect-schema-version.mjs` rejects missing, unsupported, or hybrid
+  version axes before semantic validation.
+
+The parser supports top-level mappings, simple string/integer/null scalars, empty
+arrays, block arrays of simple scalars, comments, and blank lines. It rejects nested
+objects or arrays, flow collections, anchors, aliases, tags, multiline scalars, tabs,
+and unsupported indentation with structured diagnostics.
+
 ## Ownership
 
 The patch that introduces each tool owns its behavior, tests, compatibility, and documentation. Repository maintainers own cross-tool consistency.
