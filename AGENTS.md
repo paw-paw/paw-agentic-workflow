@@ -16,7 +16,10 @@ This repository is a PAW `pre-alpha` bootstrap. It is not portable or stable and
 
 - Use the existing `sdd-*` skills in their documented order for governed changes.
 - Keep active program workspaces under `sdd/parches/<change-id>/` until the patch 14 cutover.
-- Treat `paw/**` as an inactive target layout. Do not write workspaces, schemas, tooling, or runtime state there.
+- Treat `sdd/**` as the active v1 workflow and compatibility baseline until the patch 14 cutover.
+- Materialize `paw/**` incrementally only through the governed patch that owns each target surface.
+- Materializing PAW contracts, schemas, tooling, tests, or adapters does not activate the v2 workflow or change writer defaults.
+- Keep `paw/parches/**`, v2 writers, and the default workflow inactive until their approved activation or cutover gate.
 - Keep `.codex/` as the real Codex runtime surface.
 
 ## Bootstrap Boundaries
@@ -24,7 +27,7 @@ This repository is a PAW `pre-alpha` bootstrap. It is not portable or stable and
 - Keep `_inbox/` ignored and outside Git history.
 - Keep Pages, Actions, releases, packaging, and deployment disabled unless a later governed patch explicitly changes that rule.
 - Do not rename `sdd/**`, `sdd-*` skills, schemas, or manifests before the patch that owns the change.
-- Do not create symlinks, dual-write, or two active namespaces.
+- Do not duplicate implementations across `sdd/**` and `paw/**`, create symlinks, dual-write, or run two active workflows.
 - Do not claim portability before the approved multi-repository and multi-runtime gates pass.
 - Preserve provenance for imported v1 files and explain governed divergence.
 

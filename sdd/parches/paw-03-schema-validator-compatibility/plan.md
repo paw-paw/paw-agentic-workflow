@@ -20,7 +20,8 @@
 - `sdd/parches/paw-03-schema-validator-compatibility/decision.log`
 - related docs declarados en el manifest
 - `paw/core/artifact-lifecycle.md`
-- `sdd/tools/**`, `sdd/tests/**` y `tests/**` como implementacion brownfield
+- `paw/tools/**` y `paw/tests/**` como destino canonico v2
+- `sdd/tools/**`, `sdd/tests/**` y `tests/**` como baseline v1 y compatibilidad brownfield
 
 ## 2. Lectura brownfield
 
@@ -36,15 +37,15 @@
 - `tests/sdd-validation.test.mjs` solo comprueba arrays vacios; no prueba CLI, JSON,
   severidades, version, roots ni exit codes.
 - `tests/foundation-governance.test.mjs` exige que `paw/tools/**` y `paw/tests/**`
-  permanezcan como orientacion inactiva y controla el inventario exacto de `paw/**`.
+  permanezcan inactivos y controla el inventario exacto de `paw/**`; este guardrail
+  de foundation debe reconciliarse porque patch 03 es propietario de esas superficies.
 - No hay dependencias npm ni package runtime; los checks actuales usan Node.js
   standard library y deben conservar esa propiedad.
 
 ## 3. Assumptions
 
-- El schema v1 existente conserva path y significado para no romper referencias.
-- El schema v2 puede agregarse como archivo versionado separado, con nombres que hagan
-  observable la version sin renombrar el artifact v1 heredado.
+- El schema v1 existente conserva path y significado como baseline identificable.
+- El schema v2 se agrega bajo `paw/tools/**` con version observable.
 - Las invariantes entre campos se implementaran en codigo aunque parte de la forma
   tambien quede expresada en JSON Schema.
 - El CLI puede evolucionar sin romper los comandos actuales: ejecucion sin flags
@@ -65,13 +66,15 @@
 
 ### Codigo
 
-- `sdd/tools/validate-sdd.mjs`
-- posibles modulos enfocados bajo `sdd/tools/validation/**`
+- `paw/tools/validation/**`
+- `paw/tools/schemas/**`
+- `sdd/tools/validate-sdd.mjs` como entrypoint v1 o puente de compatibilidad
 - `sdd/tools/schemas/patch.schema.json`
-- nuevo schema v2 bajo `sdd/tools/schemas/**`
 
 ### Configuracion, tests o build
 
+- `paw/tests/fixtures/**`
+- `paw/tests/contract/**`
 - `sdd/tests/fixtures/**`
 - `tests/sdd-validation.test.mjs`
 - nuevos tests de contrato bajo `tests/**`
@@ -84,8 +87,8 @@
 
 - Objetivo: fijar la forma v2 y crear una entrada de parsing que produzca datos o
   diagnosticos estructurados antes de aplicar reglas de version.
-- Superficies afectadas: schemas bajo `sdd/tools/schemas/**`, parser y modulos de
-  diagnostico bajo `sdd/tools/**`, fixtures unitarios de sintaxis.
+- Superficies afectadas: schemas, parser y diagnosticos bajo `paw/tools/**`;
+  fixtures unitarios bajo `paw/tests/**`; schema v1 preservado bajo `sdd/tools/**`.
 - Cambios esperados: schema v2 separado; preservacion explicita del schema v1;
   parser fail-loud con path y causa; detector de version que rechace ausencia,
   versiones desconocidas y ejes hibridos.
@@ -98,8 +101,8 @@
 
 - Objetivo: separar dispatch y reglas por version manteniendo intactos los resultados
   validos del runtime v1.
-- Superficies afectadas: validator modules, recorrido de `sdd/parches/**`, contrato
-  batch v1 y tratamiento legacy.
+- Superficies afectadas: validator modules PAW, recorrido compatible de
+  `sdd/parches/**`, contrato batch v1 y tratamiento legacy.
 - Cambios esperados: validator v1 equivalente al comportamiento actual; validator v2
   con invariantes por `patch_mode`, status y fechas; diagnosticos con severidad y
   evidencia; exencion legacy; lectura read-only de historia cerrada.
@@ -112,8 +115,8 @@
 ### Bloque 3 - CLI y output contractual
 
 - Objetivo: exponer una interfaz automatizable que preserve invocaciones existentes.
-- Superficies afectadas: entrypoint `validate-sdd.mjs`, serializacion humana/JSON y
-  tests de proceso.
+- Superficies afectadas: entrypoint PAW, bridge `sdd/tools/validate-sdd.mjs`,
+  serializacion humana/JSON y tests de proceso.
 - Cambios esperados: `--help`, `--json`, `--root`, `--version`, `--fixtures`;
   resultado minimo con `status`, `schema_version`, `validated_paths`, `warnings`,
   `errors` y `evidence`; stdout para resultado, stderr para diagnostico y exit codes
@@ -127,11 +130,12 @@
 
 - Objetivo: completar evidencia de compatibilidad y promover el nuevo estado real a
   las fuentes vivas sin activar v2 como default.
-- Superficies afectadas: `sdd/tests/fixtures/**`, tests top-level, docs related y
-  orientaciones `paw/tools`/`paw/tests`.
+- Superficies afectadas: `paw/tests/**`, fixtures v1 preservados, tests top-level y
+  fuentes vivas de transicion.
 - Cambios esperados: fixtures obligatorios del handoff con expectativas estructuradas;
   checks de independencia de npm/Astro/Codex; docs que distingan validator dual
-  transicional de target layout inactivo; listas de comandos actualizadas.
+  transicional de superficies PAW materializadas sin activar workflow; listas de
+  comandos actualizadas.
 - Dependencias: Bloques 1 a 3.
 - Riesgos: inventario foundation fragil o claims de portabilidad/activacion excesivos.
 - Validaciones asociadas: suite completa del repo, `git diff --check`, inventario
@@ -173,7 +177,8 @@
 ### Manuales
 
 - Comparar patches v1 antes/despues para confirmar ausencia de mutaciones.
-- Confirmar que no existen workspaces, schemas o runtime activo bajo `paw/**`.
+- Confirmar que no existen workspaces o writers bajo `paw/parches/**`.
+- Confirmar que tooling/tests PAW materializados no cambian el default v1.
 - Confirmar que `.codex/skills/sdd-*` sigue escribiendo schema v1.
 - Revisar mensajes de error por path, causa y accionabilidad en Windows y POSIX paths.
 
@@ -207,4 +212,6 @@
 
 - `2026-06-14`
   - Plan brownfield inicial.
-  - Layout transicional fijado en la superficie activa v1.
+  - Layout inicial fijado en la superficie activa v1.
+  - Drift sincronizado: destino canonico corregido a `paw/tools/**` y `paw/tests/**`,
+    con `sdd/**` limitado a operacion v1 y compatibilidad.

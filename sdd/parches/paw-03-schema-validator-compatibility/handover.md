@@ -72,14 +72,15 @@ Invariantes:
 
 ## Reconciliacion de layout
 
-El handoff proponia `paw/tools/**` y `paw/tests/**`, pero permitia ajustar el layout.
-Las fuentes vivas mantienen esas superficies inactivas y prohiben escribir tooling o
-schemas activos alli antes del cutover. El ledger confirma que el validator v1 debe
-extenderse para compatibilidad dual durante la transicion.
+El handoff propone `paw/tools/**` y exige tests bajo `paw/tests/**`. La auditoria de
+handoff 00, ledger, secuencia historica y patches 01-02 confirma que `sdd/**` fue
+importado como baseline v1 para gobernar la transformacion, mientras que las nuevas
+superficies PAW se materializan bajo el namespace objetivo por su patch propietario.
 
-Por tanto, este patch planifica la implementacion transicional bajo `sdd/tools/**`,
-`sdd/tests/**` y `tests/**`. `paw/tools/**` y `paw/tests/**` conservan solo su
-orientacion inactiva. El destino final no se activa ni se duplica en este patch.
+Por tanto, este patch implementa canonicamente schema v2 y validator bajo
+`paw/tools/**`, y fixtures/contract tests portables bajo `paw/tests/**`.
+`sdd/tools/**` y `sdd/tests/**` preservan v1 y pueden contener puentes acotados de
+compatibilidad, sin duplicar la implementacion PAW ni cambiar el default operativo.
 
 ## Stop conditions
 

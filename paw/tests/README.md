@@ -2,7 +2,12 @@
 
 ## Status
 
-Inactive orientation only. Current repository and v1 fixtures remain under `tests/` and `sdd/tests/`.
+Approved target surface for incremental materialization. Patch
+`paw-03-schema-validator-compatibility` owns the first portable v1/v2 compatibility
+fixtures and validator contract tests here.
+
+Existing v1 fixtures remain under `sdd/tests/**` as historical and operational
+compatibility evidence until cutover.
 
 ## Intended Responsibility
 
@@ -15,3 +20,6 @@ The patch that introduces a contract owns its associated conformance evidence. R
 ## Boundaries
 
 Tests and fixtures are evidence unless the canonical documentation index explicitly assigns authority. This directory must not contain active v2 fixtures or imply conformance before the governing contracts exist.
+
+Materialized v2 fixtures must remain opt-in validation evidence and must not imply
+that v2 is the default workflow before its approved activation gate.

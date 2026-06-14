@@ -85,7 +85,7 @@ test('public identity and authority are canonical', () => {
   assert.deepEqual(precedenceOwners, ['docs/README.md']);
 });
 
-test('required foundation documents, live core, and inactive target surfaces exist', () => {
+test('required foundation documents and governed PAW surfaces exist', () => {
   const requiredDocs = [
     'CONTRIBUTING.md',
     'docs/governance/ARCHITECTURE.md',
@@ -97,7 +97,7 @@ test('required foundation documents, live core, and inactive target surfaces exi
     assert.equal(existsSync(join(root, path)), true, `${path} is required`);
   }
 
-  const expectedPawFiles = [
+  const requiredPawFiles = [
     'paw/README.md',
     'paw/core/README.md',
     'paw/core/artifact-lifecycle.md',
@@ -111,7 +111,10 @@ test('required foundation documents, live core, and inactive target surfaces exi
     'paw/tests/README.md',
     'paw/tools/README.md',
   ];
-  assert.deepEqual(listFiles('paw').sort(), expectedPawFiles);
+  const pawFiles = listFiles('paw');
+  for (const path of requiredPawFiles) {
+    assert.ok(pawFiles.includes(path), `${path} is required`);
+  }
 
   assert.match(read('paw/README.md'), /live conceptual core/i);
   assert.match(read('paw/core/README.md'), /live conceptual contracts/i);
@@ -119,14 +122,16 @@ test('required foundation documents, live core, and inactive target surfaces exi
   assert.match(read('paw/parches/README.md'), /Do not create patch workspaces/);
   assert.match(read('paw/parches/README.md'), /sdd\/parches\/<change-id>\//);
   assert.match(read('paw/orchestration/README.md'), /Inactive orientation only/);
-  assert.match(read('paw/tools/README.md'), /Inactive orientation only/);
-  assert.match(read('paw/tests/README.md'), /Inactive orientation only/);
+  assert.match(read('paw/tools/README.md'), /Approved target surface for incremental materialization/);
+  assert.match(read('paw/tests/README.md'), /Approved target surface for incremental materialization/);
 });
 
-test('only the v1 namespace is active during transition', () => {
+test('only the v1 workflow and workspace namespace are active during transition', () => {
   const transition = read('docs/governance/V1-TRANSITION.md');
   assert.match(transition, /only writable patch namespace before cutover/i);
-  assert.match(transition, /Only patch 14 may activate the target namespace/);
+  assert.match(transition, /Only patch 14 may activate the target workflow and writable workspace namespace/);
+  assert.match(transition, /materialized incrementally by their owning patches/i);
+  assert.match(transition, /does not make the v2 workflow active/i);
 
   const v1Patches = read('sdd/parches/README.md');
   assert.match(v1Patches, /only active patch workspace root/i);

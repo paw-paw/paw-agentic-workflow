@@ -1,8 +1,8 @@
 # Decision Log: paw-03-schema-validator-compatibility
 
-## 2026-06-14 - Keep dual validation on the active v1 tooling surface
+## 2026-06-14 - Superseded: keep dual validation on the active v1 tooling surface
 
-- Decision: implement schema v2, dual validation and compatibility fixtures under
+- Superseded decision: implement schema v2, dual validation and compatibility fixtures under
   `sdd/tools/**`, `sdd/tests/**` and `tests/**` during this patch. Keep
   `paw/tools/**` and `paw/tests/**` inactive and do not duplicate the implementation.
 - Reason: `AGENTS.md`, architecture and transition contracts prohibit activating or
@@ -11,6 +11,23 @@
 - Impact: patch 03 delivers executable v2 validation without changing the active
   namespace, writer defaults or cutover ownership. Future activation or relocation
   remains governed by its owning patch.
+- Superseded by: `Materialize new PAW validation on its owned target surfaces`.
+
+## 2026-06-14 - Materialize new PAW validation on its owned target surfaces
+
+- Decision: implement the canonical schema v2 and validator under `paw/tools/**`, and
+  portable compatibility fixtures and contract tests under `paw/tests/**`.
+  Preserve `sdd/**` as the active v1 workflow and compatibility baseline.
+- Reason: handoff 00 imported `sdd/**` as `active-v1-bootstrap`; the ledger assigns
+  new technical identifiers and target tooling to `paw/**`; handoff 03 explicitly
+  prefers `paw/tools/**` and requires tests under `paw/tests/**`. Patch 02 established
+  that foundation-wide inactivity is reconciled when an owning patch materializes its
+  approved PAW surface.
+- Impact: `AGENTS.md`, transition docs, PAW orientation files and foundation tests
+  must allow incremental owner-driven materialization without activating
+  `paw/parches/**`, v2 writers or the default workflow. Any retained
+  `sdd/tools/**` entrypoint is a compatibility bridge, not a duplicate canonical
+  implementation.
 
 ## 2026-06-14 - Preserve v1 writes while adding v2 read and validation support
 

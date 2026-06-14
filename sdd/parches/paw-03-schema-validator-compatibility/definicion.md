@@ -21,7 +21,7 @@ workflow hasta el cutover aprobado.
 
 ## 2. No objetivos
 
-- No activar `paw/parches/**`, `paw/tools/**` ni `paw/tests/**`.
+- No activar `paw/parches/**`, writers v2 ni el workflow v2 por default.
 - No migrar o reescribir workspaces v1 abiertos, cerrados o legacy.
 - No modificar skills, templates o writers para producir v2 por default.
 - No implementar catalogs, presets, workflow, adapters o mutation envelopes.
@@ -47,6 +47,7 @@ workflow hasta el cutover aprobado.
 ### Si entra
 
 - Schema fisico v2 alineado con los campos e invariantes del core.
+- Implementacion canonica del schema y validator PAW bajo `paw/tools/**`.
 - Lectura YAML acotada y deteccion explicita de schema antes de validar.
 - Validacion dual v1/v2 y rechazo de manifests hibridos o desconocidos.
 - Diagnosticos clasificados como error, warning o compatibilidad historica.
@@ -58,7 +59,7 @@ workflow hasta el cutover aprobado.
 ### Fuera de alcance
 
 - Escritura, conversion o migracion automatica de manifests.
-- Activacion del target layout o dos copias activas del validator.
+- Activacion global del target workflow o dos copias activas del validator.
 - Routing de skills segun schema version.
 - Validacion de artifacts futuros no definidos por este patch.
 - Semantica VCS portable o automatizacion de commits.
@@ -73,18 +74,21 @@ workflow hasta el cutover aprobado.
 - `docs/governance/BOOTSTRAP-STATUS.md`
 - `README.md`
 - `AGENTS.md`
-- `sdd/tools/` documentation as needed
-- `paw/tools/README.md` and `paw/tests/README.md` only if clarification is required
+- `paw/tools/README.md`
+- `paw/tests/README.md`
+- `sdd/tools/` documentation as needed for the v1 compatibility bridge
 
 ### Codigo o contenido
 
-- `sdd/tools/validate-sdd.mjs`
-- `sdd/tools/schemas/patch.schema.json`
-- new schema or validation modules under `sdd/tools/**`
+- new schemas and validation modules under `paw/tools/**`
+- `sdd/tools/validate-sdd.mjs` only as the active v1 entrypoint or compatibility bridge
+- `sdd/tools/schemas/patch.schema.json` preserved as the identifiable v1 schema
 
 ### Configuracion o validacion
 
-- `sdd/tests/fixtures/**`
+- `paw/tests/fixtures/**`
+- `paw/tests/contract/**`
+- `sdd/tests/fixtures/**` preserved for v1 compatibility
 - `tests/sdd-validation.test.mjs`
 - new focused validator contract tests under `tests/**`
 - `tests/foundation-governance.test.mjs`
@@ -92,10 +96,11 @@ workflow hasta el cutover aprobado.
 
 ## 6. Decisiones conocidas
 
-- El validator dual se implementa en la superficie activa `sdd/tools/**`; no se
-  activa ni duplica bajo `paw/tools/**`.
-- Los fixtures transicionales viven bajo `sdd/tests/**` y los contract tests bajo
-  `tests/**`; `paw/tests/**` permanece inactivo.
+- El schema v2 y validator PAW se implementan canonicamente bajo `paw/tools/**`.
+- Los fixtures v1/v2 y contract tests portables se implementan bajo `paw/tests/**`;
+  `sdd/tests/**` preserva evidencia v1.
+- `sdd/tools/validate-sdd.mjs` puede mantenerse como entrypoint v1 compatible o
+  delegar en tooling PAW sin duplicar la implementacion canonica.
 - La deteccion de version precede a toda validacion especifica y los manifests
   hibridos fallan de forma explicita.
 - El soporte v2 es read/validate only para este patch y no cambia writers ni defaults.
@@ -147,4 +152,6 @@ durante tasks/backlog dentro del contrato minimo heredado.
 
 - `2026-06-14`
   - Intake inicial basado en handoff 03, contratos de patch 02 y repo reality.
-  - Layout reconciliado con las fronteras activas de transicion.
+  - Layout inicial asumido sobre `sdd/**`.
+  - Drift sincronizado tras auditoria humana: `sdd/**` preserva v1 y la
+    implementacion nueva se materializa en las superficies `paw/**` propietarias.

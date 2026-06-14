@@ -6,7 +6,7 @@
 - Active transformation program: `paw-foundation`.
 - Current workflow: inherited Spec-Driven Development v1.
 - PAW core: live conceptual contracts.
-- Target PAW workflow surfaces: present as inactive orientation.
+- Target PAW surfaces: materialized incrementally by their owning patches without activating the v2 workflow.
 - Portability claim: none.
 - Release claim: none.
 - Packaging claim: none.
