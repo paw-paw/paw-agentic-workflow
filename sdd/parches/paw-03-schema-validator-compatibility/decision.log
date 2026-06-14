@@ -1,0 +1,35 @@
+# Decision Log: paw-03-schema-validator-compatibility
+
+## 2026-06-14 - Keep dual validation on the active v1 tooling surface
+
+- Decision: implement schema v2, dual validation and compatibility fixtures under
+  `sdd/tools/**`, `sdd/tests/**` and `tests/**` during this patch. Keep
+  `paw/tools/**` and `paw/tests/**` inactive and do not duplicate the implementation.
+- Reason: `AGENTS.md`, architecture and transition contracts prohibit activating or
+  writing target tooling before cutover. The approved handoff allows layout adjustment,
+  and the decision ledger says the active v1 validator gains dual-read compatibility.
+- Impact: patch 03 delivers executable v2 validation without changing the active
+  namespace, writer defaults or cutover ownership. Future activation or relocation
+  remains governed by its owning patch.
+
+## 2026-06-14 - Preserve v1 writes while adding v2 read and validation support
+
+- Decision: version detection and read-only validation support for schema v2 must not
+  change the manifest version emitted by current SDD skills or require migration of
+  existing workspaces.
+- Reason: the compatibility contract preserves v1 history and reserves workflow
+  activation for the approved cutover.
+- Impact: tests must prove v1 validity, v2 validation, hybrid rejection, legacy
+  exemption and absence of mutation. No writer or routing skill changes enter scope.
+
+## 2026-06-14 - Apply the provisional paw-foundation commit policy
+
+- Decision: use Conventional Commits, create one coherent SDD preparation commit
+  before implementation, create at least one commit after each closed and validated
+  phase, split phases when intentions or surfaces differ, and create a separate
+  non-substantive closure commit after `sdd-close`.
+- Reason: the human approved this temporary discipline for `paw-foundation`.
+- Impact: do not present this policy as portable PAW doctrine; canonical treatment is
+  deferred to `paw-08-vcs-pr-integration`. Do not publish WIP, squash, rebase,
+  force-push or rewrite history without human authorization. Substantive work after
+  closure requires reopening, validation and a new closure.
