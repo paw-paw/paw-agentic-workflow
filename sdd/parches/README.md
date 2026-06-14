@@ -1,17 +1,28 @@
-# Parches SDD
+# Spec-Driven Development V1 Patch Workspaces
 
-Esta carpeta sera el workspace activo para cambios SDD posteriores al bootstrap portable.
+## Status
 
-## Reglas
+This directory is the only active patch workspace root during the `paw-foundation` transition program.
 
-- Cada subcarpeta representa un cambio SDD o memoria historica agrupada.
-- Los workspaces SDD no sustituyen `docs/README.md` ni los contratos vivos en `docs/`.
-- Todo patch formal no legacy nace con `patch.yaml` desde `sdd-intake`.
-- Un patch cerrado es memoria historica por defecto, no fuente viva escondida.
-- Si un patch introduce reglas vivas, el cierre debe reconciliarlas hacia la fuente viva correspondiente.
+New governed patches continue to use:
+
+```text
+sdd/parches/<change-id>/
+```
+
+The target `paw/parches/<change-id>/` path remains inactive until the patch 14 cutover.
+
+## Rules
+
+- Each non-legacy child directory represents one formal v1 change.
+- Every formal non-legacy patch starts with `patch.yaml` during `sdd-intake`.
+- Patch artifacts control the approved scope of that change but do not replace authoritative live documents.
+- A closed patch is historical memory by default.
+- Durable rules introduced by a patch must be reconciled into the registered live source before closure.
+- Do not create symlinks or dual-write between this directory and `paw/parches/`.
 
 ## Legacy
 
-`legacy/` contiene artifacts migrados desde layouts SDD anteriores.
+`legacy/` contains artifacts migrated from earlier Spec-Driven Development layouts.
 
-El legacy queda visible para trazabilidad, pero no debe usarse como patron vigente para nuevos cambios.
+Legacy remains readable for traceability. It is not the pattern for new work and does not gain authority through age or implementation history.

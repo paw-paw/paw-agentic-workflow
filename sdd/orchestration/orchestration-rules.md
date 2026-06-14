@@ -46,7 +46,7 @@ Subagents and skills can guide execution, and controlled writers may perform bou
 ## Role separation
 
 - `docs/README.md`: precedence and structure inside `docs/`.
-- Contractual docs: product, content, architecture, visual, delivery, i18n, and SEO truth.
+- Registered authoritative documents: live rules for their assigned repository subjects.
 - `AGENTS.md`: permanent operational governance for repo work.
 - SDD skills: controlled transitions between SDD artifacts.
 - Routing diagnosis: selection of the next skill or workflow.
@@ -109,7 +109,6 @@ Use this matrix as the default delegation map. Do not spawn a full panel when on
 | Phase backlog drafting | `sdd-artifact-writer` | One assigned `backlog/faseN.md` | Editing implementation |
 | Phase execution | `sdd-phase-worker`, optionally `sdd-test-reviewer` | One approved phase, bounded implementation, validation advice | Scope expansion |
 | Drift sync | `sdd-drift-reviewer`, `sdd-docs-checker` | Drift classification, affected artifacts, decision log implications | Redesign |
-| Astro/GitHub Pages verification | `astro-verifier` | Build, routes, metadata, SEO, assets, GitHub Pages assumptions | Generic test review |
 
 ---
 

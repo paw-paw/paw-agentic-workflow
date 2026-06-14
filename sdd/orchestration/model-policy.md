@@ -55,7 +55,6 @@ If a listed model is unavailable, choose the closest available model by capabili
 - `sdd-phase-backlog`: mini medium for clear phases; `gpt-5.4 medium` when dependencies or blockers are non-trivial.
 - `sdd-execute-phase`: `gpt-5.4 medium`; escalate for logic, build, routing, refactor, SEO, deployment, or drift-sensitive work.
 - `sdd-sync-drift`: `gpt-5.4 medium`; escalate when drift affects contracts or public behavior.
-- `astro-pages-verify`: mini low for straightforward verification; escalate if build or routing failures need diagnosis.
 - `sdd-artifact-writer`: `gpt-5.4 medium`; escalate to `gpt-5.5 medium` for contradictory artifacts or contractual drift.
 - `sdd-phase-worker`: `gpt-5.4 medium`; escalate to `gpt-5.5 medium` for non-trivial implementation or drift-sensitive work.
 
@@ -70,7 +69,6 @@ These defaults do not override the current session model or user instructions.
 - `sdd-test-reviewer`: mini medium.
 - `sdd-risk-reviewer`: mini medium, escalable.
 - `sdd-drift-reviewer`: mini medium.
-- `astro-verifier`: mini low.
 - `sdd-artifact-writer`: `gpt-5.4 medium`.
 - `sdd-phase-worker`: `gpt-5.4 medium`.
 

@@ -4,7 +4,7 @@ description: >
   Execute one existing SDD phase from its live backlog while updating the backlog as work progresses.
   Trigger: When `sdd/parches/.../backlog/faseN.md` exists and the user asks to implement that
   phase. Use for scoped execution, findings, decisions, and validations. Do not use for intake,
-  planning, task creation, drift-only sync, or generic Astro verification.
+  planning, task creation, drift-only sync, or separate domain verification.
 license: MPL-2.0
 metadata:
   author: paw-paw
@@ -57,7 +57,7 @@ metadata:
 6. Update checklist status, findings, blockers, drift, and validation results in `backlog/faseN.md` as work progresses.
 6. Add `decision.log` entries for meaningful execution decisions.
 7. Run validations required by `AGENTS.md` and the backlog.
-8. If the change touches public Astro behavior, use `astro-pages-verify` after implementation.
+8. Run a separate domain verifier only when it is installed and explicitly required by the backlog.
 9. Report result, files touched, validations, assumptions, drift, pending items, and risks.
 
 Optional delegation:

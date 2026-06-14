@@ -3,7 +3,7 @@ name: sdd-router
 description: >
   Diagnose the current SDD state of a change and recommend the next correct local SDD skill or normal workflow.
   Use when the user is unsure which SDD step applies, when artifacts may be missing, or when routing between
-  intake, plan, tasks, backlog, execution, drift sync, and Astro verification is needed. Does not modify files.
+  intake, plan, tasks, backlog, execution, and drift sync is needed. Does not modify files.
 license: MPL-2.0
 metadata:
   author: paw-paw
@@ -33,7 +33,6 @@ metadata:
 - `sdd/orchestration/drift-policy.md`
 - `sdd/orchestration/subagent-policy.md`
 - `sdd/orchestration/model-policy.md`
-- `package.json` only when Astro/public verification is relevant
 
 ## Critical Patterns
 
@@ -61,7 +60,7 @@ metadata:
 - `tasks.md` exists, selected phase lacks `backlog/faseN.md` -> `sdd-phase-backlog`
 - `backlog/faseN.md` exists and the phase is ready -> `sdd-execute-phase`
 - execution differs from artifacts, or decisions were not recorded -> `sdd-sync-drift`
-- visible public surface, routing, SEO, metadata, routes, assets, or release readiness -> `astro-pages-verify`
+- an installed domain verifier explicitly required by the active backlog -> that verifier after implementation
 - change is small, local, reversible, and clearly covered by normal repo workflow -> no SDD
 - docs conflict, scope is unclear, or a human choice is required -> stop and escalate
 
@@ -111,7 +110,6 @@ Keep the answer concise. Do not add extra sections unless the state is ambiguous
 - `sdd-risk-reviewer`: when scope creep, regression, or long-lived convention risk is the main issue
 - `sdd-test-reviewer`: when validation choice is unclear
 - `sdd-drift-reviewer`: when the main issue is drift between artifacts and reality
-- `astro-verifier`: when the change affects Astro/public behavior and needs verification
 
 Use subagents only as advisory, read-only evidence. Do not launch them by default.
 

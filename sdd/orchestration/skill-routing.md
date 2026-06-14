@@ -11,7 +11,7 @@ It is auxiliary. It describes the routing contract used by `sdd-router` and does
 The normal SDD sequence is:
 
 ```text
-triage -> intake -> plan -> tasks -> phase backlog -> execution -> drift sync -> Astro verification
+triage -> intake -> plan -> tasks -> phase backlog -> execution -> drift sync
 ```
 
 `sdd-router` performs routing diagnosis for the active session.
@@ -128,22 +128,6 @@ Do not use it to redesign the change by default.
 
 ---
 
-## Use astro-pages-verify when
-
-Use `astro-pages-verify` when the change affects:
-
-- Astro build output
-- routes or navigation
-- metadata, SEO, canonicals, or Open Graph output
-- public assets
-- visible portfolio content
-- GitHub Pages assumptions
-- release readiness
-
-Read `package.json` before choosing commands. Do not invent scripts or validation results.
-
----
-
 ## Use no SDD when
 
 Use the normal `AGENTS.md` workflow instead of SDD when the change is:
@@ -153,7 +137,7 @@ Use the normal `AGENTS.md` workflow instead of SDD when the change is:
 - reversible
 - clear
 - not a product, contract, architecture, routing, i18n, SEO, deployment, validation, or visible behavior decision
-- already covered by a narrow skill such as a blog skill
+- already covered by a narrow installed skill
 
 Small changes can still require documentation if they reveal drift or affect a contractual decision.
 

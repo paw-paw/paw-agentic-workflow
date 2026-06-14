@@ -1,46 +1,38 @@
-# SDD
+# Spec-Driven Development V1
 
-Esta carpeta es la raiz operativa del sistema SDD portable del repo.
+## Status
 
-## Proposito
+This directory contains the active Spec-Driven Development v1 runtime used to govern the `paw-foundation` transformation program.
 
-`sdd/` separa el sistema operativo de cambios spec-driven de los contratos vivos del portfolio en `docs/`.
+It is not the PAW product name or the target PAW namespace. It remains writable only until the governed patch 14 cutover, after which it becomes read-only v1 history.
 
-- `docs/` gobierna producto, contenido, arquitectura del sitio, visual, deployment e i18n.
-- `sdd/` organiza metodologia SDD, workspaces de cambio, orquestacion transicional y tooling.
-- `.codex/` contiene el runtime Codex que ejecuta skills y agentes.
+## Responsibility
 
-Si hay conflicto entre producto/portfolio y SDD, manda la precedencia definida en `docs/README.md` y `AGENTS.md`.
+- `core/`: shared v1 patch and artifact rules.
+- `parches/`: the only active patch workspace root before cutover.
+- `orchestration/`: v1 runtime coordination support.
+- `tools/`: v1 schema and deterministic validation.
+- `tests/`: v1 fixtures and validation evidence.
 
-## Estructura
+`.codex/` contains the active Codex bindings that execute the v1 skills and agents.
 
-- `core/`: micro-core metodologico portable para reglas SDD compartidas.
-- `parches/`: workspaces SDD activos futuros.
-- `parches/legacy/`: memoria historica migrada desde el layout anterior.
-- `orchestration/`: soporte operativo para coordinar skills y fases.
-- `tools/`: validacion local y checks del sistema SDD portable.
+## Authority
 
-## Entrada al flujo
+The canonical documentation map and precedence policy live in `docs/README.md`. This directory provides supporting runtime contracts and evidence; it does not replace repository governance.
 
-- `sdd-triage` clasifica una entrada nueva antes de que exista un patch formal.
-- `sdd-intake` formaliza el patch ya clasificado.
-- `sdd-router` diagnostica workspaces existentes y decide el siguiente paso correcto.
+For one active change, artifacts under `sdd/parches/<change-id>/` control the approved change scope only while they remain consistent with higher-precedence live documents.
 
-## Core portable
+## Workflow Entry
 
-`sdd/core/` contiene la autoridad metodologica auxiliar del sistema SDD portable.
+- `sdd-triage` classifies new input before a formal workspace exists.
+- `sdd-intake` creates the formal v1 workspace.
+- `sdd-router` diagnoses an existing workspace and recommends the next transition.
 
-Su alcance inicial es deliberadamente pequeno:
+## Transition Boundary
 
-- `sdd/core/README.md`
-- `sdd/core/patch-model.md`
-- `sdd/core/artifact-lifecycle.md`
-- `sdd/core/decision-drift-policy.md`
+- New program patches continue to use `sdd/parches/<change-id>/`.
+- The target `paw/parches/<change-id>/` path is inactive.
+- No symlink or dual-write mechanism may connect the namespaces.
+- Existing v1 names, schemas, fixtures, and history remain intact for compatibility.
 
-El core no reemplaza `docs/`, `AGENTS.md`, skills, agents ni artifacts vivos. Solo debe contener reglas compartidas por multiples skills o artifacts.
-
-## Trabajo diferido
-
-Quedan para fases posteriores del programa `sdd-portable-core`:
-
-- CI y evals formales.
+See `docs/governance/V1-TRANSITION.md`.

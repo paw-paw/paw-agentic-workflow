@@ -44,9 +44,8 @@ Every subagent response should include evidence for non-trivial findings: paths,
 - `sdd-repo-mapper`: identifies relevant files, folders, routes, components, configs, scripts, and execution paths.
 - `sdd-docs-checker`: checks `AGENTS.md`, docs contracts, SDD artifacts, missing docs, and docs-code drift risk.
 - `sdd-risk-reviewer`: reviews correctness risks, regressions, scope creep, contract drift, and decisions needing escalation.
-- `sdd-test-reviewer`: identifies relevant npm scripts, required validations, optional checks, and manual review needs.
+- `sdd-test-reviewer`: identifies available validation commands, required checks, optional checks, and manual review needs.
 - `sdd-drift-reviewer`: compares SDD artifacts against repo reality and classifies drift.
-- `astro-verifier`: reviews Astro/GitHub Pages build, routes, metadata, SEO, assets, and validation assumptions.
 - `sdd-artifact-writer`: drafts or updates one explicitly assigned SDD artifact.
 - `sdd-phase-worker`: executes one explicitly assigned SDD phase.
 
@@ -61,9 +60,8 @@ Use the role whose output answers a concrete question. Do not spawn a full panel
 | Locate affected files, routes, components, configs, scripts | `sdd-repo-mapper` | writers |
 | Check governing docs, missing docs, stale docs, docs-code drift | `sdd-docs-checker` | `sdd-phase-worker` |
 | Review scope creep, regression risk, hidden assumptions, escalation points | `sdd-risk-reviewer` | `sdd-artifact-writer` |
-| Identify validation path, available scripts, manual review needs | `sdd-test-reviewer` | `astro-verifier` unless Astro-specific |
+| Identify validation path, available scripts, manual review needs | `sdd-test-reviewer` | writers |
 | Check drift between SDD artifacts and repo reality | `sdd-drift-reviewer` | generic risk review |
-| Verify Astro/GitHub Pages build, routes, metadata, SEO, public assets | `astro-verifier` | generic test review |
 | Draft or update one SDD artifact | `sdd-artifact-writer` | any read-only reviewer |
 | Execute one approved phase | `sdd-phase-worker` | artifact writer |
 

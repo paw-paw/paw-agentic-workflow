@@ -4,7 +4,7 @@ description: >
   Convert an existing SDD `definicion.md` into a brownfield technical plan for this repo.
   Trigger: When a spec-driven change already has a definition under `sdd/parches/...` and needs its `plan.md`,
   affected areas, risks, dependencies, and validations. Do not use for intake, task breakdown, backlog
-  creation, implementation, drift sync, or Astro verification.
+  creation, implementation, drift sync, or separate domain verification.
 license: MPL-2.0
 metadata:
   author: paw-paw

@@ -4,7 +4,7 @@ description: >
   Convert one approved phase from `tasks.md` into a live execution backlog.
   Trigger: When a specific SDD phase is selected and needs `sdd/parches/.../backlog/faseN.md`
   with preconditions, checklist, validations, blockers, findings, and closure criteria. Do not use
-  to design phases, implement work, sync drift, or verify Astro output.
+  to design phases, implement work, sync drift, or run separate domain verification.
 license: MPL-2.0
 metadata:
   author: paw-paw
