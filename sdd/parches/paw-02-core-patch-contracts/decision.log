@@ -1,0 +1,19 @@
+# Decision Log: paw-02-core-patch-contracts
+
+## 2026-06-13 - Promote the PAW core as live doctrine
+
+- Decision: `paw/core/**` becomes the live authoritative surface for portable PAW patch contracts introduced by this patch.
+- Reason: later schemas, workflows, and adapters need shared semantics that do not belong to repository-local governance or the v1 runtime.
+- Impact: `docs/README.md`, architecture, transition status, bootstrap status, root orientation, and conformance must distinguish the live core from the still-inactive target surfaces.
+
+## 2026-06-13 - Preserve the v1 runtime through patch 14
+
+- Decision: `sdd/**`, `sdd/parches/**`, and the `sdd-*` Codex skills remain the active workflow for the `paw-foundation` program.
+- Reason: the approved cutover sequence prohibits dual-write and reserves activation of `paw/**` workflow surfaces for patch 14.
+- Impact: the new v2 contracts are conceptual and cannot change manifest validation, workspace creation, or routing defaults in this patch.
+
+## 2026-06-13 - Apply a provisional commit policy
+
+- Decision: use Conventional Commits, one coherent SDD preparation commit, at least one commit after each closed and validated phase, and a separate non-substantive closure commit.
+- Reason: the human approved this temporary discipline for `paw-foundation`.
+- Impact: do not present the policy as portable PAW doctrine; its canonical treatment is deferred to `paw-08-vcs-pr-integration`. Do not publish WIP, squash, rebase, force-push, or rewrite history without human authorization. Substantive post-close work requires reopening and reclosing the patch.
