@@ -12,7 +12,7 @@ PAW is a `pre-alpha` bootstrap under active construction.
 
 - It is not a stable distribution.
 - Portability is neither implemented nor guaranteed.
-- The target `paw/**` layout is documentation-only and inactive.
+- `paw/core/**` contains live conceptual contracts; the target workflow and tooling surfaces remain inactive.
 - The inherited Spec-Driven Development v1 runtime under `sdd/**` and the `sdd-*` Codex skills remain the only active patch workflow until the governed cutover.
 - There is no v2 schema, package, release automation, Pages site, or deployment workflow.
 - Pages, Actions, releases, packaging, and deployment remain disabled.
@@ -20,7 +20,8 @@ PAW is a `pre-alpha` bootstrap under active construction.
 ## Repository Map
 
 - `docs/**`: canonical repository governance, architecture, naming, licensing, provenance, and transition documentation.
-- `paw/**`: inactive target layout for future PAW contracts and tooling.
+- `paw/core/**`: live runtime-neutral PAW contracts.
+- Other `paw/**` surfaces: inactive target layout for future workspaces, orchestration, tooling, and conformance assets.
 - `sdd/**`: active v1 Spec-Driven Development runtime and patch workspaces during the transition.
 - `.codex/**`: the real Codex runtime surface, currently containing the v1 `sdd-*` skills and agents.
 - `tests/**`: deterministic repository checks.

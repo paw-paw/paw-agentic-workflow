@@ -54,7 +54,18 @@ An active patch cannot silently override an authoritative live document. A misma
 | `docs/provenance/public-seed-exclusions.tsv` | verifiable | verifiable | authoritative | import-time exclusions and reasons | repository maintainers | manual |
 | `CONTRIBUTING.md` | operational | operational | supporting | contribution workflow | repository maintainers | manual |
 | `AGENTS.md` | operational | operational | authoritative | repository-local agent operation | repository maintainers | manual |
-| `paw/**/README.md` | strategic, operational | operational | supporting | inactive target layout orientation | future owning patch | automated |
+| `paw/README.md` | strategic, operational | operational | supporting | target layout orientation and activation boundaries | repository maintainers | automated |
+| `paw/core/README.md` | contract, operational | contract | authoritative | portable core map and ownership boundaries | core contract owner | automated |
+| `paw/core/patch-model.md` | contract | contract | authoritative | conceptual PAW patch identity, modes, and status | core contract owner | automated |
+| `paw/core/artifact-lifecycle.md` | contract, operational | contract | authoritative | portable artifact responsibilities and lifecycle | core contract owner | automated |
+| `paw/core/authority-and-evidence.md` | contract | contract | authoritative | portable authority, evidence, and promotion semantics | core contract owner | automated |
+| `paw/core/decision-gates.md` | contract | contract | authoritative | portable human decision gates | core contract owner | automated |
+| `paw/core/drift-policy.md` | contract, operational | contract | authoritative | portable drift classification and reconciliation | core contract owner | automated |
+| `paw/core/compatibility-policy.md` | contract, operational | contract | authoritative | v1/v2 compatibility and cutover boundaries | core contract owner | automated |
+| `paw/parches/README.md` | strategic, operational | operational | supporting | inactive future workspace orientation | future owning patch | automated |
+| `paw/orchestration/README.md` | strategic, operational | operational | supporting | inactive orchestration orientation | future owning patch | automated |
+| `paw/tools/README.md` | strategic, operational | operational | supporting | inactive tooling orientation | future owning patch | automated |
+| `paw/tests/README.md` | strategic, operational | operational | supporting | inactive conformance orientation | future owning patch | automated |
 | `sdd/**` | operational, verifiable | operational | supporting | active v1 runtime until cutover | v1 transition owner | automated |
 | `.codex/**` | operational | operational | supporting | Codex runtime binding | v1 transition owner | manual |
 | `sdd/parches/<change-id>/**` | strategic, contract, operational, verifiable | operational | non_authoritative | active change scope, then historical memory | patch owner | automated |

@@ -6,7 +6,7 @@
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
 - Fase: `1 - Modelo de patch, autoridad y evidencia`
-- Estado: `ready`
+- Estado: `done`
 - Ultima actualizacion: `2026-06-13`
 - Owner: sesion Codex activa
 - Depende de: preparacion SDD completa y versionada
@@ -45,10 +45,10 @@
 
 ### Si entra
 
-- [ ] `paw/core/README.md`
-- [ ] `patch-model.md`
-- [ ] `authority-and-evidence.md`
-- [ ] registro y claims afectados
+- [x] `paw/core/README.md`
+- [x] `patch-model.md`
+- [x] `authority-and-evidence.md`
+- [x] registro y claims afectados
 
 ### No entra
 
@@ -95,44 +95,44 @@
 
 ### Bloque A - Relectura
 
-- [ ] releer artifacts y fuentes vivas
-- [ ] contrastar vocabulario v2 con baseline v1
+- [x] releer artifacts y fuentes vivas
+- [x] contrastar vocabulario v2 con baseline v1
 
 ### Bloque B - Inspeccion
 
-- [ ] localizar claims que tratan todo `paw/**` como inerte
-- [ ] confirmar registro canonico actual
+- [x] localizar claims que tratan todo `paw/**` como inerte
+- [x] confirmar registro canonico actual
 
 ### Bloque C - Edicion
 
-- [ ] convertir README del core en indice contractual
-- [ ] crear modelo conceptual de patch v2
-- [ ] crear contrato de autoridad, evidencia y promocion
-- [ ] registrar contratos con roles, autoridad, owner y verificacion
-- [ ] ajustar arquitectura y orientacion general sin activar otras superficies
+- [x] convertir README del core en indice contractual
+- [x] crear modelo conceptual de patch v2
+- [x] crear contrato de autoridad, evidencia y promocion
+- [x] registrar contratos con roles, autoridad, owner y verificacion
+- [x] ajustar arquitectura y orientacion general sin activar otras superficies
 
 ### Bloque D - Registro
 
-- [ ] registrar findings o drift no mecanico
+- [x] registrar findings o drift no mecanico
 
 ### Bloque E - Validacion
 
-- [ ] ejecutar validator repo
-- [ ] ejecutar `git diff --check`
-- [ ] revisar neutralidad y no objetivos
+- [x] ejecutar validator repo
+- [x] ejecutar `git diff --check`
+- [x] revisar neutralidad y no objetivos
 
 ### Bloque F - Cierre
 
-- [ ] registrar resultados
-- [ ] marcar fase `done`
+- [x] registrar resultados
+- [x] marcar fase `done`
 
 ## 9. Drift detectado
 
-- Ninguno al crear el backlog.
+- Drift contractual esperado: las fuentes foundation describian todo `paw/**` como inerte. Se reconcilio de forma acotada para activar solo los contratos conceptuales de `paw/core/**`.
 
 ## 10. Hallazgos durante ejecucion
 
-- Pendiente.
+- El registro canonico necesitaba entradas por archivo para asignar ownership y autoridad sin promover las otras superficies PAW.
 
 ## 11. Blockers
 
@@ -159,16 +159,18 @@
 
 ### Resultados
 
-- Pendiente.
+- `node sdd/tools/validate-sdd.mjs`: `pass`.
+- `git diff --check`: `pass`.
+- Revision manual de neutralidad, scope y activacion: `pass`.
 
 ## 14. Cierre
 
-- [ ] checklist completo
-- [ ] assumptions resueltas
-- [ ] decisiones registradas
-- [ ] blockers resueltos
-- [ ] drift documentado
-- [ ] validaciones ejecutadas
+- [x] checklist completo
+- [x] assumptions resueltas
+- [x] decisiones registradas
+- [x] blockers resueltos
+- [x] drift documentado
+- [x] validaciones ejecutadas
 
 ## 15. Riesgos y pendientes
 
