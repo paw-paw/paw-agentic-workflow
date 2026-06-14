@@ -5,7 +5,7 @@
 - Change id: `paw-02-core-patch-contracts`
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
-- Estado: `ready-for-backlog`
+- Estado: `done`
 - Ultima actualizacion: `2026-06-13`
 - Owner: sesion Codex activa con aprobacion humana
 
@@ -107,7 +107,7 @@ Promover el micro-core PAW por capas: modelo y autoridad, lifecycle, gates/drift
 - [x] fases completas y trazables
 - [x] dependencias claras
 - [x] validaciones reales
-- [x] Fase 1 seleccionada
+- [x] las cuatro fases estan cerradas
 
 ## 10. Registro de cambios
 
