@@ -3,25 +3,34 @@
 ## State
 
 - Public status: `pre-alpha`.
-- Program prepared: `paw-foundation`.
-- Active implementation: sanitized v1 bootstrap.
+- Active transformation program: `paw-foundation`.
+- Current workflow: inherited Spec-Driven Development v1.
+- Target PAW layout: present as inactive orientation.
 - Portability claim: none.
 - Release claim: none.
+- Packaging claim: none.
 
-## Included
+## Implemented
 
-The seed contains the v1 SDD core, orchestration support, validator, schema, fixtures, selected Codex SDD skills and agents, and minimum public governance.
+- PAW identity, naming, documentation authority, and repository layer boundaries.
+- MPL-2.0 project license, notices, provenance, and output policy.
+- Sanitized v1 core, orchestration, validator, fixtures, selected Codex skills, and agents.
+- Deterministic local validation using Node.js standard-library modules.
+- Target `paw/**` directory ownership and transition boundaries.
 
-Files in the initial public seed were copied byte-for-byte from the frozen source snapshot and classified in `docs/provenance/public-seed-imports.tsv`. Subsequent commits may update them under PAW governance while preserving their import-time hashes as provenance.
+## Not Implemented
 
-## Not included
+- PAW patch contracts or schema v2.
+- Active `paw/parches/` workspaces.
+- `paw-*` skills or agents.
+- Catalogs, presets, adapters, adoption records, or assessments.
+- Multi-runtime and multi-repository portability.
+- Packaging, installation automation, release automation, Pages, Actions, or deployment.
 
-The seed excludes the Astro portfolio runtime, personal content, assets, portfolio contracts, deployment workflows, `CNAME`, package dependencies, generated output, editorial skills, portfolio verification tooling, historical portfolio patches, and every `_inbox/**` file from Git history.
+## Provenance Boundary
 
-The private final handoffs and decision ledger exist only in the local ignored working tree. A local ignored `_inbox/legacy/` archive may also be present for exceptional historical review; it is not authority or default context.
+The seed was extracted from a private portfolio source, but source-repository product contracts, runtime, personal content, deployment configuration, and editorial tooling are not PAW behavior.
 
-## Known inherited limitations
+Import-time hashes remain in `docs/provenance/public-seed-imports.tsv`. Later governed changes may update imported files without altering those provenance records.
 
-The v1 bootstrap was developed inside an Astro portfolio and some imported files still contain portfolio-specific wording or assumptions. Import-time hashes preserve their provenance even when a later commit makes an explicit governed correction, such as normalizing license metadata. Broader transformation belongs to the approved patch sequence beginning with patch 01.
-
-This phase does not create `paw/**`, rename skills, migrate manifests, implement schema v2, reorganize doctrine, or enable automation.
+Private transformation handoffs and the decision ledger remain local under ignored `_inbox/**` paths and are not part of the public repository.

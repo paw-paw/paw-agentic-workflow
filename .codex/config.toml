@@ -1,7 +1,7 @@
-# Project-scoped Codex configuration for the SDD orchestration system.
+# Project-scoped Codex configuration for the active Spec-Driven Development v1 runtime.
 
 [agents]
-# Keep orchestration bounded. The SDD system should use subagents selectively,
+# Keep orchestration bounded. The v1 runtime should use subagents selectively,
 # not spawn large uncontrolled agent trees.
 max_threads = 4
 

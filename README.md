@@ -1,98 +1,61 @@
 # PAW (Paw's Agentic Workflow)
 
-PAW is an experimental workflow for building software with AI coding agents without giving up engineering discipline.
+PAW (Paw's Agentic Workflow) implements a custom software development methodology designed to help vibe coders become capable vibe developers and build serious, maintainable software with agentic tools.
 
-It is for people who like the speed of vibe coding, but want to move toward something more reliable: clearer specs, better decisions, testable changes, documented intent, and software that can survive beyond one chat session.
+PAW gives humans and coding agents a shared way to define intent, preserve decisions, control scope, validate changes, and keep software understandable beyond one chat session. It does not claim to have invented a new formal methodology.
 
-## Why PAW exists
+PAW is influenced by Spec-Driven Development, behavior-driven development, test-driven development, documentation-driven development, design by contract, DevOps, software product-line engineering, progressive disclosure, evidence-based engineering, and human-in-the-loop AI governance. These are influences, not alternate names for PAW or external authorities over this repository.
 
-AI coding tools make it easy to move fast. They also make it easy to lose track of why something was built, which assumptions changed, what still needs validation, and whether the generated code is actually maintainable.
+## Current Status
 
-PAW tries to solve that gap.
+PAW is a `pre-alpha` bootstrap under active construction.
 
-The goal is not to replace engineering judgment with agents. The goal is to give humans and agents a shared workflow: define intent, preserve context, make decisions explicit, validate changes, and keep the project understandable as it grows.
+- It is not a stable distribution.
+- Portability is neither implemented nor guaranteed.
+- The target `paw/**` layout is documentation-only and inactive.
+- The inherited Spec-Driven Development v1 runtime under `sdd/**` and the `sdd-*` Codex skills remain the only active patch workflow until the governed cutover.
+- There is no v2 schema, package, release automation, Pages site, or deployment workflow.
+- Pages, Actions, releases, packaging, and deployment remain disabled.
 
-PAW does not claim to have invented a new formal methodology. It borrows from specification-driven development, behavior-driven development, test-driven development, documentation-driven development, design by contract, DevOps, software product-line engineering, progressive disclosure, evidence-based engineering, and human-in-the-loop AI governance.
+## Repository Map
 
-## Current state: pre-alpha bootstrap
+- `docs/**`: canonical repository governance, architecture, naming, licensing, provenance, and transition documentation.
+- `paw/**`: inactive target layout for future PAW contracts and tooling.
+- `sdd/**`: active v1 Spec-Driven Development runtime and patch workspaces during the transition.
+- `.codex/**`: the real Codex runtime surface, currently containing the v1 `sdd-*` skills and agents.
+- `tests/**`: deterministic repository checks.
 
-PAW is under active construction.
+The canonical documentation map and authority policy live in `docs/README.md`. Repository-wide operational instructions live in `AGENTS.md`.
 
-This repository currently contains a sanitized v1 bootstrap extracted from the private portfolio where the workflow was developed. It also includes the minimum governance needed to begin the `paw-foundation` transformation program.
+## Transition Rule
 
-This is not yet a polished, portable PAW distribution.
+The transformation is deliberately one-way and gated:
 
-At the moment:
+1. New program patches continue to use `sdd/parches/<change-id>/`.
+2. `paw/parches/<change-id>/` is the fixed future path, but it is not active yet.
+3. There are no symlinks, dual-write mechanisms, or two active namespaces.
+4. The v1 runtime remains writable until the patch 14 cutover.
+5. After cutover, `paw/**` becomes active and `sdd/**` becomes read-only v1 history.
 
-* Status: `pre-alpha`.
-* Portability is not implemented or guaranteed.
-* The active bootstrap still uses the historical `sdd/**` namespace and `sdd-*` skill names.
-* There is no active `paw/**` namespace yet.
-* There is no v2 schema, package, release automation, Pages site, or deployment workflow yet.
-* Portfolio-specific runtime, content, assets, deployment configuration, and editorial skills are not included.
-* Some inherited v1 files still contain source-repo-bound references. These will be addressed through governed patches instead of being rewritten during extraction.
-
-## What is in this repository
-
-This bootstrap includes enough of the old system to transform it safely.
-
-* `sdd/**`
-  Historical v1 core, orchestration support, validator, schema, and fixtures.
-
-* `.codex/**`
-  Selected v1 SDD skills and agents needed to execute the governed patch sequence.
-
-* `docs/**`
-  Minimal bootstrap governance, provenance, and licensing policy.
-
-* `tests/sdd-validation.test.mjs`
-  Deterministic validation coverage for the v1 bootstrap.
-
-## What is intentionally not here
-
-The private `paw-foundation` handoffs and consolidated decision ledger are not part of this public repository.
-
-They live locally under ignored `_inbox/` paths and are intentionally absent from Git history, branches, pull requests, releases, and clean clones.
-
-That means a clean clone does not contain the private program inputs needed to run transformation patches. An authorized operator must restore the matching private files before executing those patches:
-
-* `_inbox/final/**`
-* `_inbox/decision_ledger.md`
-
-An optional `_inbox/legacy/**` historical archive may also be present. Consult it only when the active handoff, live artifacts, and ledger do not resolve a question.
-
-This separation is intentional. The public repo contains the bootstrap and governance surface. The private inbox contains transformation inputs that should not be published.
+See `docs/governance/V1-TRANSITION.md` for the active surface inventory and cutover boundaries.
 
 ## Validation
 
-The bootstrap has no runtime dependencies.
-
-With a supported Node.js installation, run:
+The repository has no runtime dependencies. With a supported Node.js installation:
 
 ```bash
+node sdd/tools/validate-sdd.mjs
 node sdd/tools/validate-sdd.mjs --fixtures
 node --test tests/sdd-validation.test.mjs
+node --test tests/foundation-governance.test.mjs
 ```
 
-## Roadmap
+## Contributing
 
-The next phase is the `paw-foundation` transformation program.
-
-Its purpose is to turn the inherited v1 SDD bootstrap into a cleaner PAW foundation, including:
-
-* a dedicated `paw/**` namespace;
-* updated schema and validation rules;
-* clearer documentation structure;
-* portable packaging expectations;
-* release and deployment foundations;
-* removal or replacement of source-repo-bound references.
-
-Until that work lands, treat this repository as a governed bootstrap, not as a ready-to-use framework.
+Read `CONTRIBUTING.md`, `docs/README.md`, and `AGENTS.md` before changing repository behavior or governance.
 
 ## License
 
-Unless a file or directory states otherwise, PAW is distributed under the Mozilla Public License 2.0 (`MPL-2.0`).
+Unless a file states otherwise, PAW is distributed under the Mozilla Public License 2.0 (`MPL-2.0`). See `LICENSE`, `LICENSES/README.md`, and `NOTICES.md`.
 
-The bundled Codex skills are distributed under the same `MPL-2.0` project license. See `LICENSES/README.md` and `NOTICES.md`.
-
-Using PAW does not automatically license a user's independent code, documents, or generated artifacts under MPL 2.0. See `docs/licensing/OUTPUT-POLICY.md`.
+Using PAW does not automatically license a user's independent code, documents, decisions, plans, or generated artifacts under MPL 2.0. See `docs/licensing/OUTPUT-POLICY.md`.

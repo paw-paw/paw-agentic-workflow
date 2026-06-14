@@ -25,7 +25,7 @@ Stop and ask the user before:
 - changing structural SEO
 - changing deployment or domain
 - adding dependencies
-- deleting pages, components, assets, or sections
+- deleting governed documents, implementation surfaces, assets, or sections
 - introducing a new convention
 - changing the content model
 - changing a source of truth
@@ -79,7 +79,7 @@ Stop when:
 - a decision blocks implementation
 - multiple viable routes have meaningful trade-offs
 - the user must choose scope
-- the decision affects a public promise of the portfolio
+- the decision affects a public promise of the repository
 - validation fails and fixing it requires changing approach
 - the plan, tasks, or backlog no longer describe the work accurately
 - a contractual doc would need to change

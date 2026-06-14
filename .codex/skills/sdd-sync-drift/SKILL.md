@@ -4,7 +4,7 @@ description: >
   Reconcile drift between SDD artifacts, contractual docs, and the current repo after execution reveals
   a mismatch. Trigger: When a completed or in-progress SDD phase under `sdd/parches/...` no longer matches `definicion.md`,
   `plan.md`, `tasks.md`, `decision.log`, backlogs, or repo reality. Do not use for new planning,
-  broad redesign, phase execution, or Astro validation.
+  broad redesign, phase execution, or separate domain validation.
 license: MPL-2.0
 metadata:
   author: paw-paw

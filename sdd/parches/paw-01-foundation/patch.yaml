@@ -1,0 +1,9 @@
+schema_version: 1
+change_id: paw-01-foundation
+program_id: paw-foundation
+patch_kind: spec
+lifecycle: spec-first
+status: closed
+created_at: 2026-06-13
+closed_at: 2026-06-13
+related_docs: []

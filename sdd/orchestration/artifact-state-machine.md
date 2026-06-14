@@ -18,7 +18,6 @@ triage report
   -> backlog/faseN.md
   -> execution updates
   -> drift sync if needed
-  -> astro verification if needed
 ```
 
 Not every change needs every step. Substantial changes should not skip definition, planning, task breakdown, and phase backlog unless the user explicitly narrows scope and the risk is low.
@@ -68,9 +67,9 @@ sdd/parches/<change-id>/
 - `tasks.md` plus selected phase -> `sdd-phase-backlog`
 - `backlog/faseN.md` -> `sdd-execute-phase`
 - drift detected -> `sdd-sync-drift`
-- visible or Astro impact -> `astro-pages-verify`
 
 The active Codex session may inspect artifacts at any step to confirm state before choosing a skill.
+Additional domain verification may run only when an installed repository skill and the active backlog explicitly require it.
 
 ---
 
@@ -99,7 +98,6 @@ Avoid these transitions:
 | `tasks.md` without selected backlog | phases ready | `sdd-phase-backlog` | checklist missing during execution |
 | `backlog/faseN.md` active | phase ready or executing | `sdd-execute-phase` | not updating live backlog |
 | execution differs from artifacts | drift | `sdd-sync-drift` | treating implementation as canon |
-| visible Astro impact | needs validation | `astro-pages-verify` | claiming validation without real checks |
 
 ---
 
