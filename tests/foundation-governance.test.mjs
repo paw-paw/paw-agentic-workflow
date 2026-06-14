@@ -7,7 +7,11 @@ import test from 'node:test';
 const root = process.cwd();
 
 function read(path) {
-  return readFileSync(join(root, path), 'utf8');
+  return readFileSync(join(root, path), 'utf8').replace(/^\uFEFF/, '');
+}
+
+function normalizePath(path) {
+  return path.replaceAll('\\', '/');
 }
 
 function listFiles(path) {
@@ -16,7 +20,7 @@ function listFiles(path) {
 
   const files = [];
   for (const entry of readdirSync(absolute, { withFileTypes: true })) {
-    const child = join(path, entry.name);
+    const child = normalizePath(join(path, entry.name));
     if (entry.isDirectory()) {
       files.push(...listFiles(child));
     } else {
@@ -31,7 +35,7 @@ function listSymlinks(path = '.') {
   const symlinks = [];
 
   for (const entry of readdirSync(absolute, { withFileTypes: true })) {
-    const child = path === '.' ? entry.name : join(path, entry.name);
+    const child = normalizePath(path === '.' ? entry.name : join(path, entry.name));
     if (child === '.git' || child.startsWith('.git/') || child === '_inbox' || child.startsWith('_inbox/')) {
       continue;
     }
@@ -48,7 +52,7 @@ function listSymlinks(path = '.') {
 
 test('public identity and authority are canonical', () => {
   const readme = read('README.md');
-  assert.ok(readme.startsWith("# PAW (Paw's Agentic Workflow)\n"));
+  assert.match(readme, /^# PAW \(Paw's Agentic Workflow\)\r?\n/);
   assert.match(
     readme,
     /PAW \(Paw's Agentic Workflow\) implements a custom software development methodology designed to help vibe coders become capable vibe developers and build serious, maintainable software with agentic tools\./,
@@ -82,7 +86,7 @@ test('public identity and authority are canonical', () => {
   assert.deepEqual(precedenceOwners, ['docs/README.md']);
 });
 
-test('required foundation documents and target layout exist', () => {
+test('required foundation documents, live core, and inactive target surfaces exist', () => {
   const requiredDocs = [
     'CONTRIBUTING.md',
     'docs/governance/ARCHITECTURE.md',
@@ -97,6 +101,12 @@ test('required foundation documents and target layout exist', () => {
   const expectedPawFiles = [
     'paw/README.md',
     'paw/core/README.md',
+    'paw/core/artifact-lifecycle.md',
+    'paw/core/authority-and-evidence.md',
+    'paw/core/compatibility-policy.md',
+    'paw/core/decision-gates.md',
+    'paw/core/drift-policy.md',
+    'paw/core/patch-model.md',
     'paw/orchestration/README.md',
     'paw/parches/README.md',
     'paw/tests/README.md',
@@ -104,10 +114,14 @@ test('required foundation documents and target layout exist', () => {
   ];
   assert.deepEqual(listFiles('paw').sort(), expectedPawFiles);
 
-  assert.match(read('paw/README.md'), /inactive target layout/i);
+  assert.match(read('paw/README.md'), /live conceptual core/i);
+  assert.match(read('paw/core/README.md'), /live conceptual contracts/i);
   assert.match(read('paw/parches/README.md'), /^Inactive\./m);
   assert.match(read('paw/parches/README.md'), /Do not create patch workspaces/);
   assert.match(read('paw/parches/README.md'), /sdd\/parches\/<change-id>\//);
+  assert.match(read('paw/orchestration/README.md'), /Inactive orientation only/);
+  assert.match(read('paw/tools/README.md'), /Inactive orientation only/);
+  assert.match(read('paw/tests/README.md'), /Inactive orientation only/);
 });
 
 test('only the v1 namespace is active during transition', () => {

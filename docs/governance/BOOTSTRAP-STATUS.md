@@ -5,7 +5,8 @@
 - Public status: `pre-alpha`.
 - Active transformation program: `paw-foundation`.
 - Current workflow: inherited Spec-Driven Development v1.
-- Target PAW layout: present as inactive orientation.
+- PAW core: live conceptual contracts.
+- Target PAW workflow surfaces: present as inactive orientation.
 - Portability claim: none.
 - Release claim: none.
 - Packaging claim: none.
@@ -17,10 +18,11 @@
 - Sanitized v1 core, orchestration, validator, fixtures, selected Codex skills, and agents.
 - Deterministic local validation using Node.js standard-library modules.
 - Target `paw/**` directory ownership and transition boundaries.
+- Runtime-neutral patch model, artifact lifecycle, authority, decision gate, drift, and compatibility contracts under `paw/core/**`.
 
 ## Not Implemented
 
-- PAW patch contracts or schema v2.
+- PAW schema v2 or executable manifest validation.
 - Active `paw/parches/` workspaces.
 - `paw-*` skills or agents.
 - Catalogs, presets, adapters, adoption records, or assessments.

@@ -2,22 +2,34 @@
 
 ## Status
 
-Inactive orientation only. Patch 01 does not define the PAW patch model, artifact contracts, schemas, catalogs, presets, adapters, or workflow.
+This directory contains the live conceptual contracts for the PAW patch model. The contracts are runtime-neutral and intentionally smaller than any schema, workflow, adapter, or repository policy that implements them.
 
-## Intended Responsibility
+The core is active as documentation. It does not activate v2 patch workspaces, schemas, validators, orchestration, tooling, or runtime adapters.
 
-This directory is reserved for the smallest runtime-neutral contracts that future approved patches determine are portable across repositories and agent runtimes.
+## Contract Map
+
+- `patch-model.md`: patch identity, modes, status, and manifest concepts.
+- `artifact-lifecycle.md`: artifact responsibilities, transitions, promotion, and historical memory.
+- `authority-and-evidence.md`: live authority, precedence, evidence, and promotion.
+- `decision-gates.md`: decisions that require explicit human approval.
+- `drift-policy.md`: drift categories and reconciliation protocol.
+- `compatibility-policy.md`: v1 history, transition behavior, and v2 cutover boundaries.
 
 ## Ownership
 
-The owning core-contract patch and repository maintainers will own this surface. Patch artifacts, runtime adapters, and repository-local governance cannot promote content here without a governed decision.
+The PAW core owns semantics that must remain consistent across repositories and agent runtimes. Schemas, workflows, tools, and adapters may encode or translate these contracts, but they must not redefine them.
+
+Repository-local governance owns local authority maps, paths, commands, validation bindings, and deployment policy. Runtime adapters own runtime-specific interaction and capability bindings.
 
 ## Boundaries
 
-This directory must not contain:
+The core must not contain:
 
-- repository-specific commands or deployment policy;
-- Codex prompts or agent profiles;
-- active patch workspaces;
-- inherited v1 files copied for convenience;
-- claims of portability before the approved gates pass.
+- provider-specific prompts, permissions, hooks, or agent profiles;
+- repository-specific paths, commands, branch names, or deployment policy;
+- stack-specific requirements;
+- catalogs, presets, or implementation profiles;
+- executable schemas, validators, or workflow state;
+- claims of portability that have not passed the approved portability gates.
+
+The active v1 transition workflow remains in effect until the governed cutover.
