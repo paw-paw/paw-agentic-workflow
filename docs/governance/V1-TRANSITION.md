@@ -4,7 +4,7 @@
 
 The existing Spec-Driven Development v1 implementation governs the `paw-foundation` program until the patch 14 cutover.
 
-The target `paw/**` namespace may be documented and populated by its owning patches, but it must not become a second active workflow.
+The `paw/core/**` conceptual contracts may be documented and activated by their owning patches, but the target namespace must not become a second active workflow.
 
 ## Active V1 Inventory
 
@@ -24,7 +24,7 @@ The target `paw/**` namespace may be documented and populated by its owning patc
 
 | Surface | Intended responsibility | Current state |
 | --- | --- | --- |
-| `paw/core/` | Portable PAW contracts | Inactive orientation only |
+| `paw/core/` | Portable PAW contracts | Live conceptual contracts; no executable v2 behavior |
 | `paw/parches/` | Future fixed patch workspace root | Inactive; writing is prohibited |
 | `paw/orchestration/` | Runtime-neutral orchestration contracts | Inactive orientation only |
 | `paw/tools/` | PAW tooling | Inactive orientation only |
@@ -35,6 +35,7 @@ The target `paw/**` namespace may be documented and populated by its owning patc
 ## Invariants Before Cutover
 
 - New governed patches use `sdd/parches/<change-id>/`.
+- Live `paw/core/**` contracts do not change the active writer or manifest version.
 - `paw/parches/` contains no workspaces or writers.
 - There are no symlinks between namespaces.
 - There is no dual-write.

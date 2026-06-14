@@ -32,4 +32,4 @@ The core must not contain:
 - executable schemas, validators, or workflow state;
 - claims of portability that have not passed the approved portability gates.
 
-The active transition workflow remains under `sdd/**` and `.codex/skills/sdd-*` until the patch 14 cutover.
+The active v1 transition workflow remains in effect until the governed cutover.
