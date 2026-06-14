@@ -19,11 +19,19 @@ This directory is reserved for future deterministic tools that validate or opera
 - `validation/parse-patch-yaml.mjs` parses the constrained manifest YAML subset.
 - `validation/detect-schema-version.mjs` rejects missing, unsupported, or hybrid
   version axes before semantic validation.
+- `validation/validate-patch-manifest.mjs` dispatches to separate v1/v2 semantic
+  validators.
+- `validation/validate-patch-directory.mjs` adds read-only root, legacy, closure, and
+  batch evidence handling.
 
 The parser supports top-level mappings, simple string/integer/null scalars, empty
 arrays, block arrays of simple scalars, comments, and blank lines. It rejects nested
 objects or arrays, flow collections, anchors, aliases, tags, multiline scalars, tabs,
 and unsupported indentation with structured diagnostics.
+
+Validation results expose `valid`, `schemaVersion`, `diagnostics`, and
+`validatedPaths`. Diagnostics use `error`, `warning`, or `compatibility`; only errors
+make a result invalid.
 
 ## Ownership
 

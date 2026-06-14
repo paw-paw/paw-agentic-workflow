@@ -17,6 +17,10 @@ This directory is reserved for future portable fixtures, examples, compatibility
 
 - `contract/patch-parsing.test.mjs` covers the constrained YAML parser, structured
   diagnostics, schema-version detection, and the physical v2 schema contract.
+- `contract/patch-validation.test.mjs` executes the dual-version fixture matrix,
+  root/legacy handling, semantic invariants, and no-mutation checks.
+- `fixtures/patch-v1/**`, `fixtures/patch-v2/**`, and `fixtures/invalid/**` contain
+  portable read-only compatibility evidence with structured expectations.
 
 ## Ownership
 

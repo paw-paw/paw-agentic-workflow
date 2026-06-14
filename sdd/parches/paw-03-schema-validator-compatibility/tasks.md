@@ -72,7 +72,7 @@
 
 ### Fase 2 - Validacion dual y compatibilidad historica
 
-- Estado: `pending`
+- Estado: `done`
 - Objetivo: implementar validadores separados v1/v2 y una matriz completa de
   compatibilidad read-only.
 - Origen en `plan.md`: Bloque 2 - Validadores v1/v2 y compatibilidad historica.
@@ -241,3 +241,4 @@ proporcional a su riesgo.
 - `2026-06-14`
   - Division inicial en cuatro fases trazables a los bloques del plan reconciliado.
   - Fase 1 cerrada con schema v2, parsing versionado y contract tests validados.
+  - Fase 2 cerrada con validacion dual, compatibilidad legacy y matriz read-only.

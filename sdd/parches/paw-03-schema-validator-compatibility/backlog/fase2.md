@@ -9,7 +9,7 @@ introduce nuevas decisiones de producto por si solo.
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
 - Fase: `2 - Validacion dual y compatibilidad historica`
-- Estado: `active`
+- Estado: `done`
 - Ultima actualizacion: `2026-06-14`
 - Owner: sesion Codex activa
 - Depende de: Fase 1 cerrada y commit `a8cd7b0`
@@ -97,15 +97,15 @@ introduce nuevas decisiones de producto por si solo.
 
 ### Si entra
 
-- [ ] implementar resultado y helpers de validacion compartidos
-- [ ] implementar reglas v1 equivalentes al validator activo
-- [ ] implementar required fields, tipos, enums e invariantes v2
-- [ ] despachar por version solo despues de parsing y detection exitosos
-- [ ] validar un patch directory read-only con roots permitidos
-- [ ] preservar legacy como exencion observable de compatibilidad
-- [ ] crear fixtures v1/v2 positivos y negativos obligatorios
-- [ ] probar no mutacion mediante snapshot de contenido
-- [ ] documentar modulos y fixture layout materializados
+- [x] implementar resultado y helpers de validacion compartidos
+- [x] implementar reglas v1 equivalentes al validator activo
+- [x] implementar required fields, tipos, enums e invariantes v2
+- [x] despachar por version solo despues de parsing y detection exitosos
+- [x] validar un patch directory read-only con roots permitidos
+- [x] preservar legacy como exencion observable de compatibilidad
+- [x] crear fixtures v1/v2 positivos y negativos obligatorios
+- [x] probar no mutacion mediante snapshot de contenido
+- [x] documentar modulos y fixture layout materializados
 
 ### No entra
 
@@ -170,132 +170,133 @@ introduce nuevas decisiones de producto por si solo.
 
 ### Bloque A - Relectura e inventario
 
-- [ ] enumerar required fields, enums e invariantes v1 actuales
-- [ ] enumerar required fields, enums e invariantes v2 del core/handoff
-- [ ] confirmar reglas de cierre y batch que requieren evidencia de directorio
-- [ ] inventariar fixtures v1 existentes y preservar sus resultados
-- [ ] comprobar historia para inconsistencias reales de status/`closed_at`
-- [ ] confirmar hash del schema v1 antes de editar
+- [x] enumerar required fields, enums e invariantes v1 actuales
+- [x] enumerar required fields, enums e invariantes v2 del core/handoff
+- [x] confirmar reglas de cierre y batch que requieren evidencia de directorio
+- [x] inventariar fixtures v1 existentes y preservar sus resultados
+- [x] comprobar historia para inconsistencias reales de status/`closed_at`
+- [x] confirmar hash del schema v1 antes de editar
 
 ### Bloque B - Contrato interno de resultados
 
-- [ ] definir resultado estable con `valid`, `schemaVersion`, `diagnostics` y
+- [x] definir resultado estable con `valid`, `schemaVersion`, `diagnostics` y
   `validatedPaths`
-- [ ] conservar diagnostics con code, severity, path, line y message
-- [ ] agregar helpers sin acoplar serializacion humana/JSON
-- [ ] permitir `compatibility` sin convertirla en error
-- [ ] mantener warnings y compatibility observables en el resultado
+- [x] conservar diagnostics con code, severity, path, line y message
+- [x] agregar helpers sin acoplar serializacion humana/JSON
+- [x] permitir `compatibility` sin convertirla en error
+- [x] mantener warnings y compatibility observables en el resultado
 
 ### Bloque C - Validator v1
 
-- [ ] exigir los nueve campos contractuales v1
-- [ ] rechazar propiedades no declaradas por v1
-- [ ] validar tipos, enums, fechas y arrays
-- [ ] preservar combinaciones `spec/spec-first`, `spec/spec-anchored` y
+- [x] exigir los nueve campos contractuales v1
+- [x] rechazar propiedades no declaradas por v1
+- [x] validar tipos, enums, fechas y arrays
+- [x] preservar combinaciones `spec/spec-first`, `spec/spec-anchored` y
   `batch/spec-first`
-- [ ] rechazar `batch/spec-anchored`
-- [ ] exigir `related_docs` no vacio para `spec-anchored`
-- [ ] exigir `cierre.md` y `closed_at` para status `closed`
-- [ ] exigir `closed_at: null` para status no cerrado
-- [ ] rechazar `closed_at` anterior a `created_at`
-- [ ] validar secciones y criterio por item del contrato batch
+- [x] rechazar `batch/spec-anchored`
+- [x] exigir `related_docs` no vacio para `spec-anchored`
+- [x] exigir `cierre.md` y `closed_at` para status `closed`
+- [x] exigir `closed_at: null` para status no cerrado
+- [x] rechazar `closed_at` anterior a `created_at`
+- [x] validar secciones y criterio por item del contrato batch
 
 ### Bloque D - Validator v2
 
-- [ ] exigir exactamente los diez campos contractuales v2
-- [ ] rechazar propiedades adicionales
-- [ ] validar tipos, enums, fechas y arrays de strings no vacios
-- [ ] aceptar `program_id` string no vacio o null
-- [ ] exigir `creates_docs` no vacio y `bootstrap_context` no nulo para
+- [x] exigir exactamente los diez campos contractuales v2
+- [x] rechazar propiedades adicionales
+- [x] validar tipos, enums, fechas y arrays de strings no vacios
+- [x] aceptar `program_id` string no vacio o null
+- [x] exigir `creates_docs` no vacio y `bootstrap_context` no nulo para
   `docs-bootstrap`
-- [ ] exigir `bootstrap_context: null` para `intention-first`
-- [ ] exigir `related_docs` no vacio y `bootstrap_context: null` para
+- [x] exigir `bootstrap_context: null` para `intention-first`
+- [x] exigir `related_docs` no vacio y `bootstrap_context: null` para
   `doc-anchored`
-- [ ] exigir `closed_at` no nulo para status `closed`
-- [ ] exigir `closed_at: null` para status distinto de `closed`
-- [ ] rechazar `closed_at` anterior a `created_at`
+- [x] exigir `closed_at` no nulo para status `closed`
+- [x] exigir `closed_at: null` para status distinto de `closed`
+- [x] rechazar `closed_at` anterior a `created_at`
 
 ### Bloque E - Dispatch y adapter read-only
 
-- [ ] parsear texto y detener dispatch ante syntax diagnostics
-- [ ] detectar version y detener dispatch ante ausencia, desconocida o hibrida
-- [ ] ejecutar exclusivamente el validator de la version detectada
-- [ ] leer `patch.yaml` desde directorio sin mutarlo
-- [ ] aportar presencia de `cierre.md` y contenido de `definicion.md` a reglas v1
-- [ ] rechazar patch paths fuera de roots permitidos
-- [ ] aceptar roots Windows/POSIX mediante `resolve` y `relative`
-- [ ] reconocer legacy solo dentro de roots legacy explicitos
-- [ ] devolver compatibility diagnostic `PATCH_LEGACY_EXEMPT` para legacy
-- [ ] no exigir `patch.yaml` ni migracion dentro de legacy
+- [x] parsear texto y detener dispatch ante syntax diagnostics
+- [x] detectar version y detener dispatch ante ausencia, desconocida o hibrida
+- [x] ejecutar exclusivamente el validator de la version detectada
+- [x] leer `patch.yaml` desde directorio sin mutarlo
+- [x] aportar presencia de `cierre.md` y contenido de `definicion.md` a reglas v1
+- [x] rechazar patch paths fuera de roots permitidos
+- [x] aceptar roots Windows/POSIX mediante `resolve` y `relative`
+- [x] reconocer legacy solo dentro de roots legacy explicitos
+- [x] devolver compatibility diagnostic `PATCH_LEGACY_EXEMPT` para legacy
+- [x] no exigir `patch.yaml` ni migracion dentro de legacy
 
 ### Bloque F - Fixtures v1
 
-- [ ] crear fixture valido `spec/spec-first`
-- [ ] crear fixture valido `spec/spec-anchored`
-- [ ] crear fixture valido `batch/spec-first` con definicion completa
-- [ ] crear fixture legacy exento sin manifest
-- [ ] crear negativo v1 para combinacion batch/spec-anchored
-- [ ] crear negativo v1 para batch contract incompleto
-- [ ] expresar expectativa con validity, version y diagnostic codes
+- [x] crear fixture valido `spec/spec-first`
+- [x] crear fixture valido `spec/spec-anchored`
+- [x] crear fixture valido `batch/spec-first` con definicion completa
+- [x] crear fixture legacy exento sin manifest
+- [x] crear negativo v1 para combinacion batch/spec-anchored
+- [x] crear negativo v1 para batch contract incompleto
+- [x] expresar expectativa con validity, version y diagnostic codes
 
 ### Bloque G - Fixtures v2 y comunes
 
-- [ ] crear fixture valido `docs-bootstrap`
-- [ ] crear fixture valido `intention-first`
-- [ ] crear fixture valido `doc-anchored`
-- [ ] cubrir `program_id` no nulo en al menos un fixture valido
-- [ ] crear negativo docs-bootstrap sin `creates_docs`
-- [ ] crear negativo docs-bootstrap sin `bootstrap_context`
-- [ ] crear negativo doc-anchored sin `related_docs`
-- [ ] crear negativos de `closed_at` para cerrado y no cerrado
-- [ ] crear manifest hibrido
-- [ ] crear version desconocida
-- [ ] crear YAML invalido
-- [ ] crear caso de path fuera de roots permitidos
+- [x] crear fixture valido `docs-bootstrap`
+- [x] crear fixture valido `intention-first`
+- [x] crear fixture valido `doc-anchored`
+- [x] cubrir `program_id` no nulo en al menos un fixture valido
+- [x] crear negativo docs-bootstrap sin `creates_docs`
+- [x] crear negativo docs-bootstrap sin `bootstrap_context`
+- [x] crear negativo doc-anchored sin `related_docs`
+- [x] crear negativos de `closed_at` para cerrado y no cerrado
+- [x] crear manifest hibrido
+- [x] crear version desconocida
+- [x] crear YAML invalido
+- [x] crear caso de path fuera de roots permitidos
 
 ### Bloque H - Contract tests y no mutacion
 
-- [ ] ejecutar fixtures mediante una tabla determinista
-- [ ] comprobar validity, schemaVersion y diagnostic codes esperados
-- [ ] comprobar severidades error/warning/compatibility
-- [ ] comprobar path y line cuando aplican
-- [ ] snapshotear contenido de todos los fixtures antes/despues de validar
-- [ ] comprobar que ningun archivo fue creado, eliminado o modificado
-- [ ] probar directamente dispatch v1/v2 y short-circuit de errores
-- [ ] mantener tests sin red, timers, prompts ni dependencias externas
+- [x] ejecutar fixtures mediante una tabla determinista
+- [x] comprobar validity, schemaVersion y diagnostic codes esperados
+- [x] comprobar severidades error/warning/compatibility
+- [x] comprobar path y line cuando aplican
+- [x] snapshotear contenido de todos los fixtures antes/despues de validar
+- [x] comprobar que ningun archivo fue creado, eliminado o modificado
+- [x] probar directamente dispatch v1/v2 y short-circuit de errores
+- [x] mantener tests sin red, timers, prompts ni dependencias externas
 
 ### Bloque I - Registro de findings y drift
 
-- [ ] registrar cualquier divergencia entre reglas v1 y schema v1
-- [ ] registrar cualquier discrepancia entre schema v2 y core/handoff
-- [ ] detener si compatibilidad requiere modificar historia
-- [ ] registrar en `decision.log` solo decisiones estructurales nuevas
+- [x] registrar cualquier divergencia entre reglas v1 y schema v1
+- [x] registrar cualquier discrepancia entre schema v2 y core/handoff
+- [x] detener si compatibilidad requiere modificar historia
+- [x] registrar en `decision.log` solo decisiones estructurales nuevas
 
 ### Bloque J - Validacion
 
-- [ ] ejecutar `node --test paw/tests/contract/patch-parsing.test.mjs`
-- [ ] ejecutar `node --test paw/tests/contract/patch-validation.test.mjs`
-- [ ] ejecutar `node sdd/tools/validate-sdd.mjs`
-- [ ] ejecutar `node sdd/tools/validate-sdd.mjs --fixtures`
-- [ ] ejecutar `node --test tests/sdd-validation.test.mjs`
-- [ ] ejecutar `node --test tests/foundation-governance.test.mjs`
-- [ ] ejecutar `node --test tests/core-contracts.test.mjs`
-- [ ] ejecutar `git diff --check`
-- [ ] confirmar hash del schema v1 sin cambios
-- [ ] revisar que no hay cambios bajo `sdd/tests/**`, `paw/parches/**` o `.codex/**`
+- [x] ejecutar `node --test paw/tests/contract/patch-parsing.test.mjs`
+- [x] ejecutar `node --test paw/tests/contract/patch-validation.test.mjs`
+- [x] ejecutar `node sdd/tools/validate-sdd.mjs`
+- [x] ejecutar `node sdd/tools/validate-sdd.mjs --fixtures`
+- [x] ejecutar `node --test tests/sdd-validation.test.mjs`
+- [x] ejecutar `node --test tests/foundation-governance.test.mjs`
+- [x] ejecutar `node --test tests/core-contracts.test.mjs`
+- [x] ejecutar `git diff --check`
+- [x] confirmar hash del schema v1 sin cambios
+- [x] revisar que no hay cambios bajo `sdd/tests/**`, `paw/parches/**` o `.codex/**`
 
 ### Bloque K - Cierre
 
-- [ ] registrar resultados concretos en la seccion 13
-- [ ] actualizar findings, drift, blockers y decisiones
-- [ ] confirmar que CLI/traversal/bridge siguen asignados a Fase 3
-- [ ] marcar fase `done` solo con todas las validaciones requeridas en pass
-- [ ] actualizar Fase 2 a `done` en `tasks.md`
-- [ ] crear al menos un Conventional Commit despues del cierre validado
+- [x] registrar resultados concretos en la seccion 13
+- [x] actualizar findings, drift, blockers y decisiones
+- [x] confirmar que CLI/traversal/bridge siguen asignados a Fase 3
+- [x] marcar fase `done` solo con todas las validaciones requeridas en pass
+- [x] actualizar Fase 2 a `done` en `tasks.md`
+- [x] crear al menos un Conventional Commit despues del cierre validado
 
 ## 9. Drift detectado
 
-- Ninguno al crear el backlog.
+- Ninguno. Las reglas v1 implementadas coinciden con el schema y validator baseline;
+  las invariantes v2 coinciden con core y handoff 03.
 
 ## 10. Hallazgos durante ejecucion
 
@@ -305,10 +306,18 @@ introduce nuevas decisiones de producto por si solo.
   - no existe historia real con status/`closed_at` inconsistente;
   - el validator v1 mezcla reglas de manifest y evidencia de directorio;
   - la exencion legacy actual se representa por ausencia de `patch.yaml`.
+- Implementacion:
+  - se agrego `validation-rules.mjs` como helper compartido para evitar duplicar
+    required fields, unknown fields, tipos, enums, fechas y arrays;
+  - el resultado interno conserva diagnostics sin fijar todavia serializacion CLI;
+  - la matriz fisica incluye 8 casos v1 y 12 casos v2/comunes, incluida historia
+    cerrada, legacy, sintaxis, version, hibridos y containment;
+  - la prueba de no mutacion compara nombres y contenido de todo el arbol de fixtures
+    antes y despues de validarlo.
 
 ## 11. Blockers
 
-- Ninguno al crear el backlog.
+- Ninguno.
 
 ## 12. Decisiones tomadas
 
@@ -316,51 +325,64 @@ introduce nuevas decisiones de producto por si solo.
 - La categoria `compatibility` representa la exencion legacy observable.
 - No se introduce tolerancia historica sin un caso real documentado.
 - La CLI y el bridge v1 permanecen en Fase 3.
+- No aparecieron decisiones estructurales nuevas que requieran modificar
+  `decision.log`.
 
 ## 13. Validaciones
 
 ### Documentales
 
-- [ ] reglas v1 equivalentes al baseline
-- [ ] invariantes v2 alineadas con core y handoff
-- [ ] compatibilidad no implica migracion, escritura o activacion
+- [x] reglas v1 equivalentes al baseline
+- [x] invariantes v2 alineadas con core y handoff
+- [x] compatibilidad no implica migracion, escritura o activacion
 
 ### Tecnicas
 
-- [ ] `node --test paw/tests/contract/patch-parsing.test.mjs`
-- [ ] `node --test paw/tests/contract/patch-validation.test.mjs`
-- [ ] `node sdd/tools/validate-sdd.mjs`
-- [ ] `node sdd/tools/validate-sdd.mjs --fixtures`
-- [ ] `node --test tests/sdd-validation.test.mjs`
-- [ ] `node --test tests/foundation-governance.test.mjs`
-- [ ] `node --test tests/core-contracts.test.mjs`
-- [ ] `git diff --check`
-- [ ] hash del schema v1 sin cambios
+- [x] `node --test paw/tests/contract/patch-parsing.test.mjs`
+- [x] `node --test paw/tests/contract/patch-validation.test.mjs`
+- [x] `node sdd/tools/validate-sdd.mjs`
+- [x] `node sdd/tools/validate-sdd.mjs --fixtures`
+- [x] `node --test tests/sdd-validation.test.mjs`
+- [x] `node --test tests/foundation-governance.test.mjs`
+- [x] `node --test tests/core-contracts.test.mjs`
+- [x] `git diff --check`
+- [x] hash del schema v1 sin cambios
 
 ### Manuales
 
-- [ ] fixtures y patches historicos no mutados
-- [ ] sin npm, Astro, Codex, red, prompts o timers
-- [ ] sin cambios en writers, skills, defaults o namespaces activos
-- [ ] diagnostics accionables en paths Windows y POSIX
+- [x] fixtures y patches historicos no mutados
+- [x] sin npm, Astro, Codex, red, prompts o timers
+- [x] sin cambios en writers, skills, defaults o namespaces activos
+- [x] diagnostics accionables en paths Windows y POSIX
 
 ### Resultados
 
-- Pendientes de ejecucion.
+- `node --test paw/tests/contract/patch-parsing.test.mjs`: 8 tests, 8 pass.
+- `node --test paw/tests/contract/patch-validation.test.mjs`: 6 tests, 6 pass.
+- `node sdd/tools/validate-sdd.mjs`: pass.
+- `node sdd/tools/validate-sdd.mjs --fixtures`: pass.
+- `node --test tests/sdd-validation.test.mjs`: 2 tests, 2 pass.
+- `node --test tests/foundation-governance.test.mjs`: 6 tests, 6 pass.
+- `node --test tests/core-contracts.test.mjs`: 8 tests, 8 pass.
+- `git diff --check`: pass; solo avisos informativos LF/CRLF.
+- schema v1 SHA-256:
+  `C694A530ABFF48B2194A7A6563E3B477EDB37D1FD191C24627F376F43D19A104`.
+- revision manual y `rg`: sin red, prompts, timers, CLI implicita ni cambios en
+  `sdd/tests/**`, `paw/parches/**` o `.codex/**`.
 
 ## 14. Cierre
 
 La fase solo se considera cerrada si:
 
-- [ ] checklist completo o pendientes explicitamente diferidos
-- [ ] assumptions criticas resueltas, aceptadas o escaladas
-- [ ] decisiones relevantes registradas
-- [ ] blockers resueltos o diferidos con razon
-- [ ] drift documentado o resuelto
-- [ ] validaciones requeridas ejecutadas o justificadas
-- [ ] resultados de validacion registrados
-- [ ] matriz obligatoria del handoff cubierta
-- [ ] Fase 3 puede consumir el resultado sin duplicar reglas
+- [x] checklist completo o pendientes explicitamente diferidos
+- [x] assumptions criticas resueltas, aceptadas o escaladas
+- [x] decisiones relevantes registradas
+- [x] blockers resueltos o diferidos con razon
+- [x] drift documentado o resuelto
+- [x] validaciones requeridas ejecutadas o justificadas
+- [x] resultados de validacion registrados
+- [x] matriz obligatoria del handoff cubierta
+- [x] Fase 3 puede consumir el resultado sin duplicar reglas
 
 ## 15. Riesgos y pendientes
 

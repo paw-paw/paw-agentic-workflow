@@ -1,0 +1,6 @@
+{
+  "valid": false,
+  "schemaVersion": 1,
+  "errorCodes": ["PATCH_V1_BATCH_LIFECYCLE_INVALID"],
+  "warningCodes": ["PATCH_SCHEMA_V1_TRANSITIONAL"]
+}

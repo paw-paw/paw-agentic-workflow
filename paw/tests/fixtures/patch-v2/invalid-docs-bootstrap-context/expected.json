@@ -1,0 +1,8 @@
+{
+  "valid": false,
+  "schemaVersion": 2,
+  "errorCodes": [
+    "PATCH_V2_FIELD_REQUIRED",
+    "PATCH_V2_BOOTSTRAP_CONTEXT_REQUIRED"
+  ]
+}
