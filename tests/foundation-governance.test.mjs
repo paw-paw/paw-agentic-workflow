@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
 import { existsSync, lstatSync, readFileSync, readdirSync } from 'node:fs';
 import { extname, join } from 'node:path';
 import test from 'node:test';
@@ -132,6 +133,21 @@ test('workspace, private inputs, and runtime configuration preserve boundaries',
 
   const ignoreRules = read('.gitignore').split(/\r?\n/);
   assert.ok(ignoreRules.includes('_inbox/'));
+  assert.ok(ignoreRules.includes('*.log'));
+  assert.ok(ignoreRules.includes('!sdd/parches/**/decision.log'));
+
+  const ignoredLog = spawnSync('git', ['check-ignore', '--quiet', '--no-index', 'runtime.log'], {
+    cwd: root,
+  });
+  assert.equal(ignoredLog.status, 0, 'ordinary log files must remain ignored');
+
+  const patchDecisionLog = spawnSync(
+    'git',
+    ['check-ignore', '--quiet', '--no-index', 'sdd/parches/example/decision.log'],
+    { cwd: root },
+  );
+  assert.equal(patchDecisionLog.status, 1, 'active patch decision logs must be versionable');
+
   assert.deepEqual(listFiles('.agents'), []);
 
   const configFiles = [

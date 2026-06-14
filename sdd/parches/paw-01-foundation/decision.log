@@ -1,0 +1,52 @@
+# Decision Log: paw-01-foundation
+
+## 2026-06-13 - Identidad y namespace transitorio
+
+- Contexto: el patch materializa la identidad PAW sin activar v2.
+- Decision: usar `PAW` en prosa, `Paw's Agentic Workflow` como expansion y `paw` para identificadores nuevos; conservar `sdd/**` y `sdd-*` como nombres historicos y runtime v1 activo hasta el patch 14.
+- Razon: decisiones vinculantes del handoff 01, confirmadas por `PAW-01` a `PAW-15` en `_inbox/decision_ledger.md`.
+- Impacto: documentacion publica, layout `paw/**`, inventario v1 y checks de naming.
+
+## 2026-06-13 - Autoridad y precedencia
+
+- Contexto: `AGENTS.md` no debe convertirse en una segunda fuente doctrinal.
+- Decision: `docs/README.md` sera el indice documental canonico y la unica politica de mapa, autoridad y precedencia; `AGENTS.md` permanecera como puente operativo repo-local.
+- Razon: handoff 01, seccion Autoridad.
+- Impacto: `docs/README.md`, `AGENTS.md`, contributor guidance y documentos de arquitectura.
+
+## 2026-06-13 - Preservacion del handoff privado
+
+- Contexto: el programa requiere trazabilidad sin publicar `_inbox/**`.
+- Decision: no crear `handover.md` con una copia del handoff; registrar su path ignorado como fuente en `definicion.md`.
+- Razon: handoff 00 y reglas bootstrap de `AGENTS.md`.
+- Impacto: workspace SDD publico sin contenido privado duplicado.
+
+## 2026-06-13 - Protocolo de ambiguedades
+
+- Contexto: el usuario fijo un orden de consulta para dudas potencialmente bloqueantes.
+- Decision: consultar handoff y fuentes vivas, luego `_inbox/decision_ledger.md`, despues solo legacy relacionado y finalmente al humano.
+- Razon: instruccion humana explicita.
+- Impacto: todas las fases, blockers y futuras entradas de este log.
+
+## 2026-06-13 - Clasificacion documental del indice canonico
+
+- Contexto: el handoff exige un indice canonico y separacion de autoridad, pero no enumera la taxonomia aprobada.
+- Decision: clasificar documentos con roles `strategic`, `contract`, `verifiable` y `operational`, manteniendo aparte `authority_level: authoritative | supporting | non_authoritative` y precedencia.
+- Fuentes: `RC-01` a `RC-04` en `_inbox/decision_ledger.md` y consulta acotada de `_inbox/legacy/decision-handoff/sdd-roles-conformance-consolidated-decisions-handoff.md`.
+- Razon: el ledger remitio explicitamente al handoff consolidado para el detalle omitido.
+- Impacto: `docs/README.md` y contributor guidance.
+
+## 2026-06-13 - Idioma de la superficie v1 heredada
+
+- Contexto: `FIX-09` exige ingles para documentacion distribuible, mientras `TS-06` exige preservar historia y compatibilidad v1.
+- Decision: toda documentacion publica creada o modificada por patch 01 queda en ingles; no se realiza una traduccion masiva de templates, fixtures o contratos v1 fuera del alcance. Los archivos v1 que deban editarse por acoplamiento activo se convierten a ingles.
+- Fuentes: `_inbox/decision_ledger.md` (`FIX-09`, `TS-06`) y consulta acotada de `_inbox/legacy/decision-handoff/sdd-transformation-sequence-consolidated-decisions-handoff.md`.
+- Razon: evita convertir una correccion de identidad/autoridad en una migracion de compatibilidad no planificada.
+- Impacto: `sdd/README.md`, `sdd/core/README.md` y documentos runtime editados; templates y fixtures v1 no afectados conservan su contenido.
+
+## 2026-06-13 - Reapertura operativa antes de entrega
+
+- Contexto: la auditoria posterior al primer cierre encontro `sdd/parches/README.md` desalineado con la transicion aprobada.
+- Decision: reabrir temporalmente status y Fase 3, corregir el documento dentro del scope existente y volver a ejecutar `sdd-close`.
+- Razon: un patch cerrado no puede conservar una contradiccion sobre el namespace writable activo.
+- Impacto: `patch.yaml`, `tasks.md`, `backlog/fase3.md`, `sdd/parches/README.md` y `cierre.md`.

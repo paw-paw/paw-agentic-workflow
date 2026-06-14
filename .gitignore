@@ -15,6 +15,7 @@ coverage/
 
 # Logs and caches
 *.log
+!sdd/parches/**/decision.log
 .cache/
 .npm/
 
