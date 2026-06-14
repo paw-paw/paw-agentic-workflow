@@ -61,6 +61,7 @@ Crear bajo `paw/core/` los contratos documentales minimos y neutrales de PAW par
 - `docs/governance/V1-TRANSITION.md`
 - `docs/governance/BOOTSTRAP-STATUS.md`
 - `README.md`
+- `AGENTS.md`
 - `paw/README.md`
 
 ### Codigo o contenido

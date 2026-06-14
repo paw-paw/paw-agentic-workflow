@@ -49,6 +49,7 @@ node sdd/tools/validate-sdd.mjs
 node sdd/tools/validate-sdd.mjs --fixtures
 node --test tests/sdd-validation.test.mjs
 node --test tests/foundation-governance.test.mjs
+node --test tests/core-contracts.test.mjs
 ```
 
 Report files changed, validations, assumptions, drift, pending work, and risks.

@@ -33,6 +33,7 @@ Promover el micro-core PAW por capas: modelo y autoridad, lifecycle, gates/drift
 
 ### Fase 1 - Modelo de patch, autoridad y evidencia
 
+- Estado: `done`
 - Objetivo: activar el indice del core y definir los contratos fundamentales de patch, autoridad, evidencia y promocion.
 - Origen: Bloque 1.
 - Precondiciones: preparacion SDD versionada.
@@ -43,6 +44,7 @@ Promover el micro-core PAW por capas: modelo y autoridad, lifecycle, gates/drift
 
 ### Fase 2 - Lifecycle y ownership de artifacts
 
+- Estado: `done`
 - Objetivo: definir responsabilidades exclusivas, secuencia y promocion de artifacts.
 - Origen: Bloque 2.
 - Precondiciones: Fase 1 cerrada.
@@ -53,6 +55,7 @@ Promover el micro-core PAW por capas: modelo y autoridad, lifecycle, gates/drift
 
 ### Fase 3 - Gates, drift y compatibilidad
 
+- Estado: `done`
 - Objetivo: definir gates humanos, categorias de drift y convivencia v1/v2.
 - Origen: Bloque 3.
 - Precondiciones: Fases 1 y 2 cerradas.
@@ -63,6 +66,7 @@ Promover el micro-core PAW por capas: modelo y autoridad, lifecycle, gates/drift
 
 ### Fase 4 - Conformance y reconciliacion
 
+- Estado: `done`
 - Objetivo: convertir criterios estables en tests y preparar cierre.
 - Origen: Bloque 4.
 - Precondiciones: Fases 1 a 3 cerradas.
@@ -86,10 +90,10 @@ Promover el micro-core PAW por capas: modelo y autoridad, lifecycle, gates/drift
 
 ## 7. Validaciones globales
 
-- [ ] validator repo y fixtures
-- [ ] tests SDD, foundation y core contracts
-- [ ] `git diff --check`
-- [ ] revision manual de neutralidad, no objetivos y compatibilidad
+- [x] validator repo y fixtures
+- [x] tests SDD, foundation y core contracts
+- [x] `git diff --check`
+- [x] revision manual de neutralidad, no objetivos y compatibilidad
 
 ## 8. Trabajo diferido
 

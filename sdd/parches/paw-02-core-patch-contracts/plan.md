@@ -40,6 +40,7 @@
 
 - `paw/core/**`
 - `README.md`
+- `AGENTS.md`
 - `paw/README.md`
 - `docs/README.md`
 - `docs/governance/ARCHITECTURE.md`
@@ -54,6 +55,7 @@
 
 - `tests/foundation-governance.test.mjs`
 - `tests/core-contracts.test.mjs`
+- validation command lists in `README.md` and `AGENTS.md`
 - workspace SDD del patch
 
 ## 5. Bloques de implementacion
