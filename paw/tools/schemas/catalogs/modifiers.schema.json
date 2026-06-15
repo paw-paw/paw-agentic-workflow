@@ -1,0 +1,16 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"paw/tools/schemas/catalogs/modifiers.schema.json",
+  "title":"PAW documentation modifier catalog",
+  "type":"object",
+  "required":["schema_version","catalog_id","catalog_version","scope_kinds","merge_strategies","modifiers"],
+  "additionalProperties":false,
+  "properties":{
+    "schema_version":{"type":"integer","enum":[1]},
+    "catalog_id":{"type":"string","enum":["documentation-modifiers"]},
+    "catalog_version":{"type":"string","pattern":"^\\d+\\.\\d+\\.\\d+$"},
+    "scope_kinds":{"type":"array","minItems":5,"maxItems":5},
+    "merge_strategies":{"type":"array","minItems":5,"maxItems":5},
+    "modifiers":{"type":"array","minItems":21,"maxItems":21}
+  }
+}

@@ -7,12 +7,14 @@ import {
   validateCapabilityCatalog,
   validateDocumentationPresetCatalog,
 } from './validate-documentation-catalogs.mjs';
+import { validateModifierCatalog } from './validate-modifier-catalog.mjs';
 
 export function validateCanonicalCatalogs(root) {
   const paths = {
     families: resolve(root, 'paw/catalogs/families/catalog.json'),
     capabilities: resolve(root, 'paw/catalogs/capabilities/catalog.json'),
     documentationPresets: resolve(root, 'paw/catalogs/documentation-presets/catalog.json'),
+    modifiers: resolve(root, 'paw/catalogs/modifiers/catalog.json'),
   };
   const loaded = Object.fromEntries(
     Object.entries(paths).map(([key, path]) => [key, loadJson(path)]),
@@ -34,6 +36,15 @@ export function validateCanonicalCatalogs(root) {
       }),
     );
   }
+  if (loaded.modifiers.value && loaded.families.value && loaded.capabilities.value) {
+    results.push(
+      validateModifierCatalog(loaded.modifiers.value, {
+        familyIds: loaded.families.value.families.map(({ family_id: id }) => id),
+        capabilityIds: loaded.capabilities.value.capabilities.map(({ capability_id: id }) => id),
+        sourcePath: paths.modifiers,
+      }),
+    );
+  }
 
   return createValidationResult({
     schemaVersion: 1,
@@ -43,6 +54,8 @@ export function validateCanonicalCatalogs(root) {
       family_count: loaded.families.value?.families?.length ?? 0,
       capability_count: loaded.capabilities.value?.capabilities?.length ?? 0,
       documentation_preset_count: loaded.documentationPresets.value?.presets?.length ?? 0,
+      component_count: loaded.modifiers.value?.modifiers?.filter(({ modifier_kind: kind }) => kind === 'component').length ?? 0,
+      concern_count: loaded.modifiers.value?.modifiers?.filter(({ modifier_kind: kind }) => kind === 'concern').length ?? 0,
     },
   });
 }
