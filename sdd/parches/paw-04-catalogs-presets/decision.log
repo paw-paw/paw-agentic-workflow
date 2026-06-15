@@ -65,6 +65,17 @@
   Documentation presets use canonical family IDs and must not define repository
   authority, precedence, or accountable ownership.
 
+## 2026-06-15 - Share universal requirements across documentation presets
+
+- Decision: store the eight universal capability references once in the documentation
+  preset catalog. Each family preset declares only its family-specific capability
+  contributions.
+- Reason: repeating universal requirements in eight presets would duplicate doctrine
+  and create avoidable drift.
+- Impact: effective preset calculation combines `universal_requirements` with the
+  selected preset's requirements. Validators enforce the complete universal set,
+  family coverage, and capability reference integrity.
+
 ## 2026-06-15 - Apply the provisional paw-foundation commit policy
 
 - Decision: use Conventional Commits, create one coherent SDD preparation commit

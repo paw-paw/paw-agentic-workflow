@@ -70,6 +70,7 @@
 
 ### Fase 2 - Capabilities y documentation presets
 
+- Estado: `done`
 - Objetivo: definir requirements documentales efectivos por familia y reglas de
   aplicabilidad, evidencia, excepciones y merge.
 - Origen en `plan.md`: Bloque 2.
@@ -267,3 +268,5 @@ la fase anterior.
   - Cuatro entregables vinculantes preservados y reconciliacion final separada.
   - Fase 1 cerrada con taxonomia canonica, catalog surface, schema, validator,
     15 fixtures y conformance.
+  - Fase 2 cerrada con 22 capabilities, 8 documentation presets, applicability,
+    exception contract, 4 fixtures adicionales y validacion cruzada.

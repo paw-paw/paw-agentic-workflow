@@ -55,3 +55,13 @@ test('family guide references every canonical family ID', () => {
     assert.match(guide, new RegExp(`\\\`${family.family_id}\\\``));
   }
 });
+
+test('documentation guides preserve authority and role boundaries', () => {
+  const capabilities = read('paw/catalogs/capabilities/README.md');
+  const presets = read('paw/catalogs/documentation-presets/README.md');
+  const manifest = read('paw/catalogs/documentation-presets/catalog.json');
+
+  assert.match(capabilities, /do not assign authority or\s+precedence/);
+  assert.match(presets, /cannot change repository authority or accountable\s+ownership/);
+  assert.doesNotMatch(manifest, /authority_level|accountable_owner/);
+});

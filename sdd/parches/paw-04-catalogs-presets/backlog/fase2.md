@@ -6,7 +6,7 @@
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
 - Fase: `2`
-- Estado: `active`
+- Estado: `done`
 - Ultima actualizacion: `2026-06-15`
 - Owner: sesion Codex activa con aprobacion humana
 - Depende de: Fase 1 cerrada
@@ -116,23 +116,23 @@
 
 ### Si entra
 
-- [ ] manifests y guides de capabilities
-- [ ] un documentation preset por family
-- [ ] applicability declarada y efectiva
-- [ ] trigger references y merge strategies
-- [ ] expected evidence and owner/review expectations
-- [ ] baselines de security and accessibility
-- [ ] exception shape temporal y auditable
-- [ ] schemas, validation, fixtures and conformance
+- [x] manifests y guides de capabilities
+- [x] un documentation preset por family
+- [x] applicability declarada y efectiva
+- [x] trigger references y merge strategies
+- [x] expected evidence and owner/review expectations
+- [x] baselines de security and accessibility
+- [x] exception shape temporal y auditable
+- [x] schemas, validation, fixtures and conformance
 
 ### No entra
 
-- [ ] modifier definitions or instances
-- [ ] typed product scopes
-- [ ] implementation presets or technology evidence
-- [ ] adoption records, bindings to real artifacts or assessments
-- [ ] complete role/conformance semantics from patch 06
-- [ ] workflow activation or writers
+- [x] modifier definitions or instances
+- [x] typed product scopes
+- [x] implementation presets or technology evidence
+- [x] adoption records, bindings to real artifacts or assessments
+- [x] complete role/conformance semantics from patch 06
+- [x] workflow activation or writers
 
 ## 7. Archivos y superficies de trabajo
 
@@ -181,68 +181,68 @@
 
 ### Bloque A - Relectura de fuentes
 
-- [ ] leer gates aprobados en `decision.log`
-- [ ] releer documentation model, applicability, exceptions and baseline rules
-- [ ] inspeccionar family catalog refs and current catalog validator dispatch
-- [ ] confirmar que roles remain references and authority remains repo-owned
+- [x] leer gates aprobados en `decision.log`
+- [x] releer documentation model, applicability, exceptions and baseline rules
+- [x] inspeccionar family catalog refs and current catalog validator dispatch
+- [x] confirmar que roles remain references and authority remains repo-owned
 
 ### Bloque B - Inspeccion de estado actual
 
-- [ ] listar canonical family IDs desde manifest, no constants duplicadas
-- [ ] identificar helpers reutilizables para loading, diagnostics and fixture harness
-- [ ] confirmar que guides pueden referenciar manifests sin duplicar matrices enteras
-- [ ] inspeccionar whether `AGENTS.md`, tools/tests README updates should be deferred
+- [x] listar canonical family IDs desde manifest, no constants duplicadas
+- [x] identificar helpers reutilizables para loading, diagnostics and fixture harness
+- [x] confirmar que guides pueden referenciar manifests sin duplicar matrices enteras
+- [x] inspeccionar whether `AGENTS.md`, tools/tests README updates should be deferred
   to Fase 5
 
 ### Bloque C - Edicion por archivo
 
-- [ ] crear capability catalog con IDs, purpose, merge strategy, roles permitidos,
+- [x] crear capability catalog con IDs, purpose, merge strategy, roles permitidos,
   evidence expectations and reopen conditions
-- [ ] crear capability guide con public/internal vocabulary boundaries
-- [ ] crear documentation preset catalog con one family ref per preset and requirement
+- [x] crear capability guide con public/internal vocabulary boundaries
+- [x] crear documentation preset catalog con one family ref per preset and requirement
   contributions
-- [ ] codificar declared applicability values:
+- [x] codificar declared applicability values:
   `required | conditional | optional | not_in_base`
-- [ ] codificar effective applicability values:
+- [x] codificar effective applicability values:
   `required | conditional_inactive | optional | not_applicable`
-- [ ] validar que required/activated conditional no produce `not_applicable`
-- [ ] codificar security baseline para transactional, service, client and agentic;
+- [x] validar que required/activated conditional no produce `not_applicable`
+- [x] codificar security baseline para transactional, service, client and agentic;
   conditional elsewhere
-- [ ] codificar accessibility baseline para content, transactional and client
-- [ ] definir exception fields: ID, affected requirements, reason, approver, owner,
+- [x] codificar accessibility baseline para content, transactional and client
+- [x] definir exception fields: ID, affected requirements, reason, approver, owner,
   dates, risk, controls and reopen trigger
-- [ ] crear schemas con closed shapes
-- [ ] extender catalog CLI para validar all canonical catalogs and fixture domains
-- [ ] crear fixtures validos por family y negativos para unknown refs, invalid
+- [x] crear schemas con closed shapes
+- [x] extender catalog CLI para validar all canonical catalogs and fixture domains
+- [x] crear fixtures validos por family y negativos para unknown refs, invalid
   applicability, missing merge strategy, invalid exception and baseline drift
-- [ ] crear contract/conformance tests for reference integrity and authority guards
+- [x] crear contract/conformance tests for reference integrity and authority guards
 
 ### Bloque D - Registro de decisiones, hallazgos o blockers
 
-- [ ] registrar IDs aprobados y rationale
-- [ ] registrar forma final de capability contribution y requirement identity
-- [ ] detener si una capability mezcla responsabilidades que deben normalizarse
-- [ ] detener si un preset intenta definir authority, precedence or accountable owner
-- [ ] registrar drift entre handoff, live contracts and implementation evidence
+- [x] registrar IDs aprobados y rationale
+- [x] registrar forma final de capability contribution y requirement identity
+- [x] detener si una capability mezcla responsabilidades que deben normalizarse
+- [x] detener si un preset intenta definir authority, precedence or accountable owner
+- [x] registrar drift entre handoff, live contracts and implementation evidence
 
 ### Bloque E - Validacion
 
-- [ ] ejecutar catalog validator canonical and fixtures
-- [ ] ejecutar capability/documentation preset contract tests
-- [ ] ejecutar `node sdd/tools/validate-sdd.mjs`
-- [ ] ejecutar `node sdd/tools/validate-sdd.mjs --fixtures`
-- [ ] ejecutar patch validator canonical and fixtures
-- [ ] ejecutar complete `paw/tests/contract/*.test.mjs tests/*.test.mjs`
-- [ ] ejecutar `git diff --check`
-- [ ] revisar manualmente matrices de security/accessibility and no authority mutation
+- [x] ejecutar catalog validator canonical and fixtures
+- [x] ejecutar capability/documentation preset contract tests
+- [x] ejecutar `node sdd/tools/validate-sdd.mjs`
+- [x] ejecutar `node sdd/tools/validate-sdd.mjs --fixtures`
+- [x] ejecutar patch validator canonical and fixtures
+- [x] ejecutar complete `paw/tests/contract/*.test.mjs tests/*.test.mjs`
+- [x] ejecutar `git diff --check`
+- [x] revisar manualmente matrices de security/accessibility and no authority mutation
 
 ### Bloque F - Cierre
 
-- [ ] registrar commands, counts and results
-- [ ] actualizar findings, drift, decisions and risks
-- [ ] marcar Fase 2 `done` en `tasks.md` solo con gates y validations cerrados
-- [ ] confirmar que Fase 3 puede usar every capability ID and merge strategy
-- [ ] crear Conventional Commit(s) after backlog update and validations
+- [x] registrar commands, counts and results
+- [x] actualizar findings, drift, decisions and risks
+- [x] marcar Fase 2 `done` en `tasks.md` solo con gates y validations cerrados
+- [x] confirmar que Fase 3 puede usar every capability ID and merge strategy
+- [x] crear Conventional Commit(s) after backlog update and validations
 
 ## 9. Drift detectado
 
@@ -250,7 +250,12 @@
 
 ## 10. Hallazgos durante ejecucion
 
-- Pendientes.
+- Los universal requirements se almacenan una vez y se combinan con contributions
+  del preset; esto evita duplicar 64 referencias normativas.
+- Roles pueden validarse como vocabulario permitido sin implementar aun ownership,
+  readiness o conformance completo.
+- El fixture harness por domain permite probar applicability y exceptions sin copiar
+  manifests canonicos completos.
 
 ## 11. Blockers
 
@@ -275,40 +280,64 @@
 
 ### Documentales
 
-- [ ] capabilities and presets registered in catalog map
-- [ ] guides preserve public/internal vocabulary boundary
-- [ ] roles referenced without defining patch 06 semantics
+- [x] capabilities and presets registered in catalog map
+- [x] guides preserve public/internal vocabulary boundary
+- [x] roles referenced without defining patch 06 semantics
 
 ### Tecnicas
 
-- [ ] all canonical catalogs validate
-- [ ] cross-catalog references resolve
-- [ ] applicability and exception invariants pass
-- [ ] existing suites remain green
+- [x] all canonical catalogs validate
+- [x] cross-catalog references resolve
+- [x] applicability and exception invariants pass
+- [x] existing suites remain green
 
 ### Manuales
 
-- [ ] IDs approved
-- [ ] universal/transversal split remains coherent
-- [ ] security/accessibility matrices match handoff
-- [ ] no authority or accountable ownership mutation
+- [x] IDs approved
+- [x] universal/transversal split remains coherent
+- [x] security/accessibility matrices match handoff
+- [x] no authority or accountable ownership mutation
 
 ### Resultados
 
-- Pendientes hasta ejecucion.
+- Validacion: canonical catalogs
+  - comando o revision: `node paw/tools/validate-catalogs.mjs --json`
+  - resultado esperado: 8 families, 22 capabilities, 8 presets, zero errors
+  - resultado obtenido: pass con inventario exacto
+  - estado: `pass`
+- Validacion: catalog fixtures
+  - comando o revision: `node paw/tools/validate-catalogs.mjs --fixtures --json`
+  - resultado esperado: family and documentation expectations match
+  - resultado obtenido: pass, 15 family fixtures y 4 documentation fixtures
+  - estado: `pass`
+- Validacion: complete suite
+  - comando o revision: `node --test paw/tests/contract/*.test.mjs tests/*.test.mjs`
+  - resultado esperado: pass
+  - resultado obtenido: 55 tests, 55 pass
+  - estado: `pass`
+- Validacion: SDD and patch compatibility
+  - comando o revision: commands declared in Block E
+  - resultado esperado: pass
+  - resultado obtenido: pass; 4 patches and 20 patch fixtures
+  - estado: `pass`
+- Validacion: whitespace and manual boundaries
+  - comando o revision: `git diff --check` plus manifest/guide inspection
+  - resultado esperado: no errors or authority/accountability mutation
+  - resultado obtenido: no errors; LF/CRLF notices only
+  - estado: `pass`
 
 ## 14. Cierre
 
 La fase solo se considera cerrada si:
 
-- [ ] checklist completo o pendientes explicitamente diferidos
-- [ ] gates de IDs resueltos y registrados
-- [ ] assumptions criticas resueltas, aceptadas o escaladas
-- [ ] decisions and drift synchronized
-- [ ] blockers resolved
-- [ ] required validations pass
-- [ ] results recorded
-- [ ] backlog and `tasks.md` synchronized
+- [x] checklist completo o pendientes explicitamente diferidos
+- [x] gates de IDs resueltos y registrados
+- [x] assumptions criticas resueltas, aceptadas o escaladas
+- [x] decisions and drift synchronized
+- [x] blockers resolved
+- [x] required validations pass
+- [x] results recorded
+- [x] backlog and `tasks.md` synchronized
 
 ## 15. Riesgos y pendientes
 
