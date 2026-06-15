@@ -109,3 +109,20 @@
   deferred to `paw-08-vcs-pr-integration`. Do not publish WIP, squash, rebase,
   force-push, or rewrite history without human authorization. Substantive work after
   closure requires reopening, validation, and a new closure.
+
+## 2026-06-15 - Approve implementation preset identities and support policy
+
+- Decision: approve the eleven canonical implementation preset IDs and the named
+  subordinate variants proposed in the Phase 4 backlog. Support constraints may
+  reference only explicit upstream-supported stable lines and must not use `latest`,
+  implicit current versions, prereleases, or EOL lines.
+- Approved by: human patch owner.
+- Freshness: each constraint records official source evidence, lifecycle status, and
+  verification date. `review_by` is the earlier of the nearest known lifecycle
+  milestone and 180 days after `reviewed_at`.
+- Reopen triggers: security advisories, EOL announcements, new major lines, removed
+  dependency support, or failed compatibility validation.
+- Reason: the approved IDs preserve the handoff's golden paths while named variants
+  remain bounded replacements rather than freely composable technology choices.
+- Impact: Phase 4 may verify primary sources and materialize implementation presets.
+  No preset activates adoption, workflow v2, or an agent runtime.

@@ -56,7 +56,7 @@
   language matrix.
 - Mobile-first and desktop-first are separate client envelopes.
 - Version constraints are recorded only after primary-source verification.
-- `review_by` is the earlier of the nearest known lifecycle milestone and 90 days
+- `review_by` is the earlier of the nearest known lifecycle milestone and 180 days
   after `reviewed_at`.
 - A named variant replaces the complete affected envelope; variants are not bags of
   independently selectable components.
@@ -71,7 +71,7 @@
 
 ### Decisiones previas
 
-- [ ] gate humano: aprobar estos canonical preset IDs:
+- [x] gate humano: aprobar estos canonical preset IDs:
   - `content-astro-static`
   - `transactional-rails-monolith`
   - `service-go-api`
@@ -83,7 +83,7 @@
   - `client-tauri-desktop`
   - `data-python-dagster`
   - `agentic-python-langgraph`
-- [ ] gate humano: aprobar variants locales y subordinadas:
+- [x] gate humano: aprobar variants locales y subordinadas:
   - `product-docs-docusaurus`
   - `laravel-monolith`, `django-admin-first`, `nextjs-restricted`
   - `hono-edge`, `fastapi-ml`, `nestjs-typescript`, `spring-java`
@@ -91,14 +91,14 @@
   - `expo-react-native`, `electron-brownfield`
   - `dbt-warehouse-first`, `airflow-existing`, `prefect-existing`
   - `autogen-prototype`, `proprietary-sdk-bounded`
-- [ ] gate humano: aprobar la support policy:
+- [x] gate humano: aprobar la support policy:
   - only explicit upstream-supported stable lines;
   - no `latest`, implicit current version, prerelease or EOL line;
   - every constraint records source, lifecycle status and verification date;
   - `review_by` uses the earlier-of rule declared in Assumptions;
   - security advisory, EOL announcement, new major line, removed dependency support
     or failed compatibility validation reopens review.
-- [ ] registrar gates aprobados en `decision.log` antes de implementation.
+- [x] registrar gates aprobados en `decision.log` antes de implementation.
 
 ### Estado tecnico
 
@@ -250,7 +250,7 @@
 
 ## 11. Blockers
 
-- [ ] Gate humano de preset IDs, variants y support policy.
+- Ninguno.
 
 ## 12. Decisiones tomadas
 
@@ -265,6 +265,12 @@
   - Razon: la evidencia temporal debe responder a una politica humana explicita y no
     introducir accidentalmente referencias flotantes.
   - Areas afectadas: evidence records, support constraints and freshness validation.
+- `2026-06-15`
+  - Decision: el owner humano aprobo los 11 preset IDs, las variants subordinadas y
+    la support policy con un intervalo maximo de 180 dias.
+  - Razon: los IDs y variants preservan los golden paths del handoff; 180 dias es el
+    limite aprobado para freshness cuando no existe un milestone anterior.
+  - Areas afectadas: preset manifest, evidence records, validators and fixtures.
 
 ## 13. Validaciones
 
@@ -282,7 +288,7 @@
 
 ### Manuales
 
-- [ ] IDs, variants and support policy approved
+- [x] IDs, variants and support policy approved
 - [ ] primary sources and lifecycle interpretations reviewed
 - [ ] every envelope closes applicable completeness dimensions
 - [ ] no preset activates adoption, workflow v2 or an agent runtime
@@ -315,5 +321,4 @@ La fase solo se considera cerrada si:
 
 ### Pendientes
 
-- Human gate for IDs, variants and support policy.
 - Phase 5 remains without backlog.
