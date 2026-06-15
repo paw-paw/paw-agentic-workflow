@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "catalog_id": "software-families",
+  "catalog_version": "1.0.0",
+  "families": [
+    {
+      "family_id": "content-knowledge",
+      "provenance_aliases": ["SF-01"],
+      "name": "Content and knowledge",
+      "primary_intent": "Publish, organize, and maintain content or knowledge for human discovery and use.",
+      "includes": ["documentation sites", "knowledge bases", "editorial sites", "content-first portals"],
+      "excludes": ["products whose primary intent is transactional workflow", "installed client applications"],
+      "boundary_questions": ["Is publishing and navigating maintained content the product's primary intent?", "Would the product remain useful without persistent transactional workflows?"],
+      "examples": ["product documentation site", "public knowledge base"]
+    },
+    {
+      "family_id": "transactional-application",
+      "provenance_aliases": ["SF-02"],
+      "name": "Transactional application",
+      "primary_intent": "Support interactive workflows that create, change, or govern durable business state.",
+      "includes": ["transactional web applications", "business workflow systems", "authenticated operational portals"],
+      "excludes": ["content-only sites", "API products without a primary interactive workflow"],
+      "boundary_questions": ["Are user workflows and durable state changes central to the product?", "Is the interactive application the governed product rather than a client of another product?"],
+      "examples": ["commerce application", "case-management system"]
+    },
+    {
+      "family_id": "service-api",
+      "provenance_aliases": ["SF-03"],
+      "name": "Service or API",
+      "primary_intent": "Provide a sustained machine-consumable service or interface contract.",
+      "includes": ["public APIs", "internal platform services", "event-facing services"],
+      "excludes": ["libraries linked into a consumer", "applications whose primary product is a human-facing workflow"],
+      "boundary_questions": ["Is the sustained remote contract the primary product boundary?", "Are consumers expected to integrate through an interface rather than a user experience?"],
+      "examples": ["payments API", "identity service"]
+    },
+    {
+      "family_id": "library-package-sdk",
+      "provenance_aliases": ["SF-04"],
+      "name": "Library, package, or SDK",
+      "primary_intent": "Distribute reusable code through the conventions of a consumer ecosystem.",
+      "includes": ["libraries", "packages", "SDKs", "language modules"],
+      "excludes": ["standalone services", "incidental internal modules without a sustained consumer contract"],
+      "boundary_questions": ["Is the product consumed as code within another product?", "Does compatibility primarily follow a language or package ecosystem?"],
+      "examples": ["TypeScript SDK", "Python package", "Go module"]
+    },
+    {
+      "family_id": "cli-developer-tool",
+      "provenance_aliases": ["SF-05"],
+      "name": "CLI or developer tool",
+      "primary_intent": "Provide a sustained command or developer-tool interface for humans or automation.",
+      "includes": ["command-line applications", "developer tools", "CI-facing utilities"],
+      "excludes": ["incidental scripts", "libraries with no supported command surface"],
+      "boundary_questions": ["Is the command or developer interaction contract the primary product?", "Must outputs, errors, and exit behavior remain stable for users or automation?"],
+      "examples": ["repository CLI", "code-generation tool"]
+    },
+    {
+      "family_id": "client-application",
+      "provenance_aliases": ["SF-06"],
+      "name": "Client application",
+      "primary_intent": "Deliver an installed client experience with a local lifecycle and platform integration.",
+      "includes": ["mobile applications", "desktop applications", "installed cross-platform clients"],
+      "excludes": ["browser-only applications", "packages without their own runtime"],
+      "boundary_questions": ["Is installation and a local application lifecycle central?", "Do platform permissions, updates, distribution, or local state materially shape the product?"],
+      "examples": ["mobile field application", "desktop authoring client"]
+    },
+    {
+      "family_id": "data-machine-learning",
+      "provenance_aliases": ["SF-07"],
+      "name": "Data and machine learning",
+      "primary_intent": "Produce, transform, evaluate, or operate governed data and model outcomes.",
+      "includes": ["data platforms", "data pipelines", "model lifecycle systems", "analytics products"],
+      "excludes": ["services that merely call a model", "agentic products whose core value is autonomous action"],
+      "boundary_questions": ["Are data or model lifecycle outcomes the primary governed product?", "Would data quality, lineage, evaluation, or reproducibility remain central without a user-facing application?"],
+      "examples": ["analytics pipeline", "model training and evaluation platform"]
+    },
+    {
+      "family_id": "agentic-system",
+      "provenance_aliases": ["SF-08"],
+      "name": "Agentic system",
+      "primary_intent": "Coordinate material autonomous behavior, tools, memory, approvals, and evaluated actions.",
+      "includes": ["coding agents", "research agents", "autonomous operational assistants"],
+      "excludes": ["software built with coding agents", "subordinate LLM features without material autonomy"],
+      "boundary_questions": ["Is autonomy a central product capability rather than a development aid?", "Does the product govern tools, actions, memory, approvals, or recovery as first-class behavior?"],
+      "examples": ["coding agent with governed tool execution", "research agent with memory and budget controls"]
+    }
+  ]
+}
