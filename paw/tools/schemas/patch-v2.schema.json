@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paw/tools/schemas/patch-v2.schema.json",
+  "title": "PAW patch manifest v2",
+  "description": "Physical shape of a PAW v2 patch manifest. Cross-field mode and status invariants are enforced by the versioned validator.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "change_id",
+    "program_id",
+    "patch_mode",
+    "status",
+    "created_at",
+    "closed_at",
+    "related_docs",
+    "creates_docs",
+    "bootstrap_context"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "enum": [2]
+    },
+    "change_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "program_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "patch_mode": {
+      "type": "string",
+      "enum": ["docs-bootstrap", "intention-first", "doc-anchored"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "blocked", "closed", "abandoned"]
+    },
+    "created_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "closed_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "related_docs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "creates_docs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "bootstrap_context": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": ["pure-greenfield", "undocumented-brownfield"]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

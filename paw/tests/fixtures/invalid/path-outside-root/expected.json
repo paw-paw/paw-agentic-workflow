@@ -1,0 +1,6 @@
+{
+  "valid": false,
+  "schemaVersion": null,
+  "outsideRoot": true,
+  "errorCodes": ["PATCH_PATH_OUTSIDE_ROOT"]
+}

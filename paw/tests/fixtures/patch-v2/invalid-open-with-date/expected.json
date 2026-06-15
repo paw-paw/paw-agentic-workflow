@@ -1,0 +1,5 @@
+{
+  "valid": false,
+  "schemaVersion": 2,
+  "errorCodes": ["PATCH_CLOSED_AT_MUST_BE_NULL"]
+}

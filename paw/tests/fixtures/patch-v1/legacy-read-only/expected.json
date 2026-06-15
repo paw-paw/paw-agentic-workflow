@@ -1,0 +1,6 @@
+{
+  "valid": true,
+  "schemaVersion": null,
+  "legacy": true,
+  "compatibilityCodes": ["PATCH_LEGACY_EXEMPT"]
+}

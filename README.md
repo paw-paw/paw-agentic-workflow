@@ -21,7 +21,7 @@ PAW is a `pre-alpha` bootstrap under active construction.
 
 - `docs/**`: canonical repository governance, architecture, naming, licensing, provenance, and transition documentation.
 - `paw/core/**`: live runtime-neutral PAW contracts.
-- Other `paw/**` surfaces: inactive target layout for future workspaces, orchestration, tooling, and conformance assets.
+- Other `paw/**` surfaces: target layout materialized incrementally by their owning governed patches; this does not activate the v2 workflow.
 - `sdd/**`: active v1 Spec-Driven Development runtime and patch workspaces during the transition.
 - `.codex/**`: the real Codex runtime surface, currently containing the v1 `sdd-*` skills and agents.
 - `tests/**`: deterministic repository checks.

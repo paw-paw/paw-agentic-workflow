@@ -1,0 +1,9 @@
+schema_version: 2
+change_id: fixture-v2-bootstrap-creates
+program_id: null
+patch_mode: docs-bootstrap
+status: active
+created_at: 2026-06-14
+closed_at: null
+related_docs: []
+bootstrap_context: undocumented-brownfield

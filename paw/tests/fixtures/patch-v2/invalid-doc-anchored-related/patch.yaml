@@ -1,0 +1,9 @@
+schema_version: 2
+change_id: fixture-v2-doc-anchored-related
+program_id: null
+patch_mode: doc-anchored
+status: active
+created_at: 2026-06-14
+closed_at: null
+creates_docs: []
+bootstrap_context: null

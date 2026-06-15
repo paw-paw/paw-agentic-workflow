@@ -1,0 +1,11 @@
+schema_version: 2
+change_id: fixture-v2-doc-anchored
+program_id: null
+patch_mode: doc-anchored
+status: closed
+created_at: 2026-06-13
+closed_at: 2026-06-14
+related_docs:
+  - docs/README.md
+creates_docs: []
+bootstrap_context: null

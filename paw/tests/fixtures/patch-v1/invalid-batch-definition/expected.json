@@ -1,0 +1,9 @@
+{
+  "valid": false,
+  "schemaVersion": 1,
+  "errorCodes": [
+    "PATCH_V1_BATCH_SECTION_REQUIRED",
+    "PATCH_V1_BATCH_ITEM_CLOSURE_REQUIRED"
+  ],
+  "warningCodes": ["PATCH_SCHEMA_V1_TRANSITIONAL"]
+}

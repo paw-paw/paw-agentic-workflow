@@ -2,7 +2,10 @@
 
 ## Status
 
-This directory contains the live conceptual core and inactive target surfaces for the future PAW workflow. Its presence does not activate v2 workspaces, establish portability, or replace the current Spec-Driven Development v1 runtime.
+This directory contains the live conceptual core and target PAW surfaces that are
+materialized incrementally by their owning governed patches. Their presence does not
+activate v2 workspaces, establish portability, or replace the current Spec-Driven
+Development v1 runtime.
 
 Until the governed cutover:
 
@@ -22,7 +25,8 @@ Each child directory is owned by the governed patch that introduces its contract
 - `core/`: live conceptual PAW contracts.
 - `parches/`: future fixed patch workspace root.
 - `orchestration/`: future runtime-neutral orchestration contracts.
-- `tools/`: future deterministic PAW tooling.
-- `tests/`: future portable conformance assets.
+- `tools/`: deterministic PAW schemas and tooling, introduced by owning patches.
+- `tests/`: portable fixtures and conformance assets, introduced by owning patches.
 
-The core documents are authoritative conceptual contracts. The other READMEs remain orientation only and are not executable contracts.
+The core documents are authoritative conceptual contracts. Other surfaces gain
+implementation or contractual status only through their owning governed patches.

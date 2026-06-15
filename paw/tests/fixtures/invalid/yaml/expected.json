@@ -1,0 +1,5 @@
+{
+  "valid": false,
+  "schemaVersion": null,
+  "errorCodes": ["PATCH_YAML_UNSUPPORTED_INDENTATION"]
+}

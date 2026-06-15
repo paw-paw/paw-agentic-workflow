@@ -1,0 +1,5 @@
+{
+  "valid": true,
+  "schemaVersion": 1,
+  "warningCodes": ["PATCH_SCHEMA_V1_TRANSITIONAL"]
+}
