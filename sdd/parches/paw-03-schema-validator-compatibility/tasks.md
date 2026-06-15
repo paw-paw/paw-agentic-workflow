@@ -5,7 +5,7 @@
 - Change id: `paw-03-schema-validator-compatibility`
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
-- Estado: `active`
+- Estado: `done`
 - Ultima actualizacion: `2026-06-15`
 - Owner: sesion Codex activa con aprobacion humana
 
