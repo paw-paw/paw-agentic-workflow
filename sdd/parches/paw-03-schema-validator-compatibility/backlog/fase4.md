@@ -2,7 +2,7 @@
 
 ## Estado
 
-- Estado: `ready`
+- Estado: `done`
 - Patch: `paw-03-schema-validator-compatibility`
 - Fuente: `tasks.md`, fase 4
 - Dependencias cerradas: fases 1, 2 y 3
@@ -22,12 +22,12 @@ activo y dejando el parche listo para su cierre formal.
 
 ## Dentro de alcance
 
-- [ ] Corregir afirmaciones obsoletas sobre la existencia del schema v2, tooling y tests PAW.
-- [ ] Documentar que esas superficies estan materializadas pero no activan writers ni workflow v2.
-- [ ] Actualizar los comandos deterministas de validacion donde corresponda.
-- [ ] Anadir conformidad ejecutable para ownership, independencia, no mutacion y no activacion.
-- [ ] Verificar la trazabilidad de los fixtures obligatorios del handoff.
-- [ ] Reconciliar los artefactos SDD con el estado final observado.
+- [x] Corregir afirmaciones obsoletas sobre la existencia del schema v2, tooling y tests PAW.
+- [x] Documentar que esas superficies estan materializadas pero no activan writers ni workflow v2.
+- [x] Actualizar los comandos deterministas de validacion donde corresponda.
+- [x] Anadir conformidad ejecutable para ownership, independencia, no mutacion y no activacion.
+- [x] Verificar la trazabilidad de los fixtures obligatorios del handoff.
+- [x] Reconciliar los artefactos SDD con el estado final observado.
 
 ## Fuera de alcance
 
@@ -52,42 +52,48 @@ activo y dejando el parche listo para su cierre formal.
 
 ## Ejecucion
 
-- [ ] Inventariar y corregir claims contradictorios con el estado integrado.
-- [ ] Incorporar pruebas de conformidad sin duplicar las pruebas contractuales de `paw/tests/**`.
-- [ ] Confirmar que el CLI no muta workspaces ni fixtures.
-- [ ] Confirmar que el tooling PAW no activa writers, workspaces ni defaults v2.
-- [ ] Confirmar que las rutas y categorias obligatorias del handoff estan cubiertas.
-- [ ] Actualizar este backlog con hallazgos, decisiones y resultados.
-- [ ] Marcar la fase 4 como completada en `tasks.md`.
+- [x] Inventariar y corregir claims contradictorios con el estado integrado.
+- [x] Incorporar pruebas de conformidad sin duplicar las pruebas contractuales de `paw/tests/**`.
+- [x] Confirmar que el CLI no muta workspaces ni fixtures.
+- [x] Confirmar que el tooling PAW no activa writers, workspaces ni defaults v2.
+- [x] Confirmar que las rutas y categorias obligatorias del handoff estan cubiertas.
+- [x] Actualizar este backlog con hallazgos, decisiones y resultados.
+- [x] Marcar la fase 4 como completada en `tasks.md`.
 
 ## Validaciones
 
-- [ ] `node paw/tools/validate-patches.mjs --json`
-- [ ] `node paw/tools/validate-patches.mjs --fixtures --json`
-- [ ] `node --test paw/tests/schema-v2-contract.test.mjs`
-- [ ] `node --test paw/tests/validator-api-contract.test.mjs`
-- [ ] `node --test paw/tests/cli-contract.test.mjs`
-- [ ] `node --test tests/schema-validator-conformance.test.mjs`
-- [ ] `node sdd/tools/validate-sdd.mjs`
-- [ ] `node sdd/tools/validate-sdd.mjs --fixtures`
-- [ ] `node --test tests/sdd-validation.test.mjs`
-- [ ] `node --test tests/foundation-governance.test.mjs`
-- [ ] `node --test tests/core-contracts.test.mjs`
-- [ ] `git diff --check`
+- [x] `node paw/tools/validate-patches.mjs --json`
+- [x] `node paw/tools/validate-patches.mjs --fixtures --json`
+- [x] `node --test paw/tests/contract/patch-parsing.test.mjs`
+- [x] `node --test paw/tests/contract/patch-validation.test.mjs`
+- [x] `node --test paw/tests/contract/validator-cli.test.mjs`
+- [x] `node --test tests/schema-validator-conformance.test.mjs`
+- [x] `node sdd/tools/validate-sdd.mjs`
+- [x] `node sdd/tools/validate-sdd.mjs --fixtures`
+- [x] `node --test tests/sdd-validation.test.mjs`
+- [x] `node --test tests/foundation-governance.test.mjs`
+- [x] `node --test tests/core-contracts.test.mjs`
+- [x] `git diff --check`
 
 ## Criterios de cierre
 
-- [ ] La documentacion distingue materializacion de activacion.
-- [ ] La conformidad ejecutable protege ownership, independencia y no mutacion.
-- [ ] No quedan claims conocidos que nieguen superficies ya implementadas.
-- [ ] Todas las validaciones deterministas pasan.
-- [ ] El parche queda listo para `sdd-close`.
+- [x] La documentacion distingue materializacion de activacion.
+- [x] La conformidad ejecutable protege ownership, independencia y no mutacion.
+- [x] No quedan claims conocidos que nieguen superficies ya implementadas.
+- [x] Todas las validaciones deterministas pasan.
+- [x] El parche queda listo para `sdd-close`.
 
 ## Hallazgos
 
 - El merge `86645bd` ocurrio antes de completar esta fase. No altera el contrato
   aprobado, pero obliga a terminar la reconciliacion y el cierre mediante un pull
   request de seguimiento.
+- `README.md`, arquitectura y bootstrap status negaban superficies ya
+  materializadas; el drift documental quedo reconciliado sin activar workflow v2.
+- Los 20 fixtures existentes cubren los minimos del handoff, incluido un
+  `program_id` v2 no nulo.
+- La conformidad top-level verifica imports locales o `node:`, ausencia de APIs de
+  escritura, writers v1 y `paw/parches/**` inactivo.
 
 ## Bloqueos
 

@@ -19,11 +19,14 @@
 - Deterministic local validation using Node.js standard-library modules.
 - Target `paw/**` directory ownership and transition boundaries.
 - Runtime-neutral patch model, artifact lifecycle, authority, decision gate, drift, and compatibility contracts under `paw/core/**`.
+- Physical patch schema v2 and dual-read v1/v2 manifest validation under `paw/tools/**`.
+- Portable compatibility fixtures and validator contract tests under `paw/tests/**`.
+- A compatibility-preserving `sdd/tools/validate-sdd.mjs` bridge for active v1 consumers.
 
 ## Not Implemented
 
-- PAW schema v2 or executable manifest validation.
 - Active `paw/parches/` workspaces.
+- v2 manifest writers or a v2 default workflow.
 - `paw-*` skills or agents.
 - Catalogs, presets, adapters, adoption records, or assessments.
 - Multi-runtime and multi-repository portability.

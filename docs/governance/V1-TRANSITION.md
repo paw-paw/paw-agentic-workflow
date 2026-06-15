@@ -15,7 +15,7 @@ authorize a second writable patch namespace.
 | `sdd/core/**` | v1 patch and artifact rules | Active v1 support; preserve names and compatibility |
 | `sdd/parches/**` | Active program workspaces | The only writable patch namespace before cutover |
 | `sdd/orchestration/**` | v1 routing and decision support | Active until replaced and cut over |
-| `sdd/tools/**` | v1 schema and validator tooling | Active v1 entrypoints and compatibility support; do not make this the canonical home of new PAW tooling |
+| `sdd/tools/**` | v1 schema and validator tooling | Active v1 entrypoints and compatibility bridge; canonical new PAW validation lives under `paw/tools/**` |
 | `sdd/tests/**` | v1 fixtures and link checks | Preserve v1 validation evidence and historical compatibility cases |
 | `.codex/skills/sdd-*` | Executable v1 lifecycle skills | Active Codex workflow |
 | `.codex/agents/sdd-*` | v1 advisory and controlled writer profiles | Active Codex support |
@@ -29,8 +29,8 @@ authorize a second writable patch namespace.
 | `paw/core/` | Portable PAW contracts | Live conceptual contracts |
 | `paw/parches/` | Future fixed patch workspace root | Inactive; writing is prohibited |
 | `paw/orchestration/` | Runtime-neutral orchestration contracts | Inactive orientation only |
-| `paw/tools/` | PAW schemas and tooling | Approved for incremental materialization by owning patches; not a workflow activation |
-| `paw/tests/` | Portable fixtures and conformance assets | Approved for incremental materialization by owning patches; not a workflow activation |
+| `paw/tools/` | PAW schemas and tooling | Schema v2 and dual-read validator materialized by patch 03; not a workflow activation |
+| `paw/tests/` | Portable fixtures and conformance assets | v1/v2 compatibility fixtures and contract tests materialized by patch 03; not a workflow activation |
 | `.codex/skills/paw-*` | Future Codex skills | Not created |
 | `.codex/agents/paw-*` | Future Codex agents | Not created |
 

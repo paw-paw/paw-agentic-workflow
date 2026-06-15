@@ -12,9 +12,11 @@ PAW is a `pre-alpha` bootstrap under active construction.
 
 - It is not a stable distribution.
 - Portability is neither implemented nor guaranteed.
-- `paw/core/**` contains live conceptual contracts; the target workflow and tooling surfaces remain inactive.
+- `paw/core/**` contains live conceptual contracts; `paw/tools/**` and `paw/tests/**`
+  contain the materialized schema v2, dual validator, fixtures, and contract tests.
 - The inherited Spec-Driven Development v1 runtime under `sdd/**` and the `sdd-*` Codex skills remain the only active patch workflow until the governed cutover.
-- There is no v2 schema, package, release automation, Pages site, or deployment workflow.
+- There are no v2 writers or active v2 workspaces, package, release automation,
+  Pages site, or deployment workflow.
 - Pages, Actions, releases, packaging, and deployment remain disabled.
 
 ## Repository Map
@@ -47,9 +49,15 @@ The repository has no runtime dependencies. With a supported Node.js installatio
 ```bash
 node sdd/tools/validate-sdd.mjs
 node sdd/tools/validate-sdd.mjs --fixtures
+node paw/tools/validate-patches.mjs --json
+node paw/tools/validate-patches.mjs --fixtures --json
+node --test paw/tests/contract/patch-parsing.test.mjs
+node --test paw/tests/contract/patch-validation.test.mjs
+node --test paw/tests/contract/validator-cli.test.mjs
 node --test tests/sdd-validation.test.mjs
 node --test tests/foundation-governance.test.mjs
 node --test tests/core-contracts.test.mjs
+node --test tests/schema-validator-conformance.test.mjs
 ```
 
 ## Contributing

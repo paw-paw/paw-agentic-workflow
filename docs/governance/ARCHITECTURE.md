@@ -11,8 +11,8 @@ This document defines the ownership and boundaries of PAW repository layers. It 
 | Portable doctrine | live `paw/core/` contracts | Small, runtime-neutral PAW contracts shared across implementations | Contain repo-specific commands, prompts, or deployment policy |
 | Patch workspaces | active `sdd/parches/`; target `paw/parches/` | Traceable memory and execution state for one governed change | Replace live authoritative documents |
 | Orchestration | active `sdd/orchestration/`; target `paw/orchestration/` | Route work through lifecycle stages and decision gates | Become portable doctrine or hide product decisions |
-| Tooling | active `sdd/tools/`; target `paw/tools/` | Deterministic validation and local utilities | Define policy solely through implementation |
-| Tests and conformance | active `sdd/tests/` and `tests/`; target `paw/tests/` | Fixtures, checks, examples, and evidence | Become authority without a governing rule |
+| Tooling | active v1 entrypoints in `sdd/tools/`; materialized PAW validator in `paw/tools/` | Deterministic validation and local utilities | Define policy solely through implementation |
+| Tests and conformance | active v1 evidence in `sdd/tests/` and `tests/`; materialized PAW contracts in `paw/tests/` | Fixtures, checks, examples, and evidence | Become authority without a governing rule |
 | Runtime adapters | active `.codex/**`; future runtime-specific adapters | Bind PAW capabilities to an agent runtime | Redefine portable contracts or repository authority |
 | Repository-local governance | `docs/**`, `AGENTS.md`, `CONTRIBUTING.md` | Define local authority, ownership, constraints, and operation | Claim universal applicability |
 | v1 history | `sdd/**`, `sdd-*`, and closed v1 patches after cutover | Preserve provenance and compatibility evidence | Remain writable or active after cutover |
@@ -36,4 +36,9 @@ This document defines the ownership and boundaries of PAW repository layers. It 
 
 ## Current Activation State
 
-The v1 Spec-Driven Development runtime is active. `paw/core/**` contains live conceptual contracts, while PAW workspaces, orchestration, tooling, tests, and runtime integrations remain inactive. The exact transition is governed by `V1-TRANSITION.md`.
+The v1 Spec-Driven Development runtime is active. `paw/core/**` contains live
+conceptual contracts, and the schema v2, dual validator, compatibility fixtures, and
+contract tests are materialized under `paw/tools/**` and `paw/tests/**`. PAW
+workspaces, orchestration, writers, and runtime integrations remain inactive.
+Materialized validation support does not change the active workflow or default
+manifest writer. The exact transition is governed by `V1-TRANSITION.md`.

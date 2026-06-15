@@ -50,9 +50,15 @@ Run only commands that exist in the repository. The deterministic checks are:
 ```bash
 node sdd/tools/validate-sdd.mjs
 node sdd/tools/validate-sdd.mjs --fixtures
+node paw/tools/validate-patches.mjs --json
+node paw/tools/validate-patches.mjs --fixtures --json
+node --test paw/tests/contract/patch-parsing.test.mjs
+node --test paw/tests/contract/patch-validation.test.mjs
+node --test paw/tests/contract/validator-cli.test.mjs
 node --test tests/sdd-validation.test.mjs
 node --test tests/foundation-governance.test.mjs
 node --test tests/core-contracts.test.mjs
+node --test tests/schema-validator-conformance.test.mjs
 ```
 
 Report files changed, validations, assumptions, drift, pending work, and risks.

@@ -6,7 +6,7 @@
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
 - Estado: `active`
-- Ultima actualizacion: `2026-06-14`
+- Ultima actualizacion: `2026-06-15`
 - Owner: sesion Codex activa con aprobacion humana
 
 ## 1. Fuente de verdad aplicable
@@ -135,7 +135,7 @@
 
 ### Fase 4 - Conformance, documentacion y reconciliacion final
 
-- Estado: `pending`
+- Estado: `done`
 - Objetivo: completar la evidencia durable, promover el estado implementado y
   verificar que la materializacion no activa el workflow v2.
 - Origen en `plan.md`: Bloque 4 - Fixtures, conformance y reconciliacion de estado.
@@ -199,15 +199,15 @@ estabilizan contratos consumidos por la fase siguiente.
 
 ## 7. Validaciones globales
 
-- [ ] `node sdd/tools/validate-sdd.mjs`
-- [ ] `node sdd/tools/validate-sdd.mjs --fixtures`
-- [ ] `node --test tests/sdd-validation.test.mjs`
-- [ ] `node --test tests/foundation-governance.test.mjs`
-- [ ] `node --test tests/core-contracts.test.mjs`
-- [ ] tests nuevos de parser, validator y CLI definidos por las fases
-- [ ] `git diff --check`
-- [ ] revision manual de no mutacion de historia
-- [ ] revision manual de namespace, writers, defaults y claims
+- [x] `node sdd/tools/validate-sdd.mjs`
+- [x] `node sdd/tools/validate-sdd.mjs --fixtures`
+- [x] `node --test tests/sdd-validation.test.mjs`
+- [x] `node --test tests/foundation-governance.test.mjs`
+- [x] `node --test tests/core-contracts.test.mjs`
+- [x] tests nuevos de parser, validator y CLI definidos por las fases
+- [x] `git diff --check`
+- [x] revision manual de no mutacion de historia
+- [x] revision manual de namespace, writers, defaults y claims
 
 Estas validaciones permanecen globales aunque cada backlog seleccione el subconjunto
 proporcional a su riesgo.
@@ -244,6 +244,8 @@ proporcional a su riesgo.
 - `2026-06-15`
   - Drift del merge prematuro clasificado como operacional; fase 4 y cierre
     continuan mediante un pull request de seguimiento.
+  - Fase 4 cerrada con documentacion reconciliada, cobertura explicita del handoff
+    y conformidad de ownership, independencia, no mutacion y no activacion.
 - `2026-06-14`
   - Division inicial en cuatro fases trazables a los bloques del plan reconciliado.
   - Fase 1 cerrada con schema v2, parsing versionado y contract tests validados.
