@@ -65,3 +65,15 @@
   available through the canonical CLI and delegated bridge flags. The CLI version
   identifies this validator contract only; it is not a PAW release or portability
   claim. Writers, workspace defaults and `paw/parches/**` remain unchanged.
+
+## 2026-06-15 - Complete the patch through a follow-up without rewriting history
+
+- Decision: treat merge `86645bd`, which integrated phases 1-3 before phase 4 and
+  `sdd-close`, as operational integration drift. Keep the patch active and complete
+  it from a new branch based on `origin/main` through a follow-up pull request.
+- Reason: the integrated implementation is within the approved scope and passed its
+  validations. Reverting, rebasing or rewriting history would not repair a
+  contractual defect and would contradict the provisional commit policy.
+- Impact: phase 4 reconciles documentation and conformance against the integrated
+  state. `sdd-close` then runs normally and produces a separate, non-substantive
+  closure commit.

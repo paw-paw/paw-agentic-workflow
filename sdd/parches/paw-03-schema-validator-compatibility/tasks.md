@@ -184,6 +184,9 @@ estabilizan contratos consumidos por la fase siguiente.
 ## 6. Decisiones y bloqueos
 
 - Decisiones abiertas bloqueantes: ninguna.
+- Drift operacional: el merge `86645bd` integro las fases 1-3 antes de la fase 4
+  y del cierre formal. La recuperacion continua en una rama de seguimiento basada
+  en `origin/main`, sin revertir ni reescribir historia.
 - Decisiones abiertas no bloqueantes:
   - forma interna exacta de los modulos bajo `paw/tools/validation/**`;
   - codigos concretos de diagnostico y exit codes, dentro del contrato estable;
@@ -238,6 +241,9 @@ proporcional a su riesgo.
 
 ## 11. Registro de cambios
 
+- `2026-06-15`
+  - Drift del merge prematuro clasificado como operacional; fase 4 y cierre
+    continuan mediante un pull request de seguimiento.
 - `2026-06-14`
   - Division inicial en cuatro fases trazables a los bloques del plan reconciliado.
   - Fase 1 cerrada con schema v2, parsing versionado y contract tests validados.
