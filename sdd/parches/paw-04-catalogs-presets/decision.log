@@ -1,0 +1,44 @@
+# Decision Log: paw-04-catalogs-presets
+
+## 2026-06-15 - Materialize portable catalogs under a dedicated PAW surface
+
+- Decision: place canonical catalog manifests and their human guides under
+  `paw/catalogs/**`; keep schemas and validation under `paw/tools/**`, and fixtures
+  and conformance under `paw/tests/**`.
+- Reason: catalogs are portable contracts but are explicitly outside the micro-core.
+  They are not tooling, evidence, adapters, orchestration, or patch state.
+- Impact: architecture, target layout, documentation registry, transition status, and
+  bootstrap status must register the new surface before closure. Materialization does
+  not activate v2 workspaces, writers, adoption, or automatic recommendation.
+
+## 2026-06-15 - Use semantic canonical identifiers
+
+- Decision: canonical catalog IDs use stable semantic slugs. Research identifiers
+  such as `SF-01` and `IP-SF01-ASTRO-01` may be retained as provenance aliases but do
+  not become normative identities by inertia.
+- Reason: the final handoff requires IDs to be canonicalized during this patch and
+  prohibits blind copying of temporary research identifiers.
+- Impact: each catalog phase must present its definitive ID set at a human gate before
+  closure, and schemas must reject unknown canonical IDs.
+
+## 2026-06-15 - Keep structured manifests canonical and guides explanatory
+
+- Decision: machine-readable manifests are the canonical representation of catalog
+  semantics. Markdown guides explain intent, boundaries, trade-offs, and examples but
+  must not redefine manifest values.
+- Reason: the approved model requires machine-readable and human-readable catalogs
+  without duplicated doctrine.
+- Impact: validation must cross-check manifest/guide coverage and live documentation
+  must identify the authoritative owning surface.
+
+## 2026-06-15 - Apply the provisional paw-foundation commit policy
+
+- Decision: use Conventional Commits, create one coherent SDD preparation commit
+  before implementation, create at least one commit after each closed and validated
+  phase, split phases when intentions or surfaces differ, and create a separate
+  non-substantive closure commit after `sdd-close`.
+- Reason: the human approved this temporary discipline for `paw-foundation`.
+- Impact: do not present this policy as portable PAW doctrine; canonical treatment is
+  deferred to `paw-08-vcs-pr-integration`. Do not publish WIP, squash, rebase,
+  force-push, or rewrite history without human authorization. Substantive work after
+  closure requires reopening, validation, and a new closure.
