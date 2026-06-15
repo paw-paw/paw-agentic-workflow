@@ -4,14 +4,11 @@ import { dirname, join, normalize, relative, resolve, sep } from 'node:path';
 import { cwd, exit } from 'node:process';
 import { pathToFileURL } from 'node:url';
 
-const root = cwd();
-const args = new Set(process.argv.slice(2));
-const useFixtures = args.has('--fixtures');
+import { runValidatorCli } from '../../paw/tools/cli/run-validator-cli.mjs';
+import { parsePatchYaml } from '../../paw/tools/validation/parse-patch-yaml.mjs';
+import { validatePatchDirectory } from '../../paw/tools/validation/validate-patch-directory.mjs';
 
-const PATCH_KINDS = new Set(['spec', 'batch']);
-const LIFECYCLES = new Set(['spec-first', 'spec-anchored']);
-const STATUSES = new Set(['active', 'blocked', 'closed', 'abandoned']);
-const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+const root = cwd();
 const LIVE_MARKDOWN_ROOTS = ['docs', 'sdd', '.codex/skills'];
 
 function rel(path) {
@@ -29,165 +26,17 @@ function readJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'));
 }
 
-function parseScalar(value) {
-  const trimmed = value.trim();
-  if (trimmed === '[]') return [];
-  if (trimmed === 'null') return null;
-  if (/^\d+$/.test(trimmed)) return Number(trimmed);
-  if (
-    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
-    (trimmed.startsWith("'") && trimmed.endsWith("'"))
-  ) {
-    return trimmed.slice(1, -1);
-  }
-  return trimmed;
-}
-
-function parsePatchYaml(path) {
-  const result = {};
-  const lines = readFileSync(path, 'utf8').split(/\r?\n/);
-  let currentList = null;
-
-  for (const line of lines) {
-    if (!line.trim() || line.trim().startsWith('#')) continue;
-    const listItem = line.match(/^\s*-\s+(.+)$/);
-    if (listItem && currentList) {
-      result[currentList].push(parseScalar(listItem[1]));
-      continue;
-    }
-    const match = line.match(/^([A-Za-z0-9_]+):\s*(.*)$/);
-    if (!match) {
-      throw new Error(`Unsupported YAML line in ${rel(path)}: ${line}`);
-    }
-    const [, key, rawValue] = match;
-    if (rawValue === '') {
-      result[key] = [];
-      currentList = key;
-    } else {
-      result[key] = parseScalar(rawValue);
-      currentList = Array.isArray(result[key]) ? key : null;
-    }
-  }
-
-  return result;
-}
-
 function validateManifest(patchDir, options = {}) {
-  const errors = [];
-  const manifestPath = join(patchDir, 'patch.yaml');
-  const isLegacy = options.legacy === true;
-
-  if (isLegacy) {
-    if (existsSync(manifestPath)) {
-      errors.push(`${rel(manifestPath)} must not exist for legacy fixtures/workspaces`);
-    }
-    return errors;
-  }
-
-  if (!existsSync(manifestPath)) {
-    errors.push(`${rel(manifestPath)} is required`);
-    return errors;
-  }
-
-  let manifest;
-  try {
-    manifest = parsePatchYaml(manifestPath);
-  } catch (error) {
-    errors.push(error.message);
-    return errors;
-  }
-
-  const required = [
-    'schema_version',
-    'change_id',
-    'program_id',
-    'patch_kind',
-    'lifecycle',
-    'status',
-    'created_at',
-    'closed_at',
-    'related_docs',
-  ];
-  for (const key of required) {
-    if (!(key in manifest)) errors.push(`${rel(manifestPath)} missing ${key}`);
-  }
-
-  if (manifest.schema_version !== 1) {
-    errors.push(`${rel(manifestPath)} schema_version must be 1`);
-  }
-  if (!PATCH_KINDS.has(manifest.patch_kind)) {
-    errors.push(`${rel(manifestPath)} patch_kind must be spec or batch`);
-  }
-  if (!LIFECYCLES.has(manifest.lifecycle)) {
-    errors.push(`${rel(manifestPath)} lifecycle must be spec-first or spec-anchored`);
-  }
-  if (!STATUSES.has(manifest.status)) {
-    errors.push(`${rel(manifestPath)} status must be active, blocked, closed, or abandoned`);
-  }
-  if (!ISO_DATE.test(manifest.created_at ?? '')) {
-    errors.push(`${rel(manifestPath)} created_at must be YYYY-MM-DD`);
-  }
-  if (manifest.closed_at !== null && !ISO_DATE.test(manifest.closed_at ?? '')) {
-    errors.push(`${rel(manifestPath)} closed_at must be YYYY-MM-DD or null`);
-  }
-  if (!Array.isArray(manifest.related_docs)) {
-    errors.push(`${rel(manifestPath)} related_docs must be an array`);
-  }
-  if (manifest.patch_kind === 'batch' && manifest.lifecycle === 'spec-anchored') {
-    errors.push(`${rel(manifestPath)} cannot combine batch + spec-anchored`);
-  }
-  if (
-    manifest.lifecycle === 'spec-anchored' &&
-    Array.isArray(manifest.related_docs) &&
-    manifest.related_docs.length === 0
-  ) {
-    errors.push(`${rel(manifestPath)} related_docs is required for spec-anchored`);
-  }
-  if (manifest.status === 'closed' && !existsSync(join(patchDir, 'cierre.md'))) {
-    errors.push(`${rel(patchDir)} is closed but missing cierre.md`);
-  }
-  if (manifest.status === 'closed' && manifest.closed_at === null) {
-    errors.push(`${rel(manifestPath)} closed patches require closed_at`);
-  }
-  if (manifest.status !== 'closed' && manifest.closed_at !== null) {
-    errors.push(`${rel(manifestPath)} open patches must keep closed_at null`);
-  }
-  if (
-    ISO_DATE.test(manifest.created_at ?? '') &&
-    ISO_DATE.test(manifest.closed_at ?? '') &&
-    manifest.closed_at < manifest.created_at
-  ) {
-    errors.push(`${rel(manifestPath)} closed_at cannot be earlier than created_at`);
-  }
-  if (manifest.patch_kind === 'batch') {
-    errors.push(...validateBatchContract(patchDir));
-  }
-
-  return errors;
-}
-
-function validateBatchContract(patchDir) {
-  const errors = [];
-  const definitionPath = join(patchDir, 'definicion.md');
-  if (!existsSync(definitionPath)) {
-    errors.push(`${rel(definitionPath)} is required for batch patches`);
-    return errors;
-  }
-
-  const definition = readFileSync(definitionPath, 'utf8');
-  const requiredSections = [
-    '## 2. Lista cerrada de items',
-    '## 3. Criterio global de cierre',
-  ];
-  for (const section of requiredSections) {
-    if (!definition.includes(section)) {
-      errors.push(`${rel(definitionPath)} missing batch section ${section}`);
-    }
-  }
-  if (!/- Item .+:\s*[\r\n]+\s+- criterio de cierre:/m.test(definition)) {
-    errors.push(`${rel(definitionPath)} must define at least one item closure criterion`);
-  }
-  return errors;
+  const result = validatePatchDirectory(patchDir, {
+    allowedRoots: [patchDir],
+    legacyRoots: options.legacy === true ? [patchDir] : [],
+  });
+  return result.diagnostics
+    .filter((diagnostic) => diagnostic.severity === 'error')
+    .map((diagnostic) => {
+      const line = diagnostic.line === null ? '' : `:${diagnostic.line}`;
+      return `${rel(diagnostic.path)}${line} ${diagnostic.message}`;
+    });
 }
 
 function validateRepo() {
@@ -256,11 +105,10 @@ function parseManifests(rootDir) {
     if (patchDir.endsWith('/legacy')) continue;
     const manifestPath = join(patchDir, 'patch.yaml');
     if (!existsSync(manifestPath)) continue;
-    try {
-      manifests.push({ patchDir, manifest: parsePatchYaml(manifestPath) });
-    } catch {
-      // Manifest syntax errors are handled by validateManifest.
-    }
+    const parsed = parsePatchYaml(readFileSync(manifestPath, 'utf8'), {
+      sourcePath: manifestPath,
+    });
+    if (parsed.ok) manifests.push({ patchDir, manifest: parsed.value });
   }
   return manifests;
 }
@@ -370,13 +218,25 @@ function validateFixtures() {
 export { validateFixtures, validateMarkdownLinks, validateRepo };
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const errors = useFixtures ? validateFixtures() : [...validateRepo(), ...validateMarkdownLinks(root)];
+  const cliArgs = process.argv.slice(2);
+  const legacyFixtures = cliArgs.length === 1 && cliArgs[0] === '--fixtures';
+  const legacyRepo = cliArgs.length === 0;
 
-  if (errors.length > 0) {
-    console.error(`SDD validation failed (${errors.length}):`);
-    for (const error of errors) console.error(`- ${error}`);
-    exit(1);
+  if (!legacyFixtures && !legacyRepo) {
+    process.exitCode = runValidatorCli(cliArgs, { cwd: root });
+  } else {
+    const errors = legacyFixtures
+      ? validateFixtures()
+      : [...validateRepo(), ...validateMarkdownLinks(root)];
+
+    if (errors.length > 0) {
+      console.error(`SDD validation failed (${errors.length}):`);
+      for (const error of errors) console.error(`- ${error}`);
+      exit(1);
+    }
+
+    console.log(
+      legacyFixtures ? 'SDD fixture validation passed' : 'SDD repo validation passed',
+    );
   }
-
-  console.log(useFixtures ? 'SDD fixture validation passed' : 'SDD repo validation passed');
 }

@@ -103,7 +103,7 @@
 
 ### Fase 3 - CLI contractual y bridge v1
 
-- Estado: `pending`
+- Estado: `done`
 - Objetivo: exponer el validator PAW mediante una interfaz estable y conservar las
   invocaciones operativas v1 sin duplicar implementacion.
 - Origen en `plan.md`: Bloque 3 - CLI y output contractual.
@@ -242,3 +242,4 @@ proporcional a su riesgo.
   - Division inicial en cuatro fases trazables a los bloques del plan reconciliado.
   - Fase 1 cerrada con schema v2, parsing versionado y contract tests validados.
   - Fase 2 cerrada con validacion dual, compatibilidad legacy y matriz read-only.
+  - Fase 3 cerrada con CLI contractual y bridge v1 sin reglas duplicadas.

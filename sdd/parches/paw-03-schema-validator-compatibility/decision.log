@@ -50,3 +50,18 @@
   deferred to `paw-08-vcs-pr-integration`. Do not publish WIP, squash, rebase,
   force-push or rewrite history without human authorization. Substantive work after
   closure requires reopening, validation and a new closure.
+
+## 2026-06-14 - Expose a PAW validator CLI through a compatibility-preserving v1 bridge
+
+- Decision: expose `paw-validator 0.1.0` through
+  `paw/tools/validate-patches.mjs`, supporting schemas 1 and 2, exit codes `0`
+  success, `1` validation failure and `2` invalid usage/internal failure. Keep
+  `sdd/tools/validate-sdd.mjs` as the active v1 bridge: its legacy invocations and
+  SDD-specific structure/link checks remain, while manifest parsing and validation
+  delegate to PAW.
+- Reason: the handoff requires an automatable, version-reportable CLI without
+  duplicating the canonical validator or breaking current v1 consumers.
+- Impact: `--help`, `--version`, `--json`, `--root` and PAW `--fixtures` are
+  available through the canonical CLI and delegated bridge flags. The CLI version
+  identifies this validator contract only; it is not a PAW release or portability
+  claim. Writers, workspace defaults and `paw/parches/**` remain unchanged.
