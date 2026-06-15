@@ -1,0 +1,1 @@
+{"kind":"instance","instance":{"instance_id":"checkout-api","modifier_ref":"synchronous-service","family_id":"transactional-application","scope_ref":"component:checkout-api","activation_inputs":{}}}

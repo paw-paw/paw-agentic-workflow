@@ -100,6 +100,7 @@
 
 ### Fase 3 - Component profiles, concerns y composicion
 
+- Estado: `done`
 - Objetivo: materializar los 21 modifiers y validar scopes, slots, merge y conflictos.
 - Origen en `plan.md`: Bloque 3.
 - Precondiciones: Fase 2 cerrada; capabilities estables.
@@ -270,3 +271,5 @@ la fase anterior.
     15 fixtures y conformance.
   - Fase 2 cerrada con 22 capabilities, 8 documentation presets, applicability,
     exception contract, 4 fixtures adicionales y validacion cruzada.
+  - Fase 3 cerrada con 11 profiles, 10 concerns, typed scopes, slot identity, five
+    merge strategies and 8 modifier fixtures.

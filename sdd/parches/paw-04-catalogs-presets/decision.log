@@ -88,6 +88,16 @@
   IDs. Modifier definitions must remain technology-neutral and cannot change document
   authority or accountable ownership.
 
+## 2026-06-15 - Keep applied modifier instances outside canonical definitions
+
+- Decision: `paw/catalogs/modifiers/catalog.json` contains reusable definitions only.
+  Applied instances with `family_id`, `scope_ref`, and activation inputs are validation
+  fixtures now and future adoption inputs later.
+- Reason: mixing definitions and product instances would make the portable catalog
+  repository-specific and blur the adapter/adoption boundary.
+- Impact: slot identity remains `capability_id + scope_ref`; `manual-conflict`
+  returns an unresolved conflict and never changes authority or ownership.
+
 ## 2026-06-15 - Apply the provisional paw-foundation commit policy
 
 - Decision: use Conventional Commits, create one coherent SDD preparation commit

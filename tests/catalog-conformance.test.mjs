@@ -65,3 +65,12 @@ test('documentation guides preserve authority and role boundaries', () => {
   assert.match(presets, /cannot change repository authority or accountable\s+ownership/);
   assert.doesNotMatch(manifest, /authority_level|accountable_owner/);
 });
+
+test('modifier guide preserves family, technology, and authority boundaries', () => {
+  const guide = read('paw/catalogs/modifiers/README.md');
+  const manifest = read('paw/catalogs/modifiers/catalog.json');
+  assert.match(guide, /without changing a product's\s+primary family/);
+  assert.match(guide, /Neither kind selects a\s+technology stack or agent runtime/);
+  assert.match(guide, /cannot.*change repository authority/s);
+  assert.doesNotMatch(manifest, /authority_level|accountable_owner|runtime_agentic/);
+});

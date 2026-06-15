@@ -6,7 +6,7 @@
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
 - Fase: `3`
-- Estado: `active`
+- Estado: `done`
 - Ultima actualizacion: `2026-06-15`
 - Owner: sesion Codex activa con aprobacion humana
 - Depende de: Fase 2 cerrada
@@ -105,24 +105,24 @@
 
 ### Si entra
 
-- [ ] shared modifier definition contract
-- [ ] 11 component definitions and guides
-- [ ] 10 concern definitions and guides
-- [ ] typed scope and applied instance validation
-- [ ] slot key and deduplication
-- [ ] union, maximum, minimum, intersection and manual-conflict
-- [ ] dependencies, conflicts and family compatibility
-- [ ] `regulated-data` named basis requirement
-- [ ] authority/accountability mutation guards
-- [ ] schemas, fixtures, contract tests and conformance
+- [x] shared modifier definition contract
+- [x] 11 component definitions and guides
+- [x] 10 concern definitions and guides
+- [x] typed scope and applied instance validation
+- [x] slot key and deduplication
+- [x] union, maximum, minimum, intersection and manual-conflict
+- [x] dependencies, conflicts and family compatibility
+- [x] `regulated-data` named basis requirement
+- [x] authority/accountability mutation guards
+- [x] schemas, fixtures, contract tests and conformance
 
 ### No entra
 
-- [ ] technology or stack selection
-- [ ] implementation preset variants
-- [ ] concrete repository adoption records
-- [ ] artifact bindings or full readiness calculation
-- [ ] runtime adapters or workflow changes
+- [x] technology or stack selection
+- [x] implementation preset variants
+- [x] concrete repository adoption records
+- [x] artifact bindings or full readiness calculation
+- [x] runtime adapters or workflow changes
 
 ## 7. Archivos y superficies de trabajo
 
@@ -165,61 +165,61 @@
 
 ### Bloque A - Relectura de fuentes
 
-- [ ] read approved modifier IDs in `decision.log`
-- [ ] reread all 11/10 semantics and non-activation signals
-- [ ] reread scope, slot key, merge, conflict, authority and ownership rules
-- [ ] confirm modifier definitions do not contain technology choices
+- [x] read approved modifier IDs in `decision.log`
+- [x] reread all 11/10 semantics and non-activation signals
+- [x] reread scope, slot key, merge, conflict, authority and ownership rules
+- [x] confirm modifier definitions do not contain technology choices
 
 ### Bloque B - Inspeccion de estado actual
 
-- [ ] load family and capability IDs from canonical manifests
-- [ ] inspect canonical validator dispatch for fourth catalog
-- [ ] inspect fixture harness extension points
-- [ ] identify reusable set/scalar merge primitives without general rule invention
+- [x] load family and capability IDs from canonical manifests
+- [x] inspect canonical validator dispatch for fourth catalog
+- [x] inspect fixture harness extension points
+- [x] identify reusable set/scalar merge primitives without general rule invention
 
 ### Bloque C - Edicion por archivo
 
-- [ ] create modifier catalog with common contract and kind-specific fields
-- [ ] encode 11 component semantics, includes/excludes, scopes and capability demands
-- [ ] encode 10 concern activation rules, affected scopes and specialist review
-- [ ] encode `regulated-data.requires_named_basis: true`
-- [ ] validate canonical inventory, unique IDs, known family/capability refs
-- [ ] validate dependencies/conflicts and no self-reference
-- [ ] validate scope refs and stable scope kinds
-- [ ] implement slot key as `capability_id + scope_ref`
-- [ ] implement five merge strategies and provenance retention
-- [ ] return blocked conflict for incomparable/manual values
-- [ ] reject modifier attempts to set authority or accountable owner
-- [ ] create simple and composite product fixtures
-- [ ] create negatives for unknown refs, incompatible family, missing basis, ambiguous
+- [x] create modifier catalog with common contract and kind-specific fields
+- [x] encode 11 component semantics, includes/excludes, scopes and capability demands
+- [x] encode 10 concern activation rules, affected scopes and specialist review
+- [x] encode `regulated-data.requires_named_basis: true`
+- [x] validate canonical inventory, unique IDs, known family/capability refs
+- [x] validate dependencies/conflicts and no self-reference
+- [x] validate scope refs and stable scope kinds
+- [x] implement slot key as `capability_id + scope_ref`
+- [x] implement five merge strategies and provenance retention
+- [x] return blocked conflict for incomparable/manual values
+- [x] reject modifier attempts to set authority or accountable owner
+- [x] create simple and composite product fixtures
+- [x] create negatives for unknown refs, incompatible family, missing basis, ambiguous
   scope, authority mutation and unresolved conflict
-- [ ] add contract and conformance tests
+- [x] add contract and conformance tests
 
 ### Bloque D - Registro de decisiones, hallazgos o blockers
 
-- [ ] record approved IDs and kind separation
-- [ ] record physical applied-instance shape used by fixtures
-- [ ] stop if a profile duplicates family intent
-- [ ] stop if a concern selects technology or changes authority/accountability
-- [ ] record drift and findings
+- [x] record approved IDs and kind separation
+- [x] record physical applied-instance shape used by fixtures
+- [x] stop if a profile duplicates family intent
+- [x] stop if a concern selects technology or changes authority/accountability
+- [x] record drift and findings
 
 ### Bloque E - Validacion
 
-- [ ] run catalog validator canonical and fixtures
-- [ ] run modifier contract tests
-- [ ] run SDD validators
-- [ ] run patch validators canonical and fixtures
-- [ ] run complete test suite
-- [ ] run `git diff --check`
-- [ ] manually review all 21 definitions and conflict behavior
+- [x] run catalog validator canonical and fixtures
+- [x] run modifier contract tests
+- [x] run SDD validators
+- [x] run patch validators canonical and fixtures
+- [x] run complete test suite
+- [x] run `git diff --check`
+- [x] manually review all 21 definitions and conflict behavior
 
 ### Bloque F - Cierre
 
-- [ ] record commands, counts and results
-- [ ] update findings, drift, decisions and risks
-- [ ] mark Fase 3 `done` only after gates and validations
-- [ ] confirm Fase 4 can reference stable modifier IDs and variant signals
-- [ ] create Conventional Commit(s) after backlog update and validation
+- [x] record commands, counts and results
+- [x] update findings, drift, decisions and risks
+- [x] mark Fase 3 `done` only after gates and validations
+- [x] confirm Fase 4 can reference stable modifier IDs and variant signals
+- [x] create Conventional Commit(s) after backlog update and validation
 
 ## 9. Drift detectado
 
@@ -227,7 +227,12 @@
 
 ## 10. Hallazgos durante ejecucion
 
-- Pendientes.
+- Applied modifier instances belong to adoption inputs, not reusable catalog
+  definitions; fixtures exercise the shape without promoting instances to authority.
+- Capability merge strategy can operate on simple values, but `manual-conflict`
+  remains unresolved whenever distinct values contribute.
+- The approved 11/10 catalog expresses responsibilities without defining a framework,
+  database, cloud, protocol, or agent runtime.
 
 ## 11. Blockers
 
@@ -251,39 +256,63 @@
 
 ### Documentales
 
-- [ ] modifier guide and manifest consistent
-- [ ] profiles/concerns do not select technology
-- [ ] authority and accountable ownership remain external
+- [x] modifier guide and manifest consistent
+- [x] profiles/concerns do not select technology
+- [x] authority and accountable ownership remain external
 
 ### Tecnicas
 
-- [ ] 11 components and 10 concerns validate
-- [ ] references, scopes, slots and merge strategies validate
-- [ ] invalid combinations and unresolved conflicts fail
-- [ ] existing suites remain green
+- [x] 11 components and 10 concerns validate
+- [x] references, scopes, slots and merge strategies validate
+- [x] invalid combinations and unresolved conflicts fail
+- [x] existing suites remain green
 
 ### Manuales
 
-- [ ] IDs approved
-- [ ] no profile duplicates a family
-- [ ] concern activation and named basis are coherent
-- [ ] composite products remain one-family models
+- [x] IDs approved
+- [x] no profile duplicates a family
+- [x] concern activation and named basis are coherent
+- [x] composite products remain one-family models
 
 ### Resultados
 
-- Pendientes hasta ejecucion.
+- Validacion: canonical catalogs
+  - comando o revision: `node paw/tools/validate-catalogs.mjs --json`
+  - resultado esperado: 11 components, 10 concerns, zero errors
+  - resultado obtenido: pass con inventario exacto
+  - estado: `pass`
+- Validacion: catalog fixtures
+  - comando o revision: `node paw/tools/validate-catalogs.mjs --fixtures --json`
+  - resultado esperado: modifier expectations match
+  - resultado obtenido: pass, 8 modifier fixtures; 27 total catalog fixtures
+  - estado: `pass`
+- Validacion: complete suite
+  - comando o revision: `node --test paw/tests/contract/*.test.mjs tests/*.test.mjs`
+  - resultado esperado: pass
+  - resultado obtenido: 61 tests, 61 pass
+  - estado: `pass`
+- Validacion: SDD and patch compatibility
+  - comando o revision: commands declared in Block E
+  - resultado esperado: pass
+  - resultado obtenido: pass; 4 patches and 20 patch fixtures
+  - estado: `pass`
+- Validacion: whitespace and manual boundaries
+  - comando o revision: `git diff --check` plus manifest inspection
+  - resultado esperado: no errors or technology/authority mutation
+  - resultado obtenido: no errors; LF/CRLF notices only
+  - estado: `pass`
 
 ## 14. Cierre
 
 La fase solo se considera cerrada si:
 
-- [ ] checklist complete
-- [ ] ID gate resolved and recorded
-- [ ] assumptions resolved
-- [ ] decisions and drift synchronized
-- [ ] blockers resolved
-- [ ] validations pass and results recorded
-- [ ] backlog and `tasks.md` synchronized
+- [x] checklist complete
+- [x] ID gate resolved and recorded
+- [x] assumptions resolved
+- [x] decisions and drift synchronized
+- [x] blockers resolved
+- [x] validations pass and results recorded
+- [x] backlog and `tasks.md` synchronized
 
 ## 15. Riesgos y pendientes
 

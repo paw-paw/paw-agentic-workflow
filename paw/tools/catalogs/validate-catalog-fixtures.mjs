@@ -1,11 +1,13 @@
 import { createValidationResult } from '../validation/validation-result.mjs';
 import { validateDocumentationFixtures } from './validate-documentation-fixtures.mjs';
 import { validateFamilyFixtures } from './validate-family-fixtures.mjs';
+import { validateModifierFixtures } from './validate-modifier-fixtures.mjs';
 
 export function validateCatalogFixtures(root) {
   const results = [
     validateFamilyFixtures(root),
     validateDocumentationFixtures(root),
+    validateModifierFixtures(root),
   ];
   return createValidationResult({
     schemaVersion: 1,
