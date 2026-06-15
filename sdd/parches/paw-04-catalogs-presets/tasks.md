@@ -161,6 +161,7 @@
 
 ### Fase 5 - Cross-catalog conformance y reconciliacion final
 
+- Estado: `done`
 - Objetivo: consolidar validation, fixtures y fuentes vivas y dejar el patch listo
   para `sdd-close`.
 - Origen en `plan.md`: Bloque 5.
@@ -276,3 +277,5 @@ la fase anterior.
     merge strategies and 8 modifier fixtures.
   - Fase 4 cerrada con 11 implementation presets, 17 variants, 31 source records,
     support freshness policy and 6 implementation preset fixtures.
+  - Fase 5 cerrada con live status docs reconciliados, validation commands
+    actualizados, conformance ajustada y suite completa verde.

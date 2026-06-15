@@ -22,13 +22,16 @@
 - Physical patch schema v2 and dual-read v1/v2 manifest validation under `paw/tools/**`.
 - Portable compatibility fixtures and validator contract tests under `paw/tests/**`.
 - A compatibility-preserving `sdd/tools/validate-sdd.mjs` bridge for active v1 consumers.
+- Portable catalogs for software families, documentation capabilities and presets,
+  modifiers, and implementation presets under `paw/catalogs/**`.
+- Deterministic catalog validation, schemas, fixtures, and conformance tests.
 
 ## Not Implemented
 
 - Active `paw/parches/` workspaces.
 - v2 manifest writers or a v2 default workflow.
 - `paw-*` skills or agents.
-- Catalogs, presets, adapters, adoption records, or assessments.
+- Adapters, adoption records, or assessments.
 - Multi-runtime and multi-repository portability.
 - Packaging, installation automation, release automation, Pages, Actions, or deployment.
 

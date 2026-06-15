@@ -12,8 +12,9 @@ PAW is a `pre-alpha` bootstrap under active construction.
 
 - It is not a stable distribution.
 - Portability is neither implemented nor guaranteed.
-- `paw/core/**` contains live conceptual contracts; `paw/tools/**` and `paw/tests/**`
-  contain the materialized schema v2, dual validator, fixtures, and contract tests.
+- `paw/core/**` contains live conceptual contracts; `paw/catalogs/**` contains
+  portable family and preset catalogs; `paw/tools/**` and `paw/tests/**` contain the
+  materialized validators, schemas, fixtures, and contract tests.
 - The inherited Spec-Driven Development v1 runtime under `sdd/**` and the `sdd-*` Codex skills remain the only active patch workflow until the governed cutover.
 - There are no v2 writers or active v2 workspaces, package, release automation,
   Pages site, or deployment workflow.
@@ -51,6 +52,8 @@ node sdd/tools/validate-sdd.mjs
 node sdd/tools/validate-sdd.mjs --fixtures
 node paw/tools/validate-patches.mjs --json
 node paw/tools/validate-patches.mjs --fixtures --json
+node paw/tools/validate-catalogs.mjs --json
+node paw/tools/validate-catalogs.mjs --fixtures --json
 node --test paw/tests/contract/patch-parsing.test.mjs
 node --test paw/tests/contract/patch-validation.test.mjs
 node --test paw/tests/contract/validator-cli.test.mjs

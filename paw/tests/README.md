@@ -4,7 +4,8 @@
 
 Approved target surface for incremental materialization. Patch
 `paw-03-schema-validator-compatibility` owns the first portable v1/v2 compatibility
-fixtures and validator contract tests here.
+fixtures and validator contract tests here. Later governed patches add their own
+fixtures and conformance checks without activating v2 workflow defaults.
 
 Existing v1 fixtures remain under `sdd/tests/**` as historical and operational
 compatibility evidence until cutover.
@@ -23,6 +24,11 @@ This directory is reserved for future portable fixtures, examples, compatibility
   codes, and validation failures as process-level behavior.
 - `fixtures/patch-v1/**`, `fixtures/patch-v2/**`, and `fixtures/invalid/**` contain
   portable read-only compatibility evidence with structured expectations.
+- `contract/*catalog*.test.mjs` covers family, documentation, modifier, and
+  implementation preset catalog behavior.
+- `fixtures/catalogs/**` contains positive and negative catalog evidence for
+  classifications, documentation applicability, modifier composition, and
+  implementation preset constraints.
 
 ## Ownership
 

@@ -27,10 +27,11 @@ authorize a second writable patch namespace.
 | Surface | Intended responsibility | Current state |
 | --- | --- | --- |
 | `paw/core/` | Portable PAW contracts | Live conceptual contracts |
+| `paw/catalogs/` | Portable family, documentation, modifier, and implementation preset definitions | Materialized catalogs and validators; not adoption automation |
 | `paw/parches/` | Future fixed patch workspace root | Inactive; writing is prohibited |
 | `paw/orchestration/` | Runtime-neutral orchestration contracts | Inactive orientation only |
-| `paw/tools/` | PAW schemas and tooling | Schema v2 and dual-read validator materialized by patch 03; not a workflow activation |
-| `paw/tests/` | Portable fixtures and conformance assets | v1/v2 compatibility fixtures and contract tests materialized by patch 03; not a workflow activation |
+| `paw/tools/` | PAW schemas and tooling | Schema v2, dual-read validator, and catalog validators materialized; not a workflow activation |
+| `paw/tests/` | Portable fixtures and conformance assets | v1/v2 compatibility and catalog fixtures plus contract tests materialized; not a workflow activation |
 | `.codex/skills/paw-*` | Future Codex skills | Not created |
 | `.codex/agents/paw-*` | Future Codex agents | Not created |
 
