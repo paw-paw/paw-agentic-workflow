@@ -53,6 +53,18 @@
 - Impact: patch 03 retains its 20-fixture compatibility contract unchanged, while
   catalog validation owns its fixture matrix and can grow independently.
 
+## 2026-06-15 - Approve capability and documentation preset identifiers
+
+- Decision: approve the eight universal capability IDs, fourteen normalized
+  transversal capability IDs, and eight `docs-<family-id>` documentation preset IDs
+  proposed in the Phase 2 backlog without changes.
+- Approved by: human patch owner.
+- Reason: the IDs describe stable semantic obligations, preserve the normalized
+  capability splits approved in research, and reference canonical family identities.
+- Impact: modifiers introduced in Phase 3 must reference these capability IDs.
+  Documentation presets use canonical family IDs and must not define repository
+  authority, precedence, or accountable ownership.
+
 ## 2026-06-15 - Apply the provisional paw-foundation commit policy
 
 - Decision: use Conventional Commits, create one coherent SDD preparation commit

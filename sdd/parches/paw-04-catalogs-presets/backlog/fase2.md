@@ -6,7 +6,7 @@
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
 - Fase: `2`
-- Estado: `blocked`
+- Estado: `active`
 - Ultima actualizacion: `2026-06-15`
 - Owner: sesion Codex activa con aprobacion humana
 - Depende de: Fase 1 cerrada
@@ -71,7 +71,7 @@
 
 ### Decisiones previas
 
-- [ ] gate humano: aprobar o corregir los IDs universales propuestos:
+- [x] gate humano: aprobar o corregir los IDs universales propuestos:
   - `intent-outcomes`
   - `scope-assumptions-constraints`
   - `stakeholders-users`
@@ -80,7 +80,7 @@
   - `validation-acceptance-evidence`
   - `decisions-ownership-freshness`
   - `authority-precedence-conformance`
-- [ ] gate humano: aprobar o corregir los IDs transversales normalizados:
+- [x] gate humano: aprobar o corregir los IDs transversales normalizados:
   - `security`
   - `privacy`
   - `operations-support`
@@ -95,7 +95,7 @@
   - `data-evolution-reprocessing`
   - `agent-traceability-audit`
   - `agent-containment-recovery`
-- [ ] gate humano: aprobar IDs de documentation presets:
+- [x] gate humano: aprobar IDs de documentation presets:
   - `docs-content-knowledge`
   - `docs-transactional-application`
   - `docs-service-api`
@@ -104,7 +104,7 @@
   - `docs-client-application`
   - `docs-data-machine-learning`
   - `docs-agentic-system`
-- [ ] registrar el resultado de los gates en `decision.log`
+- [x] registrar el resultado de los gates en `decision.log`
 
 ### Estado tecnico
 
@@ -254,7 +254,7 @@
 
 ## 11. Blockers
 
-- [ ] aprobacion humana de IDs de capabilities y documentation presets
+- Ninguno.
 
 ## 12. Decisiones tomadas
 
@@ -264,6 +264,12 @@
   - Razon: mantener IDs semanticos, normalizar capacidades compuestas y evitar
     ordinal identity.
   - Areas afectadas: manifests, schemas, validators, fixtures and modifier refs.
+- `2026-06-15`
+  - Decision: el owner humano aprobo todos los IDs propuestos sin cambios.
+  - Razon: expresan obligaciones semanticas estables y referencias de familia
+    canonicas.
+  - Areas afectadas: capability and documentation preset catalogs plus downstream
+    modifier refs.
 
 ## 13. Validaciones
 
@@ -315,5 +321,4 @@ La fase solo se considera cerrada si:
 
 ### Pendientes
 
-- Resolver gate de IDs antes de `sdd-execute-phase`.
 - Fases 3-5 permanecen sin backlog.
