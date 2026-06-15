@@ -6,7 +6,7 @@
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
 - Fase: `1`
-- Estado: `blocked`
+- Estado: `active`
 - Ultima actualizacion: `2026-06-15`
 - Owner: sesion Codex activa con aprobacion humana
 - Depende de: preparacion SDD committed; `paw-03` cerrado e integrado
@@ -72,7 +72,7 @@
 
 ### Decisiones previas
 
-- [ ] gate humano: aprobar o corregir los IDs canonicos propuestos:
+- [x] gate humano: aprobar o corregir los IDs canonicos propuestos:
   - `content-knowledge`
   - `transactional-application`
   - `service-api`
@@ -81,7 +81,7 @@
   - `client-application`
   - `data-machine-learning`
   - `agentic-system`
-- [ ] registrar el resultado del gate en `decision.log`
+- [x] registrar el resultado del gate en `decision.log`
 
 ### Estado tecnico
 
@@ -251,7 +251,7 @@
 
 ## 11. Blockers
 
-- [ ] aprobacion humana de los ocho IDs canonicos propuestos
+- Ninguno.
 
 ## 12. Decisiones tomadas
 
@@ -259,6 +259,10 @@
   - Decision: el backlog propone slugs semanticos y conserva `SF-*` como aliases.
   - Razon: cumplir el handoff sin canonizar IDs ordinales por inercia.
   - Areas afectadas: family manifest, schema, fixtures, guides and downstream refs.
+- `2026-06-15`
+  - Decision: el owner humano aprobo los ocho IDs propuestos sin cambios.
+  - Razon: expresan intencion primaria y no seleccion tecnologica.
+  - Areas afectadas: family manifest, schema, fixtures and all downstream refs.
 
 ## 13. Validaciones
 
@@ -311,5 +315,4 @@ La fase solo se considera cerrada si:
 
 ### Pendientes
 
-- Resolver el gate de IDs antes de `sdd-execute-phase`.
 - Fases 2-5 permanecen sin backlog hasta que la fase anterior se cierre.

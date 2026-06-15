@@ -21,6 +21,19 @@
 - Impact: each catalog phase must present its definitive ID set at a human gate before
   closure, and schemas must reject unknown canonical IDs.
 
+## 2026-06-15 - Approve canonical software family identifiers
+
+- Decision: use these canonical family IDs:
+  `content-knowledge`, `transactional-application`, `service-api`,
+  `library-package-sdk`, `cli-developer-tool`, `client-application`,
+  `data-machine-learning`, and `agentic-system`.
+- Approved by: human patch owner.
+- Reason: the IDs name stable product intent rather than technologies and preserve
+  the eight-family taxonomy without ordinal identity.
+- Impact: `SF-01` through `SF-08` remain provenance aliases in the family catalog.
+  Downstream documentation presets, modifiers, and implementation presets must use
+  the canonical IDs for references.
+
 ## 2026-06-15 - Keep structured manifests canonical and guides explanatory
 
 - Decision: machine-readable manifests are the canonical representation of catalog
