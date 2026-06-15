@@ -74,3 +74,12 @@ test('modifier guide preserves family, technology, and authority boundaries', ()
   assert.match(guide, /cannot.*change repository authority/s);
   assert.doesNotMatch(manifest, /authority_level|accountable_owner|runtime_agentic/);
 });
+
+test('implementation presets remain bounded, evidence-backed, and inactive', () => {
+  const guide = read('paw/catalogs/implementation-presets/README.md');
+  const manifest = read('paw/catalogs/implementation-presets/catalog.json');
+  assert.match(guide, /complete, evidence-backed golden paths/);
+  assert.match(guide, /cannot be freely combined/);
+  assert.match(guide, /180 days/);
+  assert.doesNotMatch(manifest, /authority_level|accountable_owner|runtime_agentic|selected_for_repository/);
+});

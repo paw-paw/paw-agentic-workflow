@@ -130,6 +130,7 @@
 
 ### Fase 4 - Implementation presets y evidencia
 
+- Estado: `done`
 - Objetivo: materializar golden paths completos, versionados y revisables por
   familia/envelope.
 - Origen en `plan.md`: Bloque 4.
@@ -273,3 +274,5 @@ la fase anterior.
     exception contract, 4 fixtures adicionales y validacion cruzada.
   - Fase 3 cerrada con 11 profiles, 10 concerns, typed scopes, slot identity, five
     merge strategies and 8 modifier fixtures.
+  - Fase 4 cerrada con 11 implementation presets, 17 variants, 31 source records,
+    support freshness policy and 6 implementation preset fixtures.

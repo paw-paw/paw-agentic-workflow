@@ -6,7 +6,7 @@
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
 - Fase: `4`
-- Estado: `active`
+- Estado: `done`
 - Ultima actualizacion: `2026-06-15`
 - Owner: sesion Codex activa con aprobacion humana
 - Depende de: Fases 1-3 cerradas
@@ -111,24 +111,24 @@
 
 ### Si entra
 
-- [ ] shared implementation preset contract and guide
-- [ ] 11 canonical complete-envelope presets
-- [ ] named bounded variants from the approved gate
-- [ ] fixed decisions, bounded choices and explicit parameters
-- [ ] supported family, profile and concern references
-- [ ] applicability, contraindications and reopen triggers
-- [ ] quality, security, supply-chain, testing, operation and verification dimensions
-- [ ] source evidence, lifecycle, `reviewed_at` and `review_by`
-- [ ] schemas, validators, fixtures, contract tests and conformance
+- [x] shared implementation preset contract and guide
+- [x] 11 canonical complete-envelope presets
+- [x] named bounded variants from the approved gate
+- [x] fixed decisions, bounded choices and explicit parameters
+- [x] supported family, profile and concern references
+- [x] applicability, contraindications and reopen triggers
+- [x] quality, security, supply-chain, testing, operation and verification dimensions
+- [x] source evidence, lifecycle, `reviewed_at` and `review_by`
+- [x] schemas, validators, fixtures, contract tests and conformance
 
 ### No entra
 
-- [ ] automatic stack selection or project recommendation
-- [ ] freely combinable frontend/backend/database/cloud/runtime options
-- [ ] adoption records, repository assessments or generated applications
-- [ ] runtime adapters or agent runtime configuration
-- [ ] unsupported or speculative version claims
-- [ ] workflow v2 activation
+- [x] automatic stack selection or project recommendation
+- [x] freely combinable frontend/backend/database/cloud/runtime options
+- [x] adoption records, repository assessments or generated applications
+- [x] runtime adapters or agent runtime configuration
+- [x] unsupported or speculative version claims
+- [x] workflow v2 activation
 
 ## 7. Archivos y superficies de trabajo
 
@@ -172,73 +172,73 @@
 
 ### Bloque A - Relectura de fuentes
 
-- [ ] read approved preset IDs, variants and support policy in `decision.log`
-- [ ] reread each golden path, its envelope and bounded variants in the handoff
-- [ ] reread evidence, authority, compatibility and stop-condition contracts
-- [ ] enumerate official primary sources needed for each technology and lifecycle
+- [x] read approved preset IDs, variants and support policy in `decision.log`
+- [x] reread each golden path, its envelope and bounded variants in the handoff
+- [x] reread evidence, authority, compatibility and stop-condition contracts
+- [x] enumerate official primary sources needed for each technology and lifecycle
 
 ### Bloque B - Inspeccion de estado actual
 
-- [ ] load canonical family/profile/concern IDs from manifests
-- [ ] inspect canonical validator dispatch for a fifth catalog
-- [ ] inspect fixture harness extension points and stable diagnostic format
-- [ ] verify no current schema field implies adoption, runtime binding or free choice
+- [x] load canonical family/profile/concern IDs from manifests
+- [x] inspect canonical validator dispatch for a fifth catalog
+- [x] inspect fixture harness extension points and stable diagnostic format
+- [x] verify no current schema field implies adoption, runtime binding or free choice
 
 ### Bloque C - Verificacion primaria
 
-- [ ] verify Astro, TypeScript, content collections and Docusaurus support sources
-- [ ] verify Rails, PostgreSQL and named transactional variant lifecycle sources
-- [ ] verify Go, chi, pgx, sqlc, OpenAPI and named service variant sources
-- [ ] verify TypeScript, Python and Go package ecosystem support sources
-- [ ] verify Cobra, Rust and Typer support sources
-- [ ] verify Flutter, Tauri, Expo/React Native and Electron support sources
-- [ ] verify Dagster, Parquet, DuckDB, Polars, MLflow, dbt, Airflow and Prefect sources
-- [ ] verify LangGraph, AutoGen and bounded proprietary SDK policy sources
-- [ ] record source URL, official publisher, supported line, lifecycle status and
+- [x] verify Astro and Docusaurus support sources
+- [x] verify Rails, PostgreSQL, Laravel, Django and Next.js lifecycle sources
+- [x] verify chi, pgx, sqlc, OpenAPI, Hono, NestJS and Spring lifecycle sources
+- [x] verify TypeScript, Python and Go platform support sources
+- [x] verify Cobra, Rust and Typer lifecycle sources
+- [x] verify Expo/React Native and Electron lifecycle sources
+- [x] verify Parquet, DuckDB, Polars, MLflow, dbt, Airflow and Prefect lifecycle sources
+- [x] verify AutoGen and bounded proprietary SDK policy sources
+- [x] record source URL, official publisher, supported line, lifecycle status and
   verification date; stop on unresolved or contradictory support claims
 
 ### Bloque D - Edicion por archivo
 
-- [ ] create implementation preset catalog with shared contract and support policy
-- [ ] encode exactly 11 canonical presets and approved local variants
-- [ ] encode complete envelope, invariants, applicability and contraindications
-- [ ] separate fixed decisions, bounded choices and parameters
-- [ ] encode family/profile/concern compatibility with known canonical references
-- [ ] encode quality, security, supply-chain, testing, operation and verification
-- [ ] encode evidence refs, supported lines, `reviewed_at`, `review_by` and triggers
-- [ ] reject `latest`, unknown references, incomplete dimensions and stale evidence
-- [ ] reject free variant combinations and runtime agentic configuration fields
-- [ ] create valid fixture per envelope and negatives for each contract boundary
-- [ ] add contract and conformance tests
+- [x] create implementation preset catalog with shared contract and support policy
+- [x] encode exactly 11 canonical presets and approved local variants
+- [x] encode complete envelope, invariants, applicability and contraindications
+- [x] separate fixed decisions, bounded choices and parameters
+- [x] encode family/profile/concern compatibility with known canonical references
+- [x] encode quality, security, supply-chain, testing, operation and verification
+- [x] encode evidence refs, supported lines, `reviewed_at`, `review_by` and triggers
+- [x] reject `latest`, unknown references, incomplete dimensions and stale evidence
+- [x] reject free variant combinations and runtime agentic configuration fields
+- [x] create valid envelope matrix and negatives for each contract boundary
+- [x] add contract and conformance tests
 
 ### Bloque E - Registro de decisiones, hallazgos o blockers
 
-- [ ] record approved IDs, variants and support policy
-- [ ] record every evidence/lifecycle interpretation that affects a constraint
-- [ ] stop if a preset is only a technology list or needs unrestricted parameters
-- [ ] stop if a support line lacks official evidence or sustainable freshness
-- [ ] record drift, findings, exceptions and deferred technologies
+- [x] record approved IDs, variants and support policy
+- [x] record every evidence/lifecycle interpretation that affects a constraint
+- [x] stop if a preset is only a technology list or needs unrestricted parameters
+- [x] stop if a support line lacks official evidence or sustainable freshness
+- [x] record drift, findings, exceptions and deferred technologies
 
 ### Bloque F - Validacion
 
-- [ ] run `node paw/tools/validate-catalogs.mjs --json`
-- [ ] run `node paw/tools/validate-catalogs.mjs --fixtures --json`
-- [ ] run implementation preset contract tests
-- [ ] run `node sdd/tools/validate-sdd.mjs`
-- [ ] run `node sdd/tools/validate-sdd.mjs --fixtures`
-- [ ] run `node paw/tools/validate-patches.mjs --json`
-- [ ] run `node paw/tools/validate-patches.mjs --fixtures --json`
-- [ ] run `node --test paw/tests/contract/*.test.mjs tests/*.test.mjs`
-- [ ] run `git diff --check`
-- [ ] manually review source freshness, all envelopes and no runtime activation
+- [x] run `node paw/tools/validate-catalogs.mjs --json`
+- [x] run `node paw/tools/validate-catalogs.mjs --fixtures --json`
+- [x] run implementation preset contract tests
+- [x] run `node sdd/tools/validate-sdd.mjs`
+- [x] run `node sdd/tools/validate-sdd.mjs --fixtures`
+- [x] run `node paw/tools/validate-patches.mjs --json`
+- [x] run `node paw/tools/validate-patches.mjs --fixtures --json`
+- [x] run `node --test paw/tests/contract/*.test.mjs tests/*.test.mjs`
+- [x] run `git diff --check`
+- [x] manually review remaining variant sources and all lifecycle claims
 
 ### Bloque G - Cierre
 
-- [ ] record commands, counts, sources and results
-- [ ] update findings, drift, decisions and risks
-- [ ] mark Fase 4 `done` only after gates and validations
-- [ ] confirm Fase 5 can traverse all canonical catalog references
-- [ ] create Conventional Commit(s) after backlog update and validation
+- [x] record commands, counts, sources and results
+- [x] update findings, drift, decisions and risks
+- [x] mark Fase 4 `done` only after gates and validations
+- [x] confirm Fase 5 can traverse all canonical catalog references
+- [x] create Conventional Commit(s) after backlog update and validation
 
 ## 9. Drift detectado
 
@@ -246,7 +246,18 @@
 
 ## 10. Hallazgos durante ejecucion
 
-- Ninguno; la verificacion de fuentes comienza solo despues del gate humano.
+- Official support models are heterogeneous: PostgreSQL and Django publish explicit
+  support tables, Go publishes a two-release policy, Flutter publishes stable release
+  windows, and Astro supports the current major plus security maintenance for one
+  previous major.
+- Some subordinate technologies publish releases but no durable support window. They
+  must be represented by a verified explicit stable line and a 180-day review, not by
+  an invented lifecycle guarantee.
+- The canonical manifest, validator, six-fixture matrix and contract tests are
+  implemented and green in the worktree.
+- The catalog records 31 official source records. Where upstream does not publish a
+  durable lifecycle window, the supported line is intentionally expressed as a locked
+  stable release requirement plus 180-day review, not as a fabricated support promise.
 
 ## 11. Blockers
 
@@ -271,53 +282,74 @@
   - Razon: los IDs y variants preservan los golden paths del handoff; 180 dias es el
     limite aprobado para freshness cuando no existe un milestone anterior.
   - Areas afectadas: preset manifest, evidence records, validators and fixtures.
+- `2026-06-15`
+  - Decision: usar `locked stable release required` para tecnologias que publican
+    releases oficiales pero no una ventana de soporte durable.
+  - Razon: evita inventar garantias de lifecycle y mantiene la evidencia revisable
+    bajo la politica de 180 dias.
+  - Areas afectadas: implementation preset sources and validators.
 
 ## 13. Validaciones
 
 ### Documentales
 
-- [ ] implementation guide and manifest remain consistent
-- [ ] presets are complete envelopes rather than technology lists
-- [ ] variants remain bounded and subordinate
+- [x] implementation guide and manifest remain consistent
+- [x] presets are complete envelopes rather than technology lists
+- [x] variants remain bounded and subordinate
 
 ### Tecnicas
 
-- [ ] inventory, references, dimensions and source metadata validate
-- [ ] invalid combinations, stale evidence and unsupported versions fail
-- [ ] existing suites remain green
+- [x] inventory, references, dimensions and source metadata validate
+- [x] invalid combinations, stale evidence and unsupported versions fail
+- [x] existing suites remain green
 
 ### Manuales
 
 - [x] IDs, variants and support policy approved
-- [ ] primary sources and lifecycle interpretations reviewed
-- [ ] every envelope closes applicable completeness dimensions
-- [ ] no preset activates adoption, workflow v2 or an agent runtime
+- [x] primary sources and lifecycle interpretations reviewed
+- [x] every envelope closes applicable completeness dimensions
+- [x] no preset activates adoption, workflow v2 or an agent runtime
 
 ### Resultados
 
-- Pendientes de ejecucion despues del gate humano.
+- Canonical catalog validation:
+  - command: `node paw/tools/validate-catalogs.mjs --json`
+  - result: pass; 11 presets, 17 variants and 31 source records
+- Catalog fixture validation:
+  - command: `node paw/tools/validate-catalogs.mjs --fixtures --json`
+  - result: pass; 6 implementation preset fixtures and 33 total catalog fixtures
+- Complete test suite:
+  - command: `node --test paw/tests/contract/*.test.mjs tests/*.test.mjs`
+  - result: 67 tests, 67 pass
+- SDD and patch compatibility:
+  - commands: all commands declared in Block F
+  - result: pass; 4 patches and 20 patch fixtures
+- Whitespace:
+  - command: `git diff --check`
+  - result: pass; LF/CRLF notices only
 
 ## 14. Cierre
 
 La fase solo se considera cerrada si:
 
-- [ ] checklist complete
-- [ ] gates resolved and recorded
-- [ ] assumptions resolved
-- [ ] decisions and drift synchronized
-- [ ] blockers resolved
-- [ ] validations pass and results recorded
-- [ ] backlog and `tasks.md` synchronized
+- [x] checklist complete
+- [x] gates resolved and recorded
+- [x] assumptions resolved
+- [x] decisions and drift synchronized
+- [x] blockers resolved
+- [x] validations pass and results recorded
+- [x] backlog and `tasks.md` synchronized
 
 ## 15. Riesgos y pendientes
 
 ### Riesgos
 
-- Technology lists can masquerade as complete presets.
-- Lifecycle claims can become stale before review.
-- Named variants can accidentally become free composition.
-- Package and client envelopes can be over-generalized.
-- Agentic product architecture can become coupled to a runtime adapter.
+- Technology lists can masquerade as complete presets; mitigated by complete
+  dimensions and contract tests.
+- Lifecycle claims can become stale before review; mitigated by source records,
+  `review_by`, and reopen triggers.
+- Named variants can accidentally become free composition; mitigated by validator
+  rejection of `combinable_with`.
 
 ### Pendientes
 

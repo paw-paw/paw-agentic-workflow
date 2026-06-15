@@ -26,6 +26,9 @@ test('canonical capability and documentation preset catalogs validate together',
     documentation_preset_count: 8,
     component_count: 11,
     concern_count: 10,
+    implementation_preset_count: 11,
+    implementation_variant_count: 17,
+    implementation_source_count: 31,
   });
 });
 
