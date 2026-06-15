@@ -6,9 +6,9 @@
 - Program id: `paw-foundation`
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
-- Estado: `active`
+- Estado: `done`
 - Fuente: approved final handoff 03
-- Ultima actualizacion: `2026-06-14`
+- Ultima actualizacion: `2026-06-15`
 - Owner: sesion Codex activa con aprobacion humana
 
 ## 1. Objetivo
