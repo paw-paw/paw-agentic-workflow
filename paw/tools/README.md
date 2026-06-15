@@ -23,6 +23,8 @@ This directory is reserved for future deterministic tools that validate or opera
   validators.
 - `validation/validate-patch-directory.mjs` adds read-only root, legacy, closure, and
   batch evidence handling.
+- `validate-patches.mjs` exposes repository and fixture validation through a
+  deterministic CLI.
 
 The parser supports top-level mappings, simple string/integer/null scalars, empty
 arrays, block arrays of simple scalars, comments, and blank lines. It rejects nested
@@ -32,6 +34,21 @@ and unsupported indentation with structured diagnostics.
 Validation results expose `valid`, `schemaVersion`, `diagnostics`, and
 `validatedPaths`. Diagnostics use `error`, `warning`, or `compatibility`; only errors
 make a result invalid.
+
+## Validator CLI
+
+```bash
+node paw/tools/validate-patches.mjs
+node paw/tools/validate-patches.mjs --json
+node paw/tools/validate-patches.mjs --root <path>
+node paw/tools/validate-patches.mjs --fixtures
+node paw/tools/validate-patches.mjs --help
+node paw/tools/validate-patches.mjs --version
+```
+
+Exit code `0` means success, `1` means validation errors, and `2` means invalid usage
+or an internal execution failure. The structured output contains `status`,
+`schema_version`, `validated_paths`, `warnings`, `errors`, and `evidence`.
 
 ## Ownership
 
