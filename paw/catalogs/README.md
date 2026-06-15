@@ -14,9 +14,10 @@ trade-offs, and examples without redefining manifest values.
 ## Catalog Map
 
 - `families/`: primary software-family taxonomy and classification boundaries.
+- `capabilities/`: reusable documentation obligations and merge semantics.
+- `documentation-presets/`: family baselines expressed as capability requirements.
 
-Later governed phases may add capabilities, documentation presets, modifiers, and
-implementation presets.
+Later governed phases may add modifiers and implementation presets.
 
 ## Ownership
 

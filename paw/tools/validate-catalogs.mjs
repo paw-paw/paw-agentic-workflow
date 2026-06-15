@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import { resolve } from 'node:path';
 
-import { validateCanonicalFamilies } from './catalogs/validate-family-files.mjs';
-import { validateFamilyFixtures } from './catalogs/validate-family-fixtures.mjs';
+import { validateCanonicalCatalogs } from './catalogs/validate-canonical-catalogs.mjs';
+import { validateCatalogFixtures } from './catalogs/validate-catalog-fixtures.mjs';
 
 const args = process.argv.slice(2);
 const json = args.includes('--json');
@@ -17,7 +17,7 @@ if (args.includes('--help')) {
   process.exitCode = 2;
 } else {
   const root = resolve('.');
-  const result = fixtures ? validateFamilyFixtures(root) : validateCanonicalFamilies(root);
+  const result = fixtures ? validateCatalogFixtures(root) : validateCanonicalCatalogs(root);
   const output = {
     status: result.valid ? 'pass' : 'fail',
     schema_version: result.schemaVersion,
