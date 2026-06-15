@@ -17,8 +17,8 @@ trade-offs, and examples without redefining manifest values.
 - `capabilities/`: reusable documentation obligations and merge semantics.
 - `documentation-presets/`: family baselines expressed as capability requirements.
 - `modifiers/`: reusable component profiles and transversal concerns.
-
-Later governed phases may add implementation presets.
+- `implementation-presets/`: complete golden paths with bounded variants and
+  evidence-backed freshness.
 
 ## Ownership
 

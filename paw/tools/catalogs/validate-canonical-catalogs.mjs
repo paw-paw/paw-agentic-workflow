@@ -8,6 +8,7 @@ import {
   validateDocumentationPresetCatalog,
 } from './validate-documentation-catalogs.mjs';
 import { validateModifierCatalog } from './validate-modifier-catalog.mjs';
+import { validateImplementationPresetCatalog } from './validate-implementation-presets.mjs';
 
 export function validateCanonicalCatalogs(root) {
   const paths = {
@@ -15,6 +16,7 @@ export function validateCanonicalCatalogs(root) {
     capabilities: resolve(root, 'paw/catalogs/capabilities/catalog.json'),
     documentationPresets: resolve(root, 'paw/catalogs/documentation-presets/catalog.json'),
     modifiers: resolve(root, 'paw/catalogs/modifiers/catalog.json'),
+    implementationPresets: resolve(root, 'paw/catalogs/implementation-presets/catalog.json'),
   };
   const loaded = Object.fromEntries(
     Object.entries(paths).map(([key, path]) => [key, loadJson(path)]),
@@ -45,6 +47,15 @@ export function validateCanonicalCatalogs(root) {
       }),
     );
   }
+  if (loaded.implementationPresets.value && loaded.families.value && loaded.modifiers.value) {
+    results.push(
+      validateImplementationPresetCatalog(loaded.implementationPresets.value, {
+        familyIds: loaded.families.value.families.map(({ family_id: id }) => id),
+        modifierIds: loaded.modifiers.value.modifiers.map(({ modifier_id: id }) => id),
+        sourcePath: paths.implementationPresets,
+      }),
+    );
+  }
 
   return createValidationResult({
     schemaVersion: 1,
@@ -56,6 +67,9 @@ export function validateCanonicalCatalogs(root) {
       documentation_preset_count: loaded.documentationPresets.value?.presets?.length ?? 0,
       component_count: loaded.modifiers.value?.modifiers?.filter(({ modifier_kind: kind }) => kind === 'component').length ?? 0,
       concern_count: loaded.modifiers.value?.modifiers?.filter(({ modifier_kind: kind }) => kind === 'concern').length ?? 0,
+      implementation_preset_count: loaded.implementationPresets.value?.presets?.length ?? 0,
+      implementation_variant_count: loaded.implementationPresets.value?.presets?.flatMap(({ variants }) => variants).length ?? 0,
+      implementation_source_count: loaded.implementationPresets.value?.sources?.length ?? 0,
     },
   });
 }
