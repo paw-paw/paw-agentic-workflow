@@ -40,6 +40,7 @@
 
 ### Fase 1 - Familias y foundation de catalogos
 
+- Estado: `done`
 - Objetivo: crear la superficie de catalogos y canonizar la taxonomia de ocho
   familias con fronteras verificables.
 - Origen en `plan.md`: Bloque 1.
@@ -264,3 +265,5 @@ la fase anterior.
 - `2026-06-15`
   - Division inicial en cinco fases trazables a los bloques del plan.
   - Cuatro entregables vinculantes preservados y reconciliacion final separada.
+  - Fase 1 cerrada con taxonomia canonica, catalog surface, schema, validator,
+    15 fixtures y conformance.

@@ -44,6 +44,15 @@
 - Impact: validation must cross-check manifest/guide coverage and live documentation
   must identify the authoritative owning surface.
 
+## 2026-06-15 - Isolate fixture runners by contract domain
+
+- Decision: patch compatibility fixtures and catalog fixtures use separate runners.
+  The patch fixture runner explicitly excludes `paw/tests/fixtures/catalogs/**`.
+- Reason: each fixture domain has different inputs, result contracts, and diagnostic
+  expectations; treating every `expected.json` as a patch workspace is ambiguous.
+- Impact: patch 03 retains its 20-fixture compatibility contract unchanged, while
+  catalog validation owns its fixture matrix and can grow independently.
+
 ## 2026-06-15 - Apply the provisional paw-foundation commit policy
 
 - Decision: use Conventional Commits, create one coherent SDD preparation commit

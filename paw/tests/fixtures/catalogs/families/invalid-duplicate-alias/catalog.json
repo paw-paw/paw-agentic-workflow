@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "catalog_id": "software-families",
+  "catalog_version": "1.0.0",
+  "families": [
+    {
+      "family_id": "content-knowledge",
+      "provenance_aliases": ["SF-01"],
+      "name": "Content",
+      "primary_intent": "Publish content.",
+      "includes": ["docs"],
+      "excludes": ["apps"],
+      "boundary_questions": ["Is content primary?", "Is publishing central?"],
+      "examples": ["docs"]
+    },
+    {
+      "family_id": "transactional-application",
+      "provenance_aliases": ["SF-01"],
+      "name": "Transactional",
+      "primary_intent": "Run workflows.",
+      "includes": ["apps"],
+      "excludes": ["docs"],
+      "boundary_questions": ["Are workflows primary?", "Is state durable?"],
+      "examples": ["commerce"]
+    }
+  ]
+}

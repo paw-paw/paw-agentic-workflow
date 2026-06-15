@@ -6,7 +6,7 @@
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
 - Fase: `1`
-- Estado: `active`
+- Estado: `done`
 - Ultima actualizacion: `2026-06-15`
 - Owner: sesion Codex activa con aprobacion humana
 - Depende de: preparacion SDD committed; `paw-03` cerrado e integrado
@@ -93,21 +93,21 @@
 
 ### Si entra
 
-- [ ] crear root, README, manifest y guide de families
-- [ ] crear schema de family catalog
-- [ ] crear loader/validator read-only de catalogs
-- [ ] validar exactly-one-primary-family en fixtures de producto
-- [ ] cubrir fronteras docs-only, transactional, service, client y agentic
-- [ ] registrar ownership minimo en docs vivas
+- [x] crear root, README, manifest y guide de families
+- [x] crear schema de family catalog
+- [x] crear loader/validator read-only de catalogs
+- [x] validar exactly-one-primary-family en fixtures de producto
+- [x] cubrir fronteras docs-only, transactional, service, client y agentic
+- [x] registrar ownership minimo en docs vivas
 
 ### No entra
 
-- [ ] capabilities o documentation presets
-- [ ] profiles, concerns, scopes o merge de slots
-- [ ] implementation presets o evidence de tecnologias
-- [ ] adoption records, adapters, workflow o writers
-- [ ] cambios al patch schema v1/v2
-- [ ] publicacion, packaging, Actions o deployment
+- [x] capabilities o documentation presets
+- [x] profiles, concerns, scopes o merge de slots
+- [x] implementation presets o evidence de tecnologias
+- [x] adoption records, adapters, workflow o writers
+- [x] cambios al patch schema v1/v2
+- [x] publicacion, packaging, Actions o deployment
 
 ## 7. Archivos y superficies de trabajo
 
@@ -164,83 +164,89 @@
 
 ### Bloque A - Relectura de fuentes
 
-- [ ] leer el gate aprobado de IDs en `decision.log` antes de crear manifests
-- [ ] releer `handover.md` con foco en eight-family boundaries y stop conditions
-- [ ] releer architecture/index/target map para registrar una unica nueva superficie
-- [ ] releer patch 03 diagnostics, CLI y tests para reutilizar patrones sin mezclar
+- [x] leer el gate aprobado de IDs en `decision.log` antes de crear manifests
+- [x] releer `handover.md` con foco en eight-family boundaries y stop conditions
+- [x] releer architecture/index/target map para registrar una unica nueva superficie
+- [x] releer patch 03 diagnostics, CLI y tests para reutilizar patrones sin mezclar
   contratos
 
 ### Bloque B - Inspeccion de estado actual
 
-- [ ] ejecutar `rg --files paw docs tests` y confirmar que `paw/catalogs/**` no existe
-- [ ] ejecutar `rg -n "catalog|preset|family" paw docs tests` y registrar cualquier
+- [x] ejecutar `rg --files paw docs tests` y confirmar que `paw/catalogs/**` no existe
+- [x] ejecutar `rg -n "catalog|preset|family" paw docs tests` y registrar cualquier
   claim que deba reconciliarse
-- [ ] inspeccionar exports/imports del validator PAW y decidir el minimo comun reusable
+- [x] inspeccionar exports/imports del validator PAW y decidir el minimo comun reusable
   sin cambiar su contrato publico
-- [ ] confirmar que el nuevo validator puede ser read-only y usar solo imports locales
+- [x] confirmar que el nuevo validator puede ser read-only y usar solo imports locales
   o `node:`
 
 ### Bloque C - Edicion por archivo
 
-- [ ] crear `paw/catalogs/README.md` con status, ownership, canonical representation,
+- [x] crear `paw/catalogs/README.md` con status, ownership, canonical representation,
   activation boundaries y catalog map
-- [ ] crear `paw/catalogs/families/catalog.json` con schema version, catalog version,
+- [x] crear `paw/catalogs/families/catalog.json` con schema version, catalog version,
   canonical IDs, provenance aliases, names, primary intents, includes, excludes,
   boundary questions y examples
-- [ ] crear `paw/catalogs/families/README.md` que explique la decision de familia
+- [x] crear `paw/catalogs/families/README.md` que explique la decision de familia
   primaria, productos compuestos y casos frontera sin duplicar arrays normativos
-- [ ] crear `paw/tools/schemas/catalogs/families.schema.json` con required fields,
+- [x] crear `paw/tools/schemas/catalogs/families.schema.json` con required fields,
   enums/shape and `additionalProperties: false`
-- [ ] crear loader de JSON que reporte path y parse errors sin mutar archivos
-- [ ] crear family validator que compruebe schema version, catalog version, unique IDs,
+- [x] crear loader de JSON que reporte path y parse errors sin mutar archivos
+- [x] crear family validator que compruebe schema version, catalog version, unique IDs,
   unique aliases, eight required meanings and complete boundaries
-- [ ] crear product classification fixture contract con exactly one `family_id`
-- [ ] crear fixtures validos para las ocho familias y al menos un producto compuesto
+- [x] crear product classification fixture contract con exactly one `family_id`
+- [x] crear fixtures validos para las ocho familias y al menos un producto compuesto
   que conserve una unica familia
-- [ ] crear fixtures invalidos para unknown family, duplicate IDs, duplicate aliases,
+- [x] crear fixtures invalidos para unknown family, duplicate IDs, duplicate aliases,
   missing boundary fields, zero primary families and multiple primary families
-- [ ] crear contract tests que ejecuten canonical catalog y fixture matrix
-- [ ] agregar `paw/catalogs/**` al canonical registry con role, authority, owner and
+- [x] crear contract tests que ejecuten canonical catalog y fixture matrix
+- [x] agregar `paw/catalogs/**` al canonical registry con role, authority, owner and
   verification default
-- [ ] agregar catalogs a architecture and `paw/README.md` sin cambiar activation state
+- [x] agregar catalogs a architecture and `paw/README.md` sin cambiar activation state
 
 ### Bloque D - Registro de decisiones, hallazgos o blockers
 
-- [ ] registrar IDs aprobados, aliases y rationale en `decision.log`
-- [ ] registrar cualquier reutilizacion o extraccion de helpers del validator de patch
+- [x] registrar IDs aprobados, aliases y rationale en `decision.log`
+- [x] registrar cualquier reutilizacion o extraccion de helpers del validator de patch
   que cambie ownership interno
-- [ ] registrar drift si live docs exigen una reconciliacion mayor que la prevista
-- [ ] detener la fase si una family solo puede explicarse mediante tecnologia o si
+- [x] registrar drift si live docs exigen una reconciliacion mayor que la prevista
+- [x] detener la fase si una family solo puede explicarse mediante tecnologia o si
   dos primary intents no pueden separarse
 
 ### Bloque E - Validacion
 
-- [ ] ejecutar el nuevo catalog validator sobre canonical families
-- [ ] ejecutar el nuevo fixture mode y verificar valid/invalid expectations
-- [ ] ejecutar los contract tests de family catalog
-- [ ] ejecutar `node sdd/tools/validate-sdd.mjs`
-- [ ] ejecutar `node sdd/tools/validate-sdd.mjs --fixtures`
-- [ ] ejecutar `node paw/tools/validate-patches.mjs --json`
-- [ ] ejecutar `node paw/tools/validate-patches.mjs --fixtures --json`
-- [ ] ejecutar `node --test tests/foundation-governance.test.mjs`
-- [ ] ejecutar `node --test tests/core-contracts.test.mjs`
-- [ ] ejecutar `node --test tests/schema-validator-conformance.test.mjs`
-- [ ] ejecutar `git diff --check`
-- [ ] verificar manualmente que no existen writes, external runtime imports, v2
+- [x] ejecutar el nuevo catalog validator sobre canonical families
+- [x] ejecutar el nuevo fixture mode y verificar valid/invalid expectations
+- [x] ejecutar los contract tests de family catalog
+- [x] ejecutar `node sdd/tools/validate-sdd.mjs`
+- [x] ejecutar `node sdd/tools/validate-sdd.mjs --fixtures`
+- [x] ejecutar `node paw/tools/validate-patches.mjs --json`
+- [x] ejecutar `node paw/tools/validate-patches.mjs --fixtures --json`
+- [x] ejecutar `node --test tests/foundation-governance.test.mjs`
+- [x] ejecutar `node --test tests/core-contracts.test.mjs`
+- [x] ejecutar `node --test tests/schema-validator-conformance.test.mjs`
+- [x] ejecutar `git diff --check`
+- [x] verificar manualmente que no existen writes, external runtime imports, v2
   writers o workspaces nuevos
 
 ### Bloque F - Cierre
 
-- [ ] registrar comandos, resultados y counts en la seccion 13
-- [ ] actualizar hallazgos, drift, decisiones, risks and pending work
-- [ ] marcar Fase 1 `done` en `tasks.md` solo despues de validaciones verdes
-- [ ] confirmar que Fase 2 puede referenciar todos los family IDs sin aliases
+- [x] registrar comandos, resultados y counts en la seccion 13
+- [x] actualizar hallazgos, drift, decisiones, risks and pending work
+- [x] marcar Fase 1 `done` en `tasks.md` solo despues de validaciones verdes
+- [x] confirmar que Fase 2 puede referenciar todos los family IDs sin aliases
   temporales
-- [ ] crear uno o mas Conventional Commits de fase segun intenciones/superficies
+- [x] crear uno o mas Conventional Commits de fase segun intenciones/superficies
 
 ## 9. Drift detectado
 
-- Ninguno al crear el backlog.
+- `2026-06-15`
+  - fuente esperada: cada fixture domain conserva su runner.
+  - diferencia encontrada: el runner de patch 03 recogia todo `expected.json` bajo
+    `paw/tests/fixtures/**`.
+  - impacto: los fixtures de catalogs eran interpretados como patch workspaces.
+  - accion: excluir `fixtures/catalogs/**` del runner y contract test de patches.
+  - requiere decision: `no`
 
 ## 10. Hallazgos durante ejecucion
 
@@ -248,6 +254,11 @@
   promover reglas durables.
 - El parser YAML de patch 03 no es apropiado para catalogs anidados; JSON evita
   ampliar su scope.
+- El fixture runner de patch 03 recorria cualquier `expected.json` bajo
+  `paw/tests/fixtures/**` y trataba fixtures de otros dominios como patches.
+  Se acoto a excluir `fixtures/catalogs/**`; cada dominio conserva su propio runner.
+- Los ocho primary intents pudieron expresarse sin tecnologias y los casos docs-only,
+  mobile/desktop y agentic conservaron las fronteras del handoff.
 
 ## 11. Blockers
 
@@ -268,41 +279,65 @@
 
 ### Documentales
 
-- [ ] `paw/catalogs/**` registrado sin competir con precedence global
-- [ ] family guide consistente con canonical manifest
-- [ ] no claims de portability, release, adoption o workflow activation
+- [x] `paw/catalogs/**` registrado sin competir con precedence global
+- [x] family guide consistente con canonical manifest
+- [x] no claims de portability, release, adoption o workflow activation
 
 ### Tecnicas
 
-- [ ] canonical family catalog valid
-- [ ] valid/invalid family fixtures match expectations
-- [ ] existing deterministic suites pass
-- [ ] `git diff --check`
+- [x] canonical family catalog valid
+- [x] valid/invalid family fixtures match expectations
+- [x] existing deterministic suites pass
+- [x] `git diff --check`
 
 ### Manuales
 
-- [ ] IDs canonicos aprobados
-- [ ] eight primary intents disjoint enough for classification
-- [ ] docs-only, mobile/desktop and agentic boundaries preserve handoff meaning
-- [ ] validator remains read-only and runtime-neutral
+- [x] IDs canonicos aprobados
+- [x] eight primary intents disjoint enough for classification
+- [x] docs-only, mobile/desktop and agentic boundaries preserve handoff meaning
+- [x] validator remains read-only and runtime-neutral
 
 ### Resultados
 
-- Pendientes hasta ejecucion.
+- Validacion: canonical family catalog
+  - comando o revision: `node paw/tools/validate-catalogs.mjs --json`
+  - resultado esperado: 8 families, zero errors
+  - resultado obtenido: pass, `family_count: 8`
+  - estado: `pass`
+- Validacion: family fixture matrix
+  - comando o revision: `node paw/tools/validate-catalogs.mjs --fixtures --json`
+  - resultado esperado: all fixture expectations match
+  - resultado obtenido: pass, 15 fixtures
+  - estado: `pass`
+- Validacion: complete automated suite
+  - comando o revision: `node --test paw/tests/contract/*.test.mjs tests/*.test.mjs`
+  - resultado esperado: pass
+  - resultado obtenido: 49 tests, 49 pass
+  - estado: `pass`
+- Validacion: SDD and patch validators
+  - comando o revision: four commands declared in Block E
+  - resultado esperado: pass
+  - resultado obtenido: pass; 4 patches and 20 patch fixtures
+  - estado: `pass`
+- Validacion: whitespace and manual boundaries
+  - comando o revision: `git diff --check` plus source inspection
+  - resultado esperado: no errors, writes, external runtime coupling or activation
+  - resultado obtenido: no errors; LF/CRLF notices only
+  - estado: `pass`
 
 ## 14. Cierre
 
 La fase solo se considera cerrada si:
 
-- [ ] checklist completo o pendientes explicitamente diferidos
-- [ ] assumptions criticas resueltas, aceptadas o escaladas
-- [ ] gate de IDs resuelto y registrado
-- [ ] decisiones relevantes registradas
-- [ ] blockers resueltos o diferidos con razon
-- [ ] drift documentado o resuelto
-- [ ] validaciones requeridas ejecutadas
-- [ ] resultados de validacion registrados
-- [ ] backlog y `tasks.md` sincronizados
+- [x] checklist completo o pendientes explicitamente diferidos
+- [x] assumptions criticas resueltas, aceptadas o escaladas
+- [x] gate de IDs resuelto y registrado
+- [x] decisiones relevantes registradas
+- [x] blockers resueltos o diferidos con razon
+- [x] drift documentado o resuelto
+- [x] validaciones requeridas ejecutadas
+- [x] resultados de validacion registrados
+- [x] backlog y `tasks.md` sincronizados
 
 ## 15. Riesgos y pendientes
 

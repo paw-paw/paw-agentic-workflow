@@ -1,0 +1,14 @@
+{
+  "valid": false,
+  "errorCodes": [
+    "FAMILY_CATALOG_COUNT",
+    "FAMILY_ID_DUPLICATE",
+    "FAMILY_ID_REQUIRED",
+    "FAMILY_ID_REQUIRED",
+    "FAMILY_ID_REQUIRED",
+    "FAMILY_ID_REQUIRED",
+    "FAMILY_ID_REQUIRED",
+    "FAMILY_ID_REQUIRED",
+    "FAMILY_ID_REQUIRED"
+  ]
+}

@@ -45,8 +45,10 @@ export function validateFixtureMatrix(fixturesPath) {
       ],
     });
   }
-  const expectedPaths = listFiles(fixturesRoot).filter((path) =>
-    path.endsWith('expected.json'),
+  const expectedPaths = listFiles(fixturesRoot).filter(
+    (path) =>
+      path.endsWith('expected.json') &&
+      !path.replaceAll('\\', '/').includes('/catalogs/'),
   );
   const harnessDiagnostics = [];
   const observedResults = [];
