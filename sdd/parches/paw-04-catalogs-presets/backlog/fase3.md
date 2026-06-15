@@ -6,7 +6,7 @@
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
 - Fase: `3`
-- Estado: `blocked`
+- Estado: `active`
 - Ultima actualizacion: `2026-06-15`
 - Owner: sesion Codex activa con aprobacion humana
 - Depende de: Fase 2 cerrada
@@ -70,7 +70,7 @@
 
 ### Decisiones previas
 
-- [ ] gate humano: conservar como canonical component IDs:
+- [x] gate humano: conservar como canonical component IDs:
   - `content-delivery-surface`
   - `interactive-web-surface`
   - `native-client-surface`
@@ -82,7 +82,7 @@
   - `data-pipeline`
   - `model-lifecycle`
   - `agentic-orchestrator`
-- [ ] gate humano: conservar como canonical concern IDs:
+- [x] gate humano: conservar como canonical concern IDs:
   - `public-exposure`
   - `personal-data`
   - `regulated-data`
@@ -93,7 +93,7 @@
   - `third-party-extensibility`
   - `privileged-execution`
   - `human-impacting-automation`
-- [ ] registrar gate en `decision.log`
+- [x] registrar gate en `decision.log`
 
 ### Estado tecnico
 
@@ -231,7 +231,7 @@
 
 ## 11. Blockers
 
-- [ ] aprobacion humana de los 11 component IDs y 10 concern IDs
+- Ninguno.
 
 ## 12. Decisiones tomadas
 
@@ -241,6 +241,11 @@
   - Razon: los slugs ya describen responsabilidades estables; prefijarlos duplicaria
     informacion del kind.
   - Areas afectadas: modifier manifest, schemas, fixtures and preset refs.
+- `2026-06-15`
+  - Decision: el owner humano aprobo los 21 IDs propuestos sin cambios.
+  - Razon: preservan responsabilidades y condiciones estables sin seleccionar stack.
+  - Areas afectadas: modifier manifest, schemas, fixtures and implementation preset
+    references.
 
 ## 13. Validaciones
 
@@ -291,5 +296,4 @@ La fase solo se considera cerrada si:
 
 ### Pendientes
 
-- Resolver gate de IDs antes de `sdd-execute-phase`.
 - Fases 4-5 permanecen sin backlog.

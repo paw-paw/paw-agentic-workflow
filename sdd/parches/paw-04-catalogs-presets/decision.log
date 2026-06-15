@@ -76,6 +76,18 @@
   selected preset's requirements. Validators enforce the complete universal set,
   family coverage, and capability reference integrity.
 
+## 2026-06-15 - Approve component profile and concern identifiers
+
+- Decision: approve the eleven component profile slugs and ten concern slugs from the
+  Phase 3 backlog as canonical modifier IDs without changes.
+- Approved by: human patch owner.
+- Reason: the IDs describe stable architectural responsibilities and transversal
+  conditions. `modifier_kind` carries the `component | concern` distinction, so
+  prefixes would be redundant.
+- Impact: implementation presets and future adoption records reference these modifier
+  IDs. Modifier definitions must remain technology-neutral and cannot change document
+  authority or accountable ownership.
+
 ## 2026-06-15 - Apply the provisional paw-foundation commit policy
 
 - Decision: use Conventional Commits, create one coherent SDD preparation commit
