@@ -5,7 +5,7 @@
 - Change id: `paw-04-catalogs-presets`
 - Patch kind: `spec`
 - Lifecycle: `spec-anchored`
-- Estado: `ready-for-backlog`
+- Estado: `closed`
 - Ultima actualizacion: `2026-06-15`
 - Owner: sesion Codex activa con aprobacion humana
 
