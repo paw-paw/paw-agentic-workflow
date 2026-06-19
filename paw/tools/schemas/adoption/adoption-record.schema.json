@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paw.local/schemas/adoption/adoption-record.schema.json",
+  "title": "PAW Adoption Record",
+  "type": "object",
+  "required": [
+    "record_id",
+    "preset_ref",
+    "applicability",
+    "binding_mode",
+    "approval_policy",
+    "resolution_status",
+    "responsible_owner",
+    "evidence",
+    "review_date"
+  ],
+  "properties": {
+    "record_id": { "type": "string" },
+    "preset_ref": { "type": "string" },
+    "applicability": { "enum": ["applicable", "not_applicable", "deferred"] },
+    "binding_mode": { "enum": ["exact", "variant", "exception", "rejected", "new_preset_needed"] },
+    "approval_policy": { "type": "string" },
+    "resolution_status": { "enum": ["resolved", "ready_with_exceptions", "rejected", "unresolved"] },
+    "responsible_owner": { "type": "string" },
+    "evidence": { "type": "array", "items": { "type": "string" } },
+    "review_date": { "type": "string" },
+    "variant_ref": { "type": "string" },
+    "parameters": { "type": "object" },
+    "exceptions": { "type": "array" },
+    "overrides": { "type": "array" },
+    "rejection_reason": { "type": "string" },
+    "new_preset_rationale": { "type": "string" }
+  },
+  "additionalProperties": true
+}

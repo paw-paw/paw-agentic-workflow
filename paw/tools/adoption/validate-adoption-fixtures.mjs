@@ -5,6 +5,7 @@ import { loadJson } from '../catalogs/load-json.mjs';
 import { createDiagnostic } from '../validation/diagnostics.mjs';
 import { createValidationResult } from '../validation/validation-result.mjs';
 import { validateAdapter } from './validate-adapters.mjs';
+import { createImplementationPresetContext, validateAdoptionRecord } from './validate-records.mjs';
 
 function fixtureDirectories(root, relativeRoot) {
   const base = resolve(root, relativeRoot);
@@ -21,8 +22,8 @@ function sameCodes(actual, expected) {
   return JSON.stringify([...actual].sort()) === JSON.stringify([...expected].sort());
 }
 
-export function validateAdoptionFixtures(root) {
-  const directories = fixtureDirectories(root, 'paw/tests/fixtures/adoption/adapters');
+function validateFixtureGroup(root, relativeRoot, validateCase) {
+  const directories = fixtureDirectories(root, relativeRoot);
   const diagnostics = [];
   const validatedPaths = [];
   let validCount = 0;
@@ -37,7 +38,7 @@ export function validateAdoptionFixtures(root) {
     validatedPaths.push(...loadedCase.result.validatedPaths, ...loadedExpected.result.validatedPaths);
     if (!loadedCase.value || !loadedExpected.value) continue;
 
-    const result = validateAdapter(loadedCase.value, { sourcePath: casePath });
+    const result = validateCase(loadedCase.value, casePath);
     validatedPaths.push(...result.validatedPaths);
     const actualCodes = result.diagnostics.filter(({ severity }) => severity === 'error').map(({ code }) => code);
     const expectedCodes = loadedExpected.value.error_codes ?? [];
@@ -59,9 +60,46 @@ export function validateAdoptionFixtures(root) {
     diagnostics,
     validatedPaths,
     evidence: {
-      adapter_fixture_count: directories.length,
-      adapter_fixture_valid_count: validCount,
-      adapter_fixture_invalid_count: invalidCount,
+      fixture_count: directories.length,
+      valid_count: validCount,
+      invalid_count: invalidCount,
+    },
+  });
+}
+
+export function validateAdoptionFixtures(root) {
+  const implementationCatalog = loadJson(resolve(root, 'paw/catalogs/implementation-presets/catalog.json'));
+  const catalogContext = createImplementationPresetContext(implementationCatalog.value);
+  const adapterResult = validateFixtureGroup(
+    root,
+    'paw/tests/fixtures/adoption/adapters',
+    (value, sourcePath) => validateAdapter(value, { sourcePath }),
+  );
+  const recordResult = validateFixtureGroup(
+    root,
+    'paw/tests/fixtures/adoption/records',
+    (value, sourcePath) => validateAdoptionRecord(value, { sourcePath, catalogContext }),
+  );
+
+  return createValidationResult({
+    schemaVersion: 1,
+    diagnostics: [
+      ...implementationCatalog.result.diagnostics,
+      ...adapterResult.diagnostics,
+      ...recordResult.diagnostics,
+    ],
+    validatedPaths: [
+      ...implementationCatalog.result.validatedPaths,
+      ...adapterResult.validatedPaths,
+      ...recordResult.validatedPaths,
+    ],
+    evidence: {
+      adapter_fixture_count: adapterResult.evidence.fixture_count,
+      adapter_fixture_valid_count: adapterResult.evidence.valid_count,
+      adapter_fixture_invalid_count: adapterResult.evidence.invalid_count,
+      record_fixture_count: recordResult.evidence.fixture_count,
+      record_fixture_valid_count: recordResult.evidence.valid_count,
+      record_fixture_invalid_count: recordResult.evidence.invalid_count,
     },
   });
 }

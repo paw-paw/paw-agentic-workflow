@@ -1,0 +1,12 @@
+{
+  "record_id": "reject-rails",
+  "preset_ref": "transactional-rails-monolith",
+  "applicability": "applicable",
+  "binding_mode": "rejected",
+  "approval_policy": "human-approved",
+  "resolution_status": "rejected",
+  "responsible_owner": "repo-maintainers",
+  "evidence": ["API-only product boundary"],
+  "review_date": "2026-12-12",
+  "rejection_reason": "The product is a service API, not a transactional application."
+}

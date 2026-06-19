@@ -1,0 +1,12 @@
+{
+  "record_id": "adopt-next-variant",
+  "preset_ref": "transactional-rails-monolith",
+  "applicability": "applicable",
+  "binding_mode": "variant",
+  "variant_ref": "nextjs-restricted",
+  "approval_policy": "human-approved",
+  "resolution_status": "resolved",
+  "responsible_owner": "repo-maintainers",
+  "evidence": ["react ownership constraint"],
+  "review_date": "2026-12-12"
+}

@@ -6,6 +6,10 @@ An adoption record captures a local decision about whether and how a repository 
 a PAW catalog definition. It is local evidence and binding state, not a reusable
 preset definition.
 
+The materialized schema lives at
+`paw/tools/schemas/adoption/adoption-record.schema.json`. The deterministic
+validation entrypoint is `node paw/tools/validate-adoption.mjs --fixtures`.
+
 ## Required Binding Fields
 
 Every adoption decision must be able to express:
@@ -44,3 +48,10 @@ Overrides are explicit local deviations. They must record:
 
 An override must not edit portable core, copy catalog doctrine into the repository,
 or persist without an owner and review path.
+
+## Validation Boundary
+
+Record validation checks required binding fields, implementation preset references,
+supported variant references, exception status, rejection rationale, and override
+review metadata. It does not decide whether a repository should adopt a preset; that
+comparison belongs to assessments.
