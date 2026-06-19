@@ -13,8 +13,9 @@ PAW is a `pre-alpha` bootstrap under active construction.
 - It is not a stable distribution.
 - Portability is neither implemented nor guaranteed.
 - `paw/core/**` contains live conceptual contracts; `paw/catalogs/**` contains
-  portable family and preset catalogs; `paw/tools/**` and `paw/tests/**` contain the
-  materialized validators, schemas, fixtures, and contract tests.
+  portable family and preset catalogs; `paw/adoption/**` contains portable adoption
+  contracts; `paw/tools/**` and `paw/tests/**` contain the materialized validators,
+  schemas, fixtures, and contract tests.
 - The inherited Spec-Driven Development v1 runtime under `sdd/**` and the `sdd-*` Codex skills remain the only active patch workflow until the governed cutover.
 - There are no v2 writers or active v2 workspaces, package, release automation,
   Pages site, or deployment workflow.
@@ -24,6 +25,7 @@ PAW is a `pre-alpha` bootstrap under active construction.
 
 - `docs/**`: canonical repository governance, architecture, naming, licensing, provenance, and transition documentation.
 - `paw/core/**`: live runtime-neutral PAW contracts.
+- `paw/adoption/**`: portable adoption records, adapter, assessment, and override contracts.
 - Other `paw/**` surfaces: target layout materialized incrementally by their owning governed patches; this does not activate the v2 workflow.
 - `sdd/**`: active v1 Spec-Driven Development runtime and patch workspaces during the transition.
 - `.codex/**`: the real Codex runtime surface, currently containing the v1 `sdd-*` skills and agents.
@@ -54,9 +56,13 @@ node paw/tools/validate-patches.mjs --json
 node paw/tools/validate-patches.mjs --fixtures --json
 node paw/tools/validate-catalogs.mjs --json
 node paw/tools/validate-catalogs.mjs --fixtures --json
+node paw/tools/validate-adoption.mjs --fixtures --json
 node --test paw/tests/contract/patch-parsing.test.mjs
 node --test paw/tests/contract/patch-validation.test.mjs
 node --test paw/tests/contract/validator-cli.test.mjs
+node --test paw/tests/contract/adoption-adapters.test.mjs
+node --test paw/tests/contract/adoption-records.test.mjs
+node --test paw/tests/contract/adoption-assessments.test.mjs
 node --test tests/sdd-validation.test.mjs
 node --test tests/foundation-governance.test.mjs
 node --test tests/core-contracts.test.mjs

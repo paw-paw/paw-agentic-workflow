@@ -25,13 +25,17 @@
 - Portable catalogs for software families, documentation capabilities and presets,
   modifiers, and implementation presets under `paw/catalogs/**`.
 - Deterministic catalog validation, schemas, fixtures, and conformance tests.
+- Portable adoption contracts for repo, stack, and runtime adapters, adoption
+  records, assessments, and controlled overrides under `paw/adoption/**`.
+- Deterministic adoption validation, schemas, fixtures, and contract tests.
 
 ## Not Implemented
 
 - Active `paw/parches/` workspaces.
 - v2 manifest writers or a v2 default workflow.
 - `paw-*` skills or agents.
-- Adapters, adoption records, or assessments.
+- Concrete runtime adapters for Codex, Claude Code, or Antigravity.
+- Adoption automation in a consumer repository.
 - Multi-runtime and multi-repository portability.
 - Packaging, installation automation, release automation, Pages, Actions, or deployment.
 

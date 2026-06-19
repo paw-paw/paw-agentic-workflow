@@ -40,7 +40,8 @@ function fixtureDirectories() {
     .filter(
       (path) =>
         path.endsWith('expected.json') &&
-        !path.replaceAll('\\', '/').includes('/catalogs/'),
+        !path.replaceAll('\\', '/').includes('/catalogs/') &&
+        !path.replaceAll('\\', '/').includes('/adoption/'),
     )
     .map((path) => dirname(path))
     .sort();

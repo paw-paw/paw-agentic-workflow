@@ -21,7 +21,7 @@ const coreFiles = [
 
 test('patch model defines one conceptual mode axis', () => {
   const model = read('paw/core/patch-model.md');
-  const manifest = model.match(/```yaml\n([\s\S]*?)```/)?.[1];
+  const manifest = model.match(/```yaml\r?\n([\s\S]*?)```/)?.[1];
   assert.ok(manifest, 'conceptual manifest block is required');
 
   for (const mode of ['docs-bootstrap', 'intention-first', 'doc-anchored']) {
