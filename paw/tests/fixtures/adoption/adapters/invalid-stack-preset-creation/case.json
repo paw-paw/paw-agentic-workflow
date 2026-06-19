@@ -1,0 +1,19 @@
+{
+  "adapter_type": "stack",
+  "adapter_id": "stack-invalid",
+  "observed_stack": ["rails"],
+  "versions": {},
+  "commands": {},
+  "deployment": {},
+  "operability": {},
+  "checks": [],
+  "implementation_preset_ref": "transactional-application-rails-monolith",
+  "differences": [
+    {
+      "field": "framework",
+      "actual": "custom",
+      "creates_reusable_preset": true
+    }
+  ],
+  "brownfield_constraints": []
+}

@@ -1,0 +1,15 @@
+{
+  "adapter_type": "runtime",
+  "adapter_id": "runtime-invalid",
+  "runtime": "generic-agent",
+  "paths": {},
+  "packaging": {},
+  "triggers": [],
+  "assets": [],
+  "references": [],
+  "scripts": [],
+  "permissions": {},
+  "approvals": {},
+  "optional_capabilities": [],
+  "stack_selection": "rails"
+}

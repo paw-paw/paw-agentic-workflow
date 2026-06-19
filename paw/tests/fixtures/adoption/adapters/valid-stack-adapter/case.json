@@ -1,0 +1,31 @@
+{
+  "adapter_type": "stack",
+  "adapter_id": "stack-static-docs",
+  "observed_stack": ["node", "standard-library"],
+  "versions": {
+    "node": ">=22"
+  },
+  "commands": {
+    "test": "node --test"
+  },
+  "deployment": {
+    "status": "none"
+  },
+  "operability": {
+    "logs": "local"
+  },
+  "checks": ["node --test"],
+  "implementation_preset_ref": "content-knowledge-astro-static",
+  "differences": [
+    {
+      "field": "deployment",
+      "actual": "none",
+      "reason": "pre-alpha repository"
+    }
+  ],
+  "brownfield_constraints": [
+    {
+      "constraint": "existing v1 workspace remains active"
+    }
+  ]
+}

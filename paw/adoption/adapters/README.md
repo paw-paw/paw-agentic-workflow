@@ -22,6 +22,9 @@ A repo adapter maps local repository facts:
 It must not contain universal PAW rules, define catalog values, or override live
 documentation precedence.
 
+The materialized schema lives at
+`paw/tools/schemas/adoption/repo-adapter.schema.json`.
+
 ## Stack Adapter
 
 A stack adapter records technical reality:
@@ -35,6 +38,9 @@ A stack adapter records technical reality:
 
 It must not choose the software family, choose the agentic runtime, or become an
 implicit implementation preset.
+
+The materialized schema lives at
+`paw/tools/schemas/adoption/stack-adapter.schema.json`.
 
 ## Runtime Adapter
 
@@ -50,8 +56,15 @@ A runtime adapter maps PAW capabilities to an agent runtime:
 It must not modify architecture, stack, required documentation, methodology, or
 catalog identity.
 
+The materialized schema lives at
+`paw/tools/schemas/adoption/runtime-adapter.schema.json`.
+
 ## Resolution Rule
 
 When adapters disagree, treat the mismatch as evidence of drift or local constraint.
 Do not let an adapter silently rewrite a catalog, core contract, or repository
 authority source.
+
+The deterministic adapter validator lives under `paw/tools/adoption/**` and is
+exposed through `node paw/tools/validate-adoption.mjs --fixtures`. It validates
+contract examples and fixtures; it is not a runtime adapter implementation.

@@ -1,0 +1,13 @@
+{
+  "adapter_type": "repo",
+  "adapter_id": "repo-invalid",
+  "authority_index": "docs/README.md",
+  "repo_paths": {},
+  "commands": {},
+  "documentation_map": {},
+  "surfaces": {},
+  "vcs_policy": {},
+  "repo_rules": [],
+  "root_detection": {},
+  "universal_rules": ["All PAW repositories must use this command."]
+}

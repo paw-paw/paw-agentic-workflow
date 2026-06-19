@@ -1,0 +1,31 @@
+{
+  "adapter_type": "repo",
+  "adapter_id": "repo-paw-local",
+  "authority_index": "docs/README.md",
+  "repo_paths": {
+    "root": ".",
+    "docs": "docs",
+    "patches": "sdd/parches"
+  },
+  "commands": {
+    "validate": "node sdd/tools/validate-sdd.mjs"
+  },
+  "documentation_map": {
+    "governance": "docs/governance"
+  },
+  "surfaces": {
+    "public": ["README.md"],
+    "operational": ["AGENTS.md"],
+    "private": ["_inbox"]
+  },
+  "vcs_policy": {
+    "branch_prefix": "codex/"
+  },
+  "repo_rules": [
+    "Keep _inbox ignored."
+  ],
+  "root_detection": {
+    "strategy": "ancestor-with",
+    "markers": [".git", "docs/README.md"]
+  }
+}

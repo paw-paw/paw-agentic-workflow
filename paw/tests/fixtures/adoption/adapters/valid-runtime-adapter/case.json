@@ -1,0 +1,22 @@
+{
+  "adapter_type": "runtime",
+  "adapter_id": "runtime-generic-agent",
+  "runtime": "generic-agent",
+  "paths": {
+    "skills": ".agent/skills"
+  },
+  "packaging": {
+    "mode": "local"
+  },
+  "triggers": ["manual"],
+  "assets": [],
+  "references": [],
+  "scripts": [],
+  "permissions": {
+    "filesystem": "workspace"
+  },
+  "approvals": {
+    "network": "human"
+  },
+  "optional_capabilities": ["subagents"]
+}

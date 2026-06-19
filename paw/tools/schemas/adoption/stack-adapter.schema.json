@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paw.local/schemas/adoption/stack-adapter.schema.json",
+  "title": "PAW Stack Adapter",
+  "type": "object",
+  "required": [
+    "adapter_type",
+    "adapter_id",
+    "observed_stack",
+    "versions",
+    "commands",
+    "deployment",
+    "operability",
+    "checks",
+    "implementation_preset_ref",
+    "differences",
+    "brownfield_constraints"
+  ],
+  "properties": {
+    "adapter_type": { "const": "stack" },
+    "adapter_id": { "type": "string" },
+    "observed_stack": { "type": "array", "items": { "type": "string" } },
+    "versions": { "type": "object" },
+    "commands": { "type": "object" },
+    "deployment": { "type": "object" },
+    "operability": { "type": "object" },
+    "checks": { "type": "array", "items": { "type": "string" } },
+    "implementation_preset_ref": { "type": "string" },
+    "differences": { "type": "array" },
+    "brownfield_constraints": { "type": "array" }
+  },
+  "additionalProperties": true
+}
