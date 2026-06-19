@@ -42,6 +42,10 @@ Tools may expose additional routing or approval steps. They must preserve these 
 
 An artifact becomes ready for the next transition only when its blocking decisions and critical assumptions are resolved, accepted, or escalated.
 
+The portable workflow contract defines operation-level routing and readiness checks.
+Those checks must use the artifact responsibilities in this document instead of
+creating hidden ownership in a tool or adapter.
+
 ## Patch and Phase State
 
 Patch status belongs to `patch.yaml`.
@@ -68,6 +72,10 @@ Before closure, every durable rule, check, binding, or public behavior introduce
 `cierre.md` records the disposition and evidence. It does not become the live owner of promoted rules.
 
 Closure is blocked when a durable rule has no valid live destination or when required reconciliation is incomplete.
+
+Bootstrap write reports and generated validation output are evidence artifacts. They
+do not own durable rules after closure unless the rule is promoted into a live
+authoritative source.
 
 ## Historical Memory
 

@@ -65,7 +65,10 @@ An active patch cannot silently override an authoritative live document. A misma
 | `paw/catalogs/**` | contract, verifiable | contract | authoritative | portable family and preset catalog definitions | catalog contract owner | automated |
 | `paw/adoption/**` | contract, verifiable | contract | authoritative | portable adoption records, adapters, assessments, and override contracts | adoption contract owner | automated |
 | `paw/parches/README.md` | strategic, operational | operational | supporting | inactive future workspace orientation | future owning patch | automated |
-| `paw/orchestration/README.md` | strategic, operational | operational | supporting | inactive orchestration orientation | future owning patch | automated |
+| `paw/orchestration/README.md` | strategic, operational | operational | supporting | orchestration contract map and activation boundary | workflow contract owner | automated |
+| `paw/orchestration/workflow.md` | contract, operational | contract | authoritative | portable workflow operations, routing, readiness, states, and invalid transitions | workflow contract owner | automated |
+| `paw/orchestration/bootstrap.md` | contract, operational | contract | authoritative | portable documentation bootstrap discover, define, write, approval, and closure rules | workflow contract owner | automated |
+| `paw/orchestration/conformance.md` | contract, verifiable | contract | authoritative | portable document roles, conformance chain, rule dispositions, enforcement, and manual evidence | workflow contract owner | automated |
 | `paw/tools/README.md` | strategic, operational | operational | supporting | PAW schema and validator inventory plus incremental activation boundary | owning governed patch | automated |
 | `paw/tests/README.md` | strategic, operational | operational | supporting | PAW compatibility fixtures, conformance inventory, and activation boundary | owning governed patch | automated |
 | `sdd/**` | operational, verifiable | operational | supporting | active v1 runtime until cutover | v1 transition owner | automated |

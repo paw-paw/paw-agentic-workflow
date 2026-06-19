@@ -47,6 +47,10 @@ Promotion requires:
 
 Durable rules, checks, and bindings introduced by a patch must be promoted before closure. If no valid destination exists, closure is blocked or the work is explicitly deferred through a decision gate.
 
+Documentation bootstrap follows the same rule. Discovery observations and write
+reports are evidence; they become authority only through an explicit
+evidence-to-authority decision and an approved live destination.
+
 ## Closed Patches
 
 A closed patch is historical memory. It preserves intent, decisions, execution evidence, drift, validation, and residual risk.
