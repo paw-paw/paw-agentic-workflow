@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paw.local/schemas/workflow/bootstrap.schema.json",
+  "title": "PAW documentation bootstrap contract",
+  "type": "object",
+  "required": ["schema_version", "discover", "define", "write", "closure"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "discover": { "$ref": "#/$defs/operation" },
+    "define": { "$ref": "#/$defs/operation" },
+    "write": {
+      "allOf": [
+        { "$ref": "#/$defs/operation" },
+        {
+          "type": "object",
+          "required": ["requires_approval_gate", "requires_creates_docs"],
+          "properties": {
+            "requires_approval_gate": { "const": true },
+            "requires_creates_docs": { "const": true }
+          }
+        }
+      ]
+    },
+    "closure": {
+      "type": "array",
+      "items": {
+        "enum": ["completed", "completed-with-accepted-gaps", "blocked", "abandoned"]
+      }
+    }
+  },
+  "$defs": {
+    "operation": {
+      "type": "object",
+      "required": ["artifacts", "must_not"],
+      "properties": {
+        "artifacts": { "type": "array", "items": { "type": "string" } },
+        "must_not": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
