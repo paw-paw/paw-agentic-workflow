@@ -1,0 +1,22 @@
+# Decision Log: paw-06-workflow-conformance
+
+## 2026-06-19 - Base patch 06 on origin/main after patch 05 merge
+
+- Decision: create `codex/paw-06-workflow-conformance` from `origin/main`.
+- Reason: the handoff declares `paw-05-adapter-adoption-contracts` as a dependency.
+  `origin/main` contains the patch 05 merge commit `c939698`; the local `main` was
+  behind and did not contain the patch 05 close commit.
+- Impact: patch 06 planning can reference `paw/adoption/**` and the updated live
+  registry as merged context. The local `main` branch was not rewritten.
+
+## 2026-06-19 - Apply the provisional paw-foundation commit policy
+
+- Decision: use Conventional Commits, create one coherent SDD preparation commit
+  before implementation, create at least one commit after each closed and validated
+  phase, split a phase when intentions or surfaces differ, and create a separate
+  non-substantive closure commit after `sdd-close`.
+- Reason: the human explicitly required this provisional discipline for this patch.
+- Impact: do not present this policy as portable PAW doctrine. Canonical treatment is
+  deferred to `paw-08-vcs-pr-integration`. Do not publish WIP, squash, rebase,
+  force-push, or rewrite history without human authorization. Substantive work after
+  closure requires reopening, validation, and a new closure.
