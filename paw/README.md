@@ -23,6 +23,7 @@ Each child directory is owned by the governed patch that introduces its contract
 ## Map
 
 - `core/`: live conceptual PAW contracts.
+- `catalogs/`: portable family and preset contracts introduced incrementally.
 - `parches/`: future fixed patch workspace root.
 - `orchestration/`: future runtime-neutral orchestration contracts.
 - `tools/`: deterministic PAW schemas and tooling, introduced by owning patches.

@@ -1,0 +1,145 @@
+# Decision Log: paw-04-catalogs-presets
+
+## 2026-06-15 - Materialize portable catalogs under a dedicated PAW surface
+
+- Decision: place canonical catalog manifests and their human guides under
+  `paw/catalogs/**`; keep schemas and validation under `paw/tools/**`, and fixtures
+  and conformance under `paw/tests/**`.
+- Reason: catalogs are portable contracts but are explicitly outside the micro-core.
+  They are not tooling, evidence, adapters, orchestration, or patch state.
+- Impact: architecture, target layout, documentation registry, transition status, and
+  bootstrap status must register the new surface before closure. Materialization does
+  not activate v2 workspaces, writers, adoption, or automatic recommendation.
+
+## 2026-06-15 - Use semantic canonical identifiers
+
+- Decision: canonical catalog IDs use stable semantic slugs. Research identifiers
+  such as `SF-01` and `IP-SF01-ASTRO-01` may be retained as provenance aliases but do
+  not become normative identities by inertia.
+- Reason: the final handoff requires IDs to be canonicalized during this patch and
+  prohibits blind copying of temporary research identifiers.
+- Impact: each catalog phase must present its definitive ID set at a human gate before
+  closure, and schemas must reject unknown canonical IDs.
+
+## 2026-06-15 - Approve canonical software family identifiers
+
+- Decision: use these canonical family IDs:
+  `content-knowledge`, `transactional-application`, `service-api`,
+  `library-package-sdk`, `cli-developer-tool`, `client-application`,
+  `data-machine-learning`, and `agentic-system`.
+- Approved by: human patch owner.
+- Reason: the IDs name stable product intent rather than technologies and preserve
+  the eight-family taxonomy without ordinal identity.
+- Impact: `SF-01` through `SF-08` remain provenance aliases in the family catalog.
+  Downstream documentation presets, modifiers, and implementation presets must use
+  the canonical IDs for references.
+
+## 2026-06-15 - Keep structured manifests canonical and guides explanatory
+
+- Decision: machine-readable manifests are the canonical representation of catalog
+  semantics. Markdown guides explain intent, boundaries, trade-offs, and examples but
+  must not redefine manifest values.
+- Reason: the approved model requires machine-readable and human-readable catalogs
+  without duplicated doctrine.
+- Impact: validation must cross-check manifest/guide coverage and live documentation
+  must identify the authoritative owning surface.
+
+## 2026-06-15 - Isolate fixture runners by contract domain
+
+- Decision: patch compatibility fixtures and catalog fixtures use separate runners.
+  The patch fixture runner explicitly excludes `paw/tests/fixtures/catalogs/**`.
+- Reason: each fixture domain has different inputs, result contracts, and diagnostic
+  expectations; treating every `expected.json` as a patch workspace is ambiguous.
+- Impact: patch 03 retains its 20-fixture compatibility contract unchanged, while
+  catalog validation owns its fixture matrix and can grow independently.
+
+## 2026-06-15 - Approve capability and documentation preset identifiers
+
+- Decision: approve the eight universal capability IDs, fourteen normalized
+  transversal capability IDs, and eight `docs-<family-id>` documentation preset IDs
+  proposed in the Phase 2 backlog without changes.
+- Approved by: human patch owner.
+- Reason: the IDs describe stable semantic obligations, preserve the normalized
+  capability splits approved in research, and reference canonical family identities.
+- Impact: modifiers introduced in Phase 3 must reference these capability IDs.
+  Documentation presets use canonical family IDs and must not define repository
+  authority, precedence, or accountable ownership.
+
+## 2026-06-15 - Share universal requirements across documentation presets
+
+- Decision: store the eight universal capability references once in the documentation
+  preset catalog. Each family preset declares only its family-specific capability
+  contributions.
+- Reason: repeating universal requirements in eight presets would duplicate doctrine
+  and create avoidable drift.
+- Impact: effective preset calculation combines `universal_requirements` with the
+  selected preset's requirements. Validators enforce the complete universal set,
+  family coverage, and capability reference integrity.
+
+## 2026-06-15 - Approve component profile and concern identifiers
+
+- Decision: approve the eleven component profile slugs and ten concern slugs from the
+  Phase 3 backlog as canonical modifier IDs without changes.
+- Approved by: human patch owner.
+- Reason: the IDs describe stable architectural responsibilities and transversal
+  conditions. `modifier_kind` carries the `component | concern` distinction, so
+  prefixes would be redundant.
+- Impact: implementation presets and future adoption records reference these modifier
+  IDs. Modifier definitions must remain technology-neutral and cannot change document
+  authority or accountable ownership.
+
+## 2026-06-15 - Keep applied modifier instances outside canonical definitions
+
+- Decision: `paw/catalogs/modifiers/catalog.json` contains reusable definitions only.
+  Applied instances with `family_id`, `scope_ref`, and activation inputs are validation
+  fixtures now and future adoption inputs later.
+- Reason: mixing definitions and product instances would make the portable catalog
+  repository-specific and blur the adapter/adoption boundary.
+- Impact: slot identity remains `capability_id + scope_ref`; `manual-conflict`
+  returns an unresolved conflict and never changes authority or ownership.
+
+## 2026-06-15 - Apply the provisional paw-foundation commit policy
+
+- Decision: use Conventional Commits, create one coherent SDD preparation commit
+  before implementation, create at least one commit after each closed and validated
+  phase, split phases when intentions or surfaces differ, and create a separate
+  non-substantive closure commit after `sdd-close`.
+- Reason: the human approved this temporary discipline for `paw-foundation`.
+- Impact: do not present this policy as portable PAW doctrine; canonical treatment is
+  deferred to `paw-08-vcs-pr-integration`. Do not publish WIP, squash, rebase,
+  force-push, or rewrite history without human authorization. Substantive work after
+  closure requires reopening, validation, and a new closure.
+
+## 2026-06-15 - Approve implementation preset identities and support policy
+
+- Decision: approve the eleven canonical implementation preset IDs and the named
+  subordinate variants proposed in the Phase 4 backlog. Support constraints may
+  reference only explicit upstream-supported stable lines and must not use `latest`,
+  implicit current versions, prereleases, or EOL lines.
+- Approved by: human patch owner.
+- Freshness: each constraint records official source evidence, lifecycle status, and
+  verification date. `review_by` is the earlier of the nearest known lifecycle
+  milestone and 180 days after `reviewed_at`.
+- Reopen triggers: security advisories, EOL announcements, new major lines, removed
+  dependency support, or failed compatibility validation.
+- Reason: the approved IDs preserve the handoff's golden paths while named variants
+  remain bounded replacements rather than freely composable technology choices.
+- Impact: Phase 4 may verify primary sources and materialize implementation presets.
+  No preset activates adoption, workflow v2, or an agent runtime.
+
+## 2026-06-15 - Interpret heterogeneous upstream lifecycle evidence conservatively
+
+- Decision: record an explicit stable line only when an official upstream source
+  supports that claim. A release page without a durable support window does not
+  become an implied lifecycle guarantee; it requires a locked stable version,
+  compatibility evidence, and review within 180 days.
+- Evidence: official Astro upgrade policy, Rails maintenance policy, PostgreSQL
+  versioning table, Go release policy, Node.js release schedule, Python documentation,
+  Flutter stable release windows, Tauri releases, Dagster releases, LangGraph docs,
+  Laravel support policy, Django supported-version table, and Next.js support policy.
+- Reason: upstream projects use incompatible support models, and PAW must not turn a
+  current release observation into unsupported portable doctrine.
+- Impact: canonical defaults may declare verified supported lines. Remaining named
+  variants may use locked stable release requirements when upstream does not publish
+  a portable lifecycle window. Phase 4 closure is allowed after those source records,
+  validators, fixtures, and review windows pass.

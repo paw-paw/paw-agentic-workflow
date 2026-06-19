@@ -1,0 +1,952 @@
+{
+  "schema_version": 1,
+  "catalog_id": "implementation-presets",
+  "catalog_version": "1.0.0",
+  "review_policy": {
+    "maximum_review_age_days": 180,
+    "version_rule": "explicit-supported-stable-lines-only",
+    "forbidden_references": [
+      "latest",
+      "current",
+      "next",
+      "canary",
+      "beta",
+      "rc"
+    ],
+    "reopen_triggers": [
+      "security-advisory",
+      "eol-announcement",
+      "new-major-line",
+      "removed-dependency-support",
+      "failed-compatibility-validation"
+    ]
+  },
+  "completeness_dimensions": [
+    "quality",
+    "security",
+    "supply_chain",
+    "testing",
+    "operation",
+    "verification"
+  ],
+  "sources": [
+    {
+      "source_id": "astro-support",
+      "publisher": "Astro",
+      "url": "https://docs.astro.build/en/upgrade-astro/",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Astro 6.x"
+      ]
+    },
+    {
+      "source_id": "docusaurus-releases",
+      "publisher": "Meta Open Source",
+      "url": "https://docusaurus.io/docs/versioning",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Docusaurus 3.x"
+      ]
+    },
+    {
+      "source_id": "rails-maintenance",
+      "publisher": "Ruby on Rails",
+      "url": "https://guides.rubyonrails.org/maintenance_policy.html",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Rails 8.1.x"
+      ]
+    },
+    {
+      "source_id": "postgres-versioning",
+      "publisher": "PostgreSQL Global Development Group",
+      "url": "https://www.postgresql.org/support/versioning/",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "PostgreSQL 14.x",
+        "PostgreSQL 15.x",
+        "PostgreSQL 16.x",
+        "PostgreSQL 17.x",
+        "PostgreSQL 18.x"
+      ]
+    },
+    {
+      "source_id": "go-releases",
+      "publisher": "The Go Authors",
+      "url": "https://go.dev/doc/devel/release",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Go 1.25.x",
+        "Go 1.26.x"
+      ]
+    },
+    {
+      "source_id": "node-releases",
+      "publisher": "OpenJS Foundation",
+      "url": "https://nodejs.org/en/about/previous-releases",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Node.js 24.x LTS"
+      ]
+    },
+    {
+      "source_id": "python-docs",
+      "publisher": "Python Software Foundation",
+      "url": "https://docs.python.org/3/contents.html",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Python 3.14.x"
+      ]
+    },
+    {
+      "source_id": "flutter-archive",
+      "publisher": "Flutter project",
+      "url": "https://docs.flutter.dev/install/archive",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Flutter 3.44.x stable"
+      ]
+    },
+    {
+      "source_id": "tauri-releases",
+      "publisher": "Tauri Programme",
+      "url": "https://v2.tauri.app/release/",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Tauri 2.x"
+      ]
+    },
+    {
+      "source_id": "dagster-releases",
+      "publisher": "Dagster Labs",
+      "url": "https://docs.dagster.io/about/releases",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Dagster stable 1.x"
+      ]
+    },
+    {
+      "source_id": "langgraph-overview",
+      "publisher": "LangChain",
+      "url": "https://docs.langchain.com/oss/python/langgraph/overview",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "LangGraph stable 1.x"
+      ]
+    },
+    {
+      "source_id": "chi-releases",
+      "publisher": "go-chi",
+      "url": "https://github.com/go-chi/chi/releases",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "locked stable release required"
+      ]
+    },
+    {
+      "source_id": "pgx-releases",
+      "publisher": "jackc/pgx",
+      "url": "https://github.com/jackc/pgx/releases",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "locked stable release required"
+      ]
+    },
+    {
+      "source_id": "sqlc-releases",
+      "publisher": "sqlc-dev",
+      "url": "https://github.com/sqlc-dev/sqlc/releases",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "locked stable release required"
+      ]
+    },
+    {
+      "source_id": "openapi-spec",
+      "publisher": "OpenAPI Initiative",
+      "url": "https://spec.openapis.org/oas/v3.2.0.html",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "OpenAPI 3.2.0"
+      ]
+    },
+    {
+      "source_id": "hono-releases",
+      "publisher": "Hono",
+      "url": "https://github.com/honojs/hono/releases",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "locked stable release required"
+      ]
+    },
+    {
+      "source_id": "nestjs-releases",
+      "publisher": "NestJS",
+      "url": "https://github.com/nestjs/nest/releases",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "locked stable release required"
+      ]
+    },
+    {
+      "source_id": "spring-boot-support",
+      "publisher": "Spring",
+      "url": "https://spring.io/projects/spring-boot/",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Spring Boot 4.1.x"
+      ]
+    },
+    {
+      "source_id": "rust-install",
+      "publisher": "Rust Project",
+      "url": "https://www.rust-lang.org/tools/install/",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "locked stable toolchain required"
+      ]
+    },
+    {
+      "source_id": "cobra-releases",
+      "publisher": "spf13/cobra",
+      "url": "https://github.com/spf13/cobra/releases",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "locked stable release required"
+      ]
+    },
+    {
+      "source_id": "typer-releases",
+      "publisher": "FastAPI",
+      "url": "https://github.com/fastapi/typer/releases",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "locked stable release required"
+      ]
+    },
+    {
+      "source_id": "expo-sdk",
+      "publisher": "Expo",
+      "url": "https://docs.expo.dev/versions/latest/",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Expo SDK 56.x"
+      ]
+    },
+    {
+      "source_id": "electron-timelines",
+      "publisher": "Electron",
+      "url": "https://www.electronjs.org/docs/latest/tutorial/electron-timelines",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "locked supported Electron line required"
+      ]
+    },
+    {
+      "source_id": "parquet-docs",
+      "publisher": "Apache Parquet",
+      "url": "https://parquet.apache.org/docs/",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Parquet format specification"
+      ]
+    },
+    {
+      "source_id": "duckdb-docs",
+      "publisher": "DuckDB",
+      "url": "https://duckdb.org/docs/stable/installation",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "DuckDB stable documentation line"
+      ]
+    },
+    {
+      "source_id": "polars-docs",
+      "publisher": "Polars",
+      "url": "https://pola.rs/",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "locked stable release required"
+      ]
+    },
+    {
+      "source_id": "mlflow-docs",
+      "publisher": "MLflow Project",
+      "url": "https://mlflow.org/docs/latest/index.html",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "locked stable release required"
+      ]
+    },
+    {
+      "source_id": "dbt-versions",
+      "publisher": "dbt Labs",
+      "url": "https://docs.getdbt.com/docs/dbt-versions",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "dbt Core 1.11.x",
+        "dbt Core 1.10.x"
+      ]
+    },
+    {
+      "source_id": "airflow-supported",
+      "publisher": "Apache Airflow",
+      "url": "https://airflow.apache.org/docs/apache-airflow/stable/installation/supported-versions.html",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Airflow 3.2.x stable"
+      ]
+    },
+    {
+      "source_id": "prefect-docs",
+      "publisher": "Prefect",
+      "url": "https://docs.prefect.io/v3/get-started",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "Prefect 3.x"
+      ]
+    },
+    {
+      "source_id": "autogen-docs",
+      "publisher": "Microsoft",
+      "url": "https://microsoft.github.io/autogen/stable/",
+      "verified_at": "2026-06-15",
+      "supported_lines": [
+        "AutoGen stable documentation line"
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "preset_id": "content-astro-static",
+      "family_id": "content-knowledge",
+      "envelope": "Astro, TypeScript, content collections, static output and CDN delivery.",
+      "invariants": [
+        "repository-reviewable content",
+        "static production output"
+      ],
+      "applicability": [
+        "content-first sites"
+      ],
+      "contraindications": [
+        "primary transactional workflow"
+      ],
+      "supported_profiles": [
+        "content-delivery-surface"
+      ],
+      "supported_concerns": [
+        "public-exposure"
+      ],
+      "fixed_decisions": [
+        "Astro 6.x",
+        "static output"
+      ],
+      "bounded_choices": [
+        "CDN provider"
+      ],
+      "parameters": [
+        "deployment region"
+      ],
+      "variants": [
+        {
+          "variant_id": "product-docs-docusaurus",
+          "envelope_replacement": "Docusaurus 3.x product-documentation site.",
+          "use_when": "versioned product documentation is primary"
+        }
+      ],
+      "source_refs": [
+        "astro-support",
+        "docusaurus-releases"
+      ],
+      "reviewed_at": "2026-06-15",
+      "review_by": "2026-12-12",
+      "quality": "content schema and link checks",
+      "security": "dependency audit and hosting headers",
+      "supply_chain": "locked reproducible build",
+      "testing": "unit, link and accessibility checks",
+      "operation": "deploy, rollback and cache procedure",
+      "verification": "preview and production artifact review"
+    },
+    {
+      "preset_id": "transactional-rails-monolith",
+      "family_id": "transactional-application",
+      "envelope": "Rails monolith, PostgreSQL, server-rendered HTML, jobs, authentication and simple deployment.",
+      "invariants": [
+        "one deployable boundary",
+        "server-enforced authorization"
+      ],
+      "applicability": [
+        "durable business workflows"
+      ],
+      "contraindications": [
+        "API is the primary product"
+      ],
+      "supported_profiles": [
+        "interactive-web-surface",
+        "asynchronous-processor",
+        "persistent-store"
+      ],
+      "supported_concerns": [
+        "personal-data",
+        "multi-tenancy",
+        "public-exposure"
+      ],
+      "fixed_decisions": [
+        "Rails 8.1.x",
+        "PostgreSQL 18.x",
+        "server-rendered HTML"
+      ],
+      "bounded_choices": [
+        "job backend",
+        "authentication implementation"
+      ],
+      "parameters": [
+        "deployment region"
+      ],
+      "variants": [
+        {
+          "variant_id": "laravel-monolith",
+          "envelope_replacement": "Laravel monolith with supported PHP and PostgreSQL lines.",
+          "use_when": "Laravel capability is sustained"
+        },
+        {
+          "variant_id": "django-admin-first",
+          "envelope_replacement": "Django admin-first application on Python 3.14.x.",
+          "use_when": "administrative workflows dominate"
+        },
+        {
+          "variant_id": "nextjs-restricted",
+          "envelope_replacement": "Next.js full-stack application with one explicit server boundary.",
+          "use_when": "React ownership is a durable constraint"
+        }
+      ],
+      "source_refs": [
+        "rails-maintenance",
+        "postgres-versioning",
+        "python-docs",
+        "node-releases"
+      ],
+      "reviewed_at": "2026-06-15",
+      "review_by": "2026-12-12",
+      "quality": "domain and transaction review",
+      "security": "authn, authz and CSRF controls",
+      "supply_chain": "locked dependencies and provenance",
+      "testing": "model, request, job and browser tests",
+      "operation": "migration, backup and rollback",
+      "verification": "workflow acceptance and restore evidence"
+    },
+    {
+      "preset_id": "service-go-api",
+      "family_id": "service-api",
+      "envelope": "Go, chi, pgx, sqlc and OpenAPI with one explicit service boundary.",
+      "invariants": [
+        "reviewed OpenAPI contract",
+        "typed database access"
+      ],
+      "applicability": [
+        "synchronous service contracts"
+      ],
+      "contraindications": [
+        "interactive application is primary"
+      ],
+      "supported_profiles": [
+        "synchronous-service",
+        "persistent-store"
+      ],
+      "supported_concerns": [
+        "public-exposure",
+        "public-compatibility-commitment",
+        "high-availability"
+      ],
+      "fixed_decisions": [
+        "Go 1.26.x",
+        "chi",
+        "pgx and sqlc",
+        "OpenAPI"
+      ],
+      "bounded_choices": [
+        "authentication mechanism",
+        "telemetry exporter"
+      ],
+      "parameters": [
+        "connection limits"
+      ],
+      "variants": [
+        {
+          "variant_id": "hono-edge",
+          "envelope_replacement": "Hono service on a named compatible edge runtime.",
+          "use_when": "edge placement is measured"
+        },
+        {
+          "variant_id": "fastapi-ml",
+          "envelope_replacement": "FastAPI service on Python 3.14.x.",
+          "use_when": "Python ML integration is primary"
+        },
+        {
+          "variant_id": "nestjs-typescript",
+          "envelope_replacement": "NestJS service on Node.js 24.x LTS.",
+          "use_when": "TypeScript service ownership is established"
+        },
+        {
+          "variant_id": "spring-java",
+          "envelope_replacement": "Spring service on an upstream-supported Java LTS line.",
+          "use_when": "JVM operations are established"
+        }
+      ],
+      "source_refs": [
+        "go-releases",
+        "postgres-versioning",
+        "node-releases",
+        "python-docs",
+        "chi-releases",
+        "pgx-releases",
+        "sqlc-releases",
+        "openapi-spec",
+        "hono-releases",
+        "nestjs-releases",
+        "spring-boot-support"
+      ],
+      "reviewed_at": "2026-06-15",
+      "review_by": "2026-12-12",
+      "quality": "contract and concurrency review",
+      "security": "input, auth and transport controls",
+      "supply_chain": "verified modules and locked generators",
+      "testing": "unit, integration, contract and load checks",
+      "operation": "health, telemetry and rollback",
+      "verification": "OpenAPI conformance evidence"
+    },
+    {
+      "preset_id": "package-typescript",
+      "family_id": "library-package-sdk",
+      "envelope": "TypeScript package for Node.js 24.x LTS consumers.",
+      "invariants": [
+        "intentional public exports",
+        "reviewed semantic compatibility"
+      ],
+      "applicability": [
+        "TypeScript and JavaScript consumers"
+      ],
+      "contraindications": [
+        "consumer ecosystem is Python or Go"
+      ],
+      "supported_profiles": [
+        "reusable-package"
+      ],
+      "supported_concerns": [
+        "public-compatibility-commitment"
+      ],
+      "fixed_decisions": [
+        "Node.js 24.x LTS",
+        "TypeScript compiler",
+        "ESM-first"
+      ],
+      "bounded_choices": [
+        "dual CJS compatibility when evidenced"
+      ],
+      "parameters": [
+        "package name"
+      ],
+      "variants": [],
+      "source_refs": [
+        "node-releases"
+      ],
+      "reviewed_at": "2026-06-15",
+      "review_by": "2026-12-12",
+      "quality": "API and type review",
+      "security": "dependency and install-script review",
+      "supply_chain": "lockfile and package-content checks",
+      "testing": "runtime and type-level consumer tests",
+      "operation": "publish, deprecate and rollback",
+      "verification": "packed clean-room install"
+    },
+    {
+      "preset_id": "package-python",
+      "family_id": "library-package-sdk",
+      "envelope": "Python package with pyproject metadata, typed API and wheel/sdist artifacts.",
+      "invariants": [
+        "explicit public API",
+        "isolated build"
+      ],
+      "applicability": [
+        "Python consumers"
+      ],
+      "contraindications": [
+        "consumer ecosystem is TypeScript or Go"
+      ],
+      "supported_profiles": [
+        "reusable-package"
+      ],
+      "supported_concerns": [
+        "public-compatibility-commitment"
+      ],
+      "fixed_decisions": [
+        "Python 3.14.x",
+        "pyproject.toml",
+        "wheel and sdist"
+      ],
+      "bounded_choices": [
+        "locked build backend"
+      ],
+      "parameters": [
+        "distribution name"
+      ],
+      "variants": [],
+      "source_refs": [
+        "python-docs"
+      ],
+      "reviewed_at": "2026-06-15",
+      "review_by": "2026-12-12",
+      "quality": "API and typing review",
+      "security": "dependency and build-isolation review",
+      "supply_chain": "hash-locked build inputs",
+      "testing": "interpreter and clean-install tests",
+      "operation": "publish, yank and deprecate",
+      "verification": "wheel and sdist inspection"
+    },
+    {
+      "preset_id": "package-go",
+      "family_id": "library-package-sdk",
+      "envelope": "Go module on supported Go lines with a minimal public surface.",
+      "invariants": [
+        "stable module path",
+        "explicit minimum Go line"
+      ],
+      "applicability": [
+        "Go consumers"
+      ],
+      "contraindications": [
+        "consumer ecosystem is TypeScript or Python"
+      ],
+      "supported_profiles": [
+        "reusable-package"
+      ],
+      "supported_concerns": [
+        "public-compatibility-commitment"
+      ],
+      "fixed_decisions": [
+        "Go 1.25.x or Go 1.26.x",
+        "Go modules"
+      ],
+      "bounded_choices": [
+        "minimum supported Go line"
+      ],
+      "parameters": [
+        "module path"
+      ],
+      "variants": [],
+      "source_refs": [
+        "go-releases"
+      ],
+      "reviewed_at": "2026-06-15",
+      "review_by": "2026-12-12",
+      "quality": "API, examples and static analysis",
+      "security": "vulnerability and unsafe-use review",
+      "supply_chain": "module checksum verification",
+      "testing": "supported-line consumer tests",
+      "operation": "tag, retract and deprecate",
+      "verification": "proxy-resolved consumer build"
+    },
+    {
+      "preset_id": "cli-go-cobra",
+      "family_id": "cli-developer-tool",
+      "envelope": "Go and Cobra CLI with stable commands, errors, configuration and exit behavior.",
+      "invariants": [
+        "intentional stdout and stderr",
+        "documented exit codes"
+      ],
+      "applicability": [
+        "distributed operational or developer CLI"
+      ],
+      "contraindications": [
+        "incidental private script"
+      ],
+      "supported_profiles": [
+        "cli-surface"
+      ],
+      "supported_concerns": [
+        "privileged-execution",
+        "public-compatibility-commitment"
+      ],
+      "fixed_decisions": [
+        "Go 1.26.x",
+        "Cobra command model"
+      ],
+      "bounded_choices": [
+        "configuration format"
+      ],
+      "parameters": [
+        "binary name"
+      ],
+      "variants": [
+        {
+          "variant_id": "rust-structured-cli",
+          "envelope_replacement": "Rust CLI with explicit MSRV.",
+          "use_when": "memory safety or performance is material"
+        },
+        {
+          "variant_id": "python-typer-internal",
+          "envelope_replacement": "Typer CLI on Python 3.14.x.",
+          "use_when": "internal Python tooling is primary"
+        }
+      ],
+      "source_refs": [
+        "go-releases",
+        "python-docs",
+        "cobra-releases",
+        "rust-install",
+        "typer-releases"
+      ],
+      "reviewed_at": "2026-06-15",
+      "review_by": "2026-12-12",
+      "quality": "command and error review",
+      "security": "path and privilege-boundary review",
+      "supply_chain": "verified modules and binary build",
+      "testing": "unit, golden-output and end-to-end tests",
+      "operation": "install, upgrade and rollback",
+      "verification": "clean-host invocation matrix"
+    },
+    {
+      "preset_id": "client-flutter-mobile",
+      "family_id": "client-application",
+      "envelope": "Flutter mobile-first application with explicit permissions and release channels.",
+      "invariants": [
+        "mobile lifecycle is primary",
+        "permissions are minimized"
+      ],
+      "applicability": [
+        "cross-platform mobile-first clients"
+      ],
+      "contraindications": [
+        "desktop lifecycle is primary"
+      ],
+      "supported_profiles": [
+        "native-client-surface"
+      ],
+      "supported_concerns": [
+        "offline-operation",
+        "personal-data"
+      ],
+      "fixed_decisions": [
+        "Flutter 3.44.x stable",
+        "bundled Dart line"
+      ],
+      "bounded_choices": [
+        "state-management package"
+      ],
+      "parameters": [
+        "application identifiers"
+      ],
+      "variants": [
+        {
+          "variant_id": "expo-react-native",
+          "envelope_replacement": "Expo/React Native client on an explicit supported SDK line.",
+          "use_when": "React capability is durable"
+        }
+      ],
+      "source_refs": [
+        "flutter-archive",
+        "expo-sdk"
+      ],
+      "reviewed_at": "2026-06-15",
+      "review_by": "2026-08-01",
+      "quality": "platform UX review",
+      "security": "permission, storage and transport review",
+      "supply_chain": "locked packages and signed artifacts",
+      "testing": "unit, widget, integration and device tests",
+      "operation": "store rollout and rollback",
+      "verification": "signed-build device matrix"
+    },
+    {
+      "preset_id": "client-tauri-desktop",
+      "family_id": "client-application",
+      "envelope": "Tauri desktop-first application with constrained native capabilities and signed updates.",
+      "invariants": [
+        "desktop lifecycle is primary",
+        "native commands are allowlisted"
+      ],
+      "applicability": [
+        "cross-platform desktop-first clients"
+      ],
+      "contraindications": [
+        "mobile lifecycle is primary"
+      ],
+      "supported_profiles": [
+        "native-client-surface"
+      ],
+      "supported_concerns": [
+        "offline-operation",
+        "privileged-execution"
+      ],
+      "fixed_decisions": [
+        "Tauri 2.x",
+        "Rust command boundary"
+      ],
+      "bounded_choices": [
+        "web UI framework"
+      ],
+      "parameters": [
+        "bundle identifiers"
+      ],
+      "variants": [
+        {
+          "variant_id": "electron-brownfield",
+          "envelope_replacement": "Electron application on Node.js 24.x LTS with hardened renderer boundaries.",
+          "use_when": "an established Electron platform exists"
+        }
+      ],
+      "source_refs": [
+        "tauri-releases",
+        "node-releases",
+        "electron-timelines"
+      ],
+      "reviewed_at": "2026-06-15",
+      "review_by": "2026-12-12",
+      "quality": "desktop UX and native-boundary review",
+      "security": "capability, CSP and updater review",
+      "supply_chain": "locked dependencies and signed bundles",
+      "testing": "unit, integration and packaged-app tests",
+      "operation": "signing, update rollout and rollback",
+      "verification": "installed-artifact platform matrix"
+    },
+    {
+      "preset_id": "data-python-dagster",
+      "family_id": "data-machine-learning",
+      "envelope": "Python, Dagster, Parquet/DuckDB, Polars and MLflow with lineage and replay.",
+      "invariants": [
+        "owned data assets",
+        "explicit reprocessing",
+        "traceable model artifacts"
+      ],
+      "applicability": [
+        "data pipelines and model lifecycle"
+      ],
+      "contraindications": [
+        "warehouse transformations are the sole responsibility"
+      ],
+      "supported_profiles": [
+        "data-pipeline",
+        "model-lifecycle",
+        "persistent-store"
+      ],
+      "supported_concerns": [
+        "personal-data",
+        "regulated-data",
+        "human-impacting-automation"
+      ],
+      "fixed_decisions": [
+        "Python 3.14.x",
+        "Dagster stable 1.x",
+        "Parquet and DuckDB",
+        "Polars",
+        "MLflow"
+      ],
+      "bounded_choices": [
+        "object store",
+        "execution environment"
+      ],
+      "parameters": [
+        "retention period"
+      ],
+      "variants": [
+        {
+          "variant_id": "dbt-warehouse-first",
+          "envelope_replacement": "dbt-centered warehouse transformation envelope.",
+          "use_when": "warehouse transformations are primary"
+        },
+        {
+          "variant_id": "airflow-existing",
+          "envelope_replacement": "Airflow envelope preserving an established deployment.",
+          "use_when": "Airflow is an operational constraint"
+        },
+        {
+          "variant_id": "prefect-existing",
+          "envelope_replacement": "Prefect envelope preserving an established deployment.",
+          "use_when": "Prefect is an operational constraint"
+        }
+      ],
+      "source_refs": [
+        "python-docs",
+        "dagster-releases",
+        "parquet-docs",
+        "duckdb-docs",
+        "polars-docs",
+        "mlflow-docs",
+        "dbt-versions",
+        "airflow-supported",
+        "prefect-docs"
+      ],
+      "reviewed_at": "2026-06-15",
+      "review_by": "2026-12-12",
+      "quality": "schema, lineage and data-quality review",
+      "security": "data access and secret review",
+      "supply_chain": "locked environments and provenance",
+      "testing": "unit, asset, replay and evaluation tests",
+      "operation": "backfill, retry and retention runbooks",
+      "verification": "lineage and reproducibility evidence"
+    },
+    {
+      "preset_id": "agentic-python-langgraph",
+      "family_id": "agentic-system",
+      "envelope": "Python and LangGraph with checkpoints, evaluations, observability and tool boundaries.",
+      "invariants": [
+        "runtime remains replaceable",
+        "tool effects are governed",
+        "evals are first-class"
+      ],
+      "applicability": [
+        "material autonomous product behavior"
+      ],
+      "contraindications": [
+        "LLM use is subordinate and non-autonomous"
+      ],
+      "supported_profiles": [
+        "agentic-orchestrator",
+        "persistent-store"
+      ],
+      "supported_concerns": [
+        "privileged-execution",
+        "human-impacting-automation",
+        "personal-data"
+      ],
+      "fixed_decisions": [
+        "Python 3.14.x",
+        "LangGraph stable 1.x",
+        "durable checkpoints"
+      ],
+      "bounded_choices": [
+        "model provider",
+        "telemetry backend",
+        "checkpoint store"
+      ],
+      "parameters": [
+        "budget limits",
+        "approval thresholds"
+      ],
+      "variants": [
+        {
+          "variant_id": "autogen-prototype",
+          "envelope_replacement": "AutoGen prototype with non-production scope and exit criteria.",
+          "use_when": "time-bounded interaction prototyping is the goal"
+        },
+        {
+          "variant_id": "proprietary-sdk-bounded",
+          "envelope_replacement": "Named proprietary SDK behind an isolated adapter and exit path.",
+          "use_when": "a required provider capability is otherwise unavailable"
+        }
+      ],
+      "source_refs": [
+        "python-docs",
+        "langgraph-overview",
+        "autogen-docs"
+      ],
+      "reviewed_at": "2026-06-15",
+      "review_by": "2026-12-12",
+      "quality": "graph, prompt, tool and failure-mode review",
+      "security": "tool authorization and sandbox review",
+      "supply_chain": "locked runtime and provider inventory",
+      "testing": "unit, trajectory, adversarial and regression evals",
+      "operation": "budgets, tracing, recovery and kill procedures",
+      "verification": "eval thresholds and audited action traces"
+    }
+  ]
+}

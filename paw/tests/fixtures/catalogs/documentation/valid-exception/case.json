@@ -1,0 +1,15 @@
+{
+  "kind":"exception",
+  "record":{
+    "exception_id":"EX-1",
+    "affected_requirements":["security:system"],
+    "reason":"Temporary migration constraint",
+    "approved_by":"security-owner",
+    "owner":"product-owner",
+    "created_at":"2026-06-15",
+    "expires_at":"2026-07-15",
+    "risk":"Temporary reduced coverage",
+    "compensating_controls":["manual review"],
+    "reopen_trigger":"expiry or material exposure change"
+  }
+}

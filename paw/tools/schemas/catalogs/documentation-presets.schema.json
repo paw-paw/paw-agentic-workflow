@@ -1,0 +1,18 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"paw/tools/schemas/catalogs/documentation-presets.schema.json",
+  "title":"PAW documentation preset catalog",
+  "type":"object",
+  "required":["schema_version","catalog_id","catalog_version","declared_applicability","effective_applicability","universal_requirements","exception_contract","presets"],
+  "additionalProperties":false,
+  "properties":{
+    "schema_version":{"type":"integer","enum":[1]},
+    "catalog_id":{"type":"string","enum":["documentation-presets"]},
+    "catalog_version":{"type":"string","pattern":"^\\d+\\.\\d+\\.\\d+$"},
+    "declared_applicability":{"type":"array","minItems":4,"maxItems":4},
+    "effective_applicability":{"type":"array","minItems":4,"maxItems":4},
+    "universal_requirements":{"type":"array","minItems":8,"maxItems":8},
+    "exception_contract":{"type":"object"},
+    "presets":{"type":"array","minItems":8,"maxItems":8}
+  }
+}

@@ -103,10 +103,12 @@ test('live status documents distinguish materialization from activation', () => 
   const bootstrap = read('docs/governance/BOOTSTRAP-STATUS.md');
   const transition = read('docs/governance/V1-TRANSITION.md');
 
-  assert.match(readme, /materialized schema v2, dual validator, fixtures, and contract tests/);
+  assert.match(readme, /portable family and preset catalogs/);
+  assert.match(readme, /materialized validators, schemas, fixtures, and contract tests/);
   assert.match(readme, /no v2 writers or active v2 workspaces/i);
   assert.match(architecture, /Materialized validation support does not change the active workflow/);
   assert.match(bootstrap, /Physical patch schema v2 and dual-read v1\/v2 manifest validation/);
   assert.doesNotMatch(bootstrap, /Not Implemented[\s\S]*PAW schema v2/);
-  assert.match(transition, /Schema v2 and dual-read validator materialized by patch 03/);
+  assert.match(transition, /Schema v2, dual-read validator, and catalog validators materialized/);
+  assert.match(transition, /Materialized catalogs and validators; not adoption automation/);
 });

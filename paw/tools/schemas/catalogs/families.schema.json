@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paw/tools/schemas/catalogs/families.schema.json",
+  "title": "PAW software family catalog",
+  "type": "object",
+  "required": ["schema_version", "catalog_id", "catalog_version", "families"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "integer", "enum": [1] },
+    "catalog_id": { "type": "string", "enum": ["software-families"] },
+    "catalog_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "families": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "family_id",
+          "provenance_aliases",
+          "name",
+          "primary_intent",
+          "includes",
+          "excludes",
+          "boundary_questions",
+          "examples"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "family_id": { "type": "string", "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$" },
+          "provenance_aliases": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "pattern": "^SF-[0-9]{2}$" }
+          },
+          "name": { "type": "string", "minLength": 1 },
+          "primary_intent": { "type": "string", "minLength": 1 },
+          "includes": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+          "excludes": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+          "boundary_questions": { "type": "array", "minItems": 2, "items": { "type": "string", "minLength": 1 } },
+          "examples": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+        }
+      }
+    }
+  }
+}

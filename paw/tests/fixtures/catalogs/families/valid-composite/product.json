@@ -1,0 +1,5 @@
+{
+  "product_id": "commerce-with-api-worker-package",
+  "primary_families": ["transactional-application"],
+  "component_hints": ["service-api", "asynchronous-processor", "library-package-sdk"]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "catalog_id": "documentation-presets",
+  "catalog_version": "1.0.0",
+  "declared_applicability": ["required", "conditional", "optional", "not_in_base"],
+  "effective_applicability": ["required", "conditional_inactive", "optional", "not_applicable"],
+  "universal_requirements": [
+    "intent-outcomes",
+    "scope-assumptions-constraints",
+    "stakeholders-users",
+    "domain-vocabulary-rules",
+    "context-boundaries-dependencies",
+    "validation-acceptance-evidence",
+    "decisions-ownership-freshness",
+    "authority-precedence-conformance"
+  ],
+  "exception_contract": {
+    "required_fields": ["exception_id", "affected_requirements", "reason", "approved_by", "owner", "created_at", "expires_at", "risk", "compensating_controls", "reopen_trigger"]
+  },
+  "presets": [
+    {"preset_id":"docs-content-knowledge","family_id":"content-knowledge","requirements":[{"capability_id":"security","applicability":"conditional","trigger_ref":"exposure-or-privilege"},{"capability_id":"accessibility","applicability":"required","trigger_ref":null},{"capability_id":"seo-discoverability","applicability":"conditional","trigger_ref":"public-discovery"}]},
+    {"preset_id":"docs-transactional-application","family_id":"transactional-application","requirements":[{"capability_id":"security","applicability":"required","trigger_ref":null},{"capability_id":"accessibility","applicability":"required","trigger_ref":null},{"capability_id":"privacy","applicability":"conditional","trigger_ref":"personal-data"},{"capability_id":"operations-support","applicability":"conditional","trigger_ref":"operated-service"}]},
+    {"preset_id":"docs-service-api","family_id":"service-api","requirements":[{"capability_id":"security","applicability":"required","trigger_ref":null},{"capability_id":"accessibility","applicability":"not_in_base","trigger_ref":null},{"capability_id":"operations-support","applicability":"conditional","trigger_ref":"operated-service"},{"capability_id":"integration-examples","applicability":"conditional","trigger_ref":"external-consumers"}]},
+    {"preset_id":"docs-library-package-sdk","family_id":"library-package-sdk","requirements":[{"capability_id":"security","applicability":"conditional","trigger_ref":"exposure-or-privilege"},{"capability_id":"accessibility","applicability":"not_in_base","trigger_ref":null},{"capability_id":"integration-examples","applicability":"required","trigger_ref":null},{"capability_id":"distribution-integrity","applicability":"conditional","trigger_ref":"published-artifact"}]},
+    {"preset_id":"docs-cli-developer-tool","family_id":"cli-developer-tool","requirements":[{"capability_id":"security","applicability":"conditional","trigger_ref":"exposure-or-privilege"},{"capability_id":"accessibility","applicability":"conditional","trigger_ref":"human-interaction"},{"capability_id":"integration-examples","applicability":"conditional","trigger_ref":"automation-consumers"},{"capability_id":"distribution-integrity","applicability":"conditional","trigger_ref":"published-artifact"}]},
+    {"preset_id":"docs-client-application","family_id":"client-application","requirements":[{"capability_id":"security","applicability":"required","trigger_ref":null},{"capability_id":"accessibility","applicability":"required","trigger_ref":null},{"capability_id":"privacy","applicability":"conditional","trigger_ref":"personal-data"},{"capability_id":"continuity-recovery","applicability":"conditional","trigger_ref":"durable-local-state"}]},
+    {"preset_id":"docs-data-machine-learning","family_id":"data-machine-learning","requirements":[{"capability_id":"security","applicability":"conditional","trigger_ref":"exposure-or-privilege"},{"capability_id":"accessibility","applicability":"not_in_base","trigger_ref":null},{"capability_id":"privacy","applicability":"conditional","trigger_ref":"personal-data"},{"capability_id":"data-evolution-reprocessing","applicability":"required","trigger_ref":null},{"capability_id":"model-development-evaluation","applicability":"conditional","trigger_ref":"model-lifecycle"}]},
+    {"preset_id":"docs-agentic-system","family_id":"agentic-system","requirements":[{"capability_id":"security","applicability":"required","trigger_ref":null},{"capability_id":"accessibility","applicability":"not_in_base","trigger_ref":null},{"capability_id":"agent-traceability-audit","applicability":"required","trigger_ref":null},{"capability_id":"agent-containment-recovery","applicability":"required","trigger_ref":null},{"capability_id":"privacy","applicability":"conditional","trigger_ref":"personal-data"}]}
+  ]
+}

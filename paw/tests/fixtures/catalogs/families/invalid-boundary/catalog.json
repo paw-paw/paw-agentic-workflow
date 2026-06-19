@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "catalog_id": "software-families",
+  "catalog_version": "1.0.0",
+  "families": [
+    {
+      "family_id": "content-knowledge",
+      "provenance_aliases": ["SF-01"],
+      "name": "Content",
+      "primary_intent": "Publish content.",
+      "includes": [],
+      "excludes": [],
+      "boundary_questions": [],
+      "examples": []
+    }
+  ]
+}

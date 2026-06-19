@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"paw/tools/schemas/catalogs/capabilities.schema.json",
+  "title":"PAW documentation capability catalog",
+  "type":"object",
+  "required":["schema_version","catalog_id","catalog_version","capabilities"],
+  "additionalProperties":false,
+  "properties":{
+    "schema_version":{"type":"integer","enum":[1]},
+    "catalog_id":{"type":"string","enum":["documentation-capabilities"]},
+    "catalog_version":{"type":"string","pattern":"^\\d+\\.\\d+\\.\\d+$"},
+    "capabilities":{"type":"array","minItems":22,"maxItems":22,"items":{"type":"object","required":["capability_id","category","purpose","merge_strategy","allowed_roles","expected_evidence","reopen_triggers"],"additionalProperties":false}}
+  }
+}

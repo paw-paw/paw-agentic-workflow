@@ -37,7 +37,11 @@ function snapshot(path) {
 
 function fixtureDirectories() {
   return listFiles(fixturesRoot)
-    .filter((path) => path.endsWith('expected.json'))
+    .filter(
+      (path) =>
+        path.endsWith('expected.json') &&
+        !path.replaceAll('\\', '/').includes('/catalogs/'),
+    )
     .map((path) => dirname(path))
     .sort();
 }
