@@ -1,0 +1,27 @@
+{
+  "record_id": "adopt-with-exception",
+  "preset_ref": "content-astro-static",
+  "applicability": "applicable",
+  "binding_mode": "exception",
+  "approval_policy": "human-approved",
+  "resolution_status": "ready_with_exceptions",
+  "responsible_owner": "repo-maintainers",
+  "evidence": ["brownfield deploy constraint"],
+  "review_date": "2026-09-01",
+  "exceptions": [
+    {
+      "reason": "Existing host cannot provide CDN headers yet.",
+      "scope": "deployment"
+    }
+  ],
+  "overrides": [
+    {
+      "substituted_value": "existing static host",
+      "reason": "Brownfield hosting constraint",
+      "scope": "deployment",
+      "approved_by": "repo-maintainers",
+      "review_condition": "before public release",
+      "conformance_impact": "ready_with_exceptions"
+    }
+  ]
+}

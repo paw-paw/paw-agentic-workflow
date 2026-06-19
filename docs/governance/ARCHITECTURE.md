@@ -10,6 +10,7 @@ This document defines the ownership and boundaries of PAW repository layers. It 
 | --- | --- | --- | --- |
 | Portable doctrine | live `paw/core/` contracts | Small, runtime-neutral PAW contracts shared across implementations | Contain repo-specific commands, prompts, or deployment policy |
 | Catalogs | `paw/catalogs/` | Portable family, requirement, modifier, and preset definitions | Select a concrete repository adoption or redefine core authority |
+| Adoption contracts | `paw/adoption/` | Portable contracts for adoption records, adapters, assessments, and controlled local overrides | Activate adoption automation or let local adapters rewrite catalogs, core, or repository authority |
 | Patch workspaces | active `sdd/parches/`; target `paw/parches/` | Traceable memory and execution state for one governed change | Replace live authoritative documents |
 | Orchestration | active `sdd/orchestration/`; target `paw/orchestration/` | Route work through lifecycle stages and decision gates | Become portable doctrine or hide product decisions |
 | Tooling | active v1 entrypoints in `sdd/tools/`; materialized PAW validator in `paw/tools/` | Deterministic validation and local utilities | Define policy solely through implementation |

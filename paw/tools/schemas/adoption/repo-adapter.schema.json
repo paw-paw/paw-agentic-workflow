@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paw.local/schemas/adoption/repo-adapter.schema.json",
+  "title": "PAW Repo Adapter",
+  "type": "object",
+  "required": [
+    "adapter_type",
+    "adapter_id",
+    "authority_index",
+    "repo_paths",
+    "commands",
+    "documentation_map",
+    "surfaces",
+    "vcs_policy",
+    "repo_rules",
+    "root_detection"
+  ],
+  "properties": {
+    "adapter_type": { "const": "repo" },
+    "adapter_id": { "type": "string" },
+    "authority_index": { "type": "string" },
+    "repo_paths": { "type": "object" },
+    "commands": { "type": "object" },
+    "documentation_map": { "type": "object" },
+    "surfaces": { "type": "object" },
+    "vcs_policy": { "type": "object" },
+    "repo_rules": { "type": "array", "items": { "type": "string" } },
+    "root_detection": { "type": "object" }
+  },
+  "additionalProperties": true
+}

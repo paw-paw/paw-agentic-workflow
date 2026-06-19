@@ -1,0 +1,26 @@
+{
+  "record_id": "bad-override",
+  "preset_ref": "content-astro-static",
+  "applicability": "applicable",
+  "binding_mode": "exception",
+  "approval_policy": "human-approved",
+  "resolution_status": "ready_with_exceptions",
+  "responsible_owner": "repo-maintainers",
+  "evidence": ["override without review"],
+  "review_date": "2026-12-12",
+  "exceptions": [
+    {
+      "reason": "Temporary host",
+      "scope": "deployment"
+    }
+  ],
+  "overrides": [
+    {
+      "substituted_value": "temporary host",
+      "reason": "Brownfield constraint",
+      "scope": "deployment",
+      "approved_by": "repo-maintainers",
+      "conformance_impact": "ready_with_exceptions"
+    }
+  ]
+}

@@ -31,6 +31,12 @@ This directory is reserved for future deterministic tools that validate or opera
   implementation preset catalogs plus their fixture matrices.
 - `validate-catalogs.mjs` exposes canonical and fixture catalog validation through a
   deterministic CLI.
+- `schemas/adoption/**` define materialized adoption adapter, record, and assessment
+  shapes.
+- `adoption/**` validates adapter boundaries, adoption records, overrides,
+  assessments, catalog references, and adoption fixture matrices.
+- `validate-adoption.mjs` exposes adoption fixture validation through a deterministic
+  CLI.
 
 The parser supports top-level mappings, simple string/integer/null scalars, empty
 arrays, block arrays of simple scalars, comments, and blank lines. It rejects nested
@@ -52,6 +58,7 @@ node paw/tools/validate-patches.mjs --help
 node paw/tools/validate-patches.mjs --version
 node paw/tools/validate-catalogs.mjs --json
 node paw/tools/validate-catalogs.mjs --fixtures --json
+node paw/tools/validate-adoption.mjs --fixtures --json
 ```
 
 Exit code `0` means success, `1` means validation errors, and `2` means invalid usage

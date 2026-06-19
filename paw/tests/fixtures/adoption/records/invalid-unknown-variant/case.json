@@ -1,0 +1,12 @@
+{
+  "record_id": "bad-variant",
+  "preset_ref": "service-go-api",
+  "applicability": "applicable",
+  "binding_mode": "variant",
+  "variant_ref": "rails-monolith",
+  "approval_policy": "human-approved",
+  "resolution_status": "resolved",
+  "responsible_owner": "repo-maintainers",
+  "evidence": ["incorrect variant"],
+  "review_date": "2026-12-12"
+}

@@ -1,0 +1,44 @@
+{
+  "assessment_id": "brownfield-content",
+  "flow": "brownfield",
+  "family_ref": "content-knowledge",
+  "documentation_preset_ref": "docs-content-knowledge",
+  "modifier_refs": ["content-delivery-surface", "public-exposure"],
+  "implementation_preset_ref": "content-astro-static",
+  "adoption_record": {
+    "record_id": "adopt-content-exception",
+    "preset_ref": "content-astro-static",
+    "applicability": "applicable",
+    "binding_mode": "exception",
+    "approval_policy": "human-approved",
+    "resolution_status": "ready_with_exceptions",
+    "responsible_owner": "repo-maintainers",
+    "evidence": ["observed static docs repo"],
+    "review_date": "2026-09-01",
+    "exceptions": [
+      {
+        "reason": "Existing deploy path lacks CDN controls.",
+        "scope": "deployment"
+      }
+    ],
+    "overrides": [
+      {
+        "substituted_value": "existing static host",
+        "reason": "Brownfield hosting constraint",
+        "scope": "deployment",
+        "approved_by": "repo-maintainers",
+        "review_condition": "before public release",
+        "conformance_impact": "ready_with_exceptions"
+      }
+    ]
+  },
+  "stack_realization": {
+    "observed_before_adoption": true,
+    "stack": ["astro", "node"]
+  },
+  "comparison": {
+    "status": "ready_with_exceptions",
+    "differences": ["deployment"]
+  },
+  "evidence": ["repo scan", "command inventory"]
+}

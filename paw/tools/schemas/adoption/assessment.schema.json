@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paw.local/schemas/adoption/assessment.schema.json",
+  "title": "PAW Adoption Assessment",
+  "type": "object",
+  "required": [
+    "assessment_id",
+    "flow",
+    "family_ref",
+    "documentation_preset_ref",
+    "modifier_refs",
+    "implementation_preset_ref",
+    "adoption_record",
+    "stack_realization",
+    "comparison",
+    "evidence"
+  ],
+  "properties": {
+    "assessment_id": { "type": "string" },
+    "flow": { "enum": ["greenfield", "brownfield"] },
+    "family_ref": { "type": "string" },
+    "documentation_preset_ref": { "type": "string" },
+    "modifier_refs": { "type": "array", "items": { "type": "string" } },
+    "implementation_preset_ref": { "type": "string" },
+    "variant_ref": { "type": "string" },
+    "adoption_record": { "type": "object" },
+    "stack_realization": { "type": "object" },
+    "comparison": { "type": "object" },
+    "evidence": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

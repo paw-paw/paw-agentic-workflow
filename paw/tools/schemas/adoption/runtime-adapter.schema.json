@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paw.local/schemas/adoption/runtime-adapter.schema.json",
+  "title": "PAW Runtime Adapter",
+  "type": "object",
+  "required": [
+    "adapter_type",
+    "adapter_id",
+    "runtime",
+    "paths",
+    "packaging",
+    "triggers",
+    "assets",
+    "references",
+    "scripts",
+    "permissions",
+    "approvals",
+    "optional_capabilities"
+  ],
+  "properties": {
+    "adapter_type": { "const": "runtime" },
+    "adapter_id": { "type": "string" },
+    "runtime": { "type": "string" },
+    "paths": { "type": "object" },
+    "packaging": { "type": "object" },
+    "triggers": { "type": "array" },
+    "assets": { "type": "array" },
+    "references": { "type": "array" },
+    "scripts": { "type": "array" },
+    "permissions": { "type": "object" },
+    "approvals": { "type": "object" },
+    "optional_capabilities": { "type": "array" }
+  },
+  "additionalProperties": true
+}

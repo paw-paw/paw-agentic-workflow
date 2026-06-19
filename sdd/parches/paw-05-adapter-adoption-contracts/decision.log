@@ -1,0 +1,36 @@
+# Decision Log: paw-05-adapter-adoption-contracts
+
+## 2026-06-19 - Base patch 05 on the closed patch 04 branch
+
+- Decision: create `codex/paw-05-adapter-adoption-contracts` and fast-forward it
+  onto `patch/paw-04-catalogs-presets` before drafting SDD artifacts.
+- Reason: the handoff declares `paw-04-catalogs-presets` as a dependency, and the
+  closed patch 04 branch contains the catalog contracts that patch 05 must reference.
+- Impact: patch 05 planning can reference `paw/catalogs/**` as live input on this
+  branch. This does not merge patch 04 into `main` or rewrite history.
+
+## 2026-06-19 - Apply the provisional paw-foundation commit policy
+
+- Decision: use Conventional Commits, create one coherent SDD preparation commit
+  before implementation, create at least one commit after each closed and validated
+  phase, split a phase when intentions or surfaces differ, and create a separate
+  non-substantive closure commit after `sdd-close`.
+- Reason: the human explicitly required this provisional discipline for this patch.
+- Impact: do not present this policy as portable PAW doctrine. Canonical treatment is
+  deferred to `paw-08-vcs-pr-integration`. Do not publish WIP, squash, rebase,
+  force-push, or rewrite history without human authorization. Substantive work after
+  closure requires reopening, validation, and a new closure.
+
+## 2026-06-19 - Use a dedicated adoption surface for portable adoption contracts
+
+- Decision: plan patch 05 around a new `paw/adoption/**` surface for portable
+  adoption contracts, adapter contract documentation, adoption record rules,
+  assessment rules, override semantics, and examples.
+- Reason: adapter and adoption contracts are not micro-core patch semantics,
+  catalog definitions, tool implementation, test evidence, runtime integration, or
+  repository-local governance. A dedicated surface keeps those responsibilities
+  separate while allowing schemas and validators to stay under `paw/tools/**`.
+- Impact: implementation must update the documentation registry and transition docs
+  before closure. `paw/adoption/**` must not activate v2 workspaces, runtime
+  adapters, automatic stack selection, installation, or portability claims.
+

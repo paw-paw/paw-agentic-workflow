@@ -29,6 +29,10 @@ This directory is reserved for future portable fixtures, examples, compatibility
 - `fixtures/catalogs/**` contains positive and negative catalog evidence for
   classifications, documentation applicability, modifier composition, and
   implementation preset constraints.
+- `contract/adoption-*.test.mjs` covers adapter boundaries, adoption records,
+  overrides, assessment flows, and catalog reference validation.
+- `fixtures/adoption/**` contains positive and negative evidence for adapters,
+  records, and assessments.
 
 ## Ownership
 
