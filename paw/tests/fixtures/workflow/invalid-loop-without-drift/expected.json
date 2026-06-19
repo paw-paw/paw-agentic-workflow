@@ -1,0 +1,4 @@
+{
+  "valid": false,
+  "error_codes": ["WORKFLOW_LOOP_WITHOUT_DRIFT_RECORD"]
+}
