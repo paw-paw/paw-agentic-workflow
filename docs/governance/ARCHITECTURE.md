@@ -12,7 +12,7 @@ This document defines the ownership and boundaries of PAW repository layers. It 
 | Catalogs | `paw/catalogs/` | Portable family, requirement, modifier, and preset definitions | Select a concrete repository adoption or redefine core authority |
 | Adoption contracts | `paw/adoption/` | Portable contracts for adoption records, adapters, assessments, and controlled local overrides | Activate adoption automation or let local adapters rewrite catalogs, core, or repository authority |
 | Patch workspaces | active `sdd/parches/`; target `paw/parches/` | Traceable memory and execution state for one governed change | Replace live authoritative documents |
-| Orchestration | active `sdd/orchestration/`; target `paw/orchestration/` | Route work through lifecycle stages and decision gates | Become portable doctrine or hide product decisions |
+| Orchestration | active `sdd/orchestration/`; materialized contracts in `paw/orchestration/` | Define runtime-neutral lifecycle routing, bootstrap, conformance, decision gates, drift handling, and coordination contracts | Activate writers, become runtime adapter behavior, or hide product decisions |
 | Tooling | active v1 entrypoints in `sdd/tools/`; materialized PAW validator in `paw/tools/` | Deterministic validation and local utilities | Define policy solely through implementation |
 | Tests and conformance | active v1 evidence in `sdd/tests/` and `tests/`; materialized PAW contracts in `paw/tests/` | Fixtures, checks, examples, and evidence | Become authority without a governing rule |
 | Runtime adapters | active `.codex/**`; future runtime-specific adapters | Bind PAW capabilities to an agent runtime | Redefine portable contracts or repository authority |
@@ -39,8 +39,10 @@ This document defines the ownership and boundaries of PAW repository layers. It 
 ## Current Activation State
 
 The v1 Spec-Driven Development runtime is active. `paw/core/**` contains live
-conceptual contracts, and the schema v2, dual validator, compatibility fixtures, and
-contract tests are materialized under `paw/tools/**` and `paw/tests/**`. PAW
-workspaces, orchestration, writers, and runtime integrations remain inactive.
-Materialized validation support does not change the active workflow or default
+conceptual contracts. `paw/orchestration/**` contains runtime-neutral workflow,
+bootstrap, and conformance contracts. Schema v2, dual validators, domain validators,
+compatibility fixtures, and contract tests are materialized under `paw/tools/**` and
+`paw/tests/**`. PAW workspaces, writers, and runtime integrations remain inactive.
+Materialized validation support does not change the active workflow. Materialized
+contracts and validation support do not change the active workflow or default
 manifest writer. The exact transition is governed by `V1-TRANSITION.md`.

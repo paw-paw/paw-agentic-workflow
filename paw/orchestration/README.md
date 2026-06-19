@@ -2,6 +2,8 @@
 
 ## Status
 
+Inactive orientation only for runtime activation and default workflow behavior.
+
 This directory contains runtime-neutral workflow, bootstrap, and conformance
 contracts. These contracts are active as documentation, but they do not activate v2
 patch workspaces, writers, skills, agents, or runtime adapters.
