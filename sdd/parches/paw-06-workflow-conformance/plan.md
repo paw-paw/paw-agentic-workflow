@@ -34,6 +34,7 @@
 - `paw/tools/**`
 - `paw/tests/**`
 - `sdd/parches/paw-05-adapter-adoption-contracts/cierre.md`
+- `_inbox/final/patch-execution-guide.md`
 
 ---
 
@@ -62,8 +63,9 @@
   - `paw/orchestration/README.md` dice que la superficie es solo orientacion
     inactiva; el patch debe actualizarla sin activar workflow v2.
   - No existe dominio de schemas/validators para workflow o conformance.
-  - `_inbox/final/patch-execution-guide.md` fue solicitado pero no existe en la
-    base revisada; el plan no depende de el.
+  - `_inbox/final/patch-execution-guide.md` esta disponible como guia operativa;
+    confirma que el estado debe vivir en artefactos del repo y que cada fase debe
+    preparar backlog, ejecutar, validar y commitear antes de avanzar.
 - restricciones tecnicas:
   - No agregar dependencias externas salvo decision explicita.
   - No escribir `paw/parches/**`.
@@ -343,3 +345,7 @@
 - Fecha: 2026-06-19
   - cambio: plan tecnico brownfield inicial.
   - razon: preparar `sdd-tasks` para el patch 06.
+- Fecha: 2026-06-19
+  - cambio: se incorporo el contexto de la guia operativa de ejecucion.
+  - razon: alinear tasks y fases con el ciclo backlog -> ejecucion -> validacion
+    -> commit.

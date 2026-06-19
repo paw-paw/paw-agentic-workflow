@@ -59,6 +59,7 @@ SDD debe reconciliar alcance, decisiones, drift, validaciones y riesgos residual
 - `sdd/parches/paw-05-adapter-adoption-contracts/cierre.md`
 - `_inbox/final/06-workflow-bootstrap-conformance-handoff.md`
 - `_inbox/final/README.md`
+- `_inbox/final/patch-execution-guide.md`
 
 ---
 
@@ -194,3 +195,7 @@ La definicion queda lista para `sdd-plan` solo si:
 - Fecha: 2026-06-19
   - cambio: intake inicial de `paw-06-workflow-conformance`.
   - razon: preparar plan tecnico brownfield mediante SDD v1.
+- Fecha: 2026-06-19
+  - cambio: se agrego la guia operativa de ejecucion como fuente consultada.
+  - razon: el archivo esta disponible y confirma el flujo de fases, backlogs,
+    validacion y commits del patch.

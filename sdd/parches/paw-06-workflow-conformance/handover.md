@@ -4,14 +4,7 @@
 
 - Input primario: `_inbox/final/06-workflow-bootstrap-conformance-handoff.md`
 - Contexto de programa: `_inbox/final/README.md`
-- Guia solicitada: `_inbox/final/patch-execution-guide.md`
-
-## Nota de disponibilidad
-
-`_inbox/final/patch-execution-guide.md` no existe en la base revisada al iniciar el
-patch. La preparacion usa el README final, el handoff 06, `docs/README.md`,
-`AGENTS.md`, `CONTRIBUTING.md`, documentos vivos aplicables y el cierre de la fase
-anterior disponible en `origin/main`.
+- Guia operativa: `_inbox/final/patch-execution-guide.md`
 
 ## Identidad recibida
 
