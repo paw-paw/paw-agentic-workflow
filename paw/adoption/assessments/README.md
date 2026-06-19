@@ -6,6 +6,10 @@ An assessment compares reusable PAW catalog definitions, a repository adoption
 record, and observed or materialized stack reality. It explains conformance,
 variance, exceptions, debt, and unresolved conflicts.
 
+The materialized schema lives at
+`paw/tools/schemas/adoption/assessment.schema.json`. The deterministic validation
+entrypoint is `node paw/tools/validate-adoption.mjs --fixtures`.
+
 ## Comparison Inputs
 
 An assessment may reference:
@@ -46,3 +50,9 @@ Brownfield assessment starts with reality:
 
 An assessment may recommend follow-up work, but it does not automatically select a
 stack, modify catalog definitions, or promote local reality into doctrine.
+
+## Validation Boundary
+
+Assessment validation checks flow ordering, catalog references, embedded adoption
+record validity, evidence, and explicit no-auto-selection guards. It does not inspect
+a real repository or execute a pilot.

@@ -4,6 +4,7 @@ import { join, resolve } from 'node:path';
 import { loadJson } from '../catalogs/load-json.mjs';
 import { createDiagnostic } from '../validation/diagnostics.mjs';
 import { createValidationResult } from '../validation/validation-result.mjs';
+import { createAdoptionCatalogContext, validateAssessment } from './validate-assessments.mjs';
 import { validateAdapter } from './validate-adapters.mjs';
 import { createImplementationPresetContext, validateAdoptionRecord } from './validate-records.mjs';
 
@@ -68,8 +69,19 @@ function validateFixtureGroup(root, relativeRoot, validateCase) {
 }
 
 export function validateAdoptionFixtures(root) {
-  const implementationCatalog = loadJson(resolve(root, 'paw/catalogs/implementation-presets/catalog.json'));
-  const catalogContext = createImplementationPresetContext(implementationCatalog.value);
+  const loadedCatalogs = {
+    families: loadJson(resolve(root, 'paw/catalogs/families/catalog.json')),
+    documentationPresets: loadJson(resolve(root, 'paw/catalogs/documentation-presets/catalog.json')),
+    modifiers: loadJson(resolve(root, 'paw/catalogs/modifiers/catalog.json')),
+    implementationPresets: loadJson(resolve(root, 'paw/catalogs/implementation-presets/catalog.json')),
+  };
+  const catalogContext = createAdoptionCatalogContext({
+    families: loadedCatalogs.families.value,
+    documentationPresets: loadedCatalogs.documentationPresets.value,
+    modifiers: loadedCatalogs.modifiers.value,
+    implementationPresets: loadedCatalogs.implementationPresets.value,
+  });
+  const recordCatalogContext = createImplementationPresetContext(loadedCatalogs.implementationPresets.value);
   const adapterResult = validateFixtureGroup(
     root,
     'paw/tests/fixtures/adoption/adapters',
@@ -78,20 +90,27 @@ export function validateAdoptionFixtures(root) {
   const recordResult = validateFixtureGroup(
     root,
     'paw/tests/fixtures/adoption/records',
-    (value, sourcePath) => validateAdoptionRecord(value, { sourcePath, catalogContext }),
+    (value, sourcePath) => validateAdoptionRecord(value, { sourcePath, catalogContext: recordCatalogContext }),
+  );
+  const assessmentResult = validateFixtureGroup(
+    root,
+    'paw/tests/fixtures/adoption/assessments',
+    (value, sourcePath) => validateAssessment(value, { sourcePath, catalogContext }),
   );
 
   return createValidationResult({
     schemaVersion: 1,
     diagnostics: [
-      ...implementationCatalog.result.diagnostics,
+      ...Object.values(loadedCatalogs).flatMap(({ result }) => result.diagnostics),
       ...adapterResult.diagnostics,
       ...recordResult.diagnostics,
+      ...assessmentResult.diagnostics,
     ],
     validatedPaths: [
-      ...implementationCatalog.result.validatedPaths,
+      ...Object.values(loadedCatalogs).flatMap(({ result }) => result.validatedPaths),
       ...adapterResult.validatedPaths,
       ...recordResult.validatedPaths,
+      ...assessmentResult.validatedPaths,
     ],
     evidence: {
       adapter_fixture_count: adapterResult.evidence.fixture_count,
@@ -100,6 +119,9 @@ export function validateAdoptionFixtures(root) {
       record_fixture_count: recordResult.evidence.fixture_count,
       record_fixture_valid_count: recordResult.evidence.valid_count,
       record_fixture_invalid_count: recordResult.evidence.invalid_count,
+      assessment_fixture_count: assessmentResult.evidence.fixture_count,
+      assessment_fixture_valid_count: assessmentResult.evidence.valid_count,
+      assessment_fixture_invalid_count: assessmentResult.evidence.invalid_count,
     },
   });
 }

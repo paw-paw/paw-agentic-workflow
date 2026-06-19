@@ -25,3 +25,6 @@ The adoption fixture and example set should include:
 Examples must not claim that PAW can automatically choose a stack, install itself in a
 repository, activate a runtime adapter, or certify portability before the approved
 program gates pass.
+
+The executable example matrix is represented under `paw/tests/fixtures/adoption/**`
+and validated by `node paw/tools/validate-adoption.mjs --fixtures`.

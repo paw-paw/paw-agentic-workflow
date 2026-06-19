@@ -1,0 +1,29 @@
+{
+  "assessment_id": "greenfield-service",
+  "flow": "greenfield",
+  "family_ref": "service-api",
+  "documentation_preset_ref": "docs-service-api",
+  "modifier_refs": ["synchronous-service", "persistent-store", "public-exposure"],
+  "implementation_preset_ref": "service-go-api",
+  "adoption_record": {
+    "record_id": "adopt-service-go",
+    "preset_ref": "service-go-api",
+    "applicability": "applicable",
+    "binding_mode": "exact",
+    "approval_policy": "human-approved",
+    "resolution_status": "resolved",
+    "responsible_owner": "repo-maintainers",
+    "evidence": ["greenfield architecture decision"],
+    "review_date": "2026-12-12"
+  },
+  "stack_realization": {
+    "observed_before_adoption": false,
+    "materialized_after_record": true,
+    "stack": ["go", "postgresql"]
+  },
+  "comparison": {
+    "status": "conformant",
+    "differences": []
+  },
+  "evidence": ["adoption record before scaffolding"]
+}

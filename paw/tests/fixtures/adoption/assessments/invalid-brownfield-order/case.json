@@ -1,0 +1,26 @@
+{
+  "assessment_id": "bad-brownfield",
+  "flow": "brownfield",
+  "family_ref": "content-knowledge",
+  "documentation_preset_ref": "docs-content-knowledge",
+  "modifier_refs": ["content-delivery-surface"],
+  "implementation_preset_ref": "content-astro-static",
+  "adoption_record": {
+    "record_id": "adopt-content",
+    "preset_ref": "content-astro-static",
+    "applicability": "applicable",
+    "binding_mode": "exact",
+    "approval_policy": "human-approved",
+    "resolution_status": "resolved",
+    "responsible_owner": "repo-maintainers",
+    "evidence": ["decision"],
+    "review_date": "2026-12-12"
+  },
+  "stack_realization": {
+    "observed_before_adoption": false
+  },
+  "comparison": {
+    "status": "conformant"
+  },
+  "evidence": ["decision"]
+}
