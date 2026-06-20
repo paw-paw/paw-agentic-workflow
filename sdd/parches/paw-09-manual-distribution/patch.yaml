@@ -3,9 +3,9 @@ change_id: paw-09-manual-distribution
 program_id: paw-foundation
 patch_kind: spec
 lifecycle: spec-anchored
-status: active
+status: closed
 created_at: 2026-06-20
-closed_at: null
+closed_at: 2026-06-20
 related_docs:
   - docs/README.md
   - README.md
