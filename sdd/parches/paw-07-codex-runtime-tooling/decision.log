@@ -1,0 +1,37 @@
+# Decision Log: paw-07-codex-runtime-tooling
+
+## 2026-06-20 - Base patch 07 on origin/main after patch 06 merge
+
+- Decision: create `codex/paw-07-codex-runtime-tooling` from `origin/main`.
+- Reason: the handoff declares `paw-06-workflow-conformance` as a dependency.
+  After `git fetch --prune origin`, `origin/main` contains merge commit `8d8c4af`
+  for `codex/paw-06-workflow-conformance`, and the patch 06 close commit
+  `249a544` is an ancestor of `origin/main`.
+- Impact: patch 07 planning can reference the live workflow, bootstrap,
+  conformance, workflow validator, fixtures, and documentation registry from
+  patch 06. The previous remote branch was deleted upstream and the local branch
+  for patch 06 was not rewritten.
+
+## 2026-06-20 - Apply the provisional paw-foundation commit policy
+
+- Decision: use Conventional Commits, create one coherent SDD preparation commit
+  before implementation, create at least one commit after each closed and validated
+  phase, split a phase when intentions or surfaces differ, and create a separate
+  non-substantive closure commit after `sdd-close`.
+- Reason: the human explicitly required this provisional discipline for this patch.
+- Impact: do not present this policy as portable PAW doctrine. Canonical treatment is
+  deferred to `paw-08-vcs-pr-integration`. Do not publish WIP, squash, rebase,
+  force-push, or rewrite history without human authorization. Substantive work after
+  closure requires reopening, validation, and a new closure.
+
+## 2026-06-20 - Keep Node.js as the reference scripting runtime for patch 07
+
+- Decision: plan the shared Codex runtime toolkit and skill-local scripts in
+  Node.js using repository-local standard-library patterns unless execution reveals
+  a concrete blocker.
+- Reason: existing PAW validators and CLIs under `paw/tools/**` are Node.js
+  standard-library modules with deterministic JSON output, stable exit codes, and
+  no external dependency requirement. Reusing that stack minimizes runtime spread
+  and keeps the decision reviewable during pilots.
+- Impact: Node.js is the implementation choice for this repo patch, not an
+  implementation preset for products and not a portability claim for PAW.
