@@ -23,7 +23,7 @@
       "source_path": ".codex/README.md",
       "destination_path": ".codex/README.md",
       "kind": "runtime-binding",
-      "checksum_sha256": "15f51e43f9544e79ca0cc7038a9c17be3046d1fae6b8b1c5ad7da08de7106c6f",
+      "checksum_sha256": "7a8bba6a52dde30b38c72effeba5755d8b9d714109e17ae351527c048db6af4b",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -59,7 +59,7 @@
       "source_path": ".codex/paw-runtime-map.json",
       "destination_path": ".codex/paw-runtime-map.json",
       "kind": "runtime-binding",
-      "checksum_sha256": "8763f617b048e6f07e6c38de97180e12e1f4d47c93b8ea776efa84db95a4b087",
+      "checksum_sha256": "35c1fe24b7276e265835b25dd8c0ff1f8c263219737181588a6012a8f3aadf40",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -77,7 +77,7 @@
       "source_path": ".codex/paw-toolkit/bin/paw-codex-toolkit.mjs",
       "destination_path": ".codex/paw-toolkit/bin/paw-codex-toolkit.mjs",
       "kind": "runtime-binding",
-      "checksum_sha256": "c018cb4a7af706c0e0f9dcc39b61285266dff54b2214d7b81a361f39704c4fa6",
+      "checksum_sha256": "7b930d9433ca1536c552b349cdea221934e7fb21245cc5158159425a353ed074",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -132,6 +132,15 @@
       "destination_path": ".codex/skills/paw-conformance/SKILL.md",
       "kind": "runtime-binding",
       "checksum_sha256": "24df72768d384850793852d66470a9c80e098efd2dcf7576e267ee90cff6f009",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".codex/skills/paw-distribute/SKILL.md",
+      "destination_path": ".codex/skills/paw-distribute/SKILL.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "3599c5f1e9133ad22efcbe60575f5f91e7ecdc4fc4e07f2fbd700a4d576f0f79",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -671,7 +680,7 @@
       "source_path": "paw/tests/contract/codex-runtime-skills.test.mjs",
       "destination_path": "paw/tests/contract/codex-runtime-skills.test.mjs",
       "kind": "tool",
-      "checksum_sha256": "9d5234b87761095993d472cf0057fd0d7b53808c66ba15dd83b04cd82fdb48db",
+      "checksum_sha256": "5900a35ddc9c76f4167beb65379830b8ceef359ecf9037c0de29a62bcef86290",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -680,7 +689,7 @@
       "source_path": "paw/tests/contract/codex-runtime-toolkit.test.mjs",
       "destination_path": "paw/tests/contract/codex-runtime-toolkit.test.mjs",
       "kind": "tool",
-      "checksum_sha256": "a5d12f549750387983b913ade08d9daade5edaf3ee01299cdfda364ab88f0209",
+      "checksum_sha256": "cc4044193fdd527cc27bd928b6b831d455b7003a070ef24ae985f0fb4f625071",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true

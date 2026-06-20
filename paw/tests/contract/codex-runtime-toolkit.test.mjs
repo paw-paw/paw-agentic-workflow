@@ -97,6 +97,19 @@ test('toolkit inspects local integration records', () => {
   assert.equal(output.data.delivery_disposition, 'pending');
 });
 
+test('toolkit inspects candidate distribution manifest without installation', () => {
+  const result = run([
+    'inspect-distribution',
+    '--json',
+  ]);
+  assert.equal(result.status, 0);
+  const output = JSON.parse(result.stdout);
+  assert.equal(output.data.distribution_id, 'paw-codex-manual');
+  assert.equal(output.data.distribution_status, 'candidate');
+  assert.equal(output.data.candidate_inactive, true);
+  assert.ok(output.data.file_count > 0);
+});
+
 test('toolkit normalizes provided GitHub snapshots without network access', () => {
   const result = run([
     'github-snapshot',

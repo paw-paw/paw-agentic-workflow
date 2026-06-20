@@ -63,3 +63,14 @@ test('integration candidate skill is bounded by integration contract', () => {
   assert.match(content, /Do not merge/);
   assert.match(content, /\.agents\/\*\*/);
 });
+
+test('distribution candidate skill is bounded by distribution contract', () => {
+  const content = readSkill('paw-distribute');
+  assert.match(content, /name: paw-distribute/);
+  assert.match(content, /runtime: codex/);
+  assert.match(content, /contract: paw\/distribution\/README\.md/);
+  assert.match(content, /Candidate/);
+  assert.match(content, /manual distribution manifest/);
+  assert.match(content, /Do not install/);
+  assert.match(content, /candidate-inactive/);
+});

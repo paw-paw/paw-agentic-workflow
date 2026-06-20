@@ -4,6 +4,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { validateIntegrationRecord } from '../../../paw/tools/integration/validate-integration-record.mjs';
+import { validateDistributionContracts } from '../../../paw/tools/distribution/validate-distribution-contracts.mjs';
 import { normalizeGithubSnapshot } from '../providers/github.mjs';
 
 const VERSION = 'paw-codex-toolkit 0.1.0';
@@ -15,6 +16,7 @@ Commands:
   check-mutation     Validate a mutation envelope.
   plan-write         Plan or perform a mechanical file write.
   inspect-integration  Inspect a local integration record.
+  inspect-distribution  Inspect the candidate manual distribution manifest.
   github-snapshot    Normalize an experimental GitHub provider snapshot.
 
 Options:
@@ -29,6 +31,7 @@ Options:
   --target <path>         Target path for plan-write.
   --content <text>        Mechanical content for plan-write.
   --integration-path <path>  Integration record JSON path.
+  --manifest-path <path>     Distribution manifest JSON path.
   --snapshot-path <path>  Provider snapshot JSON path.
   --dry-run               Do not write during plan-write.
 
@@ -70,6 +73,7 @@ function parseArgs(argv) {
     target: null,
     content: null,
     integrationPath: null,
+    manifestPath: null,
     snapshotPath: null,
     dryRun: false,
   };
@@ -109,6 +113,9 @@ function parseArgs(argv) {
       index += 1;
     } else if (arg === '--integration-path') {
       options.integrationPath = argv[index + 1];
+      index += 1;
+    } else if (arg === '--manifest-path') {
+      options.manifestPath = argv[index + 1];
       index += 1;
     } else if (arg === '--snapshot-path') {
       options.snapshotPath = argv[index + 1];
@@ -303,6 +310,27 @@ export function runToolkitCli(
           provider_state: record.provider_snapshot?.state ?? null,
           paw_readiness: record.paw_readiness ?? null,
           delivery_disposition: record.delivery_disposition ?? null,
+        },
+      }), { json: options.json, stdout, stderr });
+    }
+
+    if (options.command === 'inspect-distribution') {
+      const manifestPath = options.manifestPath ?? 'paw/distribution/distribution-manifest.json';
+      const validation = validateDistributionContracts(root);
+      const manifest = JSON.parse(readFileSync(resolve(root, manifestPath), 'utf8'));
+      return emit(result({
+        status: validation.valid ? 'pass' : 'fail',
+        command: options.command,
+        root,
+        errors: validation.diagnostics.filter(({ severity }) => severity === 'error').map(({ code }) => code),
+        data: {
+          manifest_path: resolve(root, manifestPath),
+          distribution_id: manifest.distribution_id ?? null,
+          distribution_status: manifest.status ?? null,
+          version: manifest.version ?? null,
+          file_count: manifest.files?.length ?? 0,
+          compatibility: manifest.compatibility ?? null,
+          candidate_inactive: true,
         },
       }), { json: options.json, stdout, stderr });
     }

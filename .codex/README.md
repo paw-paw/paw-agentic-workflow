@@ -19,6 +19,8 @@ The candidate Codex runtime is described by:
 - `.codex/agents/paw-*.toml`: bounded candidate agent profiles, added by this patch.
 - `.codex/skills/paw-integrate`: candidate integration binding for local delivery
   evidence and provider snapshot inspection, added by patch 08.
+- `.codex/skills/paw-distribute`: candidate distribution binding for local
+  manifest inspection, added by patch 09.
 
 The runtime map is evidence for this adapter. Portable workflow authority remains
 under `paw/orchestration/**`.

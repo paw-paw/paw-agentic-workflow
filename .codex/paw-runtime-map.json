@@ -124,6 +124,14 @@
       "status": "implemented",
       "mutation_level": "level-1",
       "portable_note": "Integration is an adapter operation for delivery evidence and provider snapshots, not a core lifecycle transition."
+    },
+    {
+      "portable_operation": "paw-distribute",
+      "codex_skill": ".codex/skills/paw-distribute/SKILL.md",
+      "contract": "paw/distribution/README.md",
+      "status": "implemented",
+      "mutation_level": "level-1",
+      "portable_note": "Distribution is a candidate Codex adapter operation for local manifest inspection, not package publication or installation automation."
     }
   ],
   "agent_profiles": [
