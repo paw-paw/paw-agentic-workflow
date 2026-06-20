@@ -107,6 +107,8 @@ test('required foundation documents and governed PAW surfaces exist', () => {
     'paw/core/decision-gates.md',
     'paw/core/drift-policy.md',
     'paw/core/patch-model.md',
+    'paw/integration/README.md',
+    'paw/integration/integration-lifecycle.md',
     'paw/orchestration/README.md',
     'paw/parches/README.md',
     'paw/tests/README.md',
@@ -119,6 +121,7 @@ test('required foundation documents and governed PAW surfaces exist', () => {
 
   assert.match(read('paw/README.md'), /live conceptual core/i);
   assert.match(read('paw/core/README.md'), /live conceptual contracts/i);
+  assert.match(read('paw/integration/README.md'), /Approved target surface for governed delivery/);
   assert.match(read('paw/parches/README.md'), /^Inactive\./m);
   assert.match(read('paw/parches/README.md'), /Do not create patch workspaces/);
   assert.match(read('paw/parches/README.md'), /sdd\/parches\/<change-id>\//);

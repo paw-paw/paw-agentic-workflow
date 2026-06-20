@@ -63,7 +63,7 @@ test('greenfield, brownfield, and batch boundaries are explicit', () => {
   assert.match(model, /`batch` is not a manifest mode or value/);
 });
 
-test('artifact ownership is complete and integration remains reserved', () => {
+test('artifact ownership is complete and integration has a governed owner', () => {
   const lifecycle = read('paw/core/artifact-lifecycle.md');
   for (const artifact of [
     'patch.yaml',
@@ -82,7 +82,8 @@ test('artifact ownership is complete and integration remains reserved', () => {
   assert.match(lifecycle, /Responsibilities are exclusive/);
   assert.match(lifecycle, /Durable rule, check, binding, or public behavior/i);
   assert.match(lifecycle, /patch workspace is historical memory/i);
-  assert.match(lifecycle, /no portable provider fields/);
+  assert.match(lifecycle, /owned by `paw\/integration\/\*\*`/);
+  assert.match(lifecycle, /provider observations are evidence, not authority/);
 });
 
 test('authority and gates reject observed state as automatic truth', () => {
@@ -161,4 +162,5 @@ test('canonical registry assigns authority to every core contract', () => {
   for (const path of coreFiles) {
     assert.match(index, new RegExp(`\\| \`${path.replaceAll('/', '\\/')}\` \\|`));
   }
+  assert.match(index, /\| `paw\/integration\/\*\*` \|/);
 });

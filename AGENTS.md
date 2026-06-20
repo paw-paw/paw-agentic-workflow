@@ -57,6 +57,8 @@ node paw/tools/validate-catalogs.mjs --fixtures --json
 node paw/tools/validate-adoption.mjs --fixtures --json
 node paw/tools/validate-workflow.mjs --json
 node paw/tools/validate-workflow.mjs --fixtures --json
+node paw/tools/validate-integration.mjs --json
+node paw/tools/validate-integration.mjs --fixtures --json
 node --test paw/tests/contract/patch-parsing.test.mjs
 node --test paw/tests/contract/patch-validation.test.mjs
 node --test paw/tests/contract/validator-cli.test.mjs

@@ -62,6 +62,7 @@ An active patch cannot silently override an authoritative live document. A misma
 | `paw/core/decision-gates.md` | contract | contract | authoritative | portable human decision gates | core contract owner | automated |
 | `paw/core/drift-policy.md` | contract, operational | contract | authoritative | portable drift classification and reconciliation | core contract owner | automated |
 | `paw/core/compatibility-policy.md` | contract, operational | contract | authoritative | v1/v2 compatibility and cutover boundaries | core contract owner | automated |
+| `paw/integration/**` | contract, operational | contract | authoritative | portable delivery, VCS, change-request, checks, readiness, and integration artifact semantics | integration contract owner | automated |
 | `paw/catalogs/**` | contract, verifiable | contract | authoritative | portable family and preset catalog definitions | catalog contract owner | automated |
 | `paw/adoption/**` | contract, verifiable | contract | authoritative | portable adoption records, adapters, assessments, and override contracts | adoption contract owner | automated |
 | `paw/parches/README.md` | strategic, operational | operational | supporting | inactive future workspace orientation | future owning patch | automated |

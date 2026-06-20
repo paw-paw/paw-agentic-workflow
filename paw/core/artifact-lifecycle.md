@@ -18,7 +18,7 @@ This contract defines responsibilities and transitions. It does not require one 
 | `backlog/faseN.md` | one phase's executable checklist, findings, blockers, decisions, drift, validation results, and closure state | redesign of the whole patch or unrelated phases |
 | `decision.log` | meaningful decisions, context, rationale, approval, and impact | routine progress, mechanical edits, or final summary |
 | `cierre.md` | final reconciliation of intent, execution, decisions, drift, validation, residual risk, and promoted authority | new implementation decisions or hidden durable rules |
-| `integration.yaml` | reserved extension point for governed delivery and integration metadata | provider-specific semantics before the integration contract defines them |
+| `integration.yaml` | governed delivery and integration metadata defined by `paw/integration/**` | patch intent, plan, task state, validation evidence, closure, or provider authority |
 
 Responsibilities are exclusive even when one fact is referenced by several artifacts. References point to the owning artifact instead of copying and independently evolving the fact.
 
@@ -83,13 +83,16 @@ After closure, the patch workspace is historical memory. Its artifacts remain re
 
 Closed artifacts are not rewritten by default when later schemas, workflows, or terminology change. Current behavior is read from live sources, not inferred from historical patch state.
 
-## Reserved Integration Extension
+## Integration Extension
 
-`integration.yaml` is reserved so future integration contracts can attach structured delivery state without overloading the patch manifest or narrative artifacts.
+`integration.yaml` records governed delivery metadata without overloading the
+patch manifest or narrative artifacts. The portable lifecycle, state model,
+readiness rules, and provider boundaries are owned by `paw/integration/**`.
 
-Until its owning contract is implemented:
+Core-level boundaries remain:
 
-- it has no portable provider fields;
-- it has no required relationship to a pull request, branch, review, or merge;
-- it cannot change patch readiness or closure semantics;
+- it cannot replace patch intent, planning, decisions, validation evidence, or
+  closure;
+- provider observations are evidence, not authority;
+- delivery metadata cannot silently change patch readiness or closure semantics;
 - adapters cannot treat local integration behavior as core doctrine.

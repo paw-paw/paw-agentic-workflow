@@ -15,6 +15,10 @@ The core is active as documentation. It does not activate v2 patch workspaces, s
 - `drift-policy.md`: drift categories and reconciliation protocol.
 - `compatibility-policy.md`: v1 history, transition behavior, and v2 cutover boundaries.
 
+Delivery and change-request integration semantics live outside core under
+`paw/integration/**`. Core owns artifact responsibility boundaries; integration
+owns provider-neutral delivery lifecycle rules.
+
 ## Ownership
 
 The PAW core owns semantics that must remain consistent across repositories and agent runtimes. Schemas, workflows, tools, and adapters may encode or translate these contracts, but they must not redefine them.
