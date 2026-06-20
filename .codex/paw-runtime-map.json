@@ -28,21 +28,21 @@
       "portable_operation": "paw-triage",
       "codex_skill": ".codex/skills/paw-triage/SKILL.md",
       "contract": "paw/orchestration/workflow.md",
-      "status": "planned",
+      "status": "implemented",
       "mutation_level": "level-1"
     },
     {
       "portable_operation": "paw-intake",
       "codex_skill": ".codex/skills/paw-intake/SKILL.md",
       "contract": "paw/orchestration/workflow.md",
-      "status": "planned",
+      "status": "implemented",
       "mutation_level": "level-2"
     },
     {
       "portable_operation": "paw-router",
       "codex_skill": ".codex/skills/paw-router/SKILL.md",
       "contract": "paw/orchestration/workflow.md",
-      "status": "planned",
+      "status": "implemented",
       "mutation_level": "level-1",
       "portable_note": "Codex skill name maps to workflow routing responsibilities."
     },
@@ -50,42 +50,42 @@
       "portable_operation": "paw-plan",
       "codex_skill": ".codex/skills/paw-plan/SKILL.md",
       "contract": "paw/orchestration/workflow.md",
-      "status": "planned",
+      "status": "implemented",
       "mutation_level": "level-2"
     },
     {
       "portable_operation": "paw-tasks",
       "codex_skill": ".codex/skills/paw-tasks/SKILL.md",
       "contract": "paw/orchestration/workflow.md",
-      "status": "planned",
+      "status": "implemented",
       "mutation_level": "level-2"
     },
     {
       "portable_operation": "paw-phase-backlog",
       "codex_skill": ".codex/skills/paw-phase-backlog/SKILL.md",
       "contract": "paw/orchestration/workflow.md",
-      "status": "planned",
+      "status": "implemented",
       "mutation_level": "level-2"
     },
     {
       "portable_operation": "paw-execute-phase",
       "codex_skill": ".codex/skills/paw-execute-phase/SKILL.md",
       "contract": "paw/orchestration/workflow.md",
-      "status": "planned",
+      "status": "implemented",
       "mutation_level": "level-2"
     },
     {
       "portable_operation": "paw-sync-drift",
       "codex_skill": ".codex/skills/paw-sync-drift/SKILL.md",
       "contract": "paw/orchestration/workflow.md",
-      "status": "planned",
+      "status": "implemented",
       "mutation_level": "level-2"
     },
     {
       "portable_operation": "paw-close",
       "codex_skill": ".codex/skills/paw-close/SKILL.md",
       "contract": "paw/orchestration/workflow.md",
-      "status": "planned",
+      "status": "implemented",
       "mutation_level": "level-2"
     },
     {
