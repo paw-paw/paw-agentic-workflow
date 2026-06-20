@@ -45,4 +45,7 @@ compatibility fixtures, and contract tests are materialized under `paw/tools/**`
 `paw/tests/**`. PAW workspaces, writers, and runtime integrations remain inactive.
 Materialized validation support does not change the active workflow. Materialized
 contracts and validation support do not change the active workflow or default
-manifest writer. The exact transition is governed by `V1-TRANSITION.md`.
+manifest writer. Candidate Codex runtime bindings under `.codex/**` provide a
+runtime map, toolkit, skills, and bounded agents for later activation gates; they do
+not replace the active `sdd-*` runtime before cutover. The exact transition is
+governed by `V1-TRANSITION.md`.

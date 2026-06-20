@@ -140,8 +140,10 @@ test('only the v1 workflow and workspace namespace are active during transition'
 
   const pawSkills = readdirSync(join(root, '.codex/skills')).filter((name) => name.startsWith('paw-'));
   const pawAgents = readdirSync(join(root, '.codex/agents')).filter((name) => name.startsWith('paw-'));
-  assert.deepEqual(pawSkills, []);
-  assert.deepEqual(pawAgents, []);
+  assert.ok(pawSkills.length > 0, 'candidate paw-* skills should be present after patch 07');
+  assert.ok(pawAgents.length > 0, 'candidate paw-* agents should be present after patch 07');
+  assert.match(transition, /Candidate `\.codex\/skills\/paw-\*`/);
+  assert.match(transition, /not the default workflow/);
 
   const pawPatchFiles = listFiles('paw/parches');
   assert.deepEqual(pawPatchFiles, ['paw/parches/README.md']);

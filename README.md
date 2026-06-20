@@ -14,8 +14,10 @@ PAW is a `pre-alpha` bootstrap under active construction.
 - Portability is neither implemented nor guaranteed.
 - `paw/core/**` contains live conceptual contracts; `paw/catalogs/**` contains
   portable family and preset catalogs; `paw/adoption/**` contains portable adoption
-  contracts; `paw/tools/**` and `paw/tests/**` contain the materialized validators,
-  schemas, fixtures, and contract tests.
+  contracts; `paw/orchestration/**` contains runtime-neutral workflow contracts;
+  `paw/tools/**` and `paw/tests/**` contain the materialized validators, schemas,
+  fixtures, and contract tests; `.codex/**` contains the candidate Codex runtime
+  adapter.
 - The inherited Spec-Driven Development v1 runtime under `sdd/**` and the `sdd-*` Codex skills remain the only active patch workflow until the governed cutover.
 - There are no v2 writers or active v2 workspaces, package, release automation,
   Pages site, or deployment workflow.
@@ -28,7 +30,8 @@ PAW is a `pre-alpha` bootstrap under active construction.
 - `paw/adoption/**`: portable adoption records, adapter, assessment, and override contracts.
 - Other `paw/**` surfaces: target layout materialized incrementally by their owning governed patches; this does not activate the v2 workflow.
 - `sdd/**`: active v1 Spec-Driven Development runtime and patch workspaces during the transition.
-- `.codex/**`: the real Codex runtime surface, currently containing the v1 `sdd-*` skills and agents.
+- `.codex/**`: the real Codex runtime surface, containing active v1 `sdd-*` skills
+  and agents plus inactive candidate `paw-*` runtime bindings.
 - `tests/**`: deterministic repository checks.
 
 The canonical documentation map and authority policy live in `docs/README.md`. Repository-wide operational instructions live in `AGENTS.md`.
@@ -57,12 +60,19 @@ node paw/tools/validate-patches.mjs --fixtures --json
 node paw/tools/validate-catalogs.mjs --json
 node paw/tools/validate-catalogs.mjs --fixtures --json
 node paw/tools/validate-adoption.mjs --fixtures --json
+node paw/tools/validate-workflow.mjs --json
+node paw/tools/validate-workflow.mjs --fixtures --json
 node --test paw/tests/contract/patch-parsing.test.mjs
 node --test paw/tests/contract/patch-validation.test.mjs
 node --test paw/tests/contract/validator-cli.test.mjs
 node --test paw/tests/contract/adoption-adapters.test.mjs
 node --test paw/tests/contract/adoption-records.test.mjs
 node --test paw/tests/contract/adoption-assessments.test.mjs
+node --test paw/tests/contract/workflow-validation.test.mjs
+node --test paw/tests/contract/workflow-cli.test.mjs
+node --test paw/tests/contract/codex-runtime-toolkit.test.mjs
+node --test paw/tests/contract/codex-runtime-skills.test.mjs
+node --test paw/tests/contract/codex-runtime-agents.test.mjs
 node --test tests/sdd-validation.test.mjs
 node --test tests/foundation-governance.test.mjs
 node --test tests/core-contracts.test.mjs

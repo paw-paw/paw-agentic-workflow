@@ -84,9 +84,9 @@ test('materialized validation does not activate v2 writers or workspaces', () =>
 
   const skillFiles = listFiles('.codex/skills').filter((path) => path.endsWith('SKILL.md'));
   assert.ok(skillFiles.some((path) => path.includes('/sdd-intake/')));
-  assert.deepEqual(
-    skillFiles.filter((path) => /\/paw-[^/]+\/SKILL\.md$/.test(path)),
-    [],
+  assert.ok(
+    skillFiles.filter((path) => /\/paw-[^/]+\/SKILL\.md$/.test(path)).length > 0,
+    'candidate paw-* skills should be materialized by patch 07',
   );
 
   const intake = read('.codex/skills/sdd-intake/SKILL.md');
@@ -94,7 +94,10 @@ test('materialized validation does not activate v2 writers or workspaces', () =>
   assert.doesNotMatch(intake, /paw\/parches\/<change-id>\//);
 
   const agents = listFiles('.codex/agents');
-  assert.deepEqual(agents.filter((path) => /\/paw-[^/]+/.test(path)), []);
+  assert.ok(
+    agents.filter((path) => /\/paw-[^/]+/.test(path)).length > 0,
+    'candidate paw-* agents should be materialized by patch 07',
+  );
 });
 
 test('live status documents distinguish materialization from activation', () => {
@@ -104,11 +107,13 @@ test('live status documents distinguish materialization from activation', () => 
   const transition = read('docs/governance/V1-TRANSITION.md');
 
   assert.match(readme, /portable family and preset catalogs/);
-  assert.match(readme, /materialized validators,\s+schemas, fixtures, and contract tests/);
+  assert.match(readme, /materialized validators,\s+schemas,\s+fixtures, and contract tests/);
   assert.match(readme, /no v2 writers or active v2 workspaces/i);
   assert.match(architecture, /Materialized validation support does not change the active workflow/);
   assert.match(bootstrap, /Physical patch schema v2 and dual-read v1\/v2 manifest validation/);
   assert.doesNotMatch(bootstrap, /Not Implemented[\s\S]*PAW schema v2/);
   assert.match(transition, /Schema v2, dual-read validator, catalog validators, and adoption validator materialized/);
   assert.match(transition, /Materialized catalogs and validators; not adoption automation/);
+  assert.match(transition, /Candidate Codex skills/);
+  assert.match(transition, /not the default workflow/);
 });

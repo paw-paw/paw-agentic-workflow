@@ -33,10 +33,10 @@ authorize a second writable patch namespace.
 | `paw/orchestration/` | Runtime-neutral orchestration contracts | Workflow, bootstrap, and conformance contracts materialized; not a workflow activation |
 | `paw/tools/` | PAW schemas and tooling | Schema v2, dual-read validator, catalog validators, and adoption validator materialized; workflow validator also materialized; not a workflow activation |
 | `paw/tests/` | Portable fixtures and conformance assets | v1/v2 compatibility, catalog, adoption, and workflow fixtures plus contract tests materialized; not a workflow activation |
-| `.codex/paw-toolkit/` | Candidate Codex runtime helper toolkit | Contract materialized by patch 07; helper scripts may be tested but do not activate v2 workflow |
-| `.codex/paw-runtime-map.json` | Candidate Codex operation mapping | Materialized by patch 07 as adapter evidence; portable authority remains under `paw/orchestration/**` |
-| `.codex/skills/paw-*` | Candidate Codex skills | Introduced by patch 07 as inactive runtime bindings; not the default workflow |
-| `.codex/agents/paw-*` | Candidate Codex agents | Introduced by patch 07 as bounded support profiles; not contractual authority |
+| `.codex/paw-toolkit/` | Candidate Codex runtime helper toolkit | Materialized and tested by patch 07; helper scripts do not activate v2 workflow |
+| `.codex/paw-runtime-map.json` | Candidate Codex operation mapping | Materialized and tested by patch 07 as adapter evidence; portable authority remains under `paw/orchestration/**` |
+| `.codex/skills/paw-*` | Candidate Codex skills | Materialized and tested by patch 07 as inactive runtime bindings; not the default workflow |
+| `.codex/agents/paw-*` | Candidate Codex agents | Materialized and tested by patch 07 as bounded support profiles; not contractual authority |
 
 ## Invariants Before Cutover
 

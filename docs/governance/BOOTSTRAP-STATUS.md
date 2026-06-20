@@ -32,13 +32,15 @@
   `paw/orchestration/**`.
 - Deterministic workflow validation, schemas, fixtures, and contract tests.
 - Candidate Codex runtime map and shared toolkit contract under `.codex/**`.
+- Candidate `paw-*` Codex skills and bounded `paw-*` agent profiles under
+  `.codex/**`.
+- Deterministic contract tests for the candidate Codex toolkit, skills, and agents.
 
 ## Not Implemented
 
 - Active `paw/parches/` workspaces.
 - v2 manifest writers or a v2 default workflow.
-- Executable `paw-*` skills or agents.
-- Fully tested runtime bindings for the `paw-*` workflow operations.
+- Activated `paw-*` skills or agents as the default workflow.
 - Concrete runtime adapters for Codex, Claude Code, or Antigravity.
 - Adoption automation in a consumer repository.
 - Multi-runtime and multi-repository portability.
