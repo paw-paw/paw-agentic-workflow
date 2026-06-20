@@ -37,3 +37,9 @@ This directory must not contain:
 
 Tools and tests may validate these contracts as evidence. They do not become
 authority without the owning documents.
+
+## Runtime Bindings
+
+The candidate Codex runtime binding under `.codex/**` maps these portable operations
+to Codex skills, a shared toolkit, and bounded agents. That adapter evidence does
+not redefine this contract or activate the v2 workflow before cutover.
