@@ -36,3 +36,15 @@
   conserva responsabilidades generales sin proveedor concreto.
 - Aprobacion: handoff final y plan aprobado por usuario.
 
+---
+
+## 2026-06-20 - Drift de test Codex por cierre de paw-07
+
+- Decision: actualizar la expectativa del test de toolkit para `paw-07` de
+  `active` a `closed`.
+- Contexto: el test inspecciona `sdd/parches/paw-07-codex-runtime-tooling`, que ya
+  quedo cerrado e integrado antes de abrir `paw-08`.
+- Razon: el cambio refleja repo reality; no modifica comportamiento del toolkit.
+- Impacto: `codex-runtime-toolkit.test.mjs` vuelve a validar el estado real del
+  patch anterior.
+- Aprobacion: drift operacional resuelto dentro de Fase 3.

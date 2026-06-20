@@ -17,6 +17,8 @@ The candidate Codex runtime is described by:
 - `.codex/paw-toolkit/**`: shared deterministic helper toolkit for Codex skills.
 - `.codex/skills/paw-*`: candidate PAW skills, added by this patch.
 - `.codex/agents/paw-*.toml`: bounded candidate agent profiles, added by this patch.
+- `.codex/skills/paw-integrate`: candidate integration binding for local delivery
+  evidence and provider snapshot inspection, added by patch 08.
 
 The runtime map is evidence for this adapter. Portable workflow authority remains
 under `paw/orchestration/**`.
@@ -29,6 +31,7 @@ This surface must not:
 - write `paw/parches/**` before cutover;
 - present `.agents/**` as an alternative runtime location;
 - replace active `sdd-*` skills during `paw-foundation`;
+- perform remote integration operations without explicit user permission;
 - hide decisions in scripts or generated output;
 - broaden permissions beyond the owning skill and approval gate.
 

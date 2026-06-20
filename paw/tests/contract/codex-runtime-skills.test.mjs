@@ -52,3 +52,14 @@ test('core lifecycle skills use progressive disclosure sections', () => {
     assert.match(content, /## Output/);
   }
 });
+
+test('integration candidate skill is bounded by integration contract', () => {
+  const content = readSkill('paw-integrate');
+  assert.match(content, /name: paw-integrate/);
+  assert.match(content, /runtime: codex/);
+  assert.match(content, /contract: paw\/integration\/integration-lifecycle\.md/);
+  assert.match(content, /Candidate/);
+  assert.match(content, /provider state, PAW readiness, and delivery disposition/);
+  assert.match(content, /Do not merge/);
+  assert.match(content, /\.agents\/\*\*/);
+});
