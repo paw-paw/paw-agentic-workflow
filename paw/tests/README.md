@@ -38,6 +38,10 @@ This directory is reserved for future portable fixtures, examples, compatibility
 - `fixtures/workflow/**` contains positive and negative evidence for workflow
   routing, missing artifacts, bootstrap writes, accepted gaps, generated checks, and
   manual evidence.
+- `contract/codex-runtime-*.test.mjs` covers candidate Codex runtime mapping,
+  toolkit CLI behavior, skill metadata, and agent profile boundaries.
+- `fixtures/codex-runtime/**` contains candidate Codex runtime evidence. These
+  fixtures do not activate the v2 workflow.
 
 ## Ownership
 
