@@ -28,6 +28,7 @@ authorize a second writable patch namespace.
 | --- | --- | --- |
 | `paw/core/` | Portable PAW contracts | Live conceptual contracts |
 | `paw/integration/` | Portable delivery, VCS, change-request, checks, readiness, and `integration.yaml` contracts | Materialized integration contracts and validation target; not remote automation or merge authority |
+| `paw/distribution/` | Candidate manual distribution, manifest, install, upgrade, rollback, uninstall, verification, license/notice, and progressive-loading contracts | Materialized distribution contract; not a stable release, package manager, marketplace, auto-update, or portability claim |
 | `paw/catalogs/` | Portable family, documentation, modifier, and implementation preset definitions | Materialized catalogs and validators; not adoption automation |
 | `paw/adoption/` | Portable adoption records, adapter, assessment, and override contracts | Materialized contracts and validators; not adoption automation or runtime integration |
 | `paw/parches/` | Future fixed patch workspace root | Inactive; writing is prohibited |

@@ -21,6 +21,9 @@
 - Runtime-neutral patch model, artifact lifecycle, authority, decision gate, drift, and compatibility contracts under `paw/core/**`.
 - Portable integration contracts for delivery state, VCS, change requests,
   readiness, checks, and `integration.yaml` under `paw/integration/**`.
+- Candidate manual distribution contracts for manifest, checksums,
+  install/upgrade, rollback, uninstall, verification, licensing/notices, and
+  progressive loading under `paw/distribution/**`.
 - Physical patch schema v2 and dual-read v1/v2 manifest validation under `paw/tools/**`.
 - Portable compatibility fixtures and validator contract tests under `paw/tests/**`.
 - A compatibility-preserving `sdd/tools/validate-sdd.mjs` bridge for active v1 consumers.
@@ -47,7 +50,8 @@
 - Adoption automation in a consumer repository.
 - Multi-runtime and multi-repository portability.
 - Remote merge automation or automatic review-thread resolution.
-- Packaging, installation automation, release automation, Pages, Actions, or deployment.
+- Stable release publication, package-manager or marketplace distribution,
+  auto-update, release automation, Pages, Actions, or deployment.
 
 ## Provenance Boundary
 

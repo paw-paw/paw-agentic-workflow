@@ -11,10 +11,13 @@ PAW is influenced by Spec-Driven Development, behavior-driven development, test-
 PAW is a `pre-alpha` bootstrap under active construction.
 
 - It is not a stable distribution.
+- `paw/distribution/**` defines a candidate manual distribution contract; it
+  does not publish `0.1.0`, enable packaging, or create release automation.
 - Portability is neither implemented nor guaranteed.
 - `paw/core/**` contains live conceptual contracts; `paw/integration/**` contains
-  portable delivery and change-request contracts; `paw/catalogs/**` contains
-  portable family and preset catalogs; `paw/adoption/**` contains portable adoption
+  portable delivery and change-request contracts; `paw/distribution/**` contains
+  candidate manual distribution contracts; `paw/catalogs/**` contains portable
+  family and preset catalogs; `paw/adoption/**` contains portable adoption
   contracts; `paw/orchestration/**` contains runtime-neutral workflow contracts;
   `paw/tools/**` and `paw/tests/**` contain the materialized validators, schemas,
   fixtures, and contract tests; `.codex/**` contains the candidate Codex runtime
@@ -29,6 +32,9 @@ PAW is a `pre-alpha` bootstrap under active construction.
 - `docs/**`: canonical repository governance, architecture, naming, licensing, provenance, and transition documentation.
 - `paw/core/**`: live runtime-neutral PAW contracts.
 - `paw/integration/**`: portable integration, delivery, checks, and change-request contracts.
+- `paw/distribution/**`: candidate manual distribution, manifest, installation,
+  rollback, uninstall, verification, licensing, notices, and progressive loading
+  contracts.
 - `paw/adoption/**`: portable adoption records, adapter, assessment, and override contracts.
 - Other `paw/**` surfaces: target layout materialized incrementally by their owning governed patches; this does not activate the v2 workflow.
 - `sdd/**`: active v1 Spec-Driven Development runtime and patch workspaces during the transition.

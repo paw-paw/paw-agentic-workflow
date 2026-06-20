@@ -23,6 +23,10 @@ The candidate Codex runtime is described by:
 The runtime map is evidence for this adapter. Portable workflow authority remains
 under `paw/orchestration/**`.
 
+Manual distribution authority lives under `paw/distribution/**`. Codex runtime
+files may be distributed only when declared by the manifest, and installed use
+must not depend on absolute paths from the source repository.
+
 ## Boundaries
 
 This surface must not:

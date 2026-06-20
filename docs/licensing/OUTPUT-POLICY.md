@@ -25,6 +25,19 @@ Media, examples, fixtures, and other reusable assets must carry an explicit lice
 
 Do not assume that a source-repository asset is available for PAW merely because it existed near the inherited v1 implementation.
 
+## Manual Distribution
+
+A manual PAW distribution must preserve notices for covered source files and
+must make license treatment auditable through its manifest.
+
+The manifest may state a repository default license only when individual files
+do not override it. Templates and reusable assets included in a distribution
+must explicitly state whether materialized copies contain PAW Covered Software
+or are delivered as independent output.
+
+Manual distribution does not change the user-output rule above and does not add
+MPL Exhibit B unless a future governed decision explicitly does so.
+
 ## Current Bootstrap
 
 This bootstrap contains no packaged templates or media assets intended for redistribution into user products. Later patches must preserve or deliberately refine this policy when such surfaces are introduced.

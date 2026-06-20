@@ -25,6 +25,8 @@ Each child directory is owned by the governed patch that introduces its contract
 - `core/`: live conceptual PAW contracts.
 - `catalogs/`: portable family and preset contracts introduced incrementally.
 - `adoption/`: portable adoption record, adapter, assessment, and override contracts.
+- `distribution/`: candidate manual distribution, manifest, install, rollback,
+  uninstall, verification, licensing, notices, and progressive-loading contracts.
 - `parches/`: future fixed patch workspace root.
 - `orchestration/`: runtime-neutral workflow, bootstrap, and conformance contracts.
 - `tools/`: deterministic PAW schemas and tooling, introduced by owning patches.
