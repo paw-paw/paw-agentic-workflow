@@ -1,0 +1,8 @@
+{
+  "valid": false,
+  "error_codes": [
+    "DISTRIBUTION_CHECKSUM_MISMATCH",
+    "DISTRIBUTION_EXCLUDED_SOURCE",
+    "DISTRIBUTION_REQUIRED_SURFACE_MISSING"
+  ]
+}

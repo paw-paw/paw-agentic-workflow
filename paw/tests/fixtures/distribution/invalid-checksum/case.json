@@ -1,0 +1,50 @@
+{
+  "filesystem": {
+    "README.md": "changed",
+    "LICENSE": "license",
+    "NOTICES.md": "notice",
+    "docs/README.md": "docs",
+    "docs/licensing/OUTPUT-POLICY.md": "output",
+    "paw/core/README.md": "core",
+    "paw/catalogs/README.md": "catalogs",
+    "paw/adoption/README.md": "adoption",
+    "paw/orchestration/README.md": "orchestration",
+    "paw/integration/README.md": "integration",
+    "paw/distribution/README.md": "distribution",
+    "paw/tools/schemas/patch-v2.schema.json": "schema",
+    "paw/tools/validate-patches.mjs": "validator",
+    ".codex/README.md": "codex-readme",
+    ".codex/paw-runtime-map.json": "runtime-map",
+    ".codex/paw-toolkit/README.md": "toolkit",
+    ".codex/skills/paw-plan/SKILL.md": "skill"
+  },
+  "manifest": {
+    "schema_version": 1,
+    "distribution_id": "paw-codex-manual",
+    "version": "0.1.0-candidate.9",
+    "status": "candidate",
+    "compatibility": { "schema_versions": [1, 2], "toolkit": "codex-candidate", "codex_runtime": "codex-paw-candidate" },
+    "requirements": { "node": ">=20" },
+    "license": "MPL-2.0",
+    "notices": ["NOTICES.md"],
+    "files": [
+      { "source_path": "README.md", "destination_path": "README.md", "kind": "documentation", "checksum_sha256": "711a6108ba2ce6ca93dd47d6817f2361db10d8ab6eec89460b2dfc2c325efabe", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": "LICENSE", "destination_path": "LICENSE", "kind": "license", "checksum_sha256": "cc1d3b0234846714b0aeda6cc34b057b4305bb83dd447fb88f816efeb59a4e96", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": "NOTICES.md", "destination_path": "NOTICES.md", "kind": "notice", "checksum_sha256": "9368a7d21e018f64ae3327d2f25cd4d7693b2d85328e4bb680bcfcbd4c26b90e", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": "docs/README.md", "destination_path": "docs/README.md", "kind": "contract", "checksum_sha256": "46b42b4229cd7a39c564e780bb665a8bde4fdf722007e8473f167fe53ed4b995", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": "docs/licensing/OUTPUT-POLICY.md", "destination_path": "docs/licensing/OUTPUT-POLICY.md", "kind": "contract", "checksum_sha256": "e0ee8bb50685e05fa0f47ed04203ae953fdfd055f5bd2892ea186504254f8c3a", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": "paw/core/README.md", "destination_path": "paw/core/README.md", "kind": "contract", "checksum_sha256": "0d45f5fd462b8c70bffb10021ac1bcff3f58f29b1faf7568595095427d42812c", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": "paw/catalogs/README.md", "destination_path": "paw/catalogs/README.md", "kind": "contract", "checksum_sha256": "55a98ce330955e58ee55f71cea9a8b24e5889e48c938ad81f764811e8abcc248", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": "paw/adoption/README.md", "destination_path": "paw/adoption/README.md", "kind": "contract", "checksum_sha256": "1f81818d27cc93a3cb7d8d62fc3c8815255a8b96fc804f3a871f51c3fdb1847a", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": "paw/orchestration/README.md", "destination_path": "paw/orchestration/README.md", "kind": "contract", "checksum_sha256": "74a91990e340be9dafd841be15d05fbaa5c6b104e22a2ef92b3383f4a541838d", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": "paw/integration/README.md", "destination_path": "paw/integration/README.md", "kind": "contract", "checksum_sha256": "eb92cc52a766c500e001d02f1eaa78784da47f8c96b019ce874d3e3c205b4e3c", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": "paw/distribution/README.md", "destination_path": "paw/distribution/README.md", "kind": "contract", "checksum_sha256": "93354845030274cd4bf1686abd60ab28ec52e1a792fa6f7ccb9cbd0ddff53d12", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": "paw/tools/schemas/patch-v2.schema.json", "destination_path": "paw/tools/schemas/patch-v2.schema.json", "kind": "schema", "checksum_sha256": "df0ad6e43880f09c90ebf95f19110178aba6890df0010ebda7485029e2b543b4", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": "paw/tools/validate-patches.mjs", "destination_path": "paw/tools/validate-patches.mjs", "kind": "tool", "checksum_sha256": "f82af32160bc53112ca118abbf57fa6fed47eb90291a1d1d92f438ae2ed74ef6", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": ".codex/README.md", "destination_path": ".codex/README.md", "kind": "runtime-binding", "checksum_sha256": "1c29cd8817131b11931c9506b9dddccb444b51332cba3d861756acedfb34d03f", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": ".codex/paw-runtime-map.json", "destination_path": ".codex/paw-runtime-map.json", "kind": "runtime-binding", "checksum_sha256": "83d4712f443dfdf1b7f8c67f8154e72069dc5bc9cd73aa0dc40f9416029d3351", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": ".codex/paw-toolkit/README.md", "destination_path": ".codex/paw-toolkit/README.md", "kind": "runtime-binding", "checksum_sha256": "a071a2473c944518ad502cfb6a561f2f92da70d228dc1934a53357bdb386a0cc", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true },
+      { "source_path": ".codex/skills/paw-plan/SKILL.md", "destination_path": ".codex/skills/paw-plan/SKILL.md", "kind": "runtime-binding", "checksum_sha256": "9c53c074d7ac6a2728b638ac1f376c5fa9eb8f71603017c3ea638c2fd40548df", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true }
+    ]
+  }
+}

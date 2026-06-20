@@ -1,0 +1,18 @@
+{
+  "filesystem": {
+    "_inbox/private.md": "secret"
+  },
+  "manifest": {
+    "schema_version": 1,
+    "distribution_id": "paw-codex-manual",
+    "version": "0.1.0-candidate.9",
+    "status": "candidate",
+    "compatibility": { "schema_versions": [1, 2], "toolkit": "codex-candidate", "codex_runtime": "codex-paw-candidate" },
+    "requirements": { "node": ">=20" },
+    "license": "MPL-2.0",
+    "notices": ["NOTICES.md"],
+    "files": [
+      { "source_path": "_inbox/private.md", "destination_path": "_inbox/private.md", "kind": "documentation", "checksum_sha256": "2bb80d537b1da3e38bd30361aa855686bde0ba444e6dcfb6c7f4bd020db9b6f8", "license": "MPL-2.0", "required_for_codex": false, "uninstall_owned": false }
+    ]
+  }
+}

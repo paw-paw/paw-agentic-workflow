@@ -1,0 +1,7 @@
+{
+  "valid": false,
+  "error_codes": [
+    "DISTRIBUTION_STABLE_RELEASE_INVALID",
+    "DISTRIBUTION_REQUIRED_SURFACE_MISSING"
+  ]
+}

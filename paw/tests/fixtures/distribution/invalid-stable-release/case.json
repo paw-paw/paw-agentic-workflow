@@ -1,0 +1,18 @@
+{
+  "filesystem": {
+    "README.md": "readme"
+  },
+  "manifest": {
+    "schema_version": 1,
+    "distribution_id": "paw-codex-manual",
+    "version": "0.1.0",
+    "status": "candidate",
+    "compatibility": { "schema_versions": [1, 2], "toolkit": "codex-candidate", "codex_runtime": "codex-paw-candidate" },
+    "requirements": { "node": ">=20" },
+    "license": "MPL-2.0",
+    "notices": ["NOTICES.md"],
+    "files": [
+      { "source_path": "README.md", "destination_path": "README.md", "kind": "documentation", "checksum_sha256": "711a6108ba2ce6ca93dd47d6817f2361db10d8ab6eec89460b2dfc2c325efabe", "license": "MPL-2.0", "required_for_codex": true, "uninstall_owned": true }
+    ]
+  }
+}

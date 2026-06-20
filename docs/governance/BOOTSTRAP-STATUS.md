@@ -24,6 +24,8 @@
 - Candidate manual distribution contracts for manifest, checksums,
   install/upgrade, rollback, uninstall, verification, licensing/notices, and
   progressive loading under `paw/distribution/**`.
+- Deterministic distribution manifest validation, schemas, fixtures, and
+  contract tests.
 - Physical patch schema v2 and dual-read v1/v2 manifest validation under `paw/tools/**`.
 - Portable compatibility fixtures and validator contract tests under `paw/tests/**`.
 - A compatibility-preserving `sdd/tools/validate-sdd.mjs` bridge for active v1 consumers.

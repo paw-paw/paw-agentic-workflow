@@ -59,6 +59,8 @@ node paw/tools/validate-workflow.mjs --json
 node paw/tools/validate-workflow.mjs --fixtures --json
 node paw/tools/validate-integration.mjs --json
 node paw/tools/validate-integration.mjs --fixtures --json
+node paw/tools/validate-distribution.mjs --json
+node paw/tools/validate-distribution.mjs --fixtures --json
 node --test paw/tests/contract/patch-parsing.test.mjs
 node --test paw/tests/contract/patch-validation.test.mjs
 node --test paw/tests/contract/validator-cli.test.mjs
@@ -69,6 +71,8 @@ node --test paw/tests/contract/workflow-validation.test.mjs
 node --test paw/tests/contract/workflow-cli.test.mjs
 node --test paw/tests/contract/integration-validation.test.mjs
 node --test paw/tests/contract/integration-cli.test.mjs
+node --test paw/tests/contract/distribution-validation.test.mjs
+node --test paw/tests/contract/distribution-cli.test.mjs
 node --test paw/tests/contract/codex-runtime-toolkit.test.mjs
 node --test paw/tests/contract/codex-runtime-skills.test.mjs
 node --test paw/tests/contract/codex-runtime-agents.test.mjs

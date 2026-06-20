@@ -1,0 +1,4 @@
+{
+  "valid": false,
+  "error_codes": ["DISTRIBUTION_CHECKSUM_MISMATCH"]
+}

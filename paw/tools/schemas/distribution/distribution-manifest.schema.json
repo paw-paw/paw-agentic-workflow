@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paw.local/schemas/distribution-manifest.schema.json",
+  "title": "PAW Distribution Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "distribution_id",
+    "version",
+    "status",
+    "compatibility",
+    "requirements",
+    "license",
+    "notices",
+    "files"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "distribution_id": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["candidate"] },
+    "compatibility": {
+      "type": "object",
+      "required": ["schema_versions", "toolkit", "codex_runtime"],
+      "properties": {
+        "schema_versions": {
+          "type": "array",
+          "items": { "type": "integer" },
+          "minItems": 1
+        },
+        "toolkit": { "type": "string", "minLength": 1 },
+        "codex_runtime": { "type": "string", "minLength": 1 }
+      }
+    },
+    "requirements": {
+      "type": "object",
+      "required": ["node"],
+      "properties": {
+        "node": { "type": "string", "minLength": 1 }
+      }
+    },
+    "license": { "type": "string", "minLength": 1 },
+    "notices": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_path",
+          "destination_path",
+          "kind",
+          "checksum_sha256",
+          "license",
+          "required_for_codex",
+          "uninstall_owned"
+        ],
+        "properties": {
+          "source_path": { "type": "string", "minLength": 1 },
+          "destination_path": { "type": "string", "minLength": 1 },
+          "kind": { "type": "string", "minLength": 1 },
+          "checksum_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "license": { "type": "string", "minLength": 1 },
+          "required_for_codex": { "type": "boolean" },
+          "uninstall_owned": { "type": "boolean" }
+        }
+      },
+      "minItems": 1
+    }
+  }
+}

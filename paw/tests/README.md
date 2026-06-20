@@ -44,6 +44,11 @@ This directory is reserved for future portable fixtures, examples, compatibility
 - `fixtures/integration/**` contains positive and negative evidence for standalone,
   program member, draft, current checks, stale checks, closed-unmerged, and
   abandoned delivery records.
+- `contract/distribution-*.test.mjs` covers the candidate manual distribution
+  manifest, checksums, excluded sources, required surfaces, and validator CLI
+  behavior.
+- `fixtures/distribution/**` contains positive and negative evidence for
+  distribution manifest integrity and patch-09 release boundaries.
 - `contract/codex-runtime-*.test.mjs` covers candidate Codex runtime mapping,
   toolkit CLI behavior, skill metadata, and agent profile boundaries.
 - `fixtures/codex-runtime/**` contains candidate Codex runtime evidence. These

@@ -48,6 +48,13 @@ This directory is reserved for future deterministic tools that validate or opera
   freshness, readiness, delivery disposition, and fixture expectations.
 - `validate-integration.mjs` exposes integration contract and fixture validation
   through a deterministic CLI.
+- `schemas/distribution/**` define the materialized manual distribution manifest
+  shape.
+- `distribution/**` validates the candidate manual distribution manifest,
+  checksums, excluded sources, required surfaces, compatibility declarations, and
+  fixture expectations.
+- `validate-distribution.mjs` exposes distribution contract and fixture
+  validation through a deterministic CLI.
 
 The parser supports top-level mappings, simple string/integer/null scalars, empty
 arrays, block arrays of simple scalars, comments, and blank lines. It rejects nested
@@ -74,6 +81,8 @@ node paw/tools/validate-workflow.mjs --json
 node paw/tools/validate-workflow.mjs --fixtures --json
 node paw/tools/validate-integration.mjs --json
 node paw/tools/validate-integration.mjs --fixtures --json
+node paw/tools/validate-distribution.mjs --json
+node paw/tools/validate-distribution.mjs --fixtures --json
 ```
 
 Exit code `0` means success, `1` means validation errors, and `2` means invalid usage
