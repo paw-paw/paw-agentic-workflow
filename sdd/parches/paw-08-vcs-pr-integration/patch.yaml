@@ -1,0 +1,29 @@
+schema_version: 1
+change_id: paw-08-vcs-pr-integration
+program_id: paw-foundation
+patch_kind: spec
+lifecycle: spec-anchored
+status: active
+created_at: 2026-06-20
+closed_at: null
+related_docs:
+  - docs/README.md
+  - README.md
+  - AGENTS.md
+  - CONTRIBUTING.md
+  - docs/governance/ARCHITECTURE.md
+  - docs/governance/V1-TRANSITION.md
+  - docs/governance/BOOTSTRAP-STATUS.md
+  - paw/core/README.md
+  - paw/core/patch-model.md
+  - paw/core/artifact-lifecycle.md
+  - paw/core/authority-and-evidence.md
+  - paw/core/decision-gates.md
+  - paw/core/drift-policy.md
+  - paw/core/compatibility-policy.md
+  - paw/orchestration/README.md
+  - paw/orchestration/workflow.md
+  - paw/tools/README.md
+  - paw/tests/README.md
+  - .codex/README.md
+  - .codex/paw-runtime-map.json

@@ -1,0 +1,38 @@
+# Decision log: paw-08-vcs-pr-integration
+
+---
+
+## 2026-06-20 - Branch base del patch
+
+- Decision: crear `patch/paw-08-vcs-pr-integration` desde `origin/main`.
+- Contexto: `origin/main` esta en `fd51a23` y contiene `83ac009`, cierre de
+  `paw-07-codex-runtime-tooling`.
+- Razon: el handoff exige ejecucion serial y patch anterior integrado.
+- Impacto: no se basa el patch en la rama local obsoleta `codex/paw-07...`.
+- Aprobacion: usuario pidio implementar el plan aprobado.
+
+---
+
+## 2026-06-20 - Politica VCS provisional para el patch
+
+- Decision: aplicar la cadencia del handoff 08 durante este patch.
+- Contexto: el handoff 08 canoniza la politica durable, pero tambien autoriza su
+  uso provisional para `paw-foundation`.
+- Razon: preservar trazabilidad SDD antes de que el contrato vivo quede cerrado.
+- Impacto: commit baseline SDD antes de fases, commits por fase cerrada, commit
+  de cierre independiente, sin WIP remoto, squash, rebase, force-push ni merge.
+- Aprobacion: handoff final y plan aprobado por usuario.
+
+---
+
+## 2026-06-20 - Owner de `integration.yaml`
+
+- Decision: este patch promueve `integration.yaml` desde extension reservada a
+  artifact gobernado por contrato de integracion.
+- Contexto: `paw/core/artifact-lifecycle.md` reservaba `integration.yaml` para un
+  contrato posterior.
+- Razon: el handoff 08 define explicitamente schema, lifecycle y uso.
+- Impacto: el contrato portable se materializara bajo `paw/integration/**`; core
+  conserva responsabilidades generales sin proveedor concreto.
+- Aprobacion: handoff final y plan aprobado por usuario.
+
