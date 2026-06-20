@@ -48,3 +48,17 @@
 - Impacto: `codex-runtime-toolkit.test.mjs` vuelve a validar el estado real del
   patch anterior.
 - Aprobacion: drift operacional resuelto dentro de Fase 3.
+
+---
+
+## 2026-06-20 - Separacion de fixtures de patch e integracion
+
+- Decision: excluir `paw/tests/fixtures/integration/**` de la matriz de
+  `validate-patches --fixtures`.
+- Contexto: la verificacion integral mostro que el validator de patches
+  recolectaba todo `expected.json` que no fuera catalogs, adoption o workflow.
+- Razon: los fixtures de integracion pertenecen al validator de integracion, no
+  a la compatibilidad de `patch.yaml` v1/v2.
+- Impacto: `validate-patches --fixtures` vuelve a cubrir solo fixtures de patch;
+  `validate-integration --fixtures` cubre la nueva matriz de delivery.
+- Aprobacion: drift de validacion resuelto en Fase 4.
