@@ -1,0 +1,30 @@
+# Decision Log: paw-09-manual-distribution
+
+## 2026-06-20 - Direct main execution
+
+- Decision: execute `paw-09-manual-distribution` directly on `main` and do not
+  create a patch branch.
+- Rationale: the human explicitly instructed: "No generes una branch, estas
+  modificaciones se haran en el main."
+- Consequence: this patch intentionally deviates from the default one-branch and
+  one-primary-change-request policy introduced by `paw-08`; commits still follow
+  the approved cadence: baseline SDD commit, phase commits, and closure commit.
+
+## 2026-06-20 - Candidate distribution status
+
+- Decision: describe the first manual distribution as candidate/development
+  material, not as published stable `0.1.0`.
+- Rationale: the handoff reserves `0.1.0` as the first public target version but
+  explicitly keeps publishing `0.1.0` out of scope for this patch.
+- Consequence: manifests and docs must avoid release-stable claims.
+
+## 2026-06-20 - Distribution authority surface
+
+- Decision: introduce `paw/distribution/**` as the live authority surface for
+  manual distribution contracts, layout, installation, upgrade, rollback,
+  uninstall, verification, manifest, checksums, requirements, license/notices,
+  and progressive context loading.
+- Rationale: no registered live document currently owns manual distribution, and
+  the patch needs a durable source that can be indexed by `docs/README.md`.
+- Consequence: tools and tests enforce evidence, but policy remains in
+  `paw/distribution/**`.
