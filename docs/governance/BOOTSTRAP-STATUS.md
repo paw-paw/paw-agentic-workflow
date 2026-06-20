@@ -31,13 +31,14 @@
 - Runtime-neutral workflow, documentation bootstrap, and conformance contracts under
   `paw/orchestration/**`.
 - Deterministic workflow validation, schemas, fixtures, and contract tests.
+- Candidate Codex runtime map and shared toolkit contract under `.codex/**`.
 
 ## Not Implemented
 
 - Active `paw/parches/` workspaces.
 - v2 manifest writers or a v2 default workflow.
-- `paw-*` skills or agents.
-- Runtime bindings for the `paw-*` workflow operations.
+- Executable `paw-*` skills or agents.
+- Fully tested runtime bindings for the `paw-*` workflow operations.
 - Concrete runtime adapters for Codex, Claude Code, or Antigravity.
 - Adoption automation in a consumer repository.
 - Multi-runtime and multi-repository portability.

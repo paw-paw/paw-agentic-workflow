@@ -71,6 +71,9 @@ An active patch cannot silently override an authoritative live document. A misma
 | `paw/orchestration/conformance.md` | contract, verifiable | contract | authoritative | portable document roles, conformance chain, rule dispositions, enforcement, and manual evidence | workflow contract owner | automated |
 | `paw/tools/README.md` | strategic, operational | operational | supporting | PAW schema and validator inventory plus incremental activation boundary | owning governed patch | automated |
 | `paw/tests/README.md` | strategic, operational | operational | supporting | PAW compatibility fixtures, conformance inventory, and activation boundary | owning governed patch | automated |
+| `.codex/README.md` | operational | operational | supporting | Codex runtime surface orientation and PAW candidate adapter boundary | Codex runtime owner | automated |
+| `.codex/paw-runtime-map.json` | operational, verifiable | operational | supporting | candidate Codex mapping from portable operations to runtime skills, toolkit, and agents | Codex runtime owner | automated |
+| `.codex/paw-toolkit/**` | operational, verifiable | operational | supporting | candidate Codex toolkit contract and deterministic helper scripts | Codex runtime owner | automated |
 | `sdd/**` | operational, verifiable | operational | supporting | active v1 runtime until cutover | v1 transition owner | automated |
 | `.codex/**` | operational | operational | supporting | Codex runtime binding | v1 transition owner | manual |
 | `sdd/parches/<change-id>/**` | strategic, contract, operational, verifiable | operational | non_authoritative | active change scope, then historical memory | patch owner | automated |

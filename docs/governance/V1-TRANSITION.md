@@ -33,8 +33,10 @@ authorize a second writable patch namespace.
 | `paw/orchestration/` | Runtime-neutral orchestration contracts | Workflow, bootstrap, and conformance contracts materialized; not a workflow activation |
 | `paw/tools/` | PAW schemas and tooling | Schema v2, dual-read validator, catalog validators, and adoption validator materialized; workflow validator also materialized; not a workflow activation |
 | `paw/tests/` | Portable fixtures and conformance assets | v1/v2 compatibility, catalog, adoption, and workflow fixtures plus contract tests materialized; not a workflow activation |
-| `.codex/skills/paw-*` | Future Codex skills | Not created |
-| `.codex/agents/paw-*` | Future Codex agents | Not created |
+| `.codex/paw-toolkit/` | Candidate Codex runtime helper toolkit | Contract materialized by patch 07; helper scripts may be tested but do not activate v2 workflow |
+| `.codex/paw-runtime-map.json` | Candidate Codex operation mapping | Materialized by patch 07 as adapter evidence; portable authority remains under `paw/orchestration/**` |
+| `.codex/skills/paw-*` | Candidate Codex skills | Introduced by patch 07 as inactive runtime bindings; not the default workflow |
+| `.codex/agents/paw-*` | Candidate Codex agents | Introduced by patch 07 as bounded support profiles; not contractual authority |
 
 ## Invariants Before Cutover
 
@@ -44,6 +46,8 @@ authorize a second writable patch namespace.
 - `paw/parches/` contains no workspaces or writers.
 - There are no symlinks between namespaces.
 - There is no dual-write or duplicated active implementation.
+- Candidate `.codex/skills/paw-*`, `.codex/agents/paw-*`, and `.codex/paw-toolkit/**`
+  do not replace active `.codex/skills/sdd-*` before cutover.
 - A v2 candidate may not change the default workflow without its approved activation gate.
 - Historical v1 names and provenance are preserved.
 - Pages, Actions, packaging, releases, and deployment remain disabled.
