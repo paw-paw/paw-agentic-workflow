@@ -92,30 +92,47 @@
       "portable_operation": "paw-bootstrap-discover",
       "codex_skill": ".codex/skills/paw-bootstrap-discover/SKILL.md",
       "contract": "paw/orchestration/bootstrap.md",
-      "status": "planned",
+      "status": "implemented",
       "mutation_level": "level-1"
     },
     {
       "portable_operation": "paw-bootstrap-define",
       "codex_skill": ".codex/skills/paw-bootstrap-define/SKILL.md",
       "contract": "paw/orchestration/bootstrap.md",
-      "status": "planned",
+      "status": "implemented",
       "mutation_level": "level-2"
     },
     {
       "portable_operation": "paw-bootstrap-write",
       "codex_skill": ".codex/skills/paw-bootstrap-write/SKILL.md",
       "contract": "paw/orchestration/bootstrap.md",
-      "status": "planned",
+      "status": "implemented",
       "mutation_level": "level-2"
     },
     {
       "portable_operation": "paw-conformance",
       "codex_skill": ".codex/skills/paw-conformance/SKILL.md",
       "contract": "paw/orchestration/conformance.md",
-      "status": "planned",
+      "status": "implemented",
       "mutation_level": "level-1",
       "portable_note": "Conformance is an adapter operation for the conformance contract rather than a patch lifecycle transition."
+    }
+  ],
+  "agent_profiles": [
+    {
+      "path": ".codex/agents/paw-contract-reader.toml",
+      "mode": "read-only",
+      "authority": "advisory"
+    },
+    {
+      "path": ".codex/agents/paw-artifact-writer.toml",
+      "mode": "workspace-write",
+      "authority": "single-authorized-artifact"
+    },
+    {
+      "path": ".codex/agents/paw-risk-reviewer.toml",
+      "mode": "read-only",
+      "authority": "advisory"
     }
   ],
   "gaps": []
