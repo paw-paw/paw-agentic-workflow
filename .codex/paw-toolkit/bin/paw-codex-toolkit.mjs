@@ -3,6 +3,9 @@ import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { validateIntegrationRecord } from '../../../paw/tools/integration/validate-integration-record.mjs';
+import { normalizeGithubSnapshot } from '../providers/github.mjs';
+
 const VERSION = 'paw-codex-toolkit 0.1.0';
 const HELP = `Usage: node .codex/paw-toolkit/bin/paw-codex-toolkit.mjs <command> [options]
 
@@ -11,6 +14,8 @@ Commands:
   inspect-patch      Inspect one SDD patch workspace.
   check-mutation     Validate a mutation envelope.
   plan-write         Plan or perform a mechanical file write.
+  inspect-integration  Inspect a local integration record.
+  github-snapshot    Normalize an experimental GitHub provider snapshot.
 
 Options:
   --help                  Show this help.
@@ -23,6 +28,8 @@ Options:
   --plan-path <path>      Required for level-2 mutations.
   --target <path>         Target path for plan-write.
   --content <text>        Mechanical content for plan-write.
+  --integration-path <path>  Integration record JSON path.
+  --snapshot-path <path>  Provider snapshot JSON path.
   --dry-run               Do not write during plan-write.
 
 Exit codes:
@@ -62,6 +69,8 @@ function parseArgs(argv) {
     planPath: null,
     target: null,
     content: null,
+    integrationPath: null,
+    snapshotPath: null,
     dryRun: false,
   };
 
@@ -97,6 +106,12 @@ function parseArgs(argv) {
       index += 1;
     } else if (arg === '--content') {
       options.content = argv[index + 1];
+      index += 1;
+    } else if (arg === '--integration-path') {
+      options.integrationPath = argv[index + 1];
+      index += 1;
+    } else if (arg === '--snapshot-path') {
+      options.snapshotPath = argv[index + 1];
       index += 1;
     } else {
       return { ok: false, message: `Unknown argument: ${arg}` };
@@ -266,6 +281,47 @@ export function runToolkitCli(
           dry_run: options.dryRun,
           repeated_execution: existsSync(target),
           mutation_level: options.level,
+        },
+      }), { json: options.json, stdout, stderr });
+    }
+
+    if (options.command === 'inspect-integration') {
+      if (!options.integrationPath) {
+        write(stderr, 'PAW Codex toolkit usage error: inspect-integration requires --integration-path.\n');
+        return 2;
+      }
+      const integrationPath = resolve(root, options.integrationPath);
+      const record = JSON.parse(readFileSync(integrationPath, 'utf8'));
+      const validation = validateIntegrationRecord(record, integrationPath);
+      return emit(result({
+        status: validation.valid ? 'pass' : 'fail',
+        command: options.command,
+        root,
+        errors: validation.diagnostics.filter(({ severity }) => severity === 'error').map(({ code }) => code),
+        data: {
+          integration_path: integrationPath,
+          provider_state: record.provider_snapshot?.state ?? null,
+          paw_readiness: record.paw_readiness ?? null,
+          delivery_disposition: record.delivery_disposition ?? null,
+        },
+      }), { json: options.json, stdout, stderr });
+    }
+
+    if (options.command === 'github-snapshot') {
+      if (!options.snapshotPath) {
+        write(stderr, 'PAW Codex toolkit usage error: github-snapshot requires --snapshot-path.\n');
+        return 2;
+      }
+      const snapshotPath = resolve(root, options.snapshotPath);
+      const snapshot = normalizeGithubSnapshot(JSON.parse(readFileSync(snapshotPath, 'utf8')));
+      return emit(result({
+        command: options.command,
+        root,
+        data: {
+          provider: snapshot.provider,
+          state: snapshot.state,
+          head_sha: snapshot.head_sha,
+          check_count: snapshot.checks.length,
         },
       }), { json: options.json, stdout, stderr });
     }

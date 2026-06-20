@@ -42,7 +42,7 @@ test('toolkit inspects patch state without semantic drafting', () => {
   const result = run(['inspect-patch', '--change-id', 'paw-07-codex-runtime-tooling', '--json']);
   assert.equal(result.status, 0);
   const output = JSON.parse(result.stdout);
-  assert.equal(output.data.status, 'active');
+  assert.equal(output.data.status, 'closed');
   assert.equal(output.data.lifecycle, 'spec-anchored');
 });
 
@@ -81,4 +81,31 @@ test('toolkit dry-run plan-write does not mutate target', () => {
   assert.equal(existsSync(target), false);
   const output = JSON.parse(result.stdout);
   assert.equal(output.data.dry_run, true);
+});
+
+test('toolkit inspects local integration records', () => {
+  const result = run([
+    'inspect-integration',
+    '--integration-path',
+    'paw/tests/fixtures/integration/valid-ready-current-checks/case.json',
+    '--json',
+  ]);
+  assert.equal(result.status, 0);
+  const output = JSON.parse(result.stdout);
+  assert.equal(output.data.provider_state, 'open');
+  assert.equal(output.data.paw_readiness, 'ready_to_merge');
+  assert.equal(output.data.delivery_disposition, 'pending');
+});
+
+test('toolkit normalizes provided GitHub snapshots without network access', () => {
+  const result = run([
+    'github-snapshot',
+    '--snapshot-path',
+    'paw/tests/fixtures/integration/valid-ready-current-checks/case.json',
+    '--json',
+  ]);
+  assert.equal(result.status, 0);
+  const output = JSON.parse(result.stdout);
+  assert.equal(output.data.provider, 'absent');
+  assert.equal(output.data.check_count, 0);
 });

@@ -23,6 +23,8 @@ Toolkit scripts may only perform deterministic mechanics:
 - mutation envelope validation;
 - dry-run planning for mechanical writes;
 - freshness checks based on provided expected state.
+- local integration record inspection;
+- experimental provider snapshot normalization from user-provided data.
 
 Toolkit scripts must not draft doctrine, decide scope, infer authority, or generate
 substantive artifact copy.
@@ -61,6 +63,14 @@ Mutation levels are:
   prohibited.
 
 Scripts cannot increase their authority because a skill can reason about context.
+
+## Integration Helpers
+
+`inspect-integration` validates a local integration record and reports provider
+state, PAW readiness, and delivery disposition. `github-snapshot` normalizes a
+provided provider snapshot into the portable integration shape. These helpers do
+not perform network calls, push, update change requests, read remote checks, or
+merge.
 
 ## Idempotency
 

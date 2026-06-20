@@ -116,6 +116,14 @@
       "status": "implemented",
       "mutation_level": "level-1",
       "portable_note": "Conformance is an adapter operation for the conformance contract rather than a patch lifecycle transition."
+    },
+    {
+      "portable_operation": "paw-integrate",
+      "codex_skill": ".codex/skills/paw-integrate/SKILL.md",
+      "contract": "paw/integration/integration-lifecycle.md",
+      "status": "implemented",
+      "mutation_level": "level-1",
+      "portable_note": "Integration is an adapter operation for delivery evidence and provider snapshots, not a core lifecycle transition."
     }
   ],
   "agent_profiles": [

@@ -27,6 +27,7 @@ authorize a second writable patch namespace.
 | Surface | Intended responsibility | Current state |
 | --- | --- | --- |
 | `paw/core/` | Portable PAW contracts | Live conceptual contracts |
+| `paw/integration/` | Portable delivery, VCS, change-request, checks, readiness, and `integration.yaml` contracts | Materialized integration contracts and validation target; not remote automation or merge authority |
 | `paw/catalogs/` | Portable family, documentation, modifier, and implementation preset definitions | Materialized catalogs and validators; not adoption automation |
 | `paw/adoption/` | Portable adoption records, adapter, assessment, and override contracts | Materialized contracts and validators; not adoption automation or runtime integration |
 | `paw/parches/` | Future fixed patch workspace root | Inactive; writing is prohibited |
@@ -41,7 +42,7 @@ authorize a second writable patch namespace.
 ## Invariants Before Cutover
 
 - New governed patches use `sdd/parches/<change-id>/`.
-- Materialized `paw/**` surfaces, including workflow contracts and validators, do not change the active writer, manifest default, or workspace root.
+- Materialized `paw/**` surfaces, including integration contracts, workflow contracts and validators, do not change the active writer, manifest default, or workspace root.
 - New PAW implementation belongs to its approved target surface; `sdd/**` preserves v1 operation and compatibility.
 - `paw/parches/` contains no workspaces or writers.
 - There are no symlinks between namespaces.

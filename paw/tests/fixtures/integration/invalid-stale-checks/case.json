@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "program_role": "standalone",
+  "governance_source": "sdd/parches/example/definicion.md",
+  "base_branch": "main",
+  "head_branch": "patch/example",
+  "primary_integration": {
+    "provider": "github",
+    "id": "12",
+    "url": "https://example.invalid/pull/12"
+  },
+  "promotion_refs": [],
+  "included_patches": ["example"],
+  "provider_snapshot": {
+    "provider": "github",
+    "state": "open",
+    "head_sha": "newsha",
+    "checks": [
+      {
+        "name": "contract-tests",
+        "classification": "ci-gated",
+        "status": "pass",
+        "head_sha": "oldsha"
+      }
+    ],
+    "observed_at": "2026-06-20T00:00:00Z"
+  },
+  "paw_readiness": "ready_to_merge",
+  "delivery_disposition": "pending",
+  "merged_refs": []
+}

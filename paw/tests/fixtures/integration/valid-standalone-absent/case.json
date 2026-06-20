@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "program_role": "standalone",
+  "governance_source": "sdd/parches/example/definicion.md",
+  "base_branch": "main",
+  "head_branch": "patch/example",
+  "primary_integration": {
+    "provider": "absent",
+    "id": "",
+    "url": ""
+  },
+  "promotion_refs": [],
+  "included_patches": ["example"],
+  "provider_snapshot": {
+    "provider": "absent",
+    "state": "absent",
+    "head_sha": "",
+    "checks": [],
+    "observed_at": ""
+  },
+  "paw_readiness": "not_evaluated",
+  "delivery_disposition": "pending",
+  "merged_refs": []
+}
