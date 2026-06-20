@@ -23,6 +23,10 @@ Human approval is required when a decision changes:
 
 Implementations may add stricter local gates. They may not remove these gates.
 
+Bootstrap write requires a human gate when it creates or changes authoritative
+documents. The gate must identify the approved document list, authority treatment,
+validation expectations, and any accepted gaps.
+
 ## Gate Record
 
 A decision gate records:

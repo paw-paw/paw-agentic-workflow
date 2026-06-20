@@ -19,6 +19,10 @@ Drift is information. It does not authorize an automatic change to scope or auth
 
 One finding may belong to more than one category. Record each consequence that affects reconciliation.
 
+Documentation role drift includes a mismatch between the canonical documentation
+index and optional local metadata such as frontmatter. The index remains the owning
+source unless a governed change updates it.
+
 ## Classification
 
 After identifying the category, classify the response:

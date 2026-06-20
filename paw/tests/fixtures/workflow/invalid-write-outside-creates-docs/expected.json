@@ -1,0 +1,4 @@
+{
+  "valid": false,
+  "error_codes": ["WORKFLOW_BOOTSTRAP_WRITE_OUTSIDE_CREATES_DOCS"]
+}

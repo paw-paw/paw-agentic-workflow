@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "kind": "manual-evidence",
+  "evidence": {
+    "reviewer": "repository maintainer",
+    "date": "2026-06-19",
+    "reviewed_object": "paw/orchestration/conformance.md",
+    "criterion": "manual evidence is structured",
+    "result": "pass",
+    "references": []
+  }
+}

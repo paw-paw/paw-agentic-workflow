@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "workflow",
+  "operations": [
+    { "id": "paw-triage" },
+    { "id": "paw-intake" },
+    { "id": "paw-plan" },
+    { "id": "paw-close" }
+  ],
+  "states": ["tasked", "phase-active"],
+  "transitions": [
+    {
+      "from": "tasked",
+      "to": "phase-active",
+      "requires_artifact": "backlog/fase1.md",
+      "artifact_present": false
+    }
+  ]
+}

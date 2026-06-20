@@ -55,12 +55,16 @@ node paw/tools/validate-patches.mjs --fixtures --json
 node paw/tools/validate-catalogs.mjs --json
 node paw/tools/validate-catalogs.mjs --fixtures --json
 node paw/tools/validate-adoption.mjs --fixtures --json
+node paw/tools/validate-workflow.mjs --json
+node paw/tools/validate-workflow.mjs --fixtures --json
 node --test paw/tests/contract/patch-parsing.test.mjs
 node --test paw/tests/contract/patch-validation.test.mjs
 node --test paw/tests/contract/validator-cli.test.mjs
 node --test paw/tests/contract/adoption-adapters.test.mjs
 node --test paw/tests/contract/adoption-records.test.mjs
 node --test paw/tests/contract/adoption-assessments.test.mjs
+node --test paw/tests/contract/workflow-validation.test.mjs
+node --test paw/tests/contract/workflow-cli.test.mjs
 node --test tests/sdd-validation.test.mjs
 node --test tests/foundation-governance.test.mjs
 node --test tests/core-contracts.test.mjs

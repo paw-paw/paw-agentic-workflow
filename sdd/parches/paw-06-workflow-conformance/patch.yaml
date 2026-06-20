@@ -1,0 +1,25 @@
+schema_version: 1
+change_id: paw-06-workflow-conformance
+program_id: paw-foundation
+patch_kind: spec
+lifecycle: spec-anchored
+status: closed
+created_at: 2026-06-19
+closed_at: 2026-06-19
+related_docs:
+  - docs/README.md
+  - docs/governance/ARCHITECTURE.md
+  - docs/governance/V1-TRANSITION.md
+  - docs/governance/BOOTSTRAP-STATUS.md
+  - paw/core/README.md
+  - paw/core/artifact-lifecycle.md
+  - paw/core/authority-and-evidence.md
+  - paw/core/decision-gates.md
+  - paw/core/drift-policy.md
+  - paw/core/compatibility-policy.md
+  - paw/orchestration/README.md
+  - paw/orchestration/workflow.md
+  - paw/orchestration/bootstrap.md
+  - paw/orchestration/conformance.md
+  - paw/tools/README.md
+  - paw/tests/README.md

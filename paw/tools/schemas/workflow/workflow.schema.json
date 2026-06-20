@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paw.local/schemas/workflow/workflow.schema.json",
+  "title": "PAW workflow operation contract",
+  "type": "object",
+  "required": ["schema_version", "operations", "states", "invalid_transitions"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "purpose", "inputs", "outputs", "must_not"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^paw-[a-z0-9-]+$" },
+          "purpose": { "type": "string", "minLength": 1 },
+          "inputs": { "type": "array", "items": { "type": "string" } },
+          "outputs": { "type": "array", "items": { "type": "string" } },
+          "must_not": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "states": { "type": "array", "items": { "type": "string" } },
+    "invalid_transitions": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

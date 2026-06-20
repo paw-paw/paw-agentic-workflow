@@ -33,6 +33,11 @@ This directory is reserved for future portable fixtures, examples, compatibility
   overrides, assessment flows, and catalog reference validation.
 - `fixtures/adoption/**` contains positive and negative evidence for adapters,
   records, and assessments.
+- `contract/workflow-*.test.mjs` covers workflow contract validation, bootstrap
+  gates, conformance dispositions, manual evidence, and validator CLI behavior.
+- `fixtures/workflow/**` contains positive and negative evidence for workflow
+  routing, missing artifacts, bootstrap writes, accepted gaps, generated checks, and
+  manual evidence.
 
 ## Ownership
 

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "kind": "workflow",
+  "operations": [
+    { "id": "paw-triage" },
+    { "id": "paw-intake" },
+    { "id": "paw-plan" },
+    { "id": "paw-close" }
+  ],
+  "states": ["unclassified", "triaged", "defined", "planned", "closed"],
+  "transitions": [
+    { "from": "unclassified", "to": "triaged" },
+    { "from": "triaged", "to": "defined" },
+    { "from": "defined", "to": "planned" },
+    { "from": "planned", "to": "closed" }
+  ]
+}

@@ -30,16 +30,16 @@ authorize a second writable patch namespace.
 | `paw/catalogs/` | Portable family, documentation, modifier, and implementation preset definitions | Materialized catalogs and validators; not adoption automation |
 | `paw/adoption/` | Portable adoption records, adapter, assessment, and override contracts | Materialized contracts and validators; not adoption automation or runtime integration |
 | `paw/parches/` | Future fixed patch workspace root | Inactive; writing is prohibited |
-| `paw/orchestration/` | Runtime-neutral orchestration contracts | Inactive orientation only |
-| `paw/tools/` | PAW schemas and tooling | Schema v2, dual-read validator, catalog validators, and adoption validator materialized; not a workflow activation |
-| `paw/tests/` | Portable fixtures and conformance assets | v1/v2 compatibility, catalog, and adoption fixtures plus contract tests materialized; not a workflow activation |
+| `paw/orchestration/` | Runtime-neutral orchestration contracts | Workflow, bootstrap, and conformance contracts materialized; not a workflow activation |
+| `paw/tools/` | PAW schemas and tooling | Schema v2, dual-read validator, catalog validators, and adoption validator materialized; workflow validator also materialized; not a workflow activation |
+| `paw/tests/` | Portable fixtures and conformance assets | v1/v2 compatibility, catalog, adoption, and workflow fixtures plus contract tests materialized; not a workflow activation |
 | `.codex/skills/paw-*` | Future Codex skills | Not created |
 | `.codex/agents/paw-*` | Future Codex agents | Not created |
 
 ## Invariants Before Cutover
 
 - New governed patches use `sdd/parches/<change-id>/`.
-- Materialized `paw/**` surfaces do not change the active writer, manifest default, or workspace root.
+- Materialized `paw/**` surfaces, including workflow contracts and validators, do not change the active writer, manifest default, or workspace root.
 - New PAW implementation belongs to its approved target surface; `sdd/**` preserves v1 operation and compatibility.
 - `paw/parches/` contains no workspaces or writers.
 - There are no symlinks between namespaces.

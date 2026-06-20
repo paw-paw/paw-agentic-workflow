@@ -26,9 +26,10 @@ Each child directory is owned by the governed patch that introduces its contract
 - `catalogs/`: portable family and preset contracts introduced incrementally.
 - `adoption/`: portable adoption record, adapter, assessment, and override contracts.
 - `parches/`: future fixed patch workspace root.
-- `orchestration/`: future runtime-neutral orchestration contracts.
+- `orchestration/`: runtime-neutral workflow, bootstrap, and conformance contracts.
 - `tools/`: deterministic PAW schemas and tooling, introduced by owning patches.
 - `tests/`: portable fixtures and conformance assets, introduced by owning patches.
 
-The core documents are authoritative conceptual contracts. Other surfaces gain
-implementation or contractual status only through their owning governed patches.
+The core and registered orchestration documents are authoritative conceptual
+contracts. Other surfaces gain implementation or contractual status only through
+their owning governed patches.

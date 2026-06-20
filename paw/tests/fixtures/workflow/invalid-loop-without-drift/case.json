@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "kind": "workflow",
+  "operations": [
+    { "id": "paw-triage" },
+    { "id": "paw-intake" },
+    { "id": "paw-plan" },
+    { "id": "paw-close" }
+  ],
+  "states": ["planned"],
+  "transitions": [
+    { "from": "planned", "to": "planned" }
+  ]
+}

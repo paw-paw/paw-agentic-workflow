@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "kind": "conformance",
+  "rule": {
+    "document": "paw/orchestration/conformance.md",
+    "role": "verifiable",
+    "disposition": "accepted-gap",
+    "enforcement": "manual",
+    "owner": "repository maintainers",
+    "residual_risk": "manual review remains required until integration policy exists"
+  }
+}

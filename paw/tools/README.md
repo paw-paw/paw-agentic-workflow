@@ -37,6 +37,12 @@ This directory is reserved for future deterministic tools that validate or opera
   assessments, catalog references, and adoption fixture matrices.
 - `validate-adoption.mjs` exposes adoption fixture validation through a deterministic
   CLI.
+- `schemas/workflow/**` define materialized workflow, bootstrap, conformance, and
+  manual evidence shapes.
+- `workflow/**` validates the canonical workflow contracts and workflow fixture
+  matrix.
+- `validate-workflow.mjs` exposes workflow contract and fixture validation through a
+  deterministic CLI.
 
 The parser supports top-level mappings, simple string/integer/null scalars, empty
 arrays, block arrays of simple scalars, comments, and blank lines. It rejects nested
@@ -59,6 +65,8 @@ node paw/tools/validate-patches.mjs --version
 node paw/tools/validate-catalogs.mjs --json
 node paw/tools/validate-catalogs.mjs --fixtures --json
 node paw/tools/validate-adoption.mjs --fixtures --json
+node paw/tools/validate-workflow.mjs --json
+node paw/tools/validate-workflow.mjs --fixtures --json
 ```
 
 Exit code `0` means success, `1` means validation errors, and `2` means invalid usage

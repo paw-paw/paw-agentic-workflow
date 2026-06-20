@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "kind": "conformance",
+  "rule": {
+    "document": "paw/orchestration/conformance.md",
+    "role": "verifiable",
+    "disposition": "generated",
+    "enforcement": "automated",
+    "generation_method": "deterministic fixture generator with reviewed output"
+  }
+}

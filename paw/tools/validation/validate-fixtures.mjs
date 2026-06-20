@@ -49,7 +49,8 @@ export function validateFixtureMatrix(fixturesPath) {
     (path) =>
       path.endsWith('expected.json') &&
       !path.replaceAll('\\', '/').includes('/catalogs/') &&
-      !path.replaceAll('\\', '/').includes('/adoption/'),
+      !path.replaceAll('\\', '/').includes('/adoption/') &&
+      !path.replaceAll('\\', '/').includes('/workflow/'),
   );
   const harnessDiagnostics = [];
   const observedResults = [];
