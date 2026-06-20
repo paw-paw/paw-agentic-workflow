@@ -257,7 +257,7 @@
       "source_path": "README.md",
       "destination_path": "README.md",
       "kind": "documentation",
-      "checksum_sha256": "39f6164fb7a5faddaba0b70b64d67fb8bca8a3b430870dc68640d801f91a79c8",
+      "checksum_sha256": "775dc2cab0be75b1c3a46dab2d46c4e0a981669ecf37cfd6df112437eb07b9cc",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -788,7 +788,7 @@
       "source_path": "paw/tests/contract/patch-validation.test.mjs",
       "destination_path": "paw/tests/contract/patch-validation.test.mjs",
       "kind": "tool",
-      "checksum_sha256": "fe878878d8816f05dd1a249c8cccfba1bfbe52b6b3202e95e7c6542223b34d76",
+      "checksum_sha256": "5341afb8bdde429cedd04c8c13f45d8d096ca2cab6a96505c7a7bb1ab31af636",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -2957,7 +2957,7 @@
       "source_path": "paw/tools/validation/validate-fixtures.mjs",
       "destination_path": "paw/tools/validation/validate-fixtures.mjs",
       "kind": "tool",
-      "checksum_sha256": "5dc6eef524d1093e2d8b4f5ad5af7ad17bc06fba92c8bf9bdbd98d6942a15c78",
+      "checksum_sha256": "1f3af18069e6f4a04bdd550220db8b320d2285b201f7b07162031d7cb7041060",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true

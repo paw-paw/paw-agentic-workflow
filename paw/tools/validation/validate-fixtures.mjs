@@ -51,7 +51,8 @@ export function validateFixtureMatrix(fixturesPath) {
       !path.replaceAll('\\', '/').includes('/catalogs/') &&
       !path.replaceAll('\\', '/').includes('/adoption/') &&
       !path.replaceAll('\\', '/').includes('/workflow/') &&
-      !path.replaceAll('\\', '/').includes('/integration/'),
+      !path.replaceAll('\\', '/').includes('/integration/') &&
+      !path.replaceAll('\\', '/').includes('/distribution/'),
   );
   const harnessDiagnostics = [];
   const observedResults = [];

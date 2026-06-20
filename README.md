@@ -15,9 +15,9 @@ PAW is a `pre-alpha` bootstrap under active construction.
   does not publish `0.1.0`, enable packaging, or create release automation.
 - Portability is neither implemented nor guaranteed.
 - `paw/core/**` contains live conceptual contracts; `paw/integration/**` contains
-  portable delivery and change-request contracts; `paw/distribution/**` contains
-  candidate manual distribution contracts; `paw/catalogs/**` contains portable
-  family and preset catalogs; `paw/adoption/**` contains portable adoption
+  portable delivery and change-request contracts; `paw/catalogs/**` contains
+  portable family and preset catalogs; `paw/distribution/**` contains candidate
+  manual distribution contracts; `paw/adoption/**` contains portable adoption
   contracts; `paw/orchestration/**` contains runtime-neutral workflow contracts;
   `paw/tools/**` and `paw/tests/**` contain the materialized validators, schemas,
   fixtures, and contract tests; `.codex/**` contains the candidate Codex runtime

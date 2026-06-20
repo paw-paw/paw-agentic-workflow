@@ -43,7 +43,8 @@ function fixtureDirectories() {
         !path.replaceAll('\\', '/').includes('/catalogs/') &&
         !path.replaceAll('\\', '/').includes('/adoption/') &&
         !path.replaceAll('\\', '/').includes('/workflow/') &&
-        !path.replaceAll('\\', '/').includes('/integration/'),
+        !path.replaceAll('\\', '/').includes('/integration/') &&
+        !path.replaceAll('\\', '/').includes('/distribution/'),
     )
     .map((path) => dirname(path))
     .sort();

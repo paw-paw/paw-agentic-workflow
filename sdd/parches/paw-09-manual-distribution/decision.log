@@ -28,3 +28,13 @@
   the patch needs a durable source that can be indexed by `docs/README.md`.
 - Consequence: tools and tests enforce evidence, but policy remains in
   `paw/distribution/**`.
+
+## 2026-06-20 - Distribution fixtures stay outside patch fixture matrix
+
+- Decision: exclude `paw/tests/fixtures/distribution/**` from the generic
+  `validate-patches --fixtures` harness and validate them through
+  `validate-distribution --fixtures`.
+- Rationale: distribution fixtures use `case.json`/`expected.json` for manifest
+  validation, not patch workspace fixtures with `patch.yaml`.
+- Consequence: the generic patch fixture matrix remains focused on patch
+  compatibility, while distribution owns its domain fixtures.
