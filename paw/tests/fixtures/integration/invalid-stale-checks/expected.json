@@ -1,0 +1,7 @@
+{
+  "valid": false,
+  "error_codes": [
+    "INTEGRATION_CHECK_STALE",
+    "INTEGRATION_READINESS_EVIDENCE_STALE"
+  ]
+}

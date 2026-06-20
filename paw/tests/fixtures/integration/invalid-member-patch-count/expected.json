@@ -1,0 +1,6 @@
+{
+  "valid": false,
+  "error_codes": [
+    "INTEGRATION_MEMBER_PATCH_COUNT_INVALID"
+  ]
+}

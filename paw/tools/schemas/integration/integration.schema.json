@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paw.local/schemas/integration/integration.schema.json",
+  "title": "PAW integration record",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "program_role",
+    "governance_source",
+    "base_branch",
+    "head_branch",
+    "primary_integration",
+    "promotion_refs",
+    "included_patches",
+    "provider_snapshot",
+    "paw_readiness",
+    "delivery_disposition",
+    "merged_refs"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "program_role": { "enum": ["standalone", "member", "integration"] },
+    "governance_source": { "type": "string", "minLength": 1 },
+    "base_branch": { "type": "string" },
+    "head_branch": { "type": "string", "minLength": 1 },
+    "primary_integration": {
+      "type": "object",
+      "required": ["provider", "id", "url"],
+      "properties": {
+        "provider": { "type": "string" },
+        "id": { "type": "string" },
+        "url": { "type": "string" }
+      }
+    },
+    "promotion_refs": { "type": "array", "items": { "type": "string" } },
+    "included_patches": { "type": "array", "items": { "type": "string" } },
+    "provider_snapshot": {
+      "type": "object",
+      "required": ["provider", "state", "head_sha", "checks", "observed_at"],
+      "properties": {
+        "provider": { "type": "string" },
+        "state": { "enum": ["absent", "draft", "open", "closed", "merged"] },
+        "head_sha": { "type": "string" },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "classification", "status", "head_sha"],
+            "properties": {
+              "name": { "type": "string" },
+              "classification": { "enum": ["ci-gated", "informational", "manual"] },
+              "status": { "enum": ["pass", "fail", "pending", "skipped", "unknown"] },
+              "head_sha": { "type": "string" }
+            }
+          }
+        },
+        "observed_at": { "type": "string" }
+      }
+    },
+    "paw_readiness": { "enum": ["not_evaluated", "blocked", "ready_to_merge"] },
+    "delivery_disposition": { "enum": ["pending", "integrated", "closed_unmerged", "abandoned"] },
+    "merged_refs": { "type": "array", "items": { "type": "string" } }
+  }
+}
+

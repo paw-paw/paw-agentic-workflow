@@ -38,6 +38,12 @@ This directory is reserved for future portable fixtures, examples, compatibility
 - `fixtures/workflow/**` contains positive and negative evidence for workflow
   routing, missing artifacts, bootstrap writes, accepted gaps, generated checks, and
   manual evidence.
+- `contract/integration-*.test.mjs` covers integration contract validation, provider
+  state separation, check freshness, delivery disposition, and validator CLI
+  behavior.
+- `fixtures/integration/**` contains positive and negative evidence for standalone,
+  program member, draft, current checks, stale checks, closed-unmerged, and
+  abandoned delivery records.
 - `contract/codex-runtime-*.test.mjs` covers candidate Codex runtime mapping,
   toolkit CLI behavior, skill metadata, and agent profile boundaries.
 - `fixtures/codex-runtime/**` contains candidate Codex runtime evidence. These

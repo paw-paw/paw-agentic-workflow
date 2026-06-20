@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "program_role": "member",
+  "governance_source": "sdd/parches/paw-08-vcs-pr-integration/definicion.md",
+  "base_branch": "main",
+  "head_branch": "patch/paw-08-vcs-pr-integration",
+  "primary_integration": {
+    "provider": "github",
+    "id": "8",
+    "url": "https://example.invalid/pull/8"
+  },
+  "promotion_refs": [],
+  "included_patches": ["paw-08-vcs-pr-integration"],
+  "provider_snapshot": {
+    "provider": "github",
+    "state": "draft",
+    "head_sha": "abc123",
+    "checks": [
+      {
+        "name": "local-validation",
+        "classification": "informational",
+        "status": "pending",
+        "head_sha": "abc123"
+      }
+    ],
+    "observed_at": "2026-06-20T00:00:00Z"
+  },
+  "paw_readiness": "not_evaluated",
+  "delivery_disposition": "pending",
+  "merged_refs": []
+}

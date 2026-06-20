@@ -67,6 +67,8 @@ node --test paw/tests/contract/adoption-records.test.mjs
 node --test paw/tests/contract/adoption-assessments.test.mjs
 node --test paw/tests/contract/workflow-validation.test.mjs
 node --test paw/tests/contract/workflow-cli.test.mjs
+node --test paw/tests/contract/integration-validation.test.mjs
+node --test paw/tests/contract/integration-cli.test.mjs
 node --test paw/tests/contract/codex-runtime-toolkit.test.mjs
 node --test paw/tests/contract/codex-runtime-skills.test.mjs
 node --test paw/tests/contract/codex-runtime-agents.test.mjs
