@@ -221,7 +221,7 @@
       "source_path": "AGENTS.md",
       "destination_path": "AGENTS.md",
       "kind": "documentation",
-      "checksum_sha256": "d811de753567f309dec310139d44c8c34ea788c89b45344d7b500ebb5d653bb2",
+      "checksum_sha256": "dd04578bbffed140b8cc4f17fbf49f6bf0a7c19de5469c16f20e0b686e56ac14",
       "license": "MPL-2.0",
       "required_for_codex": false,
       "uninstall_owned": true
@@ -248,7 +248,7 @@
       "source_path": "README.md",
       "destination_path": "README.md",
       "kind": "documentation",
-      "checksum_sha256": "7985cd70dcb2424b2e9a42f17e12717238a14941bf698271fc8d6e0c3f0c4334",
+      "checksum_sha256": "39f6164fb7a5faddaba0b70b64d67fb8bca8a3b430870dc68640d801f91a79c8",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -626,7 +626,7 @@
       "source_path": "paw/tests/README.md",
       "destination_path": "paw/tests/README.md",
       "kind": "test",
-      "checksum_sha256": "da5871e8f6d7a318f6a55f9aee5bd280d5715234c5b722c5c3fa2fd6e4f515d4",
+      "checksum_sha256": "2342392e2151164229da3d1f5c54c3a5f79e6eb6fbc26c47d9fbe8d7337fd87f",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -690,6 +690,15 @@
       "destination_path": "paw/tests/contract/distribution-cli.test.mjs",
       "kind": "tool",
       "checksum_sha256": "1e8e37ff5fa7e106d51ae26b93502fc8d6ba4e16eb3a22678dab1d3393e0593f",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/tests/contract/distribution-installation.test.mjs",
+      "destination_path": "paw/tests/contract/distribution-installation.test.mjs",
+      "kind": "tool",
+      "checksum_sha256": "88a814344d927e94a3d75e46e417dcfe4b93f9e5b21cc8fe9b155c43eb54d04b",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -2616,6 +2625,15 @@
       "destination_path": "paw/tools/cli/run-validator-cli.mjs",
       "kind": "tool",
       "checksum_sha256": "dfec896ccd4ff0eb8b4a6d36d7945915b0aefff4fe989b0837a127cdb25bfc24",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/tools/distribution/install-plan.mjs",
+      "destination_path": "paw/tools/distribution/install-plan.mjs",
+      "kind": "tool",
+      "checksum_sha256": "3e95d8e49ecbfda8e11ab84f20b212cbdfa3c8e68b00a5430be5c12ba10c5b92",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true

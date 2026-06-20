@@ -86,6 +86,7 @@ node --test paw/tests/contract/integration-validation.test.mjs
 node --test paw/tests/contract/integration-cli.test.mjs
 node --test paw/tests/contract/distribution-validation.test.mjs
 node --test paw/tests/contract/distribution-cli.test.mjs
+node --test paw/tests/contract/distribution-installation.test.mjs
 node --test paw/tests/contract/codex-runtime-toolkit.test.mjs
 node --test paw/tests/contract/codex-runtime-skills.test.mjs
 node --test paw/tests/contract/codex-runtime-agents.test.mjs

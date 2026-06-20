@@ -46,7 +46,8 @@ This directory is reserved for future portable fixtures, examples, compatibility
   abandoned delivery records.
 - `contract/distribution-*.test.mjs` covers the candidate manual distribution
   manifest, checksums, excluded sources, required surfaces, and validator CLI
-  behavior.
+  behavior, plus dry-run install planning, conflict detection, post-install
+  verification, and safe uninstall planning.
 - `fixtures/distribution/**` contains positive and negative evidence for
   distribution manifest integrity and patch-09 release boundaries.
 - `contract/codex-runtime-*.test.mjs` covers candidate Codex runtime mapping,
