@@ -1,0 +1,22 @@
+# Decision Log: paw-10c-antigravity-first-physical-adapter
+
+## 2026-06-21 - Antigravity candidate surface
+
+- Decision: materialize `.agents/**` only as Antigravity candidate physical
+  files.
+- Rationale: the corrected handoff selects `.agents/**`, while live governance
+  keeps `.codex/**` as the Codex runtime surface.
+- Affected areas: `.agents/**`, adoption/distribution docs.
+
+## 2026-06-21 - Runtime validation gate
+
+- Decision: close as `physical-files-candidate` unless local Antigravity
+  discovery and invocation are executed.
+- Rationale: static files do not prove Antigravity runtime behavior.
+- Affected areas: closure state, downstream `paw-10d` gate.
+
+## 2026-06-21 - Replace paw-verify with paw-conformance
+
+- Decision: do not materialize `paw-verify`; materialize `paw-conformance`.
+- Rationale: `paw-verify` is not a live portable operation.
+- Affected areas: `.agents/skills/**`.
