@@ -47,7 +47,7 @@ not available, close as `physical-files-candidate`.
 - `.claude/skills/paw-phase-backlog/SKILL.md`
 - `.claude/skills/paw-execute-phase/SKILL.md`
 - `.claude/skills/paw-sync-drift/SKILL.md`
-- `.claude/skills/paw-verify/SKILL.md`
+- `.claude/skills/paw-conformance/SKILL.md`
 - minimal `references/` files where a skill needs supporting context
 - optional `.claude/agents/*.md` advisory reviewers
 - optional `.claude/settings.json` only if a safe shared config exists

@@ -20,3 +20,12 @@
 - Rationale: controlled writers require stronger runtime validation and should
   not be introduced as hidden decision-makers.
 - Affected areas: `.claude/agents/*.md`.
+
+## 2026-06-21 - Replace handoff-local paw-verify with paw-conformance
+
+- Decision: do not materialize `paw-verify`; materialize `paw-conformance`
+  instead.
+- Rationale: `paw-verify` is named by the private handoff but is not a live
+  portable operation. `paw-conformance` is the existing candidate operation for
+  rules, checks, evidence, and validation coverage.
+- Affected areas: `.claude/skills/**`, `handover.md`, `tasks.md`, phase backlog.

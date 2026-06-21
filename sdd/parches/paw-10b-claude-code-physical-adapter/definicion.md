@@ -121,6 +121,11 @@ no activa PAW v2 por defecto ni declara soporte estable.
   - razon: el handoff permite subagents candidate pero prohibe decisiones
     humanas delegadas o writers no gobernados.
   - documentos o areas afectadas: `.claude/agents/*.md`.
+- decision: usar `paw-conformance` en lugar de `paw-verify`.
+  - razon: `paw-verify` aparece en el handoff privado, pero no es una operacion
+    portable viva; `paw-conformance` ya gobierna reglas, checks y evidencia.
+  - documentos o areas afectadas: `.claude/skills/**`, `handover.md`,
+    `tasks.md`, backlog de fase.
 
 ---
 

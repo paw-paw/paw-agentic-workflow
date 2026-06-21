@@ -51,6 +51,8 @@
 - Tareas:
   - create `.claude/skills/paw-*` operation skills.
   - create minimal references for workflow, activation boundary, and validation.
+  - use `paw-conformance` for evidence mapping instead of handoff-local
+    `paw-verify`.
   - create advisory `.claude/agents/*.md` reviewers.
   - omit `.claude/settings.json` unless a safe shared setting is required.
 - Archivos o areas probables: `.claude/**`.
