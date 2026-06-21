@@ -1,0 +1,10 @@
+# Decision Log: paw-10d-antigravity-distribution-adapter
+
+## 2026-06-21 - Block distribution adapter on predecessor gate
+
+- Decision: do not implement the Antigravity distribution adapter in this run.
+- Rationale: `paw-10c-antigravity-first-physical-adapter` closed as
+  `physical-files-candidate`; the handoff requires `physical-adapter-candidate`
+  before distribution work starts.
+- Affected areas: `sdd/parches/paw-10d-antigravity-distribution-adapter/**`,
+  final report.
