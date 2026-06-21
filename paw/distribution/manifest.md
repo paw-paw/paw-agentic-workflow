@@ -62,6 +62,11 @@ surfaces when required by the manifest:
   `.codex/paw-toolkit/**`, `.codex/skills/paw-*`, and
   `.codex/agents/paw-*`.
 
+Runtime adapter evidence under `paw/adoption/adapters/runtime/**` may be
+included as contract data for candidate evaluation. Including that evidence does
+not ship `.claude/**` or `.antigravity/**` runtime files and does not make the
+manual distribution a multi-runtime installer.
+
 ## Exclusions
 
 The distribution must exclude:

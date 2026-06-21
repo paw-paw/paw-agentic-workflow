@@ -23,6 +23,13 @@ Use this order for Codex-oriented installed use:
 6. References, fixtures, test logs, and extended diagnostics only when a finding,
    failure, or human review requires them.
 
+For explicit multi-runtime candidate evaluation, load only the runtime adapter
+evidence for the selected runtime under `paw/adoption/adapters/runtime/`.
+Claude Code evidence may point to official `.claude/skills/<name>/SKILL.md`
+semantics, but those files are not materialized by this distribution.
+Antigravity evidence must be loaded with its blocked gaps visible and must not
+be replaced with Gemini CLI assumptions.
+
 ## Runtime Requirements
 
 Candidate runtime bindings must document which contract they load first and why.
@@ -37,6 +44,8 @@ The following patterns are invalid for default installed use:
 - loading private `_inbox/**` material as runtime authority;
 - treating fixtures or generated output as policy when a contract exists;
 - loading adapters for runtimes that are not part of the current operation;
+- treating candidate adapter evidence as proof that runtime installation files
+  exist;
 - using legacy `sdd/**` history to override live PAW contracts.
 
 ## Escalation

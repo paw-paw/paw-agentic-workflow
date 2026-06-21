@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "distribution_id": "paw-codex-manual",
-  "version": "0.1.0-candidate.9",
+  "version": "0.1.0-candidate.10",
   "status": "candidate",
   "compatibility": {
     "schema_versions": [
@@ -19,15 +19,6 @@
     "NOTICES.md"
   ],
   "files": [
-    {
-      "source_path": ".codex/README.md",
-      "destination_path": ".codex/README.md",
-      "kind": "runtime-binding",
-      "checksum_sha256": "7a8bba6a52dde30b38c72effeba5755d8b9d714109e17ae351527c048db6af4b",
-      "license": "MPL-2.0",
-      "required_for_codex": true,
-      "uninstall_owned": true
-    },
     {
       "source_path": ".codex/agents/paw-artifact-writer.toml",
       "destination_path": ".codex/agents/paw-artifact-writer.toml",
@@ -65,15 +56,6 @@
       "uninstall_owned": true
     },
     {
-      "source_path": ".codex/paw-toolkit/README.md",
-      "destination_path": ".codex/paw-toolkit/README.md",
-      "kind": "runtime-binding",
-      "checksum_sha256": "e7554476fd2c4efcbb18ccd6273472f5c3fcddf9a1cb90ed0b595ba04f38f453",
-      "license": "MPL-2.0",
-      "required_for_codex": true,
-      "uninstall_owned": true
-    },
-    {
       "source_path": ".codex/paw-toolkit/bin/paw-codex-toolkit.mjs",
       "destination_path": ".codex/paw-toolkit/bin/paw-codex-toolkit.mjs",
       "kind": "runtime-binding",
@@ -87,6 +69,24 @@
       "destination_path": ".codex/paw-toolkit/providers/github.mjs",
       "kind": "runtime-binding",
       "checksum_sha256": "9dbd0c29d31dfa1114b759cfdde3a969f6312ae71afe4c272fd2954de3f52a03",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".codex/paw-toolkit/README.md",
+      "destination_path": ".codex/paw-toolkit/README.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "e7554476fd2c4efcbb18ccd6273472f5c3fcddf9a1cb90ed0b595ba04f38f453",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".codex/README.md",
+      "destination_path": ".codex/README.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "7a8bba6a52dde30b38c72effeba5755d8b9d714109e17ae351527c048db6af4b",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -236,46 +236,10 @@
       "uninstall_owned": true
     },
     {
-      "source_path": "LICENSE",
-      "destination_path": "LICENSE",
-      "kind": "license",
-      "checksum_sha256": "cde215e5b42363eb28ca2462c4558ff4807b38f383c537624c31e44657ac58f4",
-      "license": "MPL-2.0",
-      "required_for_codex": true,
-      "uninstall_owned": true
-    },
-    {
-      "source_path": "NOTICES.md",
-      "destination_path": "NOTICES.md",
-      "kind": "notice",
-      "checksum_sha256": "18fc8da5b8d81c3d3b2723f46b9e0b2df5f54c6b9bec9bd78202bc7108810dc6",
-      "license": "MPL-2.0",
-      "required_for_codex": true,
-      "uninstall_owned": true
-    },
-    {
-      "source_path": "README.md",
-      "destination_path": "README.md",
-      "kind": "documentation",
-      "checksum_sha256": "775dc2cab0be75b1c3a46dab2d46c4e0a981669ecf37cfd6df112437eb07b9cc",
-      "license": "MPL-2.0",
-      "required_for_codex": true,
-      "uninstall_owned": true
-    },
-    {
-      "source_path": "docs/README.md",
-      "destination_path": "docs/README.md",
-      "kind": "contract",
-      "checksum_sha256": "32530561f12bc47e935bb0f1f8dab036fe1b01e1cd96fb8fab5ccd5d8645206f",
-      "license": "MPL-2.0",
-      "required_for_codex": true,
-      "uninstall_owned": true
-    },
-    {
       "source_path": "docs/governance/ARCHITECTURE.md",
       "destination_path": "docs/governance/ARCHITECTURE.md",
       "kind": "contract",
-      "checksum_sha256": "df42d47652c42714229881d20773fcc3dcf7971ef82eb2a71171491419ab123b",
+      "checksum_sha256": "a8507def636608130a7cb98ef145430b14a76d6b7b1ed5b9fdd84ab769d56ca0",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -284,7 +248,7 @@
       "source_path": "docs/governance/BOOTSTRAP-STATUS.md",
       "destination_path": "docs/governance/BOOTSTRAP-STATUS.md",
       "kind": "contract",
-      "checksum_sha256": "84e11cc844588e580dffefbf04ef6eff530a7e25ebece7f3b3f4b01f95577884",
+      "checksum_sha256": "4d780075166901f6ca9d614fc79b21eabe4b29c49c7012a147c6d7e22e79d280",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -311,7 +275,7 @@
       "source_path": "docs/governance/V1-TRANSITION.md",
       "destination_path": "docs/governance/V1-TRANSITION.md",
       "kind": "contract",
-      "checksum_sha256": "2a346e41fd14671e3fbe5d0f069fe2b74822c8b05466d25c4ec764bd30eb1416",
+      "checksum_sha256": "29ae14a6857736d9785a52f5c8b55a25d9474d9d1d4e495f6ab98cc0da8adeea",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -326,10 +290,28 @@
       "uninstall_owned": true
     },
     {
-      "source_path": "paw/adoption/README.md",
-      "destination_path": "paw/adoption/README.md",
+      "source_path": "docs/README.md",
+      "destination_path": "docs/README.md",
       "kind": "contract",
-      "checksum_sha256": "cc7a1f1bcb65c80123a9b9803510f7981dbbc3227c1bafd566bbeb44d8b3ba38",
+      "checksum_sha256": "32530561f12bc47e935bb0f1f8dab036fe1b01e1cd96fb8fab5ccd5d8645206f",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "LICENSE",
+      "destination_path": "LICENSE",
+      "kind": "license",
+      "checksum_sha256": "cde215e5b42363eb28ca2462c4558ff4807b38f383c537624c31e44657ac58f4",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "NOTICES.md",
+      "destination_path": "NOTICES.md",
+      "kind": "notice",
+      "checksum_sha256": "18fc8da5b8d81c3d3b2723f46b9e0b2df5f54c6b9bec9bd78202bc7108810dc6",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -338,7 +320,34 @@
       "source_path": "paw/adoption/adapters/README.md",
       "destination_path": "paw/adoption/adapters/README.md",
       "kind": "contract",
-      "checksum_sha256": "962fad782abe2e6a42eac8f7b04b3f7534e9ad4aef2e7d62a5bde4902af71f7e",
+      "checksum_sha256": "af65bbdbb3697eeb6479421a72317801872f75181e284260cd2d2fbdb67b9918",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/adoption/adapters/runtime/antigravity.json",
+      "destination_path": "paw/adoption/adapters/runtime/antigravity.json",
+      "kind": "contract",
+      "checksum_sha256": "2a073db29787748c00af58193b0c27cb8ea4ff7c26c16a8d95bcaecb2c9d23a7",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/adoption/adapters/runtime/claude-code.json",
+      "destination_path": "paw/adoption/adapters/runtime/claude-code.json",
+      "kind": "contract",
+      "checksum_sha256": "0814c15e5b271d2b581dc0307daeba70674182c68362d2131f68e5451acb017f",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/adoption/adapters/runtime/codex.json",
+      "destination_path": "paw/adoption/adapters/runtime/codex.json",
+      "kind": "contract",
+      "checksum_sha256": "577057a66707f3ba92441ba70d57ca062886fa99b259b595977e7e5a5205de90",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -362,28 +371,19 @@
       "uninstall_owned": true
     },
     {
+      "source_path": "paw/adoption/README.md",
+      "destination_path": "paw/adoption/README.md",
+      "kind": "contract",
+      "checksum_sha256": "c78401ecaa63de8f0bd07a8feaf13c752b4bf2d8777c3fe063ec02a32d06ea29",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
       "source_path": "paw/adoption/records/README.md",
       "destination_path": "paw/adoption/records/README.md",
       "kind": "contract",
       "checksum_sha256": "2459238d0c26e3d47839e2440c782805e89be5e709b5abce046fac108b74ea65",
-      "license": "MPL-2.0",
-      "required_for_codex": true,
-      "uninstall_owned": true
-    },
-    {
-      "source_path": "paw/catalogs/README.md",
-      "destination_path": "paw/catalogs/README.md",
-      "kind": "contract",
-      "checksum_sha256": "249d42a0bdd0336e1a765882efd130c72e6e312a0655ff3ef4e7fa25b2f603c9",
-      "license": "MPL-2.0",
-      "required_for_codex": true,
-      "uninstall_owned": true
-    },
-    {
-      "source_path": "paw/catalogs/capabilities/README.md",
-      "destination_path": "paw/catalogs/capabilities/README.md",
-      "kind": "contract",
-      "checksum_sha256": "7ccae721de27ed5a100ce3d432499a42fc90fa2493b8f8e2561dd3bdb4be0a45",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -398,10 +398,10 @@
       "uninstall_owned": true
     },
     {
-      "source_path": "paw/catalogs/documentation-presets/README.md",
-      "destination_path": "paw/catalogs/documentation-presets/README.md",
+      "source_path": "paw/catalogs/capabilities/README.md",
+      "destination_path": "paw/catalogs/capabilities/README.md",
       "kind": "contract",
-      "checksum_sha256": "56a5060587ccc05dcd90df431717beff4c9b69ab4a23dbecf785e2691d83f10e",
+      "checksum_sha256": "7ccae721de27ed5a100ce3d432499a42fc90fa2493b8f8e2561dd3bdb4be0a45",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -416,10 +416,10 @@
       "uninstall_owned": true
     },
     {
-      "source_path": "paw/catalogs/families/README.md",
-      "destination_path": "paw/catalogs/families/README.md",
+      "source_path": "paw/catalogs/documentation-presets/README.md",
+      "destination_path": "paw/catalogs/documentation-presets/README.md",
       "kind": "contract",
-      "checksum_sha256": "bd39efb18276d5ac6f35f7a5735fc6b7e84ae1f7cb92e6beeb621ece2a50f154",
+      "checksum_sha256": "56a5060587ccc05dcd90df431717beff4c9b69ab4a23dbecf785e2691d83f10e",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -434,10 +434,10 @@
       "uninstall_owned": true
     },
     {
-      "source_path": "paw/catalogs/implementation-presets/README.md",
-      "destination_path": "paw/catalogs/implementation-presets/README.md",
+      "source_path": "paw/catalogs/families/README.md",
+      "destination_path": "paw/catalogs/families/README.md",
       "kind": "contract",
-      "checksum_sha256": "7f7aef1485f8d3758f0efa457b38c5bb2d2f3b20ff5dc0c5b067223551f787f5",
+      "checksum_sha256": "bd39efb18276d5ac6f35f7a5735fc6b7e84ae1f7cb92e6beeb621ece2a50f154",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -452,10 +452,10 @@
       "uninstall_owned": true
     },
     {
-      "source_path": "paw/catalogs/modifiers/README.md",
-      "destination_path": "paw/catalogs/modifiers/README.md",
+      "source_path": "paw/catalogs/implementation-presets/README.md",
+      "destination_path": "paw/catalogs/implementation-presets/README.md",
       "kind": "contract",
-      "checksum_sha256": "550b56857099903559b47d96ddc3f675da7826b9695c1ddd4ff0d32bccb676c9",
+      "checksum_sha256": "7f7aef1485f8d3758f0efa457b38c5bb2d2f3b20ff5dc0c5b067223551f787f5",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -470,10 +470,19 @@
       "uninstall_owned": true
     },
     {
-      "source_path": "paw/core/README.md",
-      "destination_path": "paw/core/README.md",
+      "source_path": "paw/catalogs/modifiers/README.md",
+      "destination_path": "paw/catalogs/modifiers/README.md",
       "kind": "contract",
-      "checksum_sha256": "b38a0be276ebd542cc314cc47392f054973637bf2c8fe7b23bc525c8ac603a2e",
+      "checksum_sha256": "550b56857099903559b47d96ddc3f675da7826b9695c1ddd4ff0d32bccb676c9",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/catalogs/README.md",
+      "destination_path": "paw/catalogs/README.md",
+      "kind": "contract",
+      "checksum_sha256": "249d42a0bdd0336e1a765882efd130c72e6e312a0655ff3ef4e7fa25b2f603c9",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -533,10 +542,10 @@
       "uninstall_owned": true
     },
     {
-      "source_path": "paw/distribution/README.md",
-      "destination_path": "paw/distribution/README.md",
+      "source_path": "paw/core/README.md",
+      "destination_path": "paw/core/README.md",
       "kind": "contract",
-      "checksum_sha256": "f2a22a9ac320306ad7c974f3549bc92072f15734fd0f13e4b454d76d3d9ca6e7",
+      "checksum_sha256": "b38a0be276ebd542cc314cc47392f054973637bf2c8fe7b23bc525c8ac603a2e",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -545,7 +554,7 @@
       "source_path": "paw/distribution/manifest.md",
       "destination_path": "paw/distribution/manifest.md",
       "kind": "contract",
-      "checksum_sha256": "c9056e5f543e6086574b77833c3aa7a2bc69d877c3713c3f2c043694e6e488f3",
+      "checksum_sha256": "a1bbe73c56e443867451953da182b31a3002ef051f01b796c98350d220dff520",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -563,16 +572,16 @@
       "source_path": "paw/distribution/progressive-loading.md",
       "destination_path": "paw/distribution/progressive-loading.md",
       "kind": "contract",
-      "checksum_sha256": "70a80c7e59ecde6a6e6f6473a3591657b91d06ca15c55b9dc3793dfb209d7104",
+      "checksum_sha256": "fed68e47e3af745088b2ce3e2be48317dd01edad107b8f62a26466707a600e32",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
     },
     {
-      "source_path": "paw/integration/README.md",
-      "destination_path": "paw/integration/README.md",
+      "source_path": "paw/distribution/README.md",
+      "destination_path": "paw/distribution/README.md",
       "kind": "contract",
-      "checksum_sha256": "63104c6d1b8d488fa5064b7196ce1d5fc79c8c7e37c5e187105acfb9339a05e0",
+      "checksum_sha256": "f2a22a9ac320306ad7c974f3549bc92072f15734fd0f13e4b454d76d3d9ca6e7",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -596,10 +605,10 @@
       "uninstall_owned": true
     },
     {
-      "source_path": "paw/orchestration/README.md",
-      "destination_path": "paw/orchestration/README.md",
+      "source_path": "paw/integration/README.md",
+      "destination_path": "paw/integration/README.md",
       "kind": "contract",
-      "checksum_sha256": "a29449b254c79fb9cf18e7fba7b19f240c93a856236d2c67aed294ebf0870ce8",
+      "checksum_sha256": "63104c6d1b8d488fa5064b7196ce1d5fc79c8c7e37c5e187105acfb9339a05e0",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -623,6 +632,15 @@
       "uninstall_owned": true
     },
     {
+      "source_path": "paw/orchestration/README.md",
+      "destination_path": "paw/orchestration/README.md",
+      "kind": "contract",
+      "checksum_sha256": "a29449b254c79fb9cf18e7fba7b19f240c93a856236d2c67aed294ebf0870ce8",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
       "source_path": "paw/orchestration/workflow.md",
       "destination_path": "paw/orchestration/workflow.md",
       "kind": "contract",
@@ -632,19 +650,10 @@
       "uninstall_owned": true
     },
     {
-      "source_path": "paw/tests/README.md",
-      "destination_path": "paw/tests/README.md",
-      "kind": "test",
-      "checksum_sha256": "2342392e2151164229da3d1f5c54c3a5f79e6eb6fbc26c47d9fbe8d7337fd87f",
-      "license": "MPL-2.0",
-      "required_for_codex": true,
-      "uninstall_owned": true
-    },
-    {
       "source_path": "paw/tests/contract/adoption-adapters.test.mjs",
       "destination_path": "paw/tests/contract/adoption-adapters.test.mjs",
       "kind": "tool",
-      "checksum_sha256": "578cfdbc9139617550b05324b236e7956567e33a3ecf5363fb565aff63c2440b",
+      "checksum_sha256": "5b7cf748b97d562cce38ed1c9d758992153b1de50e1dfb93c2851af6ec282e11",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -839,10 +848,46 @@
       "uninstall_owned": true
     },
     {
+      "source_path": "paw/tests/fixtures/adoption/adapters/invalid-runtime-default-activation/case.json",
+      "destination_path": "paw/tests/fixtures/adoption/adapters/invalid-runtime-default-activation/case.json",
+      "kind": "fixture",
+      "checksum_sha256": "02efc54c58c937578d0c14d144c04386f1eb00c69c01406a8b9505672c36fbb6",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/tests/fixtures/adoption/adapters/invalid-runtime-default-activation/expected.json",
+      "destination_path": "paw/tests/fixtures/adoption/adapters/invalid-runtime-default-activation/expected.json",
+      "kind": "fixture",
+      "checksum_sha256": "886370d65744261794daabe947dcae4b202458c7264e1deecee044be05d9e64e",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/tests/fixtures/adoption/adapters/invalid-runtime-hidden-gap/case.json",
+      "destination_path": "paw/tests/fixtures/adoption/adapters/invalid-runtime-hidden-gap/case.json",
+      "kind": "fixture",
+      "checksum_sha256": "36f3e0688eebabb762870a8b32927a86eea0c0a21afeb246a8fc292ac4f95d83",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/tests/fixtures/adoption/adapters/invalid-runtime-hidden-gap/expected.json",
+      "destination_path": "paw/tests/fixtures/adoption/adapters/invalid-runtime-hidden-gap/expected.json",
+      "kind": "fixture",
+      "checksum_sha256": "6976749c903ae9ffc69e6190f2bd0698552a3daee65777472b50c28a2cd04bed",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
       "source_path": "paw/tests/fixtures/adoption/adapters/invalid-runtime-stack-selection/case.json",
       "destination_path": "paw/tests/fixtures/adoption/adapters/invalid-runtime-stack-selection/case.json",
       "kind": "fixture",
-      "checksum_sha256": "719616b4214aedb98323be68a0b71ebecf8c6c51ca4397dabb1ae21de8ed9c63",
+      "checksum_sha256": "98383d58729017951c64212d1952679a8c70560dc65c5a16c624ad8efe21f779",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -896,7 +941,7 @@
       "source_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-adapter/case.json",
       "destination_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-adapter/case.json",
       "kind": "fixture",
-      "checksum_sha256": "9c0778fb67496d18edd62ad87308f3a2ffc5a78c676040b3d5ecb18c76118769",
+      "checksum_sha256": "67ecfe349984a19b419753fb01e3090284eba3be50bf857eac83ecd63517ed35",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -906,6 +951,60 @@
       "destination_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-adapter/expected.json",
       "kind": "fixture",
       "checksum_sha256": "12b78b1cbe6679833e147e98709b8faf4de005efb167584ad7cf5b94cc357b61",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-antigravity-adapter/case.json",
+      "destination_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-antigravity-adapter/case.json",
+      "kind": "fixture",
+      "checksum_sha256": "2a073db29787748c00af58193b0c27cb8ea4ff7c26c16a8d95bcaecb2c9d23a7",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-antigravity-adapter/expected.json",
+      "destination_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-antigravity-adapter/expected.json",
+      "kind": "fixture",
+      "checksum_sha256": "89249d220111c3b3a8ba52e6d4c3a9ef4f1c700833feb796737bfc2fe10923ce",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-claude-code-adapter/case.json",
+      "destination_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-claude-code-adapter/case.json",
+      "kind": "fixture",
+      "checksum_sha256": "0814c15e5b271d2b581dc0307daeba70674182c68362d2131f68e5451acb017f",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-claude-code-adapter/expected.json",
+      "destination_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-claude-code-adapter/expected.json",
+      "kind": "fixture",
+      "checksum_sha256": "89249d220111c3b3a8ba52e6d4c3a9ef4f1c700833feb796737bfc2fe10923ce",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-codex-adapter/case.json",
+      "destination_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-codex-adapter/case.json",
+      "kind": "fixture",
+      "checksum_sha256": "577057a66707f3ba92441ba70d57ca062886fa99b259b595977e7e5a5205de90",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-codex-adapter/expected.json",
+      "destination_path": "paw/tests/fixtures/adoption/adapters/valid-runtime-codex-adapter/expected.json",
+      "kind": "fixture",
+      "checksum_sha256": "89249d220111c3b3a8ba52e6d4c3a9ef4f1c700833feb796737bfc2fe10923ce",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -2468,10 +2567,10 @@
       "uninstall_owned": true
     },
     {
-      "source_path": "paw/tools/README.md",
-      "destination_path": "paw/tools/README.md",
-      "kind": "tool",
-      "checksum_sha256": "62961b05ed23e7754ba10aab91a671d0cb8bedb979a9ae1501c3cd55f1569841",
+      "source_path": "paw/tests/README.md",
+      "destination_path": "paw/tests/README.md",
+      "kind": "test",
+      "checksum_sha256": "062316d57c33caa251995a2bbdb85681aa091f9be14d9ffcb6e5cec7f908cfa4",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -2480,7 +2579,7 @@
       "source_path": "paw/tools/adoption/validate-adapters.mjs",
       "destination_path": "paw/tools/adoption/validate-adapters.mjs",
       "kind": "tool",
-      "checksum_sha256": "6b4761dd7349695e88a0437f4d4b165397300c4ce1bb5111cfd1c957259c7ae9",
+      "checksum_sha256": "f3589fe67a143dce49f05bfda0aaed8d638242ba623cb8cab7779738928730b0",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -2702,6 +2801,15 @@
       "uninstall_owned": true
     },
     {
+      "source_path": "paw/tools/README.md",
+      "destination_path": "paw/tools/README.md",
+      "kind": "tool",
+      "checksum_sha256": "24a38ffedab3b842b2059760c40f5787aabf967010563d3a9d1602c9801da916",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
       "source_path": "paw/tools/schemas/adoption/adoption-record.schema.json",
       "destination_path": "paw/tools/schemas/adoption/adoption-record.schema.json",
       "kind": "schema",
@@ -2732,7 +2840,7 @@
       "source_path": "paw/tools/schemas/adoption/runtime-adapter.schema.json",
       "destination_path": "paw/tools/schemas/adoption/runtime-adapter.schema.json",
       "kind": "schema",
-      "checksum_sha256": "c74c15314866e091ced002b564223582d31c9a6d3938149b172c6d094c6feb89",
+      "checksum_sha256": "083d8c193a74be4737959faf20a72d7214b5a3f02a7d8e072ee9d5cd0b2f6216",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -3039,6 +3147,15 @@
       "destination_path": "paw/tools/workflow/validate-workflow-fixtures.mjs",
       "kind": "tool",
       "checksum_sha256": "5892983a96fc027cdae99e5e3f702b915b01061a8db696d371b763a26664430d",
+      "license": "MPL-2.0",
+      "required_for_codex": true,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": "README.md",
+      "destination_path": "README.md",
+      "kind": "documentation",
+      "checksum_sha256": "775dc2cab0be75b1c3a46dab2d46c4e0a981669ecf37cfd6df112437eb07b9cc",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
