@@ -1,0 +1,101 @@
+{
+  "adapter_type": "runtime",
+  "adapter_id": "runtime-claude-code-paw-candidate",
+  "runtime": "claude-code",
+  "paths": {
+    "project_skills": ".claude/skills/<skill-name>/SKILL.md",
+    "commands_compatibility": ".claude/commands/<command>.md",
+    "supporting_files": ".claude/skills/<skill-name>/**"
+  },
+  "packaging": {
+    "mode": "project-skill-files",
+    "plugin_mode": "optional"
+  },
+  "triggers": ["slash-skill", "model-invoked-skill", "explicit-opt-in"],
+  "assets": ["SKILL.md", "supporting files", "scripts", "references"],
+  "references": ["paw/orchestration/workflow.md", "paw/orchestration/bootstrap.md", "paw/orchestration/conformance.md"],
+  "scripts": ["skill-local scripts when declared by the skill"],
+  "permissions": {
+    "allowed_tools": "skill-frontmatter",
+    "disallowed_tools": "skill-frontmatter",
+    "mutation_envelope": "skill-and-session-permissions"
+  },
+  "approvals": {
+    "writes": "Claude Code permission model",
+    "network": "Claude Code permission model"
+  },
+  "optional_capabilities": ["subagents", "hooks", "dynamic-context", "forked-skill-context"],
+  "operation_mappings": [
+    {
+      "operation_id": "paw-triage",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".claude/skills/paw-triage/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "mappable"
+    },
+    {
+      "operation_id": "paw-execute-phase",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".claude/skills/paw-execute-phase/SKILL.md",
+      "mutation_level": "level-2",
+      "support": "mappable"
+    },
+    {
+      "operation_id": "paw-conformance",
+      "portable_contract": "paw/orchestration/conformance.md",
+      "runtime_entrypoint": ".claude/skills/paw-conformance/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "mappable"
+    }
+  ],
+  "capability_matrix": [
+    {
+      "capability_id": "progressive-context-loading",
+      "status": "supported",
+      "notes": "Claude Code skills load only when used and may carry supporting files."
+    },
+    {
+      "capability_id": "subagents",
+      "status": "supported-optional",
+      "notes": "Claude Code documents custom subagents and forked skill context."
+    },
+    {
+      "capability_id": "hooks",
+      "status": "supported-optional",
+      "notes": "Hooks are documented as automation around Claude Code lifecycle events."
+    }
+  ],
+  "source_freshness": [
+    {
+      "source_id": "claude-code-skills",
+      "url": "https://code.claude.com/docs/en/skills",
+      "checked_at": "2026-06-21",
+      "status": "official-current"
+    },
+    {
+      "source_id": "claude-code-subagents",
+      "url": "https://code.claude.com/docs/en/sub-agents",
+      "checked_at": "2026-06-21",
+      "status": "official-current"
+    },
+    {
+      "source_id": "claude-code-hooks",
+      "url": "https://code.claude.com/docs/en/hooks",
+      "checked_at": "2026-06-21",
+      "status": "official-current"
+    }
+  ],
+  "gap_disposition": [
+    {
+      "gap_id": "physical-claude-files-not-materialized",
+      "status": "manual-future-work",
+      "disposition": "This patch records a portable adapter mapping and does not install .claude files.",
+      "required_for_candidate": false
+    }
+  ],
+  "activation": {
+    "state": "candidate-opt-in",
+    "default_workflow": false,
+    "requires_opt_in": true
+  }
+}

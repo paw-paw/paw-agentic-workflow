@@ -18,5 +18,35 @@
   "approvals": {
     "network": "human"
   },
-  "optional_capabilities": ["subagents"]
+  "optional_capabilities": ["subagents"],
+  "operation_mappings": [
+    {
+      "operation_id": "paw-triage",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".agent/skills/paw-triage",
+      "mutation_level": "level-1",
+      "support": "manual"
+    }
+  ],
+  "capability_matrix": [
+    {
+      "capability_id": "progressive-context-loading",
+      "status": "supported",
+      "notes": "Generic adapter declares a manual skill path."
+    }
+  ],
+  "source_freshness": [
+    {
+      "source_id": "generic-runtime-contract",
+      "url": "paw/adoption/adapters/README.md",
+      "checked_at": "2026-06-21",
+      "status": "local-contract"
+    }
+  ],
+  "gap_disposition": [],
+  "activation": {
+    "state": "candidate-opt-in",
+    "default_workflow": false,
+    "requires_opt_in": true
+  }
 }

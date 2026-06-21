@@ -27,7 +27,7 @@ test('adoption surface is registered and remains inactive', () => {
 test('adoption tooling and fixtures validate the complete adoption matrix', () => {
   const result = validateAdoptionFixtures(root);
   assert.equal(result.valid, true);
-  assert.equal(result.evidence.adapter_fixture_count, 6);
+  assert.equal(result.evidence.adapter_fixture_count, 11);
   assert.equal(result.evidence.record_fixture_count, 6);
   assert.equal(result.evidence.assessment_fixture_count, 5);
 });

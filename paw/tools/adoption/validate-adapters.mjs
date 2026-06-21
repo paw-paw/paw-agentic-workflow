@@ -40,6 +40,11 @@ const REQUIRED = {
     'permissions',
     'approvals',
     'optional_capabilities',
+    'operation_mappings',
+    'capability_matrix',
+    'source_freshness',
+    'gap_disposition',
+    'activation',
   ],
 };
 
@@ -82,6 +87,46 @@ function validateObject(value, adapterType, sourcePath) {
 
   if (adapterType === 'runtime' && value.runtime && typeof value.runtime !== 'string') {
     diagnostics.push(diagnostic('RUNTIME_ADAPTER_RUNTIME_INVALID', 'Runtime name must be a string', sourcePath, 'runtime'));
+  }
+
+  if (adapterType === 'runtime') {
+    const activation = value.activation;
+    if (activation && typeof activation === 'object') {
+      if (activation.state === 'default-active' || activation.default_workflow === true) {
+        diagnostics.push(diagnostic(
+          'RUNTIME_ADAPTER_DEFAULT_ACTIVATION',
+          'Runtime adapter cannot activate PAW as the default workflow before cutover',
+          sourcePath,
+          'activation',
+        ));
+      }
+    }
+
+    if (Array.isArray(value.operation_mappings)) {
+      for (const [index, mapping] of value.operation_mappings.entries()) {
+        if (mapping?.support === 'simulated') {
+          diagnostics.push(diagnostic(
+            'RUNTIME_ADAPTER_SIMULATED_SUPPORT',
+            'Runtime adapter cannot mark simulated support as equivalent capability evidence',
+            sourcePath,
+            `operation_mappings[${index}].support`,
+          ));
+        }
+      }
+    }
+
+    if (Array.isArray(value.gap_disposition)) {
+      for (const [index, gap] of value.gap_disposition.entries()) {
+        if (gap?.status === 'blocked' && !gap.disposition) {
+          diagnostics.push(diagnostic(
+            'RUNTIME_ADAPTER_BLOCKED_GAP_UNEXPLAINED',
+            'Blocked runtime adapter gaps require an explicit disposition',
+            sourcePath,
+            `gap_disposition[${index}].disposition`,
+          ));
+        }
+      }
+    }
   }
 
   if (adapterType === 'stack' && Array.isArray(value.differences)) {

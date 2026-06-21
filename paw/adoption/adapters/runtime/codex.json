@@ -1,0 +1,89 @@
+{
+  "adapter_type": "runtime",
+  "adapter_id": "runtime-codex-paw-candidate",
+  "runtime": "codex",
+  "paths": {
+    "skills": ".codex/skills/paw-*",
+    "agents": ".codex/agents/paw-*",
+    "runtime_map": ".codex/paw-runtime-map.json",
+    "toolkit": ".codex/paw-toolkit"
+  },
+  "packaging": {
+    "mode": "candidate-manual-distribution",
+    "manifest": "paw/distribution/distribution-manifest.json"
+  },
+  "triggers": ["explicit-skill-invocation", "governed-opt-in"],
+  "assets": [".codex/skills/paw-*/SKILL.md", ".codex/paw-toolkit/**"],
+  "references": ["paw/orchestration/workflow.md", "paw/orchestration/bootstrap.md", "paw/orchestration/conformance.md"],
+  "scripts": [".codex/paw-toolkit/bin/paw-codex-toolkit.mjs"],
+  "permissions": {
+    "filesystem": "workspace",
+    "network": "approval-required",
+    "mutation_envelope": "skill-specific"
+  },
+  "approvals": {
+    "remote_operations": "human",
+    "writes": "governed-skill"
+  },
+  "optional_capabilities": ["subagents", "toolkit-scripts", "provider-snapshots"],
+  "operation_mappings": [
+    {
+      "operation_id": "paw-triage",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".codex/skills/paw-triage/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "implemented"
+    },
+    {
+      "operation_id": "paw-execute-phase",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".codex/skills/paw-execute-phase/SKILL.md",
+      "mutation_level": "level-2",
+      "support": "implemented"
+    },
+    {
+      "operation_id": "paw-distribute",
+      "portable_contract": "paw/distribution/README.md",
+      "runtime_entrypoint": ".codex/skills/paw-distribute/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "implemented"
+    }
+  ],
+  "capability_matrix": [
+    {
+      "capability_id": "progressive-context-loading",
+      "status": "supported",
+      "notes": "Skills load instructions and references progressively."
+    },
+    {
+      "capability_id": "subagents",
+      "status": "optional",
+      "notes": "Candidate PAW agents are advisory or single-artifact bounded."
+    },
+    {
+      "capability_id": "hooks",
+      "status": "not-required",
+      "notes": "No Codex hook binding is required for current candidate operations."
+    }
+  ],
+  "source_freshness": [
+    {
+      "source_id": "codex-runtime-map",
+      "url": ".codex/paw-runtime-map.json",
+      "checked_at": "2026-06-21",
+      "status": "local-candidate-evidence"
+    },
+    {
+      "source_id": "codex-runtime-readme",
+      "url": ".codex/README.md",
+      "checked_at": "2026-06-21",
+      "status": "local-candidate-evidence"
+    }
+  ],
+  "gap_disposition": [],
+  "activation": {
+    "state": "candidate-opt-in",
+    "default_workflow": false,
+    "requires_opt_in": true
+  }
+}
