@@ -518,7 +518,7 @@
       "source_path": "docs/governance/BOOTSTRAP-STATUS.md",
       "destination_path": "docs/governance/BOOTSTRAP-STATUS.md",
       "kind": "contract",
-      "checksum_sha256": "4d780075166901f6ca9d614fc79b21eabe4b29c49c7012a147c6d7e22e79d280",
+      "checksum_sha256": "6d68cd68a4ad31ec3dcc47fb0c8fbbb0d364ebba587ef666e19ab5cb72ec1254",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -545,7 +545,7 @@
       "source_path": "docs/governance/V1-TRANSITION.md",
       "destination_path": "docs/governance/V1-TRANSITION.md",
       "kind": "contract",
-      "checksum_sha256": "29ae14a6857736d9785a52f5c8b55a25d9474d9d1d4e495f6ab98cc0da8adeea",
+      "checksum_sha256": "9e501d6ae9b4adae693d5da557d5cc9c46b4a92ed6694d5abf8d824c13b644f0",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -563,7 +563,7 @@
       "source_path": "docs/README.md",
       "destination_path": "docs/README.md",
       "kind": "contract",
-      "checksum_sha256": "32530561f12bc47e935bb0f1f8dab036fe1b01e1cd96fb8fab5ccd5d8645206f",
+      "checksum_sha256": "0029a2de8c46611d6e7e1282793b8cf110d036e9b44b34bbfa60c50c6a7a3e86",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true

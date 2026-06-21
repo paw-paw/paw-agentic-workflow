@@ -172,7 +172,27 @@ test('workspace, private inputs, and runtime configuration preserve boundaries',
   );
   assert.equal(patchDecisionLog.status, 1, 'active patch decision logs must be versionable');
 
-  assert.deepEqual(listFiles('.agents'), []);
+  const antigravityCandidateFiles = listFiles('.agents');
+  const allowedAntigravityCandidatePrefixes = [
+    '.agents/README.md',
+    '.agents/rules/',
+    '.agents/skills/',
+    '.agents/workflows/',
+  ];
+  const unexpectedAntigravityFiles = antigravityCandidateFiles.filter(
+    (path) => !allowedAntigravityCandidatePrefixes.some((prefix) => path === prefix || path.startsWith(prefix)),
+  );
+  assert.deepEqual(unexpectedAntigravityFiles, []);
+
+  if (antigravityCandidateFiles.length > 0) {
+    const antigravityReadme = read('.agents/README.md');
+    assert.match(antigravityReadme, /physical files candidate only/i);
+    assert.match(antigravityReadme, /do not activate PAW v2/i);
+    assert.match(antigravityReadme, /do not replace `\.codex\/\*\*`/i);
+  }
+
+  assert.deepEqual(listFiles('.gemini'), []);
+  assert.deepEqual(listFiles('.antigravity'), []);
 
   const configFiles = [
     ...listFiles('.codex').filter((path) => ['.json', '.toml', '.yaml', '.yml'].includes(extname(path))),

@@ -39,6 +39,8 @@ authorize a second writable patch namespace.
 | `.codex/paw-runtime-map.json` | Candidate Codex operation mapping | Materialized and tested by patch 07 as adapter evidence; portable authority remains under `paw/orchestration/**` |
 | `.codex/skills/paw-*` | Candidate Codex skills | Materialized and tested by patch 07 as inactive runtime bindings; not the default workflow |
 | `.codex/agents/paw-*` | Candidate Codex agents | Materialized and tested by patch 07 as bounded support profiles; not contractual authority |
+| `.claude/**` | Candidate Claude Code physical adapter files | Materialized by patch 10b as physical-files candidate evidence; not validated runtime support or a distribution package |
+| `.agents/**` | Candidate Antigravity physical adapter files | Materialized by patch 10c as physical-files candidate evidence; not validated runtime support, Gemini CLI scope, or a `.codex/**` replacement |
 
 ## Invariants Before Cutover
 
@@ -49,8 +51,9 @@ authorize a second writable patch namespace.
 - There are no symlinks between namespaces.
 - There is no dual-write or duplicated active implementation.
 - Candidate `.codex/skills/paw-*`, `.codex/agents/paw-*`, `.codex/paw-toolkit/**`,
-  and runtime adapter evidence under `paw/adoption/adapters/runtime/**` do not
-  replace active `.codex/skills/sdd-*` before cutover.
+  `.claude/**`, `.agents/**`, and runtime adapter evidence under
+  `paw/adoption/adapters/runtime/**` do not replace active `.codex/skills/sdd-*`
+  before cutover.
 - A v2 candidate may not change the default workflow without its approved activation gate.
 - Historical v1 names and provenance are preserved.
 - Pages, Actions, packaging, releases, and deployment remain disabled.

@@ -76,6 +76,8 @@ An active patch cannot silently override an authoritative live document. A misma
 | `.codex/README.md` | operational | operational | supporting | Codex runtime surface orientation and PAW candidate adapter boundary | Codex runtime owner | automated |
 | `.codex/paw-runtime-map.json` | operational, verifiable | operational | supporting | candidate Codex mapping from portable operations to runtime skills, toolkit, and agents | Codex runtime owner | automated |
 | `.codex/paw-toolkit/**` | operational, verifiable | operational | supporting | candidate Codex toolkit contract and deterministic helper scripts | Codex runtime owner | automated |
+| `.claude/**` | operational | operational | supporting | candidate Claude Code physical adapter files; not activated runtime support | Claude Code adapter owner | automated |
+| `.agents/**` | operational | operational | supporting | candidate Antigravity physical adapter files; not activated runtime support and not a Codex replacement | Antigravity adapter owner | automated |
 | `sdd/**` | operational, verifiable | operational | supporting | active v1 runtime until cutover | v1 transition owner | automated |
 | `.codex/**` | operational | operational | supporting | Codex runtime binding | v1 transition owner | manual |
 | `sdd/parches/<change-id>/**` | strategic, contract, operational, verifiable | operational | non_authoritative | active change scope, then historical memory | patch owner | automated |

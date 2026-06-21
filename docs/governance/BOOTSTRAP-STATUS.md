@@ -44,6 +44,9 @@
 - Candidate Codex runtime map and shared toolkit contract under `.codex/**`.
 - Candidate `paw-*` Codex skills and bounded `paw-*` agent profiles under
   `.codex/**`.
+- Candidate Claude Code physical adapter files under `.claude/**` and candidate
+  Antigravity physical adapter files under `.agents/**`, both closed only as
+  physical-files candidates until real runtime discovery validates them.
 - Deterministic contract tests for the candidate Codex toolkit, skills, and agents.
 
 ## Not Implemented
