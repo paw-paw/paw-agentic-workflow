@@ -1,0 +1,18 @@
+schema_version: 1
+change_id: paw-10e-claude-code-distribution-adapter
+program_id: paw-foundation
+patch_kind: spec
+lifecycle: spec-anchored
+status: blocked
+created_at: 2026-06-21
+closed_at: null
+related_docs:
+  - docs/README.md
+  - AGENTS.md
+  - paw/adoption/adapters/runtime/claude-code.json
+  - paw/distribution/README.md
+  - paw/distribution/manifest.md
+  - paw/distribution/manual-installation.md
+  - paw/distribution/progressive-loading.md
+  - sdd/parches/paw-10b-claude-code-physical-adapter/patch.yaml
+  - sdd/parches/paw-10b-claude-code-physical-adapter/cierre.md

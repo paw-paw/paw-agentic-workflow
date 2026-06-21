@@ -1,0 +1,10 @@
+# Decision Log: paw-10e-claude-code-distribution-adapter
+
+## 2026-06-21 - Block distribution adapter on predecessor gate
+
+- Decision: do not implement the Claude Code distribution adapter in this run.
+- Rationale: `paw-10b-claude-code-physical-adapter` closed as
+  `physical-files-candidate`; the handoff requires `physical-adapter-candidate`
+  before distribution work starts.
+- Affected areas: `sdd/parches/paw-10e-claude-code-distribution-adapter/**`,
+  final report.
