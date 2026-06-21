@@ -34,7 +34,9 @@ This directory is reserved for future deterministic tools that validate or opera
 - `schemas/adoption/**` define materialized adoption adapter, record, and assessment
   shapes.
 - `adoption/**` validates adapter boundaries, adoption records, overrides,
-  assessments, catalog references, and adoption fixture matrices.
+  assessments, catalog references, runtime adapter operation mappings, source
+  freshness, gap disposition, activation boundaries, and adoption fixture
+  matrices.
 - `validate-adoption.mjs` exposes adoption fixture validation through a deterministic
   CLI.
 - `schemas/workflow/**` define materialized workflow, bootstrap, conformance, and

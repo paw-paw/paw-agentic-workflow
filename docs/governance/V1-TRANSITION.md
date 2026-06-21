@@ -30,7 +30,7 @@ authorize a second writable patch namespace.
 | `paw/integration/` | Portable delivery, VCS, change-request, checks, readiness, and `integration.yaml` contracts | Materialized integration contracts and validation target; not remote automation or merge authority |
 | `paw/distribution/` | Candidate manual distribution, manifest, install, upgrade, rollback, uninstall, verification, license/notice, and progressive-loading contracts | Materialized distribution contract; not a stable release, package manager, marketplace, auto-update, or portability claim |
 | `paw/catalogs/` | Portable family, documentation, modifier, and implementation preset definitions | Materialized catalogs and validators; not adoption automation |
-| `paw/adoption/` | Portable adoption records, adapter, assessment, and override contracts | Materialized contracts and validators; not adoption automation or runtime integration |
+| `paw/adoption/` | Portable adoption records, adapter, assessment, and override contracts | Materialized contracts, validators, and candidate runtime adapter evidence for Codex, Claude Code, and Antigravity; not adoption automation, runtime activation, or a portability claim |
 | `paw/parches/` | Future fixed patch workspace root | Inactive; writing is prohibited |
 | `paw/orchestration/` | Runtime-neutral orchestration contracts | Workflow, bootstrap, and conformance contracts materialized; not a workflow activation |
 | `paw/tools/` | PAW schemas and tooling | Schema v2, dual-read validator, catalog validators, and adoption validator materialized; workflow validator also materialized; not a workflow activation |
@@ -48,8 +48,9 @@ authorize a second writable patch namespace.
 - `paw/parches/` contains no workspaces or writers.
 - There are no symlinks between namespaces.
 - There is no dual-write or duplicated active implementation.
-- Candidate `.codex/skills/paw-*`, `.codex/agents/paw-*`, and `.codex/paw-toolkit/**`
-  do not replace active `.codex/skills/sdd-*` before cutover.
+- Candidate `.codex/skills/paw-*`, `.codex/agents/paw-*`, `.codex/paw-toolkit/**`,
+  and runtime adapter evidence under `paw/adoption/adapters/runtime/**` do not
+  replace active `.codex/skills/sdd-*` before cutover.
 - A v2 candidate may not change the default workflow without its approved activation gate.
 - Historical v1 names and provenance are preserved.
 - Pages, Actions, packaging, releases, and deployment remain disabled.

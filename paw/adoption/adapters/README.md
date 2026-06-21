@@ -59,6 +59,31 @@ catalog identity.
 The materialized schema lives at
 `paw/tools/schemas/adoption/runtime-adapter.schema.json`.
 
+Runtime adapters that claim concrete candidate support must also declare:
+
+- operation mappings from portable PAW operation IDs to runtime entrypoints;
+- capability status for progressive context loading, subagents, hooks, scripts,
+  permissions, approvals, and artifacts where relevant;
+- source freshness with a checked date and source status;
+- gap disposition for missing or blocked runtime capabilities;
+- activation state, which must remain explicit opt-in before cutover.
+
+The current candidate runtime adapter evidence lives under
+`paw/adoption/adapters/runtime/`:
+
+- `codex.json`: implemented candidate mapping to `.codex/**` skills, agents,
+  runtime map, and toolkit.
+- `claude-code.json`: mappable candidate mapping to Claude Code project skills,
+  supporting files, tool controls, subagents, hooks, and forked skill context
+  based on official docs checked on 2026-06-21.
+- `antigravity.json`: limited candidate mapping using manual task context and
+  explicit blocked gaps because no stable official local skill path or hook
+  contract was available on 2026-06-21.
+
+These files are evidence for adapter behavior. They do not create `.claude/**`,
+`.antigravity/**`, `.agents/**`, or `paw/parches/**`, and they do not change the
+active SDD v1 workflow.
+
 ## Resolution Rule
 
 When adapters disagree, treat the mismatch as evidence of drift or local constraint.

@@ -46,11 +46,14 @@ change-request contracts. `paw/distribution/**` contains candidate manual
 distribution contracts without release publication or packaging activation.
 `paw/orchestration/**` contains runtime-neutral workflow, bootstrap, and
 conformance contracts. Schema v2, dual validators, domain validators,
-compatibility fixtures, and contract tests are materialized under `paw/tools/**` and
-`paw/tests/**`. PAW workspaces, writers, and runtime integrations remain inactive.
-Materialized validation support does not change the active workflow. Materialized
-contracts and validation support do not change the active workflow or default
-manifest writer. Candidate Codex runtime bindings under `.codex/**` provide a
-runtime map, toolkit, skills, and bounded agents for later activation gates; they do
-not replace the active `sdd-*` runtime before cutover. The exact transition is
-governed by `V1-TRANSITION.md`.
+compatibility fixtures, and contract tests are materialized under `paw/tools/**`
+and `paw/tests/**`. PAW workspaces, writers, and runtime integrations remain
+inactive. Materialized validation support does not change the active workflow.
+Materialized contracts and validation support do not change the active workflow
+or default manifest writer. Candidate Codex runtime bindings under `.codex/**`
+provide a runtime map, toolkit, skills, and bounded agents for later activation
+gates. Candidate runtime adapter evidence under
+`paw/adoption/adapters/runtime/**` maps Codex, Claude Code, and Antigravity
+capabilities without activating those runtimes or claiming complete portability.
+These surfaces do not replace the active `sdd-*` runtime before cutover. The
+exact transition is governed by `V1-TRANSITION.md`.

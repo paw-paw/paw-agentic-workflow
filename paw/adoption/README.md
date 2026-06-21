@@ -7,8 +7,10 @@ repository records a PAW adoption decision, binds that decision to reusable cata
 compares the decision with repository reality, and scopes local deviations.
 
 The contracts are documentation. Their presence does not activate adoption
-automation, v2 patch workspaces, runtime adapters, installers, packaging, release
-automation, or portability claims.
+automation, v2 patch workspaces, installers, packaging, release automation, or
+portability claims. Concrete runtime adapter evidence may be materialized here
+as candidate opt-in data. That evidence still does not activate a runtime or
+make PAW portable by itself.
 
 ## Contract Map
 
@@ -59,6 +61,9 @@ remain owned by `paw/core/**`; repository-local governance remains owned by
 - Adoption records do not create new catalog doctrine.
 - Stack realizations do not become implementation presets by observation.
 - Runtime adapters do not choose families, documentation, architecture, or stack.
+- Runtime adapters may declare operation mappings, source freshness, optional
+  capabilities, activation state, and gap disposition for a concrete agent
+  runtime, but those declarations remain adapter evidence.
 - Overrides are explicit local deviations, not global doctrine.
 - Greenfield adoption records decisions before scaffolding or code.
 - Brownfield adoption starts from observed repository and stack reality.

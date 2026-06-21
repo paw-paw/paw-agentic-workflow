@@ -29,10 +29,12 @@ This directory is reserved for future portable fixtures, examples, compatibility
 - `fixtures/catalogs/**` contains positive and negative catalog evidence for
   classifications, documentation applicability, modifier composition, and
   implementation preset constraints.
-- `contract/adoption-*.test.mjs` covers adapter boundaries, adoption records,
-  overrides, assessment flows, and catalog reference validation.
+- `contract/adoption-*.test.mjs` covers adapter boundaries, concrete runtime
+  adapter evidence, adoption records, overrides, assessment flows, and catalog
+  reference validation.
 - `fixtures/adoption/**` contains positive and negative evidence for adapters,
-  records, and assessments.
+  records, assessments, candidate runtime operation mappings, activation
+  boundaries, source freshness, and gap disposition.
 - `contract/workflow-*.test.mjs` covers workflow contract validation, bootstrap
   gates, conformance dispositions, manual evidence, and validator CLI behavior.
 - `fixtures/workflow/**` contains positive and negative evidence for workflow

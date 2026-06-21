@@ -35,6 +35,9 @@
 - Portable adoption contracts for repo, stack, and runtime adapters, adoption
   records, assessments, and controlled overrides under `paw/adoption/**`.
 - Deterministic adoption validation, schemas, fixtures, and contract tests.
+- Candidate runtime adapter evidence for Codex, Claude Code, and Antigravity
+  under `paw/adoption/adapters/runtime/**`, with source freshness, operation
+  mappings, activation boundaries, and explicit Antigravity gaps.
 - Runtime-neutral workflow, documentation bootstrap, and conformance contracts under
   `paw/orchestration/**`.
 - Deterministic workflow validation, schemas, fixtures, and contract tests.
@@ -48,7 +51,8 @@
 - Active `paw/parches/` workspaces.
 - v2 manifest writers or a v2 default workflow.
 - Activated `paw-*` skills or agents as the default workflow.
-- Concrete runtime adapters for Codex, Claude Code, or Antigravity.
+- Activated runtime adapters for Codex, Claude Code, or Antigravity.
+- Stable or complete multi-runtime portability.
 - Adoption automation in a consumer repository.
 - Multi-runtime and multi-repository portability.
 - Remote merge automation or automatic review-thread resolution.
