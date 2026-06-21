@@ -1,0 +1,27 @@
+schema_version: 1
+change_id: paw-10-multiruntime-adapters
+program_id: paw-foundation
+patch_kind: spec
+lifecycle: spec-anchored
+status: active
+created_at: 2026-06-21
+closed_at: null
+related_docs:
+  - docs/README.md
+  - AGENTS.md
+  - CONTRIBUTING.md
+  - docs/governance/ARCHITECTURE.md
+  - docs/governance/V1-TRANSITION.md
+  - docs/governance/BOOTSTRAP-STATUS.md
+  - paw/adoption/README.md
+  - paw/adoption/adapters/README.md
+  - paw/orchestration/workflow.md
+  - paw/orchestration/bootstrap.md
+  - paw/orchestration/conformance.md
+  - paw/distribution/README.md
+  - paw/distribution/manifest.md
+  - paw/distribution/progressive-loading.md
+  - paw/tools/README.md
+  - paw/tests/README.md
+  - .codex/README.md
+  - .codex/paw-runtime-map.json

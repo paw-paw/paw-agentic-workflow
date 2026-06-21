@@ -1,0 +1,18 @@
+# Decision Log: paw-10-multiruntime-adapters
+
+## 2026-06-21 - Execute on main without branch
+
+- decision: execute `paw-10-multiruntime-adapters` directly on `main`.
+- reason: explicit human instruction for this run.
+- impact: preserve the commit cadence policy promoted by `paw-08` where practical,
+  but do not create a branch or PR.
+
+## 2026-06-21 - Treat Antigravity as public-capability mapping with blocked paths
+
+- decision: model Antigravity only through official public capability evidence
+  available at execution time and mark unverified filesystem/plugin paths as
+  blocked.
+- reason: the handoff says the Antigravity public surface is not frozen enough to
+  specify paths and contracts by inference.
+- impact: the adapter may be structurally present while concrete installable
+  runtime files remain unavailable until an official contract exists.
