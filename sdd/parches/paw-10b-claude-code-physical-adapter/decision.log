@@ -1,0 +1,22 @@
+# Decision Log: paw-10b-claude-code-physical-adapter
+
+## 2026-06-21 - Mainline execution
+
+- Decision: execute this patch directly on `main`, without creating a branch.
+- Rationale: explicit human instruction for the handoff expansion sequence.
+- Affected areas: commits, SDD artifacts, final report.
+
+## 2026-06-21 - Defer executable hooks
+
+- Decision: do not add executable Claude Code hooks in the initial physical
+  adapter.
+- Rationale: the physical candidate can prove project skill and subagent layout
+  without adding non-deterministic or permission-sensitive enforcement.
+- Affected areas: `.claude/**`, closure evidence.
+
+## 2026-06-21 - Advisory subagents only
+
+- Decision: materialize only read-only/advisory Claude project subagents.
+- Rationale: controlled writers require stronger runtime validation and should
+  not be introduced as hidden decision-makers.
+- Affected areas: `.claude/agents/*.md`.
