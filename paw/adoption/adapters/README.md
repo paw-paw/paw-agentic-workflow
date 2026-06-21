@@ -73,16 +73,20 @@ The current candidate runtime adapter evidence lives under
 
 - `codex.json`: implemented candidate mapping to `.codex/**` skills, agents,
   runtime map, and toolkit.
-- `claude-code.json`: mappable candidate mapping to Claude Code project skills,
-  supporting files, tool controls, subagents, hooks, and forked skill context
-  based on official docs checked on 2026-06-21.
+- `claude-code.json`: candidate mapping to Claude Code project skills,
+  supporting files, tool controls, advisory subagents, deferred hooks, and
+  forked skill context based on official docs checked on 2026-06-21. Patch
+  `paw-10b-claude-code-physical-adapter` materializes repo-local `.claude/**`
+  files as `physical-files-candidate` evidence unless runtime discovery is
+  manually validated.
 - `antigravity.json`: limited candidate mapping using manual task context and
   explicit blocked gaps because no stable official local skill path or hook
   contract was available on 2026-06-21.
 
-These files are evidence for adapter behavior. They do not create `.claude/**`,
-`.antigravity/**`, `.agents/**`, or `paw/parches/**`, and they do not change the
-active SDD v1 workflow.
+These files are evidence for adapter behavior. Runtime evidence may point to
+physical adapter files when a governed patch creates them, but it does not create
+stable support, `.antigravity/**`, `.agents/**`, `paw/parches/**`, or a change to
+the active SDD v1 workflow.
 
 ## Resolution Rule
 

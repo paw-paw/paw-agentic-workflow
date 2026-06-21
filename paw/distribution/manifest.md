@@ -60,12 +60,16 @@ surfaces when required by the manifest:
 - `paw/tests/**` when needed as verification evidence;
 - `.codex/README.md`, `.codex/paw-runtime-map.json`,
   `.codex/paw-toolkit/**`, `.codex/skills/paw-*`, and
-  `.codex/agents/paw-*`.
+  `.codex/agents/paw-*`;
+- `.claude/README.md`, `.claude/skills/paw-*`, and `.claude/agents/paw-*`
+  when a governed Claude Code physical adapter patch includes them as candidate
+  runtime binding files.
 
 Runtime adapter evidence under `paw/adoption/adapters/runtime/**` may be
-included as contract data for candidate evaluation. Including that evidence does
-not ship `.claude/**` or `.antigravity/**` runtime files and does not make the
-manual distribution a multi-runtime installer.
+included as contract data for candidate evaluation. Including `.claude/**`
+physical adapter files does not make the manual distribution a Claude plugin,
+Antigravity bundle, marketplace package, stable release, or multi-runtime
+installer.
 
 ## Exclusions
 

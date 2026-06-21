@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "distribution_id": "paw-codex-manual",
-  "version": "0.1.0-candidate.10",
+  "version": "0.1.0-candidate.10b",
   "status": "candidate",
   "compatibility": {
     "schema_versions": [
@@ -19,6 +19,141 @@
     "NOTICES.md"
   ],
   "files": [
+    {
+      "source_path": ".claude/agents/paw-docs-checker.md",
+      "destination_path": ".claude/agents/paw-docs-checker.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "faded9ab6b3fd8418e4847f1108145d22dc709b446f89ba824e4497bf2f07000",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/agents/paw-risk-reviewer.md",
+      "destination_path": ".claude/agents/paw-risk-reviewer.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "c529e3d3c0f3f12c9ba8a65ba8075607832c4bfa1a22ebdb055e4abe25c32294",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/agents/paw-test-reviewer.md",
+      "destination_path": ".claude/agents/paw-test-reviewer.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "7536b395f4168830d6b6eee598b9ae63581575a6244ab5d068d67a6a6f1bb380",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/README.md",
+      "destination_path": ".claude/README.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "9e45b4ce913c3213e1429ba59781a26c8498edf3a53f87d9800a6bea3972abda",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/skills/paw-conformance/SKILL.md",
+      "destination_path": ".claude/skills/paw-conformance/SKILL.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "fbed12df8ea27feb713947781531c142cf400474917dc3ea8ce9b82c6fb1166a",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/skills/paw-execute-phase/SKILL.md",
+      "destination_path": ".claude/skills/paw-execute-phase/SKILL.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "a0f044649bd9a39210a652be98b2a1bf38d9e1acd9d48f9fd607ad82a9c0fc32",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/skills/paw-intake/SKILL.md",
+      "destination_path": ".claude/skills/paw-intake/SKILL.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "7218054970315b69d3671eabc92d2ff889c62077666f56d4b9f19b1f0604dd96",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/skills/paw-phase-backlog/SKILL.md",
+      "destination_path": ".claude/skills/paw-phase-backlog/SKILL.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "60b7760d8ea33ace3d1c95cb225b0172e09256e0cb2b559068d17075d870f8e8",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/skills/paw-plan/SKILL.md",
+      "destination_path": ".claude/skills/paw-plan/SKILL.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "9800faaea8d98cf81b5d0afe0ecd38a51f5ce17ab6294b5e78685443d983f125",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/skills/paw-router/references/activation-boundary.md",
+      "destination_path": ".claude/skills/paw-router/references/activation-boundary.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "a29825694f5f2b68918f58d8421a4a4dce52b6e5b2904b1bb647e60134521231",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/skills/paw-router/references/validation.md",
+      "destination_path": ".claude/skills/paw-router/references/validation.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "89c75f8b7797f3ed5603cbd4f9ad64b11a8bc103208a00999603ddfdc1754185",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/skills/paw-router/references/workflow-map.md",
+      "destination_path": ".claude/skills/paw-router/references/workflow-map.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "829f203791583b7e4f4a610a75a8cd6260bf9ab1dc22301e07de6c093dcdfe0e",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/skills/paw-router/SKILL.md",
+      "destination_path": ".claude/skills/paw-router/SKILL.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "f6002e9f7752b7641e004a4c34e160b7c789d719bafaf755f933c86f59c62867",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/skills/paw-sync-drift/SKILL.md",
+      "destination_path": ".claude/skills/paw-sync-drift/SKILL.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "0b298f50a1546434b2c17764e97c4827bf54171044f948f9dad00b2572c5bae5",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
+    {
+      "source_path": ".claude/skills/paw-tasks/SKILL.md",
+      "destination_path": ".claude/skills/paw-tasks/SKILL.md",
+      "kind": "runtime-binding",
+      "checksum_sha256": "8fdb0b29b331d8b5fe7556704c39fd08b52645f15675d130ebf39ed75e21c85a",
+      "license": "MPL-2.0",
+      "required_for_codex": false,
+      "uninstall_owned": true
+    },
     {
       "source_path": ".codex/agents/paw-artifact-writer.toml",
       "destination_path": ".codex/agents/paw-artifact-writer.toml",
@@ -320,7 +455,7 @@
       "source_path": "paw/adoption/adapters/README.md",
       "destination_path": "paw/adoption/adapters/README.md",
       "kind": "contract",
-      "checksum_sha256": "af65bbdbb3697eeb6479421a72317801872f75181e284260cd2d2fbdb67b9918",
+      "checksum_sha256": "356e74fad0a1aa4cbbb6829ddeb243c3093d3389efb5a185ffb704d7d0cacaba",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -338,7 +473,7 @@
       "source_path": "paw/adoption/adapters/runtime/claude-code.json",
       "destination_path": "paw/adoption/adapters/runtime/claude-code.json",
       "kind": "contract",
-      "checksum_sha256": "0814c15e5b271d2b581dc0307daeba70674182c68362d2131f68e5451acb017f",
+      "checksum_sha256": "047b0db079229716e1f9a075a4c5d998927f38f52fe6474beb60484d9d239bb4",
       "license": "MPL-2.0",
       "required_for_codex": false,
       "uninstall_owned": true
@@ -554,7 +689,7 @@
       "source_path": "paw/distribution/manifest.md",
       "destination_path": "paw/distribution/manifest.md",
       "kind": "contract",
-      "checksum_sha256": "a1bbe73c56e443867451953da182b31a3002ef051f01b796c98350d220dff520",
+      "checksum_sha256": "91a08b94ec3bebc89b58641cfacb612e2870834746f51f339a9d575ca4c73788",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true
@@ -572,7 +707,7 @@
       "source_path": "paw/distribution/progressive-loading.md",
       "destination_path": "paw/distribution/progressive-loading.md",
       "kind": "contract",
-      "checksum_sha256": "fed68e47e3af745088b2ce3e2be48317dd01edad107b8f62a26466707a600e32",
+      "checksum_sha256": "8ffa4863420af5cfedef9a97d7da68c11b136e51f44f2cc6188a0cf6994fc507",
       "license": "MPL-2.0",
       "required_for_codex": true,
       "uninstall_owned": true

@@ -5,11 +5,13 @@
   "paths": {
     "project_skills": ".claude/skills/<skill-name>/SKILL.md",
     "commands_compatibility": ".claude/commands/<command>.md",
-    "supporting_files": ".claude/skills/<skill-name>/**"
+    "supporting_files": ".claude/skills/<skill-name>/**",
+    "project_subagents": ".claude/agents/<agent>.md"
   },
   "packaging": {
     "mode": "project-skill-files",
-    "plugin_mode": "optional"
+    "plugin_mode": "optional",
+    "physical_adapter_status": "physical-files-candidate"
   },
   "triggers": ["slash-skill", "model-invoked-skill", "explicit-opt-in"],
   "assets": ["SKILL.md", "supporting files", "scripts", "references"],
@@ -29,23 +31,58 @@
     {
       "operation_id": "paw-triage",
       "portable_contract": "paw/orchestration/workflow.md",
-      "runtime_entrypoint": ".claude/skills/paw-triage/SKILL.md",
+      "runtime_entrypoint": ".claude/skills/paw-router/SKILL.md",
       "mutation_level": "level-1",
-      "support": "mappable"
+      "support": "routed"
+    },
+    {
+      "operation_id": "paw-intake",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".claude/skills/paw-intake/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "physical-files-candidate"
+    },
+    {
+      "operation_id": "paw-plan",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".claude/skills/paw-plan/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "physical-files-candidate"
+    },
+    {
+      "operation_id": "paw-tasks",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".claude/skills/paw-tasks/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "physical-files-candidate"
+    },
+    {
+      "operation_id": "paw-phase-backlog",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".claude/skills/paw-phase-backlog/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "physical-files-candidate"
     },
     {
       "operation_id": "paw-execute-phase",
       "portable_contract": "paw/orchestration/workflow.md",
       "runtime_entrypoint": ".claude/skills/paw-execute-phase/SKILL.md",
       "mutation_level": "level-2",
-      "support": "mappable"
+      "support": "physical-files-candidate"
+    },
+    {
+      "operation_id": "paw-sync-drift",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".claude/skills/paw-sync-drift/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "physical-files-candidate"
     },
     {
       "operation_id": "paw-conformance",
       "portable_contract": "paw/orchestration/conformance.md",
       "runtime_entrypoint": ".claude/skills/paw-conformance/SKILL.md",
       "mutation_level": "level-1",
-      "support": "mappable"
+      "support": "physical-files-candidate"
     }
   ],
   "capability_matrix": [
@@ -61,8 +98,8 @@
     },
     {
       "capability_id": "hooks",
-      "status": "supported-optional",
-      "notes": "Hooks are documented as automation around Claude Code lifecycle events."
+      "status": "deferred",
+      "notes": "Hooks are documented, but this physical adapter omits executable hooks to avoid premature enforcement."
     }
   ],
   "source_freshness": [
@@ -88,9 +125,15 @@
   "gap_disposition": [
     {
       "gap_id": "physical-claude-files-not-materialized",
-      "status": "manual-future-work",
-      "disposition": "This patch records a portable adapter mapping and does not install .claude files.",
+      "status": "resolved-by-paw-10b",
+      "disposition": "paw-10b materialized repo-local .claude physical files as candidate evidence.",
       "required_for_candidate": false
+    },
+    {
+      "gap_id": "claude-runtime-discovery-not-validated",
+      "status": "manual-validation-required",
+      "disposition": "Without local Claude Code discovery and invocation evidence, the physical adapter remains physical-files-candidate.",
+      "required_for_candidate": true
     }
   ],
   "activation": {
