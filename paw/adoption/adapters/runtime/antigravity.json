@@ -3,18 +3,32 @@
   "adapter_id": "runtime-antigravity-paw-candidate",
   "runtime": "antigravity",
   "paths": {
-    "local_skills": "blocked-unverified",
-    "project_instructions": "blocked-unverified",
-    "artifact_review": "runtime-ui"
+    "local_skills": ".agents/skills/<skill-folder>/SKILL.md",
+    "rules": ".agents/rules/*.md",
+    "workflows": ".agents/workflows/*.md",
+    "artifact_review": "runtime-ui-unvalidated"
   },
   "packaging": {
-    "mode": "manual-gap-declared",
-    "installable_files": false
+    "mode": "repo-local-physical-files",
+    "installable_files": true,
+    "physical_adapter_status": "physical-files-candidate",
+    "plugin_mode": "deferred"
   },
-  "triggers": ["manual-agent-task", "explicit-opt-in"],
-  "assets": ["PAW artifacts supplied as prompt or repo context"],
-  "references": ["paw/orchestration/workflow.md", "paw/orchestration/bootstrap.md", "paw/orchestration/conformance.md"],
-  "scripts": ["repo-local validation commands only when invoked by the runtime"],
+  "triggers": [
+    "manual-agent-task",
+    "explicit-opt-in"
+  ],
+  "assets": [
+    "PAW artifacts supplied as prompt or repo context"
+  ],
+  "references": [
+    "paw/orchestration/workflow.md",
+    "paw/orchestration/bootstrap.md",
+    "paw/orchestration/conformance.md"
+  ],
+  "scripts": [
+    "repo-local validation commands only when invoked by the runtime"
+  ],
   "permissions": {
     "filesystem": "runtime-managed",
     "terminal": "runtime-managed",
@@ -25,28 +39,74 @@
     "writes": "runtime-managed",
     "external_actions": "human-review"
   },
-  "optional_capabilities": ["multi-agent-manager", "browser-artifacts", "task-artifacts"],
+  "optional_capabilities": [
+    "multi-agent-manager",
+    "browser-artifacts",
+    "task-artifacts"
+  ],
   "operation_mappings": [
     {
       "operation_id": "paw-triage",
       "portable_contract": "paw/orchestration/workflow.md",
-      "runtime_entrypoint": "manual-agent-task",
+      "runtime_entrypoint": ".agents/skills/paw-router/SKILL.md",
       "mutation_level": "level-1",
-      "support": "mappable-with-manual-context"
+      "support": "physical-files-candidate"
+    },
+    {
+      "operation_id": "paw-intake",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".agents/skills/paw-intake/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "physical-files-candidate"
     },
     {
       "operation_id": "paw-plan",
       "portable_contract": "paw/orchestration/workflow.md",
-      "runtime_entrypoint": "manual-agent-task",
+      "runtime_entrypoint": ".agents/skills/paw-plan/SKILL.md",
       "mutation_level": "level-2",
-      "support": "mappable-with-manual-context"
+      "support": "physical-files-candidate"
+    },
+    {
+      "operation_id": "paw-tasks",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".agents/skills/paw-tasks/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "physical-files-candidate"
+    },
+    {
+      "operation_id": "paw-phase-backlog",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".agents/skills/paw-phase-backlog/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "physical-files-candidate"
+    },
+    {
+      "operation_id": "paw-execute-phase",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".agents/skills/paw-execute-phase/SKILL.md",
+      "mutation_level": "level-2",
+      "support": "physical-files-candidate"
+    },
+    {
+      "operation_id": "paw-sync-drift",
+      "portable_contract": "paw/orchestration/workflow.md",
+      "runtime_entrypoint": ".agents/skills/paw-sync-drift/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "physical-files-candidate"
+    },
+    {
+      "operation_id": "paw-conformance",
+      "portable_contract": "paw/orchestration/conformance.md",
+      "runtime_entrypoint": ".agents/skills/paw-conformance/SKILL.md",
+      "mutation_level": "level-1",
+      "support": "physical-files-candidate"
     }
   ],
   "capability_matrix": [
     {
       "capability_id": "progressive-context-loading",
-      "status": "manual",
-      "notes": "No official local skill-loading path was found; context must be supplied explicitly."
+      "status": "physical-files-candidate",
+      "notes": "Repo-local .agents skills and rules exist, but runtime discovery was not validated."
     },
     {
       "capability_id": "subagents",
@@ -55,8 +115,8 @@
     },
     {
       "capability_id": "hooks",
-      "status": "blocked",
-      "notes": "No official hook contract was found."
+      "status": "deferred",
+      "notes": "Hooks are not required for this physical-files candidate."
     }
   ],
   "source_freshness": [
@@ -70,8 +130,8 @@
   "gap_disposition": [
     {
       "gap_id": "antigravity-local-skill-path",
-      "status": "blocked",
-      "disposition": "Do not invent local paths; use manual task context until official technical docs exist.",
+      "status": "physical-files-created-runtime-unvalidated",
+      "disposition": "paw-10c materialized .agents physical files from the approved handoff, but local runtime discovery was not executed.",
       "required_for_candidate": true
     },
     {

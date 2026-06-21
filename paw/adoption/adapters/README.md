@@ -79,13 +79,15 @@ The current candidate runtime adapter evidence lives under
   `paw-10b-claude-code-physical-adapter` materializes repo-local `.claude/**`
   files as `physical-files-candidate` evidence unless runtime discovery is
   manually validated.
-- `antigravity.json`: limited candidate mapping using manual task context and
-  explicit blocked gaps because no stable official local skill path or hook
-  contract was available on 2026-06-21.
+- `antigravity.json`: Antigravity-first candidate mapping to repo-local
+  `.agents/**` physical files. Patch `paw-10c-antigravity-first-physical-adapter`
+  materializes skills, rules, and a thin workflow as `physical-files-candidate`
+  evidence; runtime discovery remains unvalidated until local Antigravity
+  execution proves it.
 
 These files are evidence for adapter behavior. Runtime evidence may point to
 physical adapter files when a governed patch creates them, but it does not create
-stable support, `.antigravity/**`, `.agents/**`, `paw/parches/**`, or a change to
+stable support, `.antigravity/**`, `.gemini/**`, `paw/parches/**`, or a change to
 the active SDD v1 workflow.
 
 ## Resolution Rule

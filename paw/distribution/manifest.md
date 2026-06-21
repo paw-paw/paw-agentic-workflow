@@ -64,12 +64,15 @@ surfaces when required by the manifest:
 - `.claude/README.md`, `.claude/skills/paw-*`, and `.claude/agents/paw-*`
   when a governed Claude Code physical adapter patch includes them as candidate
   runtime binding files.
+- `.agents/README.md`, `.agents/skills/paw-*`, `.agents/rules/paw-*`, and
+  `.agents/workflows/paw-*` when a governed Antigravity physical adapter patch
+  includes them as candidate runtime binding files.
 
 Runtime adapter evidence under `paw/adoption/adapters/runtime/**` may be
-included as contract data for candidate evaluation. Including `.claude/**`
-physical adapter files does not make the manual distribution a Claude plugin,
-Antigravity bundle, marketplace package, stable release, or multi-runtime
-installer.
+included as contract data for candidate evaluation. Including `.claude/**` or
+`.agents/**` physical adapter files does not make the manual distribution a
+Claude plugin, Antigravity bundle, marketplace package, stable release, or
+multi-runtime installer.
 
 ## Exclusions
 

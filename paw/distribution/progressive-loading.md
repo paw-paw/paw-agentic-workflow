@@ -30,7 +30,9 @@ semantics and to repo-local `.claude/**` physical files when the governed Claude
 adapter patch includes them. Load those physical files only for Claude Code
 candidate evaluation.
 Antigravity evidence must be loaded with its blocked gaps visible and must not
-be replaced with Gemini CLI assumptions.
+be replaced with Gemini CLI assumptions. When `.agents/**` physical files are
+present, load them only for Antigravity candidate evaluation and keep runtime
+discovery status visible.
 
 ## Runtime Requirements
 
